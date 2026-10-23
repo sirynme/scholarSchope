@@ -10,12 +10,6 @@ interface AuthModalProps {
     fullName: string;
     role: string;
   } | null;
-  availableAccounts: Array<{
-    id: string;
-    email: string;
-    fullName: string;
-    role: string;
-  }>;
   onRefreshBootstrap: () => Promise<void>;
 }
 
@@ -23,10 +17,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   isOpen,
   onClose,
   currentUser,
-  availableAccounts,
   onRefreshBootstrap,
 }) => {
-  const [mode, setMode] = React.useState<'login' | 'register' | 'recover'>('login');
+  const [mode, setMode] = React.useState<'login' | 'register' | 'recover'>(
+    currentUser ? 'login' : 'register'
+  );
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [fullName, setFullName] = React.useState('');
@@ -91,25 +86,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     }
   };
 
-  const handleSwitchAccount = async (userId: string) => {
-    setLoading(true);
-    setError(null);
-    try {
-      const res = await fetch('/api/auth/switch-user', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId }),
-      });
-      if (!res.ok) throw new Error('Failed to switch user session');
-      await onRefreshBootstrap();
-      onClose();
-    } catch (err: any) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const handleDeleteAccount = async () => {
     if (!currentUser) return;
     setLoading(true);
@@ -152,7 +128,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       <div className="w-full max-w-lg bg-white border border-slate-200 rounded-lg p-6 space-y-6">
         <div className="flex items-center justify-between border-b border-slate-200 pb-4">
           <h2 id="auth-modal-title" className="text-lg font-bold text-slate-900">
-            Account Authentication & Multi-User Isolation
+            {currentUser ? 'Account Settings' : 'Sign In or Create Your Account'}
           </h2>
           <div className="flex items-center gap-2">
             {currentUser && (
@@ -175,46 +151,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             </button>
           </div>
         </div>
-
-        {/* Instant Multi-User Session Switcher for testing row-level data isolation */}
-        {availableAccounts.length > 0 && (
-          <div className="space-y-2 bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <div className="text-xs font-semibold text-slate-800">
-              Active Workspace Accounts (Row-Level Data Isolation)
-            </div>
-            <p className="text-[11px] text-slate-600">
-              Switch accounts to verify that profiles, GPA scales, saved opportunities, tasks, and notifications are strictly isolated per user while sharing the verified opportunity database:
-            </p>
-            <div className="space-y-1.5 pt-1">
-              {availableAccounts.map((acc) => {
-                const isCurrent = currentUser?.id === acc.id;
-                return (
-                  <div
-                    key={acc.id}
-                    className="flex items-center justify-between gap-2 bg-white border border-slate-200 px-3 py-2 rounded text-xs"
-                  >
-                    <div>
-                      <span className="font-semibold text-slate-900">{acc.fullName}</span>
-                      <span className="text-slate-500"> · {acc.email} · Role: {acc.role}</span>
-                    </div>
-                    <button
-                      type="button"
-                      disabled={isCurrent || loading}
-                      onClick={() => handleSwitchAccount(acc.id)}
-                      className={`px-2.5 py-1 rounded text-xs font-medium ${
-                        isCurrent
-                          ? 'bg-slate-100 text-slate-500 cursor-default'
-                          : 'bg-slate-900 text-white hover:bg-slate-800'
-                      }`}
-                    >
-                      {isCurrent ? 'Active Session' : 'Switch to Account'}
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
 
         {/* Mode Selector Tabs */}
         <div className="flex items-center gap-1 p-1 bg-slate-100 rounded-lg">
@@ -317,7 +253,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           </div>
 
           <div className="flex items-center justify-between pt-2">
-            {currentUser && availableAccounts.length > 1 ? (
+            {currentUser ? (
               <button
                 type="button"
                 onClick={handleDeleteAccount}

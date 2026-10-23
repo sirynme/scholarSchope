@@ -59,9 +59,6 @@ export default function App() {
     role: string;
     onboardingCompleted: boolean;
   } | null>(null);
-  const [availableAccounts, setAvailableAccounts] = React.useState<
-    Array<{ id: string; email: string; fullName: string; role: string }>
-  >([]);
   const [profile, setProfile] = React.useState<UserProfileRecord | null>(null);
   const [qualifications, setQualifications] = React.useState<UserQualificationRecord[]>([]);
   const [institutions, setInstitutions] = React.useState<InstitutionRecord[]>([]);
@@ -114,14 +111,7 @@ export default function App() {
         throw new Error(errBody.error || `Server returned HTTP ${res.status}`);
       }
       const data = await res.json();
-      if (!data.authenticated) {
-        setCurrentUser(null);
-        setAvailableAccounts(data.availableTestAccounts || []);
-        setLoading(false);
-        return;
-      }
-      setCurrentUser(data.user);
-      setAvailableAccounts(data.availableAccounts || []);
+      setCurrentUser(data.authenticated ? data.user : null);
       setProfile(data.profile || null);
       setQualifications(data.qualifications || []);
       setInstitutions(data.institutions || []);
@@ -238,6 +228,10 @@ export default function App() {
     applicationStatus?: ApplicationStatus,
     privateNotes?: string
   ) => {
+    if (!currentUser) {
+      setAuthModalOpen(true);
+      return;
+    }
     const res = await fetch('/api/saved-opportunities', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -529,7 +523,7 @@ export default function App() {
                 onClick={() => setAuthModalOpen(true)}
                 className="w-full px-3 py-1.5 text-xs font-semibold text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50 transition-colors"
               >
-                Account & Switch User
+                Account & Sign Out
               </button>
             </div>
           ) : (
@@ -651,7 +645,7 @@ export default function App() {
                 Retry loading workspace
               </button>
             </div>
-          ) : !currentUser ? (
+          ) : !currentUser && (activeView === 'journey' || activeView === 'profile') ? (
             <div className="bg-white border border-slate-200 rounded-xl p-8 text-center space-y-4 max-w-lg mx-auto my-8">
               <h2 className="text-xl font-bold text-slate-900">
                 Sign in to access your personalized scholarship workspace
@@ -845,12 +839,11 @@ export default function App() {
         onNavigateToProfile={() => handleNavigate('profile')}
       />
 
-      {/* Account Authentication & User Switcher Modal */}
+      {/* Account Authentication Modal */}
       <AuthModal
         isOpen={authModalOpen}
         onClose={() => setAuthModalOpen(false)}
         currentUser={currentUser}
-        availableAccounts={availableAccounts}
         onRefreshBootstrap={fetchBootstrap}
       />
     </div>

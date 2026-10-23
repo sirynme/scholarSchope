@@ -664,164 +664,14 @@ export function getInitialOfficialSourceRegistry(nowIso: string): SourceRegistry
   ];
 }
 
-export function createInitialDatabase(options?: { isProduction?: boolean }): DatabaseSchema {
+export function createInitialDatabase(_options?: { isProduction?: boolean }): DatabaseSchema {
   const nowIso = new Date().toISOString();
-  const isProd =
-    options?.isProduction ??
-    (process.env.NODE_ENV === 'production' ||
-      process.env.VERCEL === '1' ||
-      Boolean(process.env.VERCEL_ENV) ||
-      process.env.SCHOLARSCOPE_NO_TEST_FIXTURES === '1');
-
-  // In production mode, zero test fixture users or profiles are seeded.
-  // In local development/test mode, two isolated Pakistani applicant test fixtures are available for multi-user verification.
-  const primaryUserId = 'usr-researcher-primary';
-  const secondaryUserId = 'usr-student-isolated';
-
-  const users: UserRecord[] = isProd
-    ? []
-    : [
-        {
-          id: primaryUserId,
-          email: 'researcher@scholarscope.org',
-          passwordHash: hashPassword('ScholarScope2026!'),
-          fullName: 'Zainab Raza',
-          role: 'admin',
-          onboardingCompleted: true,
-          createdAt: nowIso,
-          updatedAt: nowIso,
-        },
-        {
-          id: secondaryUserId,
-          email: 'ayesha.siddiqui@scholarscope.org',
-          passwordHash: hashPassword('StudentPass2026!'),
-          fullName: 'Ayesha Siddiqui',
-          role: 'student',
-          onboardingCompleted: true,
-          createdAt: nowIso,
-          updatedAt: nowIso,
-        },
-      ];
-
-  const profiles: UserProfileRecord[] = isProd
-    ? []
-    : [
-        {
-          id: 'prof-primary',
-          userId: primaryUserId,
-          citizenship: 'Pakistan',
-          residencyCountry: 'Pakistan',
-          ageYears: 23,
-          hecEquivalenceConfirmed: true,
-          currentDegree: 'BS Computer Science (4-Year HEC Recognized)',
-          currentUniversity: 'NUST (National University of Sciences & Technology), Islamabad',
-          gpaValue: 3.88,
-          gradingScale: '4.0',
-          gradingClassification: 'First Class',
-          graduationDate: '2026-06-15',
-          completedPrerequisites: [
-            'Algorithms & Data Structures',
-            'Linear Algebra',
-            'Probability & Statistics',
-            'Operating Systems',
-            'Machine Learning Foundations',
-            'Computational Biology & Bioinformatics',
-          ],
-          englishTestType: 'IELTS',
-          englishTestScore: 8.0,
-          greVerbal: 162,
-          greQuant: 168,
-          greWriting: 5.0,
-          researchMonths: 18,
-          publicationsCount: 2,
-          workExperienceMonths: 12,
-          technicalSkills: ['Python', 'PyTorch', 'Bioinformatics', 'Distributed Systems', 'Genomic Data Science', 'C++'],
-          applicationBudgetUsd: 250,
-          targetDegrees: ['MSc', 'MS', 'MPhil', 'PhD'],
-          targetFields: [
-            'Computer Science',
-            'Artificial Intelligence and Machine Learning',
-            'Bioinformatics and Computational Biology',
-            'Microbiology',
-          ],
-          fundingPreferenceMode: 'INCLUDE_SELF_FUNDED',
-          preferredCountries: ['Germany', 'United Kingdom', 'United States', 'Japan', 'China'],
-          preferredUniversities: [
-            'Technical University of Munich (TUM)',
-            'Max Planck Society (IMPRS)',
-            'University of Cambridge',
-            'MIT',
-            'Tsinghua University',
-            'University of Chinese Academy of Sciences (UCAS)',
-          ],
-          requireFullFunding: false,
-          minAnnualLivingSupportUsd: 12000,
-          preferredIntakes: ['Autumn 2027'],
-          applicationCycles: ['2026-2027', '2027-2028'],
-          emailNotificationsEnabled: true,
-          inAppNotificationsEnabled: true,
-          reminderDaysBeforeDeadline: [30, 14, 7, 1],
-          updatedAt: nowIso,
-        },
-        {
-          id: 'prof-secondary',
-          userId: secondaryUserId,
-          citizenship: 'Pakistan',
-          residencyCountry: 'Pakistan',
-          ageYears: 24,
-          hecEquivalenceConfirmed: true,
-          currentDegree: 'BS Microbiology (4-Year HEC Recognized)',
-          currentUniversity: 'Quaid-i-Azam University (QAU), Islamabad',
-          gpaValue: 3.79,
-          gradingScale: '4.0',
-          gradingClassification: 'First Class',
-          graduationDate: '2026-07-01',
-          completedPrerequisites: [
-            'Medical & Clinical Microbiology',
-            'Molecular Microbiology',
-            'Virology',
-            'Microbial Genetics & Genomics',
-            'Immunology & Host-Pathogen Interactions',
-          ],
-          englishTestType: 'IELTS',
-          englishTestScore: 7.5,
-          greVerbal: 156,
-          greQuant: 163,
-          greWriting: 4.5,
-          researchMonths: 14,
-          publicationsCount: 1,
-          workExperienceMonths: 6,
-          technicalSkills: ['PCR & qPCR', 'CRISPR', 'Metagenomics', 'Antimicrobial Susceptibility Testing', 'R', 'Bioinformatics'],
-          applicationBudgetUsd: 180,
-          targetDegrees: ['MSc', 'MPhil', 'PhD'],
-          targetFields: [
-            'Microbiology',
-            'Medical and Clinical Microbiology',
-            'Virology',
-            'Antimicrobial Resistance',
-            'Microbial Genetics and Genomics',
-          ],
-          fundingPreferenceMode: 'FULLY_FUNDED_ONLY',
-          preferredCountries: ['Germany', 'United Kingdom', 'United States', 'Japan', 'China'],
-          preferredUniversities: ['Max Planck Society (IMPRS)', 'University of Cambridge', 'MIT', 'UCAS'],
-          requireFullFunding: true,
-          minAnnualLivingSupportUsd: 12000,
-          preferredIntakes: ['Autumn 2027'],
-          applicationCycles: ['2026-2027', '2027-2028'],
-          emailNotificationsEnabled: true,
-          inAppNotificationsEnabled: true,
-          reminderDaysBeforeDeadline: [30, 14, 7],
-          updatedAt: nowIso,
-        },
-      ];
-
-  const qualifications: UserQualificationRecord[] = [];
 
   return {
-    users,
-    profiles,
-    qualifications,
-    // Production opportunity tables start empty and are populated ONLY by live HTTP source discovery!
+    users: [],
+    profiles: [],
+    qualifications: [],
+    // Opportunity tables start empty and are populated ONLY by live HTTP source discovery or verified snapshot import
     institutions: [],
     departments: [],
     programs: [],
@@ -842,11 +692,12 @@ export function createInitialDatabase(options?: { isProduction?: boolean }): Dat
     auditLogs: [
       {
         id: crypto.randomUUID(),
-        userId: isProd ? null : primaryUserId,
+        userId: null,
         action: 'SYSTEM_INITIALIZED',
         targetType: 'DATABASE',
         targetId: 'singleton',
-        details: `Initialized normalized ScholarScope store (${isProd ? 'PRODUCTION_ZERO_FIXTURES' : 'DEV_TEST_FIXTURES'}) with 24 official source registry entries covering Germany, UK, USA, Japan, China, and global hubs with 0 synthetic opportunity records.`,
+        details:
+          'Initialized normalized ScholarScope store (ZERO_DEMO_FIXTURES) with 24 official source registry entries covering Germany, UK, USA, Japan, China, and global hubs with 0 synthetic opportunity or user records.',
         createdAt: nowIso,
       },
     ],
@@ -970,17 +821,6 @@ export function reconcileDataQualityAndStalePlaceholders(db: DatabaseSchema): {
         claim.evidenceQualityScore = 78;
       }
       downgradedNonNumericClaimsCount++;
-    }
-  }
-
-  // 3. Normalize legacy development fixture account emails so persisted JSON snapshots match canonical fixtures
-  for (const user of db.users ?? []) {
-    if (user.email === 'lukas.weber@student.ethz.ch') {
-      user.email = 'ayesha.siddiqui@scholarscope.org';
-      user.fullName = 'Ayesha Siddiqui';
-    } else if (user.email === 'elena.rostova@scholarscope.org') {
-      user.email = 'researcher@scholarscope.org';
-      user.fullName = 'Usman Tariq';
     }
   }
 

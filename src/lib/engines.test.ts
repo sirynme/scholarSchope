@@ -567,8 +567,10 @@ test('Initial database starts with zero synthetic opportunities or application a
   assert.equal(prodDb.checklistItems.length, 0);
   assert.equal(prodDb.sources.length, 24);
 
-  // Development/test initialization includes the 2 isolated test fixture profiles
+  // Development/test initialization also starts with zero pre-populated demo users
   const initDb = createInitialDatabase({ isProduction: false });
+  assert.equal(initDb.users.length, 0);
+  assert.equal(initDb.profiles.length, 0);
   assert.equal(initDb.programs.length, 0);
   assert.equal(initDb.scholarships.length, 0);
   assert.equal(initDb.institutions.length, 0);
@@ -584,18 +586,6 @@ test('Initial database starts with zero synthetic opportunities or application a
   assert.ok(h1.startsWith('scrypt$'));
   assert.equal(verifyPassword('MySecurePass123!', h1), true);
   assert.equal(verifyPassword('WrongPass', h1), false);
-
-  // Verify user isolation between primary (CS) and secondary (Microbiology) Pakistani user profiles
-  const u1 = initDb.users[0];
-  const u2 = initDb.users[1];
-  assert.notEqual(u1.id, u2.id);
-  assert.equal(u1.email, 'researcher@scholarscope.org');
-  assert.equal(u2.email, 'ayesha.siddiqui@scholarscope.org');
-  const p1 = initDb.profiles.find((p) => p.userId === u1.id);
-  const p2 = initDb.profiles.find((p) => p.userId === u2.id);
-  assert.equal(p1?.citizenship, 'Pakistan');
-  assert.equal(p2?.citizenship, 'Pakistan');
-  assert.notEqual(p1?.currentDegree, p2?.currentDegree);
 });
 
 test('Storage configuration refuses ephemeral local fallback on Vercel serverless without authoritative DATABASE_URL', () => {
@@ -1382,10 +1372,10 @@ test('Safe, repeatable JSON-to-PostgreSQL migration preserves records, excludes 
     'Must never silently upgrade unverified evidence to verified'
   );
 
-  // Verify dev fixture users (Zainab Raza & Ayesha Siddiqui) were skipped and NOT imported into PostgreSQL
-  assert.equal(summary1.sourceCounts.users, 2);
+  // Verify zero demo/fixture users exist in .data/scholarscope-db.json or PostgreSQL
+  assert.equal(summary1.sourceCounts.users, 0);
   assert.equal(summary1.importedCounts.users, 0);
-  assert.equal(summary1.skippedCounts.users, 2);
+  assert.equal(summary1.skippedCounts.users, 0);
 
   // Verify all 24 programs, 15 scholarships, 24 sources, and 39 evidence claims were imported
   assert.equal(summary1.importedCounts.programs, 24);

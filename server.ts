@@ -36,9 +36,8 @@ import { validateUrlAgainstSsrf } from './src/lib/url-security';
 dotenv.config();
 
 const PORT = Number(process.env.PORT) || 3000;
-const CRON_SECRET = process.env.CRON_SECRET || 'scholarscope-cron-secret-2026';
-const SESSION_SECRET =
-  process.env.SESSION_SECRET || 'scholarscope-hmac-session-secret-2026-production';
+const CRON_SECRET = process.env.CRON_SECRET || '';
+const SESSION_SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
 
 function getStorageConfigSafe() {
   try {
@@ -133,18 +132,7 @@ function getAuthenticatedUser(req: Request): UserRecord | null {
     return db.users.find((x) => x.id === uid) || null;
   }
 
-  // In production or Vercel serverless mode, never auto-authenticate unauthenticated requests into a default account
-  if (
-    process.env.NODE_ENV === 'production' ||
-    process.env.VERCEL === '1' ||
-    Boolean(process.env.VERCEL_ENV) ||
-    process.env.SCHOLARSCOPE_NO_TEST_FIXTURES === '1'
-  ) {
-    return null;
-  }
-
-  // Local development convenience: default to primary authenticated researcher session unless explicitly logged out
-  return db.users[0] || null;
+  return null;
 }
 
 export const app = express();
@@ -315,12 +303,13 @@ async function startServer() {
 
     const nowIso = new Date().toISOString();
     const userId = `usr-${crypto.randomUUID()}`;
+    const isFirstAccount = currentDb.users.length === 0;
     const newUser: UserRecord = {
       id: userId,
       email: parsed.data.email.toLowerCase().trim(),
       passwordHash: hashPassword(parsed.data.password),
       fullName: parsed.data.fullName.trim(),
-      role: 'student',
+      role: isFirstAccount ? 'admin' : 'student',
       onboardingCompleted: false,
       createdAt: nowIso,
       updatedAt: nowIso,
@@ -330,12 +319,12 @@ async function startServer() {
     currentDb.profiles.push({
       id: `prof-${crypto.randomUUID()}`,
       userId,
-      citizenship: null,
-      residencyCountry: null,
+      citizenship: 'Pakistan',
+      residencyCountry: 'Pakistan',
       currentDegree: null,
       currentUniversity: null,
       gpaValue: null,
-      gradingScale: null,
+      gradingScale: '4.0',
       gradingClassification: null,
       graduationDate: null,
       completedPrerequisites: [],
@@ -349,11 +338,12 @@ async function startServer() {
       workExperienceMonths: 0,
       technicalSkills: [],
       applicationBudgetUsd: null,
-      targetDegrees: ['MSc', 'PhD'],
-      targetFields: ['Computer Science', 'AI'],
-      preferredCountries: [],
+      targetDegrees: ['MSc', 'MS', 'PhD'],
+      targetFields: ['Computer Science', 'Microbiology'],
+      fundingPreferenceMode: 'INCLUDE_SELF_FUNDED',
+      preferredCountries: ['Germany', 'United Kingdom', 'United States', 'Japan', 'China'],
       preferredUniversities: [],
-      requireFullFunding: true,
+      requireFullFunding: false,
       minAnnualLivingSupportUsd: null,
       preferredIntakes: ['Autumn 2027'],
       applicationCycles: ['2026-2027', '2027-2028'],
@@ -449,48 +439,6 @@ async function startServer() {
     res.json({ ok: true, message: 'Password updated. You can now sign in with your new credentials.' });
   });
 
-  app.post('/api/auth/switch-user', (req: Request, res: Response) => {
-    if (
-      process.env.NODE_ENV === 'production' ||
-      process.env.VERCEL === '1' ||
-      Boolean(process.env.VERCEL_ENV)
-    ) {
-      const caller = getAuthenticatedUser(req);
-      if (!caller || caller.role !== 'admin') {
-        res.status(403).json({
-          error: 'Account switching is restricted to administrators in production.',
-        });
-        return;
-      }
-    }
-    const { userId } = req.body || {};
-    const currentDb = loadDb();
-    const target = currentDb.users.find((u) => u.id === userId);
-    if (!target) {
-      res.status(404).json({ error: 'Target user account not found.' });
-      return;
-    }
-    const sessionToken = createSignedSessionToken(target.id);
-    res.setHeader(
-      'Set-Cookie',
-      [
-        `scholarscope_session=${sessionToken}; Path=/; HttpOnly; SameSite=Lax`,
-        `scholarscope_logged_out=0; Path=/; HttpOnly; SameSite=Lax`,
-      ]
-    );
-    res.json({
-      ok: true,
-      user: {
-        id: target.id,
-        email: target.email,
-        fullName: target.fullName,
-        role: target.role,
-        onboardingCompleted: target.onboardingCompleted,
-      },
-      sessionToken,
-    });
-  });
-
   app.post('/api/auth/logout', async (req: Request, res: Response) => {
     const user = getAuthenticatedUser(req);
     const cookies = parseCookies(req.headers.cookie);
@@ -528,10 +476,6 @@ async function startServer() {
       return;
     }
     const currentDb = loadDb();
-    if (currentDb.users.length <= 1) {
-      res.status(400).json({ error: 'Cannot delete the sole remaining system account.' });
-      return;
-    }
 
     // Cascade delete all private user-owned records (Section 15)
     currentDb.users = currentDb.users.filter((u) => u.id !== user.id);
@@ -563,12 +507,30 @@ async function startServer() {
       res.json({
         authenticated: false,
         user: null,
-        availableTestAccounts: currentDb.users.map((u) => ({
-          id: u.id,
-          email: u.email,
-          fullName: u.fullName,
-          role: u.role,
-        })),
+        profile: null,
+        qualifications: [],
+        eligibilityResults: [],
+        savedOpportunities: [],
+        tasks: [],
+        checklistItems: [],
+        notifications: [],
+        emailDeliveries: [],
+        // Shared Public Research Database
+        institutions: currentDb.institutions,
+        departments: currentDb.departments,
+        programs: currentDb.programs,
+        scholarships: currentDb.scholarships,
+        sources: currentDb.sources,
+        claims: currentDb.claims,
+        changeEvents: currentDb.changeEvents,
+        systemHealth: currentDb.systemHealth,
+        countryCoverage: computeCountryCoverageMetrics(currentDb),
+        livingCostBenchmarks: Object.values(OFFICIAL_LIVING_COST_BENCHMARKS),
+        fetchAttempts: [],
+        snapshots: [],
+        researchRuns: [],
+        jobQueue: [],
+        auditLogs: [],
       });
       return;
     }
@@ -593,12 +555,6 @@ async function startServer() {
         onboardingCompleted: user.onboardingCompleted,
         createdAt: user.createdAt,
       },
-      availableAccounts: currentDb.users.map((u) => ({
-        id: u.id,
-        email: u.email,
-        fullName: u.fullName,
-        role: u.role,
-      })),
       // Private User-Owned Data
       profile,
       qualifications,
