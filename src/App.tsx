@@ -44,6 +44,15 @@ import { ProfileView } from './components/ProfileView';
 import { AdminAndSourcesView } from './components/AdminAndSourcesView';
 import { EvidenceModal } from './components/EvidenceModal';
 import { AuthModal } from './components/AuthModal';
+import { FieldPicker } from './components/FieldPicker';
+import {
+  getStudyField,
+  getStudyFieldBySubject,
+  loadStoredField,
+  programInField,
+  storeField,
+  STUDY_FIELDS,
+} from './lib/opportunity-presentation';
 
 export default function App() {
   const [loading, setLoading] = React.useState(true);
@@ -102,6 +111,26 @@ export default function App() {
   const [unauthorizedAdminBanner, setUnauthorizedAdminBanner] = React.useState<boolean>(false);
   const [bootstrapError, setBootstrapError] = React.useState<string | null>(null);
 
+  // ---- Study field: the whole site is scoped to ONE field (never mixed) ----
+  const [activeFieldId, setActiveFieldId] = React.useState<string | null>(() => loadStoredField());
+  const activeField = getStudyField(activeFieldId ?? undefined);
+
+  const handleSelectField = React.useCallback((fieldId: string) => {
+    const field = getStudyField(fieldId);
+    if (!field) return;
+    setActiveFieldId(fieldId);
+    storeField(fieldId);
+    // Keep the catalogue's internal subject filter in lockstep with the global field.
+    setCatalogueFilters((prev) => ({ ...prev, subject: field.subject }));
+    setCataloguePage(1);
+  }, []);
+
+  // Programs visible across the whole site, scoped to the chosen field.
+  const visiblePrograms = React.useMemo(() => {
+    if (!activeField) return programs;
+    return programs.filter((p) => programInField(p, activeField.subject));
+  }, [programs, activeField]);
+
   const fetchBootstrap = React.useCallback(async () => {
     setBootstrapError(null);
     try {
@@ -149,6 +178,25 @@ export default function App() {
             subject: navState.impliedSubject || prev.subject,
             country: navState.impliedCountry || prev.country,
           }));
+          // A ?field= link also sets the global study field.
+          const linkedField = navState.impliedSubject
+            ? getStudyFieldBySubject(navState.impliedSubject)
+            : undefined;
+          if (linkedField) {
+            setActiveFieldId(linkedField.id);
+            storeField(linkedField.id);
+          }
+        }
+        // No stored field yet: seed the global field from the saved profile (first target field).
+        if (!loadStoredField()) {
+          const profileField = (data.profile?.targetFields || [])
+            .map((t: string) => getStudyFieldBySubject(t))
+            .find(Boolean);
+          if (profileField) {
+            setActiveFieldId(profileField.id);
+            storeField(profileField.id);
+            setCatalogueFilters((prev) => ({ ...prev, subject: profileField.subject }));
+          }
         }
       }
     } catch (err: any) {
@@ -572,6 +620,36 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-2.5">
+            {/* Study-field switcher: one field at a time, never mixed */}
+            {activeField && (
+              <div
+                className="inline-flex items-center gap-1 bg-stone-100 border border-stone-200 rounded-lg p-0.5"
+                role="group"
+                aria-label="Study field"
+              >
+                {STUDY_FIELDS.map((f) => {
+                  const Icon = f.icon;
+                  const isActive = f.id === activeFieldId;
+                  return (
+                    <button
+                      key={f.id}
+                      type="button"
+                      onClick={() => handleSelectField(f.id)}
+                      aria-pressed={isActive}
+                      title={f.tagline}
+                      className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 text-[11px] font-semibold rounded-md transition-colors ${
+                        isActive
+                          ? 'bg-stone-900 text-white shadow-sm'
+                          : 'text-stone-600 hover:text-stone-900'
+                      }`}
+                    >
+                      <Icon className="w-3.5 h-3.5" />
+                      <span className="hidden lg:inline">{f.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
             {isAdmin && (
               <button
                 type="button"
@@ -658,7 +736,7 @@ export default function App() {
                 Sign in to access your personalized scholarship workspace
               </h2>
               <p className="text-xs text-stone-600 leading-relaxed">
-                Create a student account or sign in to check your eligibility against verified Computer Science and Microbiology programs, save opportunities, and track your application documents.
+                Create a student account or sign in to check your eligibility against verified programs in your field, save opportunities, and track your application documents.
               </p>
               <button
                 type="button"
@@ -668,6 +746,8 @@ export default function App() {
                 Sign In or Register
               </button>
             </div>
+          ) : !activeField ? (
+            <FieldPicker programs={programs} onSelectField={handleSelectField} />
           ) : (
             <>
               {activeView === 'home' && (
@@ -675,7 +755,7 @@ export default function App() {
                   currentUser={currentUser}
                   profile={profile}
                   qualifications={qualifications}
-                  programs={programs}
+                  programs={visiblePrograms}
                   institutions={institutions}
                   scholarships={scholarships}
                   eligibilityResults={eligibilityResults}
@@ -685,6 +765,7 @@ export default function App() {
                   systemHealth={systemHealth}
                   latestRun={latestRun}
                   sources={sources}
+                  activeField={activeField}
                   onNavigate={handleNavigate}
                   onInspectProgram={(progId) => setSelectedProgramId(progId)}
                   onSaveOrUpdateOpportunity={handleSaveOrUpdateOpportunity}
@@ -693,7 +774,7 @@ export default function App() {
 
               {activeView === 'explore' && (
                 <ExploreOpportunitiesView
-                  programs={programs}
+                  programs={visiblePrograms}
                   institutions={institutions}
                   scholarships={scholarships}
                   eligibilityResults={eligibilityResults}
@@ -706,6 +787,7 @@ export default function App() {
                   onInspectProgram={(progId) => setSelectedProgramId(progId)}
                   onSaveOrUpdateOpportunity={handleSaveOrUpdateOpportunity}
                   onNavigateToProfile={() => handleNavigate('profile')}
+                  activeField={activeField}
                 />
               )}
 
@@ -713,7 +795,7 @@ export default function App() {
                 <MyJourneyView
                   activeSection={journeySection}
                   onSelectSection={setJourneySection}
-                  programs={programs}
+                  programs={visiblePrograms}
                   institutions={institutions}
                   scholarships={scholarships}
                   eligibilityResults={eligibilityResults}
@@ -721,6 +803,7 @@ export default function App() {
                   tasks={tasks}
                   checklistItems={checklistItems}
                   notifications={notifications}
+                  activeField={activeField}
                   onInspectProgram={(progId) => setSelectedProgramId(progId)}
                   onNavigateToExplore={() => handleNavigate('explore')}
                   onSaveOrUpdateOpportunity={handleSaveOrUpdateOpportunity}
@@ -739,6 +822,8 @@ export default function App() {
                 <ProfileView
                   profile={profile}
                   qualifications={qualifications}
+                  activeField={activeField}
+                  onSelectField={handleSelectField}
                   onSaveProfile={handleSaveProfile}
                   onAddQualification={handleAddQualification}
                   onDeleteQualification={handleDeleteQualification}
@@ -769,7 +854,7 @@ export default function App() {
         {/* Clean Academic Footer */}
         <footer className="border-t border-stone-200 bg-white px-6 py-4 text-xs text-stone-500 flex flex-wrap items-center justify-between gap-4">
           <div>
-            ScholarScope — Verified Graduate Admissions & Scholarship Guide for Pakistani Students (Computer Science & Microbiology)
+            ScholarScope — Verified Graduate Admissions & Scholarship Guide for Pakistani Students
           </div>
           <div className="flex items-center gap-4">
             <button

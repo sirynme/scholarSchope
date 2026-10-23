@@ -3,6 +3,8 @@ import {
   Banknote,
   Briefcase,
   Building2,
+  Cpu,
+  Dna,
   GraduationCap,
   HandCoins,
   Landmark,
@@ -236,4 +238,93 @@ export function countryAccent(country: string): string {
   if (c.includes('switzerland')) return 'bg-red-400';
   if (c.includes('canada')) return 'bg-red-500';
   return 'bg-stone-400';
+}
+
+// ============================================================================
+// STUDY FIELDS — one field at a time, never mixed.
+//
+// Computer Science and Microbiology are different worlds; the whole site is
+// scoped to a single field chosen by the student. Interdisciplinary programs
+// (CS & Bio) appear under both fields because they genuinely belong to both.
+//
+// TO ADD A NEW FIELD LATER: append one entry here. The field picker, the
+// header switcher, home, explore, and profile all render from this array —
+// no other code changes needed. `subject` matches the CatalogueFilterState
+// subject values so the existing catalogue filter keeps working untouched.
+// ============================================================================
+
+export interface StudyField {
+  /** Stable id, persisted in localStorage. */
+  id: string;
+  /** Matches CatalogueFilterState['subject'] values. */
+  subject: string;
+  label: string;
+  tagline: string;
+  icon: LucideIcon;
+}
+
+export const STUDY_FIELDS: StudyField[] = [
+  {
+    id: 'computer-science',
+    subject: 'Computer Science',
+    label: 'Computer Science',
+    tagline: 'AI, software, data, systems & security',
+    icon: Cpu,
+  },
+  {
+    id: 'microbiology',
+    subject: 'Microbiology',
+    label: 'Microbiology',
+    tagline: 'Microbes, virology, immunology & bioinformatics',
+    icon: Dna,
+  },
+];
+
+export function getStudyField(id: string | null | undefined): StudyField | undefined {
+  return STUDY_FIELDS.find((f) => f.id === id);
+}
+
+export function getStudyFieldBySubject(subject: string | null | undefined): StudyField | undefined {
+  return STUDY_FIELDS.find((f) => f.subject === subject);
+}
+
+/** Same inclusive rule as the catalogue subject filter: interdisciplinary belongs to both. */
+export function programInField(
+  program: { broadField?: string | null },
+  fieldSubject: string
+): boolean {
+  if (fieldSubject === 'Computer Science') {
+    return (
+      program.broadField === 'Computer Science' ||
+      program.broadField === 'Interdisciplinary (CS & Bio)'
+    );
+  }
+  if (fieldSubject === 'Microbiology') {
+    return (
+      program.broadField === 'Microbiology' ||
+      program.broadField === 'Interdisciplinary (CS & Bio)'
+    );
+  }
+  return program.broadField === fieldSubject;
+}
+
+const FIELD_STORAGE_KEY = 'scholarscope-field';
+
+export function loadStoredField(): string | null {
+  try {
+    if (typeof window === 'undefined' || !window.localStorage) return null;
+    const raw = window.localStorage.getItem(FIELD_STORAGE_KEY);
+    return raw && getStudyField(raw) ? raw : null;
+  } catch {
+    return null;
+  }
+}
+
+export function storeField(id: string): void {
+  try {
+    if (typeof window === 'undefined' || !window.localStorage) return;
+    window.localStorage.setItem(FIELD_STORAGE_KEY, id);
+  } catch {
+    // private mode etc. — field simply won't persist
+  }
 }

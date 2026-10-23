@@ -17,7 +17,7 @@ import {
   filterAndSortCataloguePrograms,
   getProgramStudyDestination,
 } from '../lib/student-dashboard';
-import { OPPORTUNITY_TYPE_META } from '../lib/opportunity-presentation';
+import { OPPORTUNITY_TYPE_META, programInField, type StudyField } from '../lib/opportunity-presentation';
 import { OpportunityCard } from './OpportunityCard';
 
 interface ExploreOpportunitiesViewProps {
@@ -38,6 +38,7 @@ interface ExploreOpportunitiesViewProps {
     notes?: string
   ) => Promise<void>;
   onNavigateToProfile?: () => void;
+  activeField: StudyField;
 }
 
 const ITEMS_PER_PAGE = 9;
@@ -59,6 +60,7 @@ export const ExploreOpportunitiesView: React.FC<ExploreOpportunitiesViewProps> =
   onInspectProgram,
   onSaveOrUpdateOpportunity,
   onNavigateToProfile,
+  activeField,
 }) => {
   const [advancedOpen, setAdvancedOpen] = React.useState(false);
 
@@ -73,15 +75,13 @@ export const ExploreOpportunitiesView: React.FC<ExploreOpportunitiesViewProps> =
     [programs, filters, institutions, scholarships, eligibilityResults, profile]
   );
 
+  // Specializations follow the global study field (subject filter is now global, not per-view).
   const availableSpecializations = React.useMemo(() => {
-    if (filters.subject === 'Computer Science')
-      return SUBJECT_TAXONOMY.filter((s) => s.broadField === 'Computer Science');
-    if (filters.subject === 'Microbiology')
-      return SUBJECT_TAXONOMY.filter((s) => s.broadField === 'Microbiology');
-    if (filters.subject === 'Interdisciplinary (CS & Bio)')
-      return SUBJECT_TAXONOMY.filter((s) => s.broadField === 'Interdisciplinary (CS & Bio)');
-    return SUBJECT_TAXONOMY;
-  }, [filters.subject]);
+    return SUBJECT_TAXONOMY.filter((s) =>
+      s.broadField === activeField.subject ||
+      s.broadField === 'Interdisciplinary (CS & Bio)'
+    );
+  }, [activeField]);
 
   const totalPages = Math.max(1, Math.ceil(filteredPrograms.length / ITEMS_PER_PAGE));
   const safePage = Math.min(currentPage, totalPages);
@@ -147,10 +147,10 @@ export const ExploreOpportunitiesView: React.FC<ExploreOpportunitiesViewProps> =
     <div className="space-y-5">
       {/* Header */}
       <div className="space-y-1 px-1">
-        <h2 className="text-2xl font-bold text-stone-900 tracking-tight">Explore opportunities</h2>
+        <h2 className="text-2xl font-bold text-stone-900 tracking-tight">{activeField.label} opportunities</h2>
         <p className="text-[13px] text-stone-500">
           Every listing shows what kind of award it is, what it pays, what you need, and when
-          it closes.
+          it closes. Showing {activeField.label} only — switch fields from the top bar.
         </p>
       </div>
 
@@ -317,22 +317,7 @@ export const ExploreOpportunitiesView: React.FC<ExploreOpportunitiesViewProps> =
           </button>
           {advancedOpen && (
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-3">
-              <div>
-                <label htmlFor="f-subject" className="block text-[11px] font-semibold text-stone-500 mb-1">
-                  Subject
-                </label>
-                <select
-                  id="f-subject"
-                  value={filters.subject}
-                  onChange={(e) => handleFilterChange('subject', e.target.value)}
-                  className={selectClass}
-                >
-                  <option value="ALL">All subjects</option>
-                  <option value="Computer Science">Computer Science</option>
-                  <option value="Microbiology">Microbiology</option>
-                  <option value="Interdisciplinary (CS & Bio)">CS & Bio</option>
-                </select>
-              </div>
+              {/* Subject is now the global study-field switcher in the top bar */}
               <div>
                 <label htmlFor="f-spec" className="block text-[11px] font-semibold text-stone-500 mb-1">
                   Specialization

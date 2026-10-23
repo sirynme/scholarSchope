@@ -33,7 +33,7 @@ import {
   mapDeadlineStatus,
   StudentPrimaryNavId,
 } from '../lib/student-dashboard';
-import { OPPORTUNITY_TYPE_META } from '../lib/opportunity-presentation';
+import { OPPORTUNITY_TYPE_META, type StudyField } from '../lib/opportunity-presentation';
 import { OpportunityCard } from './OpportunityCard';
 
 interface HomeViewProps {
@@ -62,6 +62,7 @@ interface HomeViewProps {
   ) => void;
   onInspectProgram: (programId: string) => void;
   onSaveOrUpdateOpportunity: (programId: string, status?: ApplicationStatus, notes?: string) => Promise<void>;
+  activeField: StudyField;
 }
 
 const COUNTRY_CHIPS = ['Germany', 'United Kingdom', 'United States', 'Japan', 'China'];
@@ -83,6 +84,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
   onNavigate,
   onInspectProgram,
   onSaveOrUpdateOpportunity,
+  activeField,
 }) => {
   const [searchQuery, setSearchQuery] = React.useState('');
   const [legendOpen, setLegendOpen] = React.useState(false);
@@ -167,17 +169,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="relative max-w-2xl space-y-5">
           <div className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-emerald-300">
             <BadgeCheck className="w-4 h-4" />
-            Verified scholarships · for Pakistani students
+            Verified {activeField.label} scholarships · for Pakistani students
           </div>
           <h2 className="text-3xl md:text-[2.75rem] font-bold tracking-tight leading-[1.1]">
             {firstName ? (
               <>
                 Assalam-o-Alaikum, {firstName}.<br />
-                Let's find your funded degree.
+                Let's find your funded {activeField.label.toLowerCase()} degree.
               </>
             ) : (
               <>
-                Find a funded master's
+                Find a funded {activeField.label.toLowerCase()} master's
                 <br />
                 or PhD abroad.
               </>
@@ -194,7 +196,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               type="search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Try “DAAD”, “PhD computer science”, “Japan”…"
+              placeholder={`Try “DAAD”, “PhD ${activeField.label.toLowerCase()}”, “Japan”…`}
               aria-label="Search scholarships"
               className="w-full pl-12 pr-28 py-3.5 rounded-2xl bg-white/10 border border-white/20 text-white placeholder:text-stone-400 text-[15px] focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:bg-white/15"
             />

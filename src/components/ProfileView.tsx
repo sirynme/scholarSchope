@@ -7,10 +7,13 @@ import {
   UserProfileRecord,
   UserQualificationRecord,
 } from '../lib/types';
+import { STUDY_FIELDS, type StudyField } from '../lib/opportunity-presentation';
 
 interface ProfileViewProps {
   profile: UserProfileRecord | null;
   qualifications: UserQualificationRecord[];
+  activeField: StudyField | undefined;
+  onSelectField: (fieldId: string) => void;
   onSaveProfile: (updated: Partial<UserProfileRecord>) => Promise<void>;
   onAddQualification: (q: {
     title: string;
@@ -23,11 +26,6 @@ interface ProfileViewProps {
 }
 
 const AVAILABLE_DEGREES = ['MS', 'MSc', 'MPhil', 'MRes', 'PhD', 'Integrated MS/PhD'];
-const CORE_BROAD_FIELDS = [
-  'Computer Science',
-  'Microbiology',
-  'Bioinformatics and Computational Biology',
-];
 const MANDATORY_FIVE_COUNTRIES = [
   'Germany',
   'United Kingdom',
@@ -51,6 +49,8 @@ const AVAILABLE_COUNTRIES = [
 export const ProfileView: React.FC<ProfileViewProps> = ({
   profile,
   qualifications,
+  activeField,
+  onSelectField,
   onSaveProfile,
   onAddQualification,
   onDeleteQualification,
@@ -110,7 +110,8 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
     profile?.targetDegrees || ['MSc', 'MS', 'MPhil', 'PhD']
   );
   const [targetFields, setTargetFields] = React.useState<string[]>(
-    profile?.targetFields || ['Computer Science', 'Microbiology']
+    profile?.targetFields ||
+      (activeField ? [activeField.subject] : ['Computer Science'])
   );
   const [fundingPreferenceMode, setFundingPreferenceMode] = React.useState<FundingPreferenceMode>(
     profile?.fundingPreferenceMode ||
@@ -343,7 +344,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
         <div>
           <span className="text-stone-400 block text-[11px]">Target Fields</span>
           <span className="font-semibold text-white truncate block">
-            {targetFields.slice(0, 2).join(', ') || 'Computer Science, Microbiology'}
+            {activeField ? activeField.label : targetFields[0] || 'Not chosen yet'}
           </span>
         </div>
         <div>
@@ -362,9 +363,9 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
 
       <form onSubmit={handleSubmit} className="space-y-8">
         {/* 1. Citizenship, Academic Standing & Grading Scale */}
-        <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-5">
+        <section className="bg-white border border-stone-200 rounded-2xl p-6 space-y-5">
           <h2 className="text-sm font-semibold text-stone-900 border-b border-stone-100 pb-2">
-            01. Citizenship, Degree & Multi-System Grading Scale
+            01. Your background
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
@@ -520,9 +521,9 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
         </section>
 
         {/* 2. Language Tests, GRE, Research & Budget */}
-        <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-5">
+        <section className="bg-white border border-stone-200 rounded-2xl p-6 space-y-5">
           <h2 className="text-sm font-semibold text-stone-900 border-b border-stone-100 pb-2">
-            02. Language Examinations, GRE, Research Experience & Budget
+            02. Tests, research & budget
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div>
@@ -660,9 +661,9 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
         </section>
 
         {/* 3. Target Degrees, CS & Microbiology Taxonomies, Countries & Funding Preferences */}
-        <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-5">
+        <section className="bg-white border border-stone-200 rounded-2xl p-6 space-y-5">
           <h2 className="text-sm font-semibold text-stone-900 border-b border-stone-100 pb-2">
-            03. Target Degrees, Computer Science & Microbiology Specializations & Funding Preferences
+            03. Your field, degrees & funding
           </h2>
 
           <div className="space-y-5">
@@ -693,69 +694,62 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
 
             <div>
               <span className="block text-xs font-medium text-stone-700 mb-2">
-                Broad Target Disciplines (Computer Science, Microbiology & Bioinformatics)
+                Your field of study
               </span>
+              <p className="text-[11px] text-stone-500 mb-2">
+                One field at a time — recommendations, deadlines and the catalogue all
+                follow this choice.
+              </p>
               <div className="flex flex-wrap gap-2">
-                {CORE_BROAD_FIELDS.map((field) => {
-                  const active = targetFields.includes(field);
+                {STUDY_FIELDS.map((f) => {
+                  const Icon = f.icon;
+                  const isActive = activeField?.id === f.id;
                   return (
                     <button
-                      key={field}
+                      key={f.id}
                       type="button"
-                      onClick={() => toggleItem(targetFields, field, setTargetFields)}
-                      className={`px-3 py-1.5 text-xs font-medium rounded-md border transition-colors ${
-                        active
+                      onClick={() => {
+                        onSelectField(f.id);
+                        // Keep the saved profile consistent: field first, keep only
+                        // specializations that belong to the newly chosen field.
+                        setTargetFields((prev) => {
+                          const specs = prev.filter((t) =>
+                            SUBJECT_TAXONOMY.some(
+                              (s) =>
+                                s.label === t &&
+                                (s.broadField === f.subject ||
+                                  s.broadField === 'Interdisciplinary (CS & Bio)')
+                            )
+                          );
+                          return [f.subject, ...specs];
+                        });
+                      }}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md border transition-colors ${
+                        isActive
                           ? 'bg-stone-900 text-white border-stone-900'
                           : 'bg-white text-stone-700 border-stone-300 hover:bg-stone-50'
                       }`}
                     >
-                      {field}
+                      <Icon className="w-3.5 h-3.5" />
+                      {f.label}
                     </button>
                   );
                 })}
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-2 border-t border-stone-100">
+            <div className="pt-2 border-t border-stone-100">
               <div className="space-y-2">
                 <span className="block text-xs font-semibold text-stone-800">
-                  Computer Science Specializations (12 Subfields)
+                  {activeField ? activeField.label : 'Field'} specializations
+                  <span className="font-normal text-stone-500">
+                    {' '}— pick the areas closest to your degree
+                  </span>
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {SUBJECT_TAXONOMY.filter(
                     (s) =>
-                      s.broadField === 'Computer Science' ||
-                      s.broadField === 'Interdisciplinary (CS & Bio)'
-                  ).map((spec) => {
-                    const active = targetFields.includes(spec.label);
-                    return (
-                      <button
-                        key={spec.id}
-                        type="button"
-                        onClick={() =>
-                          toggleItem(targetFields, spec.label, setTargetFields)
-                        }
-                        className={`px-2.5 py-1 text-[11px] font-medium rounded border transition-colors ${
-                          active
-                            ? 'bg-stone-900 text-white border-stone-900'
-                            : 'bg-stone-50 text-stone-700 border-stone-300 hover:bg-stone-100'
-                        }`}
-                      >
-                        {spec.label}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <span className="block text-xs font-semibold text-stone-800">
-                  Microbiology Specializations (15 Subfields)
-                </span>
-                <div className="flex flex-wrap gap-1.5">
-                  {SUBJECT_TAXONOMY.filter(
-                    (s) =>
-                      s.broadField === 'Microbiology' ||
+                      (activeField && s.broadField === activeField.subject) ||
                       s.broadField === 'Interdisciplinary (CS & Bio)'
                   ).map((spec) => {
                     const active = targetFields.includes(spec.label);
@@ -883,9 +877,9 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
       </form>
 
       {/* 4. Academic Transcripts, Publications & Qualifications Ledger */}
-      <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-5">
+      <section className="bg-white border border-stone-200 rounded-2xl p-6 space-y-5">
         <h2 className="text-sm font-semibold text-stone-900 border-b border-stone-100 pb-2">
-          04. Verified Academic Transcripts, Publications & Projects ({qualifications.length})
+          04. Transcripts, publications & projects ({qualifications.length})
         </h2>
 
         <div className="space-y-3">
