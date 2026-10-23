@@ -303,13 +303,18 @@ async function startServer() {
 
     const nowIso = new Date().toISOString();
     const userId = `usr-${crypto.randomUUID()}`;
-    const isFirstAccount = currentDb.users.length === 0;
+    const normalizedEmail = parsed.data.email.toLowerCase().trim();
+    const configuredAdminEmails = (process.env.ADMIN_EMAILS || '')
+      .split(',')
+      .map((e) => e.trim().toLowerCase())
+      .filter(Boolean);
+    const assignedRole = configuredAdminEmails.includes(normalizedEmail) ? 'admin' : 'student';
     const newUser: UserRecord = {
       id: userId,
-      email: parsed.data.email.toLowerCase().trim(),
+      email: normalizedEmail,
       passwordHash: hashPassword(parsed.data.password),
       fullName: parsed.data.fullName.trim(),
-      role: isFirstAccount ? 'admin' : 'student',
+      role: assignedRole,
       onboardingCompleted: false,
       createdAt: nowIso,
       updatedAt: nowIso,
