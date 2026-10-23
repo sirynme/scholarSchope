@@ -1193,367 +1193,6 @@
       "globalRegion": "UK & Ireland"
     },
     {
-      "id": "prog-usefp-fulbright-cs-micro",
-      "institutionId": "inst-usefp-pk",
-      "departmentId": "dept-usefp-fulbright",
-      "title": "MS & PhD in Computer Science, Bioinformatics & Non-Clinical Microbiology (USEFP Fulbright Pakistan)",
-      "degreeLevel": "PhD",
-      "discipline": "Computer Science, Artificial Intelligence, Bioinformatics & Microbiology",
-      "broadField": "Interdisciplinary (CS & Bio)",
-      "specializations": [
-        "Artificial Intelligence and Machine Learning",
-        "Data Science, Big Data, and Analytics",
-        "Cybersecurity and Information Security",
-        "Bioinformatics and Computational Biology",
-        "Molecular Microbiology",
-        "Microbial Genetics and Genomics",
-        "Virology",
-        "Antimicrobial Resistance",
-        "Environmental and Agricultural Microbiology"
-      ],
-      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
-      "globalRegion": "Pakistan",
-      "durationMonths": 48,
-      "intakeTerm": "Autumn 2027 (US Fall Intake)",
-      "applicationCycle": "2027-2028",
-      "officialProgramUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
-      "officialApplicationUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
-      "contactEmail": "info@usefp.org",
-      "applicationStages": [
-        "Submit USEFP Fulbright online application with GRE score report, transcripts, and 2 essays",
-        "Shortlisting and in-person/virtual interview in Islamabad, Lahore, or Karachi",
-        "TOEFL examination and US university placement by IIE/USEFP"
-      ],
-      "applicationFeeAmount": 0,
-      "applicationFeeCurrency": "PKR",
-      "supervisorContactReq": "NOT_REQUIRED",
-      "deadlineDate": "2026-04-01T23:59:59Z",
-      "deadlineTimezone": "PKT",
-      "openingDate": null,
-      "isActive": false,
-      "isExpired": true,
-      "verificationStatus": "Officially Confirmed",
-      "fundingClassification": "Fully Funded — Confirmed",
-      "scholarshipIds": [
-        "sch-usefp-fulbright-pk"
-      ],
-      "requirement": {
-        "id": "req-usefp-fulbright-cs-micro",
-        "programId": "prog-usefp-fulbright-cs-micro",
-        "minGpa": 3,
-        "gradingScale": "4.0",
-        "minGradingClassification": null,
-        "acceptedBackgrounds": [
-          "Computer Science",
-          "Software Engineering",
-          "Data Science",
-          "Microbiology",
-          "Biotechnology",
-          "Bioinformatics"
-        ],
-        "prerequisiteCourses": [
-          "16 Years Formal Education (4-Year BS or 2-Year BSc + 2-Year MSc) for MS; 18 Years (MS/MPhil) for PhD"
-        ],
-        "ieltsMinScore": null,
-        "toeflMinScore": 90,
-        "greRequirement": "REQUIRED",
-        "citizenshipRule": "Pakistani citizens only (dual US-Pakistani citizens ineligible; clinical medicine ineligible)",
-        "excludedCitizenships": [
-          "United States"
-        ],
-        "residencyRule": "Must be a Pakistani citizen residing and working in Pakistan throughout the selection process",
-        "feeWaiverAvailable": true,
-        "researchExpRequired": false,
-        "requiredDocuments": [
-          "HEC-Attested Degree & Transcripts (16 years for MS / 18 years for PhD)",
-          "GRE General Score Report",
-          "Study Objectives & Personal Statement Essays",
-          "3 Reference Letters",
-          "CNIC & Valid Pakistani Passport"
-        ],
-        "verificationStatus": "Officially Confirmed",
-        "supportingClaimIds": [
-          "c8408a73-8de4-46e4-9228-a03ffc583b62",
-          "4442d6fe-f248-4d49-810a-a0935a67886e",
-          "3ebaaf79-522c-4eab-9a95-b16d0e44ec81"
-        ]
-      },
-      "claimIds": [
-        "c8408a73-8de4-46e4-9228-a03ffc583b62",
-        "4442d6fe-f248-4d49-810a-a0935a67886e",
-        "3ebaaf79-522c-4eab-9a95-b16d0e44ec81"
-      ],
-      "lastCheckedAt": "2026-10-23T17:35:00Z",
-      "createdAt": "2026-10-22T12:22:31.334Z",
-      "updatedAt": "2026-10-23T17:35:00Z"
-    },
-    {
-      "id": "prog-csc-uk-msc-cs-micro",
-      "institutionId": "inst-csc-uk",
-      "departmentId": null,
-      "title": "MSc in Computer Science, Data Science, Bioinformatics & Microbiology (Commonwealth UK Scholarship)",
-      "degreeLevel": "MSc",
-      "discipline": "Computer Science, AI, Bioinformatics, Medical Microbiology & Antimicrobial Resistance",
-      "broadField": "Interdisciplinary (CS & Bio)",
-      "specializations": [
-        "Artificial Intelligence and Machine Learning",
-        "Data Science, Big Data, and Analytics",
-        "Bioinformatics and Computational Biology",
-        "Medical and Clinical Microbiology",
-        "Infectious Diseases and Pathogen Biology",
-        "Antimicrobial Resistance"
-      ],
-      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
-      "globalRegion": "UK & Ireland",
-      "durationMonths": 12,
-      "intakeTerm": "Autumn 2027",
-      "applicationCycle": "2027-2028",
-      "officialProgramUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
-      "officialApplicationUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
-      "contactEmail": null,
-      "applicationStages": [
-        "Apply via CSC Central Electronic Application System",
-        "Submit parallel nomination application via Higher Education Commission (HEC) Pakistan & complete HAT test",
-        "Secure unconditional offer from at least one partner UK university"
-      ],
-      "applicationFeeAmount": 0,
-      "applicationFeeCurrency": "GBP",
-      "supervisorContactReq": "NOT_REQUIRED",
-      "deadlineDate": null,
-      "deadlineTimezone": "GMT",
-      "openingDate": null,
-      "isActive": true,
-      "isExpired": false,
-      "verificationStatus": "Officially Confirmed",
-      "fundingClassification": "Fully Funded — Confirmed",
-      "scholarshipIds": [
-        "sch-commonwealth-masters-uk"
-      ],
-      "requirement": {
-        "id": "req-csc-uk-msc-cs-micro",
-        "programId": "prog-csc-uk-msc-cs-micro",
-        "minGpa": 3.3,
-        "gradingScale": "4.0",
-        "minGradingClassification": "2:1",
-        "acceptedBackgrounds": [
-          "Computer Science",
-          "Software Engineering",
-          "Microbiology",
-          "Biotechnology",
-          "Bioinformatics"
-        ],
-        "prerequisiteCourses": [
-          "16-Year HEC Recognized Bachelor Degree (Minimum Upper Second Class / 2:1 Honors)"
-        ],
-        "ieltsMinScore": 6.5,
-        "toeflMinScore": 92,
-        "greRequirement": "NOT_REQUIRED",
-        "citizenshipRule": "Citizen and permanent resident of Pakistan (or eligible Commonwealth country)",
-        "excludedCitizenships": [
-          "United Kingdom"
-        ],
-        "residencyRule": "Must be permanently resident in Pakistan",
-        "feeWaiverAvailable": true,
-        "researchExpRequired": false,
-        "requiredDocuments": [
-          "Pakistani Passport / CNIC Proof of Citizenship",
-          "Full Academic Transcripts (16 years education)",
-          "Development Impact Statement (4 parts)",
-          "2 Academic/Professional References",
-          "HEC Pakistan Nomination Receipt"
-        ],
-        "verificationStatus": "Officially Confirmed",
-        "supportingClaimIds": [
-          "ee6eaaec-e9f0-4477-a7e7-c99c9574f8f5",
-          "4384f27b-241f-45f7-9d64-fa2a88f4e2f2",
-          "0fb2bbbb-b1fa-4695-a1be-f26b83f7acf1"
-        ]
-      },
-      "claimIds": [
-        "ee6eaaec-e9f0-4477-a7e7-c99c9574f8f5",
-        "4384f27b-241f-45f7-9d64-fa2a88f4e2f2",
-        "0fb2bbbb-b1fa-4695-a1be-f26b83f7acf1"
-      ],
-      "lastCheckedAt": "2026-10-22T12:22:32.863Z",
-      "createdAt": "2026-10-22T12:22:32.863Z",
-      "updatedAt": "2026-10-22T12:22:32.863Z"
-    },
-    {
-      "id": "prog-chevening-uk-msc",
-      "institutionId": "inst-chevening-uk",
-      "departmentId": null,
-      "title": "1-Year UK Master’s in Computer Science or Microbiology (Chevening Pakistan Track)",
-      "degreeLevel": "MSc",
-      "discipline": "Computer Science, Cybersecurity, Data Science & Public Health Microbiology",
-      "broadField": "Interdisciplinary (CS & Bio)",
-      "specializations": [
-        "Artificial Intelligence and Machine Learning",
-        "Cybersecurity and Information Security",
-        "Data Science, Big Data, and Analytics",
-        "Medical and Clinical Microbiology",
-        "Infectious Diseases and Pathogen Biology",
-        "Antimicrobial Resistance"
-      ],
-      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
-      "globalRegion": "UK & Ireland",
-      "durationMonths": 12,
-      "intakeTerm": "Autumn 2027",
-      "applicationCycle": "2027-2028",
-      "officialProgramUrl": "https://www.chevening.org/scholarship/pakistan/",
-      "officialApplicationUrl": "https://www.chevening.org/scholarship/pakistan/",
-      "contactEmail": null,
-      "applicationStages": [
-        "Online Chevening application (4 leadership/networking/career essays)",
-        "British High Commission Islamabad interview panel",
-        "Unconditional offer from 1 of 3 selected UK Master’s courses"
-      ],
-      "applicationFeeAmount": 0,
-      "applicationFeeCurrency": "GBP",
-      "supervisorContactReq": "NOT_REQUIRED",
-      "deadlineDate": null,
-      "deadlineTimezone": "GMT",
-      "openingDate": null,
-      "isActive": false,
-      "isExpired": true,
-      "verificationStatus": "Officially Confirmed",
-      "fundingClassification": "Fully Funded — Confirmed",
-      "scholarshipIds": [
-        "sch-chevening-pakistan"
-      ],
-      "requirement": {
-        "id": "req-chevening-uk-msc",
-        "programId": "prog-chevening-uk-msc",
-        "minGpa": 3,
-        "gradingScale": "4.0",
-        "minGradingClassification": "2:1",
-        "acceptedBackgrounds": [
-          "Computer Science",
-          "Microbiology",
-          "Software Engineering",
-          "Biosciences"
-        ],
-        "prerequisiteCourses": [
-          "Undergraduate degree enabling entry to a UK postgraduate programme"
-        ],
-        "ieltsMinScore": 6.5,
-        "toeflMinScore": 90,
-        "greRequirement": "NOT_REQUIRED",
-        "citizenshipRule": "Citizen of Pakistan; must return to Pakistan for a minimum of two years after award",
-        "excludedCitizenships": [
-          "United Kingdom"
-        ],
-        "workExperienceReq": "Minimum 2 years (equivalent to 2,800 hours) of work, internship, or voluntary experience",
-        "feeWaiverAvailable": true,
-        "researchExpRequired": false,
-        "requiredDocuments": [
-          "Four Chevening Essays (Leadership, Influence, Studying in the UK, Career Plan)",
-          "Work Experience Log (>= 2,800 hours)",
-          "2 Reference Letters",
-          "Academic Transcripts & Unconditional UK University Offer"
-        ],
-        "verificationStatus": "Officially Confirmed",
-        "supportingClaimIds": [
-          "9a191075-79ac-4bbb-bdf8-a6cec2ae70f3"
-        ]
-      },
-      "claimIds": [
-        "9a191075-79ac-4bbb-bdf8-a6cec2ae70f3"
-      ],
-      "lastCheckedAt": "2026-10-22T12:22:33.626Z",
-      "createdAt": "2026-10-22T12:22:33.626Z",
-      "updatedAt": "2026-10-22T12:22:33.626Z"
-    },
-    {
-      "id": "prog-mext-japan-cs-micro",
-      "institutionId": "inst-mext-japan",
-      "departmentId": null,
-      "title": "MS & PhD in Computer Science, Robotics & Microbial Biotechnology (MEXT Japan Scholarship)",
-      "degreeLevel": "PhD",
-      "discipline": "Computer Science, Robotics, AI, Microbial Biotechnology & Fermentation Science",
-      "broadField": "Interdisciplinary (CS & Bio)",
-      "specializations": [
-        "Robotics and Intelligent Systems",
-        "Artificial Intelligence and Machine Learning",
-        "Computer Vision and Natural Language Processing",
-        "Bioinformatics and Computational Biology",
-        "Industrial and Food Microbiology",
-        "Microbial Biotechnology",
-        "Microbial Genetics and Genomics"
-      ],
-      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
-      "globalRegion": "Asia",
-      "durationMonths": 36,
-      "intakeTerm": "April / October 2027",
-      "applicationCycle": "2027-2028",
-      "officialProgramUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-      "officialApplicationUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-      "contactEmail": null,
-      "applicationStages": [
-        "Embassy Recommendation (written exam & interview at Embassy of Japan in Pakistan) OR University Recommendation",
-        "Request Letter of Provisional Acceptance from Japanese graduate professor",
-        "Final MEXT selection and placement"
-      ],
-      "applicationFeeAmount": 0,
-      "applicationFeeCurrency": "JPY",
-      "supervisorContactReq": "REQUIRED",
-      "deadlineDate": null,
-      "deadlineTimezone": "JST",
-      "openingDate": null,
-      "isActive": true,
-      "isExpired": false,
-      "verificationStatus": "Officially Confirmed",
-      "fundingClassification": "Fully Funded — Confirmed",
-      "scholarshipIds": [
-        "sch-mext-japan-research"
-      ],
-      "requirement": {
-        "id": "req-mext-japan-cs-micro",
-        "programId": "prog-mext-japan-cs-micro",
-        "minGpa": 3.2,
-        "gradingScale": "4.0",
-        "minGradingClassification": null,
-        "acceptedBackgrounds": [
-          "Computer Science",
-          "Robotics",
-          "Software Engineering",
-          "Microbiology",
-          "Biotechnology",
-          "Bioinformatics"
-        ],
-        "prerequisiteCourses": [
-          "16 Years Formal Education for Master’s; 18 Years for Doctoral Track"
-        ],
-        "ieltsMinScore": 6.5,
-        "toeflMinScore": 85,
-        "greRequirement": "NOT_REQUIRED",
-        "citizenshipRule": "Citizens of countries that have diplomatic relations with Japan (including Pakistan)",
-        "excludedCitizenships": [
-          "Japan"
-        ],
-        "maxAgeLimit": 35,
-        "feeWaiverAvailable": true,
-        "researchExpRequired": true,
-        "requiredDocuments": [
-          "MEXT Field of Study and Research Plan",
-          "Official Degree & Academic Transcripts",
-          "Academic Recommendation Letter from Dean/Department Head",
-          "Medical Certificate on MEXT Form"
-        ],
-        "verificationStatus": "Officially Confirmed",
-        "supportingClaimIds": [
-          "76f4ab12-c1d4-419a-81bd-97f07316abaf",
-          "4d00873b-c6ad-4e99-a7ab-af1a08cd938d"
-        ]
-      },
-      "claimIds": [
-        "76f4ab12-c1d4-419a-81bd-97f07316abaf",
-        "4d00873b-c6ad-4e99-a7ab-af1a08cd938d"
-      ],
-      "lastCheckedAt": "2026-10-22T12:22:33.991Z",
-      "createdAt": "2026-10-22T12:22:33.991Z",
-      "updatedAt": "2026-10-22T12:22:33.991Z"
-    },
-    {
       "id": "prog-kaust-cs-bioscience",
       "institutionId": "inst-kaust",
       "departmentId": "dept-kaust-cemse-bese",
@@ -1963,99 +1602,6 @@
       "updatedAt": "2026-10-23T17:35:00Z"
     },
     {
-      "id": "prog-daad-germany-cs-micro",
-      "institutionId": "inst-daad-germany",
-      "departmentId": "dept-daad-grad",
-      "title": "MSc & PhD in Computer Science, Data Science & Infectious Disease Microbiology (DAAD Germany Track)",
-      "degreeLevel": "PhD",
-      "discipline": "Computer Science, AI, Bioinformatics & Microbiology at German Universities",
-      "broadField": "Interdisciplinary (CS & Bio)",
-      "specializations": [
-        "Artificial Intelligence and Machine Learning",
-        "Data Science, Big Data, and Analytics",
-        "Software Engineering and Programming Languages",
-        "Bioinformatics and Computational Biology",
-        "Medical and Clinical Microbiology",
-        "Infectious Diseases and Pathogen Biology",
-        "Environmental and Agricultural Microbiology",
-        "Antimicrobial Resistance"
-      ],
-      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
-      "globalRegion": "Europe",
-      "durationMonths": 36,
-      "intakeTerm": "Autumn 2027 (Winter Semester)",
-      "applicationCycle": "2027-2028",
-      "officialProgramUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
-      "officialApplicationUrl": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/",
-      "contactEmail": "info@daad.de",
-      "applicationStages": [
-        "Select eligible German university program or doctoral supervisor via DAAD Scholarship Database",
-        "Submit application package via the DAAD Portal including research proposal / motivation letter",
-        "Selection committee review in Bonn and German Embassy Islamabad visa processing"
-      ],
-      "applicationFeeAmount": 0,
-      "applicationFeeCurrency": "EUR",
-      "supervisorContactReq": "REQUIRED",
-      "deadlineDate": "2026-10-31T23:59:59Z",
-      "deadlineTimezone": "CET",
-      "openingDate": "2026-07-01T00:00:00Z",
-      "isActive": true,
-      "isExpired": false,
-      "verificationStatus": "Officially Confirmed",
-      "fundingClassification": "Fully Funded — Confirmed",
-      "scholarshipIds": [
-        "sch-daad-germany-epos-phd"
-      ],
-      "requirement": {
-        "id": "req-daad-germany-cs-micro",
-        "programId": "prog-daad-germany-cs-micro",
-        "minGpa": 3.3,
-        "gradingScale": "4.0",
-        "minGradingClassification": "2:1",
-        "acceptedBackgrounds": [
-          "Computer Science",
-          "Software Engineering",
-          "Data Science",
-          "Microbiology",
-          "Biotechnology",
-          "Bioinformatics"
-        ],
-        "prerequisiteCourses": [
-          "16-Year HEC Recognized Bachelor Degree for Master’s; 18-Year MS/MPhil for Doctoral Grant"
-        ],
-        "ieltsMinScore": 6.5,
-        "toeflMinScore": 90,
-        "greRequirement": "NOT_REQUIRED",
-        "citizenshipRule": "Citizens of developing countries including Pakistan (last degree normally obtained within the past 6 years)",
-        "excludedCitizenships": [
-          "Germany"
-        ],
-        "workExperienceReq": "For EPOS Master’s tracks: minimum 2 years of relevant professional experience after Bachelor graduation; for Doctoral Research Grants: strong academic research record",
-        "feeWaiverAvailable": true,
-        "researchExpRequired": true,
-        "requiredDocuments": [
-          "DAAD Online Application Form",
-          "Full Curriculum Vitae (Europass format)",
-          "Detailed Research Proposal & Time Schedule (or EPOS Motivation Letter)",
-          "Confirmation of Supervision from a German Host Professor (for PhD track)",
-          "HEC-Attested Degree Certificates & Transcripts",
-          "IELTS 6.5 / TOEFL 90 Language Certificate"
-        ],
-        "verificationStatus": "Officially Confirmed",
-        "supportingClaimIds": [
-          "b6f4c547-3b02-463f-b63d-b5e6a87434a3",
-          "d0bb085a-de6a-409a-8812-75141d001d97"
-        ]
-      },
-      "claimIds": [
-        "b6f4c547-3b02-463f-b63d-b5e6a87434a3",
-        "d0bb085a-de6a-409a-8812-75141d001d97"
-      ],
-      "lastCheckedAt": "2026-10-22T12:22:08.729Z",
-      "createdAt": "2026-10-22T12:22:08.729Z",
-      "updatedAt": "2026-10-22T12:22:08.729Z"
-    },
-    {
       "id": "prog-mpg-imprs-phd-cs",
       "institutionId": "inst-mpg-germany",
       "departmentId": "dept-mpg-imprs",
@@ -2313,189 +1859,6 @@
       "lastCheckedAt": "2026-10-22T12:22:17.008Z",
       "createdAt": "2026-10-22T12:22:17.008Z",
       "updatedAt": "2026-10-22T12:22:17.008Z"
-    },
-    {
-      "id": "prog-ucas-phd-cs-micro",
-      "institutionId": "inst-ucas-china",
-      "departmentId": "dept-ucas-ict-im",
-      "title": "MS & PhD in Computer Science, AI, Virology & Microbial Biotechnology (UCAS / CAS-TWAS Full Fellowship)",
-      "degreeLevel": "PhD",
-      "discipline": "Computer Science, Artificial Intelligence, Bioinformatics, Virology & Mycology",
-      "broadField": "Interdisciplinary (CS & Bio)",
-      "specializations": [
-        "Artificial Intelligence and Machine Learning",
-        "Computer Vision and Natural Language Processing",
-        "Computer Systems, Cloud Computing, and Distributed Systems",
-        "Bioinformatics and Computational Biology",
-        "Molecular Microbiology",
-        "Virology",
-        "Bacteriology",
-        "Mycology",
-        "Microbial Genetics and Genomics",
-        "Microbial Biotechnology"
-      ],
-      "opportunityType": "FOUNDATION_FELLOWSHIP",
-      "globalRegion": "Asia",
-      "durationMonths": 48,
-      "intakeTerm": "Autumn 2027 (September)",
-      "applicationCycle": "2027-2028",
-      "officialProgramUrl": "https://english.ucas.ac.cn/",
-      "officialApplicationUrl": "https://english.ucas.ac.cn/",
-      "contactEmail": "phd@ucas.ac.cn",
-      "applicationStages": [
-        "Contact a CAS host supervisor at ICT, Institute of Microbiology (IMCAS), or Wuhan Institute of Virology",
-        "Complete online admission & ANSO/UCAS scholarship application in the UCAS portal by Feb 15",
-        "Institute expert panel interview and CAS Admission Notice + JW201/JW202 visa issuance"
-      ],
-      "applicationFeeAmount": 0,
-      "applicationFeeCurrency": "CNY",
-      "supervisorContactReq": "RECOMMENDED",
-      "deadlineDate": "2027-02-15T23:59:59Z",
-      "deadlineTimezone": "CST (UTC+8)",
-      "openingDate": "2026-10-20T00:00:00Z",
-      "isActive": true,
-      "isExpired": false,
-      "verificationStatus": "Officially Confirmed",
-      "fundingClassification": "Fully Funded — Confirmed",
-      "scholarshipIds": [
-        "sch-ucas-anso-castwas"
-      ],
-      "requirement": {
-        "id": "req-ucas-phd-cs-micro",
-        "programId": "prog-ucas-phd-cs-micro",
-        "minGpa": 3.2,
-        "gradingScale": "4.0",
-        "minGradingClassification": "First Class",
-        "acceptedBackgrounds": [
-          "Computer Science",
-          "Artificial Intelligence",
-          "Bioinformatics",
-          "Microbiology",
-          "Virology",
-          "Biotechnology"
-        ],
-        "prerequisiteCourses": [
-          "16-Year BS for Master’s Track; 18-Year MS/MPhil for PhD Track"
-        ],
-        "ieltsMinScore": 6,
-        "toeflMinScore": 80,
-        "greRequirement": "NOT_REQUIRED",
-        "citizenshipRule": "Non-Chinese citizens (Pakistani citizens strongly prioritized under CAS-TWAS & ANSO Belt and Road science cooperation)",
-        "excludedCitizenships": [
-          "China"
-        ],
-        "maxAgeLimit": 35,
-        "feeWaiverAvailable": true,
-        "researchExpRequired": true,
-        "requiredDocuments": [
-          "Notarized / HEC-Attested Degree Certificates & Transcripts",
-          "Detailed Research Proposal & Study Plan in China",
-          "2 Professor Reference Letters",
-          "Foreigner Physical Examination Form",
-          "Police Character / Non-Criminal Record Certificate",
-          "Valid Pakistani Passport & English Proficiency Proof (IELTS / English Medium Certificate)"
-        ],
-        "verificationStatus": "Officially Confirmed",
-        "supportingClaimIds": [
-          "553e59df-ed27-488d-9d4f-d5a3157a32eb"
-        ]
-      },
-      "claimIds": [
-        "553e59df-ed27-488d-9d4f-d5a3157a32eb"
-      ],
-      "lastCheckedAt": "2026-10-22T12:22:18.054Z",
-      "createdAt": "2026-10-22T12:22:18.054Z",
-      "updatedAt": "2026-10-22T12:22:18.054Z"
-    },
-    {
-      "id": "prog-tsinghua-cs-micro",
-      "institutionId": "inst-tsinghua-china",
-      "departmentId": "dept-tsinghua-cs-bio",
-      "title": "MS & PhD in Advanced Computing, AI & Structural Microbiology/Immunology (Tsinghua CGS Track)",
-      "degreeLevel": "MS",
-      "discipline": "Computer Science (English-Taught Advanced Computing) & Life Sciences / Microbiology",
-      "broadField": "Computer Science",
-      "specializations": [
-        "Artificial Intelligence and Machine Learning",
-        "Computer Vision and Natural Language Processing",
-        "Computer Systems, Cloud Computing, and Distributed Systems",
-        "Computer Networks and Telecommunications",
-        "Databases and Information Retrieval",
-        "Bioinformatics and Computational Biology"
-      ],
-      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
-      "globalRegion": "Asia",
-      "durationMonths": 24,
-      "intakeTerm": "Autumn 2027 (September)",
-      "applicationCycle": "2027-2028",
-      "officialProgramUrl": "https://www.tsinghua.edu.cn/en/",
-      "officialApplicationUrl": "https://www.tsinghua.edu.cn/en/",
-      "contactEmail": "grad@tsinghua.edu.cn",
-      "applicationStages": [
-        "Submit Tsinghua International Graduate Application online before March 1",
-        "Departmental comprehensive interview and Pre-Admission Letter issuance",
-        "Complete CSC Online Portal application under Type B (Agency Number 10003)"
-      ],
-      "applicationFeeAmount": 800,
-      "applicationFeeCurrency": "CNY",
-      "supervisorContactReq": "RECOMMENDED",
-      "deadlineDate": "2027-03-01T17:00:00Z",
-      "deadlineTimezone": "CST (UTC+8)",
-      "openingDate": "2026-10-15T00:00:00Z",
-      "isActive": true,
-      "isExpired": false,
-      "verificationStatus": "Officially Confirmed",
-      "fundingClassification": "Fully Funded — Confirmed",
-      "scholarshipIds": [
-        "sch-tsinghua-cgs"
-      ],
-      "requirement": {
-        "id": "req-tsinghua-cs-micro",
-        "programId": "prog-tsinghua-cs-micro",
-        "minGpa": 3.4,
-        "gradingScale": "4.0",
-        "minGradingClassification": "First Class",
-        "acceptedBackgrounds": [
-          "Computer Science",
-          "Software Engineering",
-          "Computer Engineering",
-          "Bioinformatics",
-          "Biology"
-        ],
-        "prerequisiteCourses": [
-          "Data Structures & Algorithms",
-          "Operating Systems",
-          "Computer Networks",
-          "Linear Algebra"
-        ],
-        "ieltsMinScore": 6.5,
-        "toeflMinScore": 85,
-        "greRequirement": "OPTIONAL",
-        "citizenshipRule": "Non-Chinese citizens in good health (Pakistani citizens eligible; Master’s applicants under 35, PhD applicants under 40)",
-        "excludedCitizenships": [
-          "China"
-        ],
-        "maxAgeLimit": 35,
-        "feeWaiverAvailable": false,
-        "researchExpRequired": false,
-        "requiredDocuments": [
-          "Personal Statement & Research Plan",
-          "Degree Certificates & Official Academic Transcripts (HEC-Attested)",
-          "Two Academic Recommendation Letters from Associate Professors or higher",
-          "IELTS 6.5 / TOEFL 85 or Official English Medium Instruction Certificate",
-          "Passport Copy & Non-Criminal Record"
-        ],
-        "verificationStatus": "Officially Confirmed",
-        "supportingClaimIds": [
-          "07d00b64-6e3d-49e2-ac35-090c3267bdcf"
-        ]
-      },
-      "claimIds": [
-        "07d00b64-6e3d-49e2-ac35-090c3267bdcf"
-      ],
-      "lastCheckedAt": "2026-10-22T12:22:18.517Z",
-      "createdAt": "2026-10-22T12:22:18.517Z",
-      "updatedAt": "2026-10-22T12:22:18.517Z"
     },
     {
       "id": "prog-pku-phd-micro-bioinfo",
@@ -3603,6 +2966,1202 @@
       ],
       "opportunityType": "RESEARCH_STUDENTSHIP",
       "globalRegion": "Asia"
+    },
+    {
+      "id": "prog-usefp-fulbright-cs",
+      "institutionId": "inst-usefp-pk",
+      "departmentId": "dept-usefp-fulbright-cs-micro-cs",
+      "title": "MS & PhD in Computer Science, AI & Data Science (USEFP Fulbright Pakistan Track)",
+      "degreeLevel": "PhD",
+      "discipline": "Computer Science, Artificial Intelligence & Data Science at US universities via USEFP Fulbright Pakistan",
+      "broadField": "Computer Science",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Data Science, Big Data, and Analytics",
+        "Cybersecurity and Information Security",
+        "Bioinformatics and Computational Biology"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "Pakistan",
+      "durationMonths": 48,
+      "intakeTerm": "Autumn 2027 (US Fall Intake)",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+      "officialApplicationUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+      "contactEmail": "info@usefp.org",
+      "applicationStages": [
+        "Submit USEFP Fulbright online application with GRE score report, transcripts, and 2 essays",
+        "Shortlisting and in-person/virtual interview in Islamabad, Lahore, or Karachi",
+        "TOEFL examination and US university placement by IIE/USEFP"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "PKR",
+      "supervisorContactReq": "NOT_REQUIRED",
+      "deadlineDate": "2026-04-01T23:59:59Z",
+      "deadlineTimezone": "PKT",
+      "openingDate": null,
+      "isActive": false,
+      "isExpired": true,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-usefp-fulbright-pk"
+      ],
+      "requirement": {
+        "id": "req-usefp-fulbright-cs",
+        "programId": "prog-usefp-fulbright-cs",
+        "minGpa": 3,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Software Engineering",
+          "Data Science",
+          "Bioinformatics"
+        ],
+        "prerequisiteCourses": [
+          "16 Years Formal Education (4-Year BS or 2-Year BSc + 2-Year MSc) for MS; 18 Years (MS/MPhil) for PhD"
+        ],
+        "ieltsMinScore": null,
+        "toeflMinScore": 90,
+        "greRequirement": "REQUIRED",
+        "citizenshipRule": "Pakistani citizens only (dual US-Pakistani citizens ineligible; clinical medicine ineligible)",
+        "excludedCitizenships": [
+          "United States"
+        ],
+        "residencyRule": "Must be a Pakistani citizen residing and working in Pakistan throughout the selection process",
+        "feeWaiverAvailable": true,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "HEC-Attested Degree & Transcripts (16 years for MS / 18 years for PhD)",
+          "GRE General Score Report",
+          "Study Objectives & Personal Statement Essays",
+          "3 Reference Letters",
+          "CNIC & Valid Pakistani Passport"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "c8408a73-8de4-46e4-9228-a03ffc583b62",
+          "4442d6fe-f248-4d49-810a-a0935a67886e",
+          "3ebaaf79-522c-4eab-9a95-b16d0e44ec81"
+        ]
+      },
+      "claimIds": [
+        "418c5460-bf76-492a-b5b7-27ddf28612a5",
+        "43ea9c8d-e3c3-4faf-9658-a1fc50ce1ae4",
+        "d358aa55-0bdc-4a40-b82b-d1010efffbd3"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:31.334Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-usefp-fulbright-microbio",
+      "institutionId": "inst-usefp-pk",
+      "departmentId": "dept-usefp-fulbright-cs-micro-microbio",
+      "title": "MS & PhD in Microbiology & Infectious Diseases (USEFP Fulbright Pakistan Track)",
+      "degreeLevel": "PhD",
+      "discipline": "Microbiology, Molecular Biology & Infectious Diseases at US universities via USEFP Fulbright Pakistan",
+      "broadField": "Microbiology",
+      "specializations": [
+        "Bioinformatics and Computational Biology",
+        "Molecular Microbiology",
+        "Microbial Genetics and Genomics",
+        "Virology",
+        "Antimicrobial Resistance",
+        "Environmental and Agricultural Microbiology"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "Pakistan",
+      "durationMonths": 48,
+      "intakeTerm": "Autumn 2027 (US Fall Intake)",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+      "officialApplicationUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+      "contactEmail": "info@usefp.org",
+      "applicationStages": [
+        "Submit USEFP Fulbright online application with GRE score report, transcripts, and 2 essays",
+        "Shortlisting and in-person/virtual interview in Islamabad, Lahore, or Karachi",
+        "TOEFL examination and US university placement by IIE/USEFP"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "PKR",
+      "supervisorContactReq": "NOT_REQUIRED",
+      "deadlineDate": "2026-04-01T23:59:59Z",
+      "deadlineTimezone": "PKT",
+      "openingDate": null,
+      "isActive": false,
+      "isExpired": true,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-usefp-fulbright-pk"
+      ],
+      "requirement": {
+        "id": "req-usefp-fulbright-microbio",
+        "programId": "prog-usefp-fulbright-microbio",
+        "minGpa": 3,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Microbiology",
+          "Biotechnology",
+          "Bioinformatics"
+        ],
+        "prerequisiteCourses": [
+          "16 Years Formal Education (4-Year BS or 2-Year BSc + 2-Year MSc) for MS; 18 Years (MS/MPhil) for PhD"
+        ],
+        "ieltsMinScore": null,
+        "toeflMinScore": 90,
+        "greRequirement": "REQUIRED",
+        "citizenshipRule": "Pakistani citizens only (dual US-Pakistani citizens ineligible; clinical medicine ineligible)",
+        "excludedCitizenships": [
+          "United States"
+        ],
+        "residencyRule": "Must be a Pakistani citizen residing and working in Pakistan throughout the selection process",
+        "feeWaiverAvailable": true,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "HEC-Attested Degree & Transcripts (16 years for MS / 18 years for PhD)",
+          "GRE General Score Report",
+          "Study Objectives & Personal Statement Essays",
+          "3 Reference Letters",
+          "CNIC & Valid Pakistani Passport"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "c8408a73-8de4-46e4-9228-a03ffc583b62",
+          "4442d6fe-f248-4d49-810a-a0935a67886e",
+          "3ebaaf79-522c-4eab-9a95-b16d0e44ec81"
+        ]
+      },
+      "claimIds": [
+        "5a82a437-f9ef-4333-bb0a-a8f82899f215",
+        "072864df-ecc2-499c-bd27-d4a9af5e3cee",
+        "25507710-8648-4994-a1b8-fa83f89c58c3"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:31.334Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-csc-uk-msc-cs",
+      "institutionId": "inst-csc-uk",
+      "departmentId": "dept-csc-uk-msc-cs-micro-cs",
+      "title": "MSc in Computer Science & Data Science (Commonwealth UK Scholarship Track)",
+      "degreeLevel": "MSc",
+      "discipline": "Computer Science & Data Science at UK universities via the Commonwealth Scholarship (HEC Pakistan route)",
+      "broadField": "Computer Science",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Data Science, Big Data, and Analytics",
+        "Bioinformatics and Computational Biology"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "UK & Ireland",
+      "durationMonths": 12,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+      "officialApplicationUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+      "contactEmail": null,
+      "applicationStages": [
+        "Apply via CSC Central Electronic Application System",
+        "Submit parallel nomination application via Higher Education Commission (HEC) Pakistan & complete HAT test",
+        "Secure unconditional offer from at least one partner UK university"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "GBP",
+      "supervisorContactReq": "NOT_REQUIRED",
+      "deadlineDate": null,
+      "deadlineTimezone": "GMT",
+      "openingDate": null,
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-commonwealth-masters-uk"
+      ],
+      "requirement": {
+        "id": "req-csc-uk-msc-cs",
+        "programId": "prog-csc-uk-msc-cs",
+        "minGpa": 3.3,
+        "gradingScale": "4.0",
+        "minGradingClassification": "2:1",
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Software Engineering",
+          "Bioinformatics"
+        ],
+        "prerequisiteCourses": [
+          "16-Year HEC Recognized Bachelor Degree (Minimum Upper Second Class / 2:1 Honors)"
+        ],
+        "ieltsMinScore": 6.5,
+        "toeflMinScore": 92,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Citizen and permanent resident of Pakistan (or eligible Commonwealth country)",
+        "excludedCitizenships": [
+          "United Kingdom"
+        ],
+        "residencyRule": "Must be permanently resident in Pakistan",
+        "feeWaiverAvailable": true,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "Pakistani Passport / CNIC Proof of Citizenship",
+          "Full Academic Transcripts (16 years education)",
+          "Development Impact Statement (4 parts)",
+          "2 Academic/Professional References",
+          "HEC Pakistan Nomination Receipt"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "ee6eaaec-e9f0-4477-a7e7-c99c9574f8f5",
+          "4384f27b-241f-45f7-9d64-fa2a88f4e2f2",
+          "0fb2bbbb-b1fa-4695-a1be-f26b83f7acf1"
+        ]
+      },
+      "claimIds": [
+        "dd46ca80-ffb9-4a93-83eb-161386563b98",
+        "7c27bb40-8fe4-4132-9930-9f107332c27c",
+        "81cb27c2-bee4-4a59-8c46-bc52d2db68af"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:32.863Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-csc-uk-msc-microbio",
+      "institutionId": "inst-csc-uk",
+      "departmentId": "dept-csc-uk-msc-cs-micro-microbio",
+      "title": "MSc in Microbiology & Bioinformatics (Commonwealth UK Scholarship Track)",
+      "degreeLevel": "MSc",
+      "discipline": "Microbiology & Bioinformatics at UK universities via the Commonwealth Scholarship (HEC Pakistan route)",
+      "broadField": "Microbiology",
+      "specializations": [
+        "Bioinformatics and Computational Biology",
+        "Medical and Clinical Microbiology",
+        "Infectious Diseases and Pathogen Biology",
+        "Antimicrobial Resistance"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "UK & Ireland",
+      "durationMonths": 12,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+      "officialApplicationUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+      "contactEmail": null,
+      "applicationStages": [
+        "Apply via CSC Central Electronic Application System",
+        "Submit parallel nomination application via Higher Education Commission (HEC) Pakistan & complete HAT test",
+        "Secure unconditional offer from at least one partner UK university"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "GBP",
+      "supervisorContactReq": "NOT_REQUIRED",
+      "deadlineDate": null,
+      "deadlineTimezone": "GMT",
+      "openingDate": null,
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-commonwealth-masters-uk"
+      ],
+      "requirement": {
+        "id": "req-csc-uk-msc-microbio",
+        "programId": "prog-csc-uk-msc-microbio",
+        "minGpa": 3.3,
+        "gradingScale": "4.0",
+        "minGradingClassification": "2:1",
+        "acceptedBackgrounds": [
+          "Microbiology",
+          "Biotechnology",
+          "Bioinformatics"
+        ],
+        "prerequisiteCourses": [
+          "16-Year HEC Recognized Bachelor Degree (Minimum Upper Second Class / 2:1 Honors)"
+        ],
+        "ieltsMinScore": 6.5,
+        "toeflMinScore": 92,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Citizen and permanent resident of Pakistan (or eligible Commonwealth country)",
+        "excludedCitizenships": [
+          "United Kingdom"
+        ],
+        "residencyRule": "Must be permanently resident in Pakistan",
+        "feeWaiverAvailable": true,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "Pakistani Passport / CNIC Proof of Citizenship",
+          "Full Academic Transcripts (16 years education)",
+          "Development Impact Statement (4 parts)",
+          "2 Academic/Professional References",
+          "HEC Pakistan Nomination Receipt"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "ee6eaaec-e9f0-4477-a7e7-c99c9574f8f5",
+          "4384f27b-241f-45f7-9d64-fa2a88f4e2f2",
+          "0fb2bbbb-b1fa-4695-a1be-f26b83f7acf1"
+        ]
+      },
+      "claimIds": [
+        "f7979270-edba-450d-be3a-a653d4ff32b6",
+        "87a41be6-759c-4ebb-bee7-de746dc9a306",
+        "dd5bc1a4-7714-4af8-808f-2344497c4168"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:32.863Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-chevening-uk-msc-cs",
+      "institutionId": "inst-chevening-uk",
+      "departmentId": "dept-chevening-uk-msc-cs",
+      "title": "1-Year UK Master's in Computer Science (Chevening Pakistan Track)",
+      "degreeLevel": "MSc",
+      "discipline": "One-year taught master’s in Computer Science at any UK university via Chevening Pakistan",
+      "broadField": "Computer Science",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Cybersecurity and Information Security",
+        "Data Science, Big Data, and Analytics"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "UK & Ireland",
+      "durationMonths": 12,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.chevening.org/scholarship/pakistan/",
+      "officialApplicationUrl": "https://www.chevening.org/scholarship/pakistan/",
+      "contactEmail": null,
+      "applicationStages": [
+        "Online Chevening application (4 leadership/networking/career essays)",
+        "British High Commission Islamabad interview panel",
+        "Unconditional offer from 1 of 3 selected UK Master’s courses"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "GBP",
+      "supervisorContactReq": "NOT_REQUIRED",
+      "deadlineDate": null,
+      "deadlineTimezone": "GMT",
+      "openingDate": null,
+      "isActive": false,
+      "isExpired": true,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-chevening-pakistan"
+      ],
+      "requirement": {
+        "id": "req-chevening-uk-msc-cs",
+        "programId": "prog-chevening-uk-msc-cs",
+        "minGpa": 3,
+        "gradingScale": "4.0",
+        "minGradingClassification": "2:1",
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Software Engineering"
+        ],
+        "prerequisiteCourses": [
+          "Undergraduate degree enabling entry to a UK postgraduate programme"
+        ],
+        "ieltsMinScore": 6.5,
+        "toeflMinScore": 90,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Citizen of Pakistan; must return to Pakistan for a minimum of two years after award",
+        "excludedCitizenships": [
+          "United Kingdom"
+        ],
+        "workExperienceReq": "Minimum 2 years (equivalent to 2,800 hours) of work, internship, or voluntary experience",
+        "feeWaiverAvailable": true,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "Four Chevening Essays (Leadership, Influence, Studying in the UK, Career Plan)",
+          "Work Experience Log (>= 2,800 hours)",
+          "2 Reference Letters",
+          "Academic Transcripts & Unconditional UK University Offer"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "9a191075-79ac-4bbb-bdf8-a6cec2ae70f3"
+        ]
+      },
+      "claimIds": [
+        "c23630c4-c121-4cce-8028-e282b6d2a408"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:33.626Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-chevening-uk-msc-microbio",
+      "institutionId": "inst-chevening-uk",
+      "departmentId": "dept-chevening-uk-msc-microbio",
+      "title": "1-Year UK Master's in Microbiology (Chevening Pakistan Track)",
+      "degreeLevel": "MSc",
+      "discipline": "One-year taught master’s in Microbiology at any UK university via Chevening Pakistan",
+      "broadField": "Microbiology",
+      "specializations": [
+        "Medical and Clinical Microbiology",
+        "Infectious Diseases and Pathogen Biology",
+        "Antimicrobial Resistance"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "UK & Ireland",
+      "durationMonths": 12,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.chevening.org/scholarship/pakistan/",
+      "officialApplicationUrl": "https://www.chevening.org/scholarship/pakistan/",
+      "contactEmail": null,
+      "applicationStages": [
+        "Online Chevening application (4 leadership/networking/career essays)",
+        "British High Commission Islamabad interview panel",
+        "Unconditional offer from 1 of 3 selected UK Master’s courses"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "GBP",
+      "supervisorContactReq": "NOT_REQUIRED",
+      "deadlineDate": null,
+      "deadlineTimezone": "GMT",
+      "openingDate": null,
+      "isActive": false,
+      "isExpired": true,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-chevening-pakistan"
+      ],
+      "requirement": {
+        "id": "req-chevening-uk-msc-microbio",
+        "programId": "prog-chevening-uk-msc-microbio",
+        "minGpa": 3,
+        "gradingScale": "4.0",
+        "minGradingClassification": "2:1",
+        "acceptedBackgrounds": [
+          "Microbiology",
+          "Biosciences"
+        ],
+        "prerequisiteCourses": [
+          "Undergraduate degree enabling entry to a UK postgraduate programme"
+        ],
+        "ieltsMinScore": 6.5,
+        "toeflMinScore": 90,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Citizen of Pakistan; must return to Pakistan for a minimum of two years after award",
+        "excludedCitizenships": [
+          "United Kingdom"
+        ],
+        "workExperienceReq": "Minimum 2 years (equivalent to 2,800 hours) of work, internship, or voluntary experience",
+        "feeWaiverAvailable": true,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "Four Chevening Essays (Leadership, Influence, Studying in the UK, Career Plan)",
+          "Work Experience Log (>= 2,800 hours)",
+          "2 Reference Letters",
+          "Academic Transcripts & Unconditional UK University Offer"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "9a191075-79ac-4bbb-bdf8-a6cec2ae70f3"
+        ]
+      },
+      "claimIds": [
+        "3aa52f19-bff6-444c-aa16-123831b97a4c"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:33.626Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-mext-japan-cs",
+      "institutionId": "inst-mext-japan",
+      "departmentId": "dept-mext-japan-cs-micro-cs",
+      "title": "MS & PhD in Computer Science, AI & Robotics (MEXT Japan Scholarship)",
+      "degreeLevel": "PhD",
+      "discipline": "Computer Science, Artificial Intelligence & Robotics at Japanese universities via MEXT",
+      "broadField": "Computer Science",
+      "specializations": [
+        "Robotics and Intelligent Systems",
+        "Artificial Intelligence and Machine Learning",
+        "Computer Vision and Natural Language Processing",
+        "Bioinformatics and Computational Biology"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "Asia",
+      "durationMonths": 36,
+      "intakeTerm": "April / October 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+      "officialApplicationUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+      "contactEmail": null,
+      "applicationStages": [
+        "Embassy Recommendation (written exam & interview at Embassy of Japan in Pakistan) OR University Recommendation",
+        "Request Letter of Provisional Acceptance from Japanese graduate professor",
+        "Final MEXT selection and placement"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "JPY",
+      "supervisorContactReq": "REQUIRED",
+      "deadlineDate": null,
+      "deadlineTimezone": "JST",
+      "openingDate": null,
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-mext-japan-research"
+      ],
+      "requirement": {
+        "id": "req-mext-japan-cs",
+        "programId": "prog-mext-japan-cs",
+        "minGpa": 3.2,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Robotics",
+          "Software Engineering",
+          "Bioinformatics"
+        ],
+        "prerequisiteCourses": [
+          "16 Years Formal Education for Master’s; 18 Years for Doctoral Track"
+        ],
+        "ieltsMinScore": 6.5,
+        "toeflMinScore": 85,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Citizens of countries that have diplomatic relations with Japan (including Pakistan)",
+        "excludedCitizenships": [
+          "Japan"
+        ],
+        "maxAgeLimit": 35,
+        "feeWaiverAvailable": true,
+        "researchExpRequired": true,
+        "requiredDocuments": [
+          "MEXT Field of Study and Research Plan",
+          "Official Degree & Academic Transcripts",
+          "Academic Recommendation Letter from Dean/Department Head",
+          "Medical Certificate on MEXT Form"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "76f4ab12-c1d4-419a-81bd-97f07316abaf",
+          "4d00873b-c6ad-4e99-a7ab-af1a08cd938d"
+        ]
+      },
+      "claimIds": [
+        "e015b217-382f-4fd2-ba80-e9e12eff42aa",
+        "aa5d7282-469b-4362-9b3d-059988d38f4c"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:33.991Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-mext-japan-microbio",
+      "institutionId": "inst-mext-japan",
+      "departmentId": "dept-mext-japan-cs-micro-microbio",
+      "title": "MS & PhD in Microbial Biotechnology (MEXT Japan Scholarship)",
+      "degreeLevel": "PhD",
+      "discipline": "Microbial Biotechnology at Japanese universities via MEXT",
+      "broadField": "Microbiology",
+      "specializations": [
+        "Bioinformatics and Computational Biology",
+        "Industrial and Food Microbiology",
+        "Microbial Biotechnology",
+        "Microbial Genetics and Genomics"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "Asia",
+      "durationMonths": 36,
+      "intakeTerm": "April / October 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+      "officialApplicationUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+      "contactEmail": null,
+      "applicationStages": [
+        "Embassy Recommendation (written exam & interview at Embassy of Japan in Pakistan) OR University Recommendation",
+        "Request Letter of Provisional Acceptance from Japanese graduate professor",
+        "Final MEXT selection and placement"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "JPY",
+      "supervisorContactReq": "REQUIRED",
+      "deadlineDate": null,
+      "deadlineTimezone": "JST",
+      "openingDate": null,
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-mext-japan-research"
+      ],
+      "requirement": {
+        "id": "req-mext-japan-microbio",
+        "programId": "prog-mext-japan-microbio",
+        "minGpa": 3.2,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Microbiology",
+          "Biotechnology",
+          "Bioinformatics"
+        ],
+        "prerequisiteCourses": [
+          "16 Years Formal Education for Master’s; 18 Years for Doctoral Track"
+        ],
+        "ieltsMinScore": 6.5,
+        "toeflMinScore": 85,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Citizens of countries that have diplomatic relations with Japan (including Pakistan)",
+        "excludedCitizenships": [
+          "Japan"
+        ],
+        "maxAgeLimit": 35,
+        "feeWaiverAvailable": true,
+        "researchExpRequired": true,
+        "requiredDocuments": [
+          "MEXT Field of Study and Research Plan",
+          "Official Degree & Academic Transcripts",
+          "Academic Recommendation Letter from Dean/Department Head",
+          "Medical Certificate on MEXT Form"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "76f4ab12-c1d4-419a-81bd-97f07316abaf",
+          "4d00873b-c6ad-4e99-a7ab-af1a08cd938d"
+        ]
+      },
+      "claimIds": [
+        "bd88b6e2-33f9-4baf-a67f-e24e0a6b9b0a",
+        "7fb113ac-c8f1-43e4-b1f2-35c91b6d5df9"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:33.991Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-daad-germany-cs",
+      "institutionId": "inst-daad-germany",
+      "departmentId": "dept-daad-germany-cs-micro-cs",
+      "title": "MSc & PhD in Computer Science & Data Science (DAAD Germany Track)",
+      "degreeLevel": "PhD",
+      "discipline": "Computer Science & Data Science at German universities via DAAD EPOS / Doctoral Research Grant",
+      "broadField": "Computer Science",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Data Science, Big Data, and Analytics",
+        "Software Engineering and Programming Languages",
+        "Bioinformatics and Computational Biology"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "Europe",
+      "durationMonths": 36,
+      "intakeTerm": "Autumn 2027 (Winter Semester)",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+      "officialApplicationUrl": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/",
+      "contactEmail": "info@daad.de",
+      "applicationStages": [
+        "Select eligible German university program or doctoral supervisor via DAAD Scholarship Database",
+        "Submit application package via the DAAD Portal including research proposal / motivation letter",
+        "Selection committee review in Bonn and German Embassy Islamabad visa processing"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "EUR",
+      "supervisorContactReq": "REQUIRED",
+      "deadlineDate": "2026-10-31T23:59:59Z",
+      "deadlineTimezone": "CET",
+      "openingDate": "2026-07-01T00:00:00Z",
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-daad-germany-epos-phd"
+      ],
+      "requirement": {
+        "id": "req-daad-germany-cs",
+        "programId": "prog-daad-germany-cs",
+        "minGpa": 3.3,
+        "gradingScale": "4.0",
+        "minGradingClassification": "2:1",
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Software Engineering",
+          "Data Science",
+          "Bioinformatics"
+        ],
+        "prerequisiteCourses": [
+          "16-Year HEC Recognized Bachelor Degree for Master’s; 18-Year MS/MPhil for Doctoral Grant"
+        ],
+        "ieltsMinScore": 6.5,
+        "toeflMinScore": 90,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Citizens of developing countries including Pakistan (last degree normally obtained within the past 6 years)",
+        "excludedCitizenships": [
+          "Germany"
+        ],
+        "workExperienceReq": "For EPOS Master’s tracks: minimum 2 years of relevant professional experience after Bachelor graduation; for Doctoral Research Grants: strong academic research record",
+        "feeWaiverAvailable": true,
+        "researchExpRequired": true,
+        "requiredDocuments": [
+          "DAAD Online Application Form",
+          "Full Curriculum Vitae (Europass format)",
+          "Detailed Research Proposal & Time Schedule (or EPOS Motivation Letter)",
+          "Confirmation of Supervision from a German Host Professor (for PhD track)",
+          "HEC-Attested Degree Certificates & Transcripts",
+          "IELTS 6.5 / TOEFL 90 Language Certificate"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "b6f4c547-3b02-463f-b63d-b5e6a87434a3",
+          "d0bb085a-de6a-409a-8812-75141d001d97"
+        ]
+      },
+      "claimIds": [
+        "52419947-0bdb-4767-9d85-3b685871673c",
+        "16425b7e-a7ca-456a-be60-e657682f2f5f"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:08.729Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-daad-germany-microbio",
+      "institutionId": "inst-daad-germany",
+      "departmentId": "dept-daad-germany-cs-micro-microbio",
+      "title": "MSc & PhD in Infectious Disease Microbiology (DAAD Germany Track)",
+      "degreeLevel": "PhD",
+      "discipline": "Infectious Disease Microbiology at German universities via DAAD EPOS / Doctoral Research Grant",
+      "broadField": "Microbiology",
+      "specializations": [
+        "Bioinformatics and Computational Biology",
+        "Medical and Clinical Microbiology",
+        "Infectious Diseases and Pathogen Biology",
+        "Environmental and Agricultural Microbiology",
+        "Antimicrobial Resistance"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "Europe",
+      "durationMonths": 36,
+      "intakeTerm": "Autumn 2027 (Winter Semester)",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+      "officialApplicationUrl": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/",
+      "contactEmail": "info@daad.de",
+      "applicationStages": [
+        "Select eligible German university program or doctoral supervisor via DAAD Scholarship Database",
+        "Submit application package via the DAAD Portal including research proposal / motivation letter",
+        "Selection committee review in Bonn and German Embassy Islamabad visa processing"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "EUR",
+      "supervisorContactReq": "REQUIRED",
+      "deadlineDate": "2026-10-31T23:59:59Z",
+      "deadlineTimezone": "CET",
+      "openingDate": "2026-07-01T00:00:00Z",
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-daad-germany-epos-phd"
+      ],
+      "requirement": {
+        "id": "req-daad-germany-microbio",
+        "programId": "prog-daad-germany-microbio",
+        "minGpa": 3.3,
+        "gradingScale": "4.0",
+        "minGradingClassification": "2:1",
+        "acceptedBackgrounds": [
+          "Microbiology",
+          "Biotechnology",
+          "Bioinformatics"
+        ],
+        "prerequisiteCourses": [
+          "16-Year HEC Recognized Bachelor Degree for Master’s; 18-Year MS/MPhil for Doctoral Grant"
+        ],
+        "ieltsMinScore": 6.5,
+        "toeflMinScore": 90,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Citizens of developing countries including Pakistan (last degree normally obtained within the past 6 years)",
+        "excludedCitizenships": [
+          "Germany"
+        ],
+        "workExperienceReq": "For EPOS Master’s tracks: minimum 2 years of relevant professional experience after Bachelor graduation; for Doctoral Research Grants: strong academic research record",
+        "feeWaiverAvailable": true,
+        "researchExpRequired": true,
+        "requiredDocuments": [
+          "DAAD Online Application Form",
+          "Full Curriculum Vitae (Europass format)",
+          "Detailed Research Proposal & Time Schedule (or EPOS Motivation Letter)",
+          "Confirmation of Supervision from a German Host Professor (for PhD track)",
+          "HEC-Attested Degree Certificates & Transcripts",
+          "IELTS 6.5 / TOEFL 90 Language Certificate"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "b6f4c547-3b02-463f-b63d-b5e6a87434a3",
+          "d0bb085a-de6a-409a-8812-75141d001d97"
+        ]
+      },
+      "claimIds": [
+        "78acb359-b5db-4256-b63b-9469e479d63d",
+        "68c70a75-19f7-40bc-91a4-17ed059398e8"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:08.729Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-ucas-phd-cs",
+      "institutionId": "inst-ucas-china",
+      "departmentId": "dept-ucas-phd-cs-micro-cs",
+      "title": "MS & PhD in Computer Science & AI (UCAS / CAS-TWAS Full Scholarship Track)",
+      "degreeLevel": "PhD",
+      "discipline": "Computer Science & Artificial Intelligence at UCAS institutes via the ANSO / CAS-TWAS scholarship",
+      "broadField": "Computer Science",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Computer Vision and Natural Language Processing",
+        "Computer Systems, Cloud Computing, and Distributed Systems",
+        "Bioinformatics and Computational Biology"
+      ],
+      "opportunityType": "FOUNDATION_FELLOWSHIP",
+      "globalRegion": "Asia",
+      "durationMonths": 48,
+      "intakeTerm": "Autumn 2027 (September)",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://english.ucas.ac.cn/",
+      "officialApplicationUrl": "https://english.ucas.ac.cn/",
+      "contactEmail": "phd@ucas.ac.cn",
+      "applicationStages": [
+        "Contact a CAS host supervisor at ICT, Institute of Microbiology (IMCAS), or Wuhan Institute of Virology",
+        "Complete online admission & ANSO/UCAS scholarship application in the UCAS portal by Feb 15",
+        "Institute expert panel interview and CAS Admission Notice + JW201/JW202 visa issuance"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "CNY",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": "2027-02-15T23:59:59Z",
+      "deadlineTimezone": "CST (UTC+8)",
+      "openingDate": "2026-10-20T00:00:00Z",
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-ucas-anso-castwas"
+      ],
+      "requirement": {
+        "id": "req-ucas-phd-cs",
+        "programId": "prog-ucas-phd-cs",
+        "minGpa": 3.2,
+        "gradingScale": "4.0",
+        "minGradingClassification": "First Class",
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Artificial Intelligence",
+          "Bioinformatics"
+        ],
+        "prerequisiteCourses": [
+          "16-Year BS for Master’s Track; 18-Year MS/MPhil for PhD Track"
+        ],
+        "ieltsMinScore": 6,
+        "toeflMinScore": 80,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Non-Chinese citizens (Pakistani citizens strongly prioritized under CAS-TWAS & ANSO Belt and Road science cooperation)",
+        "excludedCitizenships": [
+          "China"
+        ],
+        "maxAgeLimit": 35,
+        "feeWaiverAvailable": true,
+        "researchExpRequired": true,
+        "requiredDocuments": [
+          "Notarized / HEC-Attested Degree Certificates & Transcripts",
+          "Detailed Research Proposal & Study Plan in China",
+          "2 Professor Reference Letters",
+          "Foreigner Physical Examination Form",
+          "Police Character / Non-Criminal Record Certificate",
+          "Valid Pakistani Passport & English Proficiency Proof (IELTS / English Medium Certificate)"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "553e59df-ed27-488d-9d4f-d5a3157a32eb"
+        ]
+      },
+      "claimIds": [
+        "7ffcce2a-013d-4a84-b95f-bf4207bb10dd"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:18.054Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-ucas-phd-microbio",
+      "institutionId": "inst-ucas-china",
+      "departmentId": "dept-ucas-phd-cs-micro-microbio",
+      "title": "MS & PhD in Virology & Microbial Biotechnology (UCAS / CAS-TWAS Full Scholarship Track)",
+      "degreeLevel": "PhD",
+      "discipline": "Virology & Microbial Biotechnology at UCAS institutes via the ANSO / CAS-TWAS scholarship",
+      "broadField": "Microbiology",
+      "specializations": [
+        "Bioinformatics and Computational Biology",
+        "Molecular Microbiology",
+        "Virology",
+        "Bacteriology",
+        "Mycology",
+        "Microbial Genetics and Genomics",
+        "Microbial Biotechnology"
+      ],
+      "opportunityType": "FOUNDATION_FELLOWSHIP",
+      "globalRegion": "Asia",
+      "durationMonths": 48,
+      "intakeTerm": "Autumn 2027 (September)",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://english.ucas.ac.cn/",
+      "officialApplicationUrl": "https://english.ucas.ac.cn/",
+      "contactEmail": "phd@ucas.ac.cn",
+      "applicationStages": [
+        "Contact a CAS host supervisor at ICT, Institute of Microbiology (IMCAS), or Wuhan Institute of Virology",
+        "Complete online admission & ANSO/UCAS scholarship application in the UCAS portal by Feb 15",
+        "Institute expert panel interview and CAS Admission Notice + JW201/JW202 visa issuance"
+      ],
+      "applicationFeeAmount": 0,
+      "applicationFeeCurrency": "CNY",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": "2027-02-15T23:59:59Z",
+      "deadlineTimezone": "CST (UTC+8)",
+      "openingDate": "2026-10-20T00:00:00Z",
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-ucas-anso-castwas"
+      ],
+      "requirement": {
+        "id": "req-ucas-phd-microbio",
+        "programId": "prog-ucas-phd-microbio",
+        "minGpa": 3.2,
+        "gradingScale": "4.0",
+        "minGradingClassification": "First Class",
+        "acceptedBackgrounds": [
+          "Bioinformatics",
+          "Microbiology",
+          "Virology",
+          "Biotechnology"
+        ],
+        "prerequisiteCourses": [
+          "16-Year BS for Master’s Track; 18-Year MS/MPhil for PhD Track"
+        ],
+        "ieltsMinScore": 6,
+        "toeflMinScore": 80,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Non-Chinese citizens (Pakistani citizens strongly prioritized under CAS-TWAS & ANSO Belt and Road science cooperation)",
+        "excludedCitizenships": [
+          "China"
+        ],
+        "maxAgeLimit": 35,
+        "feeWaiverAvailable": true,
+        "researchExpRequired": true,
+        "requiredDocuments": [
+          "Notarized / HEC-Attested Degree Certificates & Transcripts",
+          "Detailed Research Proposal & Study Plan in China",
+          "2 Professor Reference Letters",
+          "Foreigner Physical Examination Form",
+          "Police Character / Non-Criminal Record Certificate",
+          "Valid Pakistani Passport & English Proficiency Proof (IELTS / English Medium Certificate)"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "553e59df-ed27-488d-9d4f-d5a3157a32eb"
+        ]
+      },
+      "claimIds": [
+        "22edbf4d-85b8-410b-abf2-9072dded05e5"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:18.054Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-tsinghua-cs",
+      "institutionId": "inst-tsinghua-china",
+      "departmentId": "dept-tsinghua-cs-micro-cs",
+      "title": "MS & PhD in Advanced Computing & AI (Tsinghua CGS Track)",
+      "degreeLevel": "MS",
+      "discipline": "Advanced Computing & Artificial Intelligence at Tsinghua University via the Chinese Government Scholarship",
+      "broadField": "Computer Science",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Computer Vision and Natural Language Processing",
+        "Computer Systems, Cloud Computing, and Distributed Systems",
+        "Computer Networks and Telecommunications",
+        "Databases and Information Retrieval",
+        "Bioinformatics and Computational Biology"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "Asia",
+      "durationMonths": 24,
+      "intakeTerm": "Autumn 2027 (September)",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.tsinghua.edu.cn/en/",
+      "officialApplicationUrl": "https://www.tsinghua.edu.cn/en/",
+      "contactEmail": "grad@tsinghua.edu.cn",
+      "applicationStages": [
+        "Submit Tsinghua International Graduate Application online before March 1",
+        "Departmental comprehensive interview and Pre-Admission Letter issuance",
+        "Complete CSC Online Portal application under Type B (Agency Number 10003)"
+      ],
+      "applicationFeeAmount": 800,
+      "applicationFeeCurrency": "CNY",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": "2027-03-01T17:00:00Z",
+      "deadlineTimezone": "CST (UTC+8)",
+      "openingDate": "2026-10-15T00:00:00Z",
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-tsinghua-cgs"
+      ],
+      "requirement": {
+        "id": "req-tsinghua-cs",
+        "programId": "prog-tsinghua-cs",
+        "minGpa": 3.4,
+        "gradingScale": "4.0",
+        "minGradingClassification": "First Class",
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Software Engineering",
+          "Computer Engineering",
+          "Bioinformatics"
+        ],
+        "prerequisiteCourses": [
+          "Data Structures & Algorithms",
+          "Operating Systems",
+          "Computer Networks",
+          "Linear Algebra"
+        ],
+        "ieltsMinScore": 6.5,
+        "toeflMinScore": 85,
+        "greRequirement": "OPTIONAL",
+        "citizenshipRule": "Non-Chinese citizens in good health (Pakistani citizens eligible; Master’s applicants under 35, PhD applicants under 40)",
+        "excludedCitizenships": [
+          "China"
+        ],
+        "maxAgeLimit": 35,
+        "feeWaiverAvailable": false,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "Personal Statement & Research Plan",
+          "Degree Certificates & Official Academic Transcripts (HEC-Attested)",
+          "Two Academic Recommendation Letters from Associate Professors or higher",
+          "IELTS 6.5 / TOEFL 85 or Official English Medium Instruction Certificate",
+          "Passport Copy & Non-Criminal Record"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "07d00b64-6e3d-49e2-ac35-090c3267bdcf"
+        ]
+      },
+      "claimIds": [
+        "5de57551-51d9-4cda-809e-b75050ffabbf"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:18.517Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
+    },
+    {
+      "id": "prog-tsinghua-microbio",
+      "institutionId": "inst-tsinghua-china",
+      "departmentId": "dept-tsinghua-cs-micro-microbio",
+      "title": "MS & PhD in Structural Microbiology & Immunology (Tsinghua CGS Track)",
+      "degreeLevel": "MS",
+      "discipline": "Structural Microbiology & Immunology at Tsinghua University via the Chinese Government Scholarship",
+      "broadField": "Microbiology",
+      "specializations": [
+        "Bioinformatics and Computational Biology"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "Asia",
+      "durationMonths": 24,
+      "intakeTerm": "Autumn 2027 (September)",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.tsinghua.edu.cn/en/",
+      "officialApplicationUrl": "https://www.tsinghua.edu.cn/en/",
+      "contactEmail": "grad@tsinghua.edu.cn",
+      "applicationStages": [
+        "Submit Tsinghua International Graduate Application online before March 1",
+        "Departmental comprehensive interview and Pre-Admission Letter issuance",
+        "Complete CSC Online Portal application under Type B (Agency Number 10003)"
+      ],
+      "applicationFeeAmount": 800,
+      "applicationFeeCurrency": "CNY",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": "2027-03-01T17:00:00Z",
+      "deadlineTimezone": "CST (UTC+8)",
+      "openingDate": "2026-10-15T00:00:00Z",
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded — Confirmed",
+      "scholarshipIds": [
+        "sch-tsinghua-cgs"
+      ],
+      "requirement": {
+        "id": "req-tsinghua-microbio",
+        "programId": "prog-tsinghua-microbio",
+        "minGpa": 3.4,
+        "gradingScale": "4.0",
+        "minGradingClassification": "First Class",
+        "acceptedBackgrounds": [
+          "Bioinformatics",
+          "Biology"
+        ],
+        "prerequisiteCourses": [
+          "Data Structures & Algorithms",
+          "Operating Systems",
+          "Computer Networks",
+          "Linear Algebra"
+        ],
+        "ieltsMinScore": 6.5,
+        "toeflMinScore": 85,
+        "greRequirement": "OPTIONAL",
+        "citizenshipRule": "Non-Chinese citizens in good health (Pakistani citizens eligible; Master’s applicants under 35, PhD applicants under 40)",
+        "excludedCitizenships": [
+          "China"
+        ],
+        "maxAgeLimit": 35,
+        "feeWaiverAvailable": false,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "Personal Statement & Research Plan",
+          "Degree Certificates & Official Academic Transcripts (HEC-Attested)",
+          "Two Academic Recommendation Letters from Associate Professors or higher",
+          "IELTS 6.5 / TOEFL 85 or Official English Medium Instruction Certificate",
+          "Passport Copy & Non-Criminal Record"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "07d00b64-6e3d-49e2-ac35-090c3267bdcf"
+        ]
+      },
+      "claimIds": [
+        "287b2fa8-c9c3-43e5-b849-f6749ae80cc4"
+      ],
+      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "createdAt": "2026-10-22T12:22:18.517Z",
+      "updatedAt": "2026-10-23T13:29:16.000Z"
     }
   ],
   "scholarships": [
@@ -9502,312 +10061,6 @@
       ]
     },
     {
-      "id": "c8408a73-8de4-46e4-9228-a03ffc583b62",
-      "programId": "prog-usefp-fulbright-cs-micro",
-      "scholarshipId": "sch-usefp-fulbright-pk",
-      "claimType": "TUITION_COVERAGE",
-      "fieldName": "tuitionAndStipendCoverage",
-      "normalizedValue": "100% Tuition + Textbooks + Round-Trip Airfare + Living Stipend + Health Insurance + J-1 Visa Support",
-      "supportingExcerpt": "USEFP - Fulbright Degree Promoting Mutual Understanding through Exchanges FUTURE APPLICANTS Undergraduate Students Global UGRAD Graduate Students Fulbright PhD & Masters Mid-Career Professionals Humphrey FLTA Journalism CCIP CCAP TEA Senior Scholar Fulbright Specialist Program Fulbright Scholar Program U.S. Applicants",
-      "excerptHash": "258ccbcf3ebfd47ce4625fa96cdff3e0bd8f12eaf6c6f70b28a11d1ac5aeb398",
-      "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
-      "sourceDomain": "www.usefp.org",
-      "sourceOrganization": "USEFP Pakistan (Fulbright Commission)",
-      "pageSection": "Grant Benefits",
-      "retrievedAt": "2026-10-22T12:22:31.334Z",
-      "extractedAt": "2026-10-21T14:49:28.286Z",
-      "lastContentChangeAt": "2026-10-21T14:49:28.286Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Officially Confirmed",
-      "evidenceQualityScore": 0.88,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "DAILY",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "1b155ee2-1b63-450d-b649-753d59442d0d",
-          "claimId": "c8408a73-8de4-46e4-9228-a03ffc583b62",
-          "normalizedValue": "100% Tuition + Textbooks + Round-Trip Airfare + Living Stipend + Health Insurance + J-1 Visa Support",
-          "supportingExcerpt": "USEFP - Fulbright Degree Promoting Mutual Understanding through Exchanges FUTURE APPLICANTS Undergraduate Students Global UGRAD Graduate Students Fulbright PhD & Masters Mid-Career Professionals Humphrey FLTA Journalism CCIP CCAP TEA Senior Scholar Fulbright Specialist Program Fulbright Scholar Program U.S. Applicants",
-          "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
-          "verificationStatus": "Officially Confirmed",
-          "observedAt": "2026-10-21T14:49:28.286Z"
-        }
-      ]
-    },
-    {
-      "id": "4442d6fe-f248-4d49-810a-a0935a67886e",
-      "programId": "prog-usefp-fulbright-cs-micro",
-      "scholarshipId": "sch-usefp-fulbright-pk",
-      "claimType": "CITIZENSHIP_RULE",
-      "fieldName": "citizenshipAndResidencyRule",
-      "normalizedValue": "Pakistani citizens residing in Pakistan (16 years HEC-recognized education for MS; 18 years for PhD)",
-      "supportingExcerpt": "Eligibility Criteria Pakistani citizens with strong academic histories, residing (throughout the process) in Pakistan and committed to returning and serving Pakistan are welcome to apply. Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal",
-      "excerptHash": "ce7e2727405c8779833a7e5c4c551fe7fa9d373c567deb47c1a51dc8da878c7e",
-      "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
-      "sourceDomain": "www.usefp.org",
-      "sourceOrganization": "USEFP Pakistan",
-      "pageSection": "Eligibility Criteria",
-      "retrievedAt": "2026-10-22T12:22:31.334Z",
-      "extractedAt": "2026-10-21T14:49:28.286Z",
-      "lastContentChangeAt": "2026-10-21T14:49:28.286Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Officially Confirmed",
-      "evidenceQualityScore": 0.88,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "DAILY",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "7ef9b7a7-04a1-40d9-888e-8fe20f962d8d",
-          "claimId": "4442d6fe-f248-4d49-810a-a0935a67886e",
-          "normalizedValue": "Pakistani citizens residing in Pakistan (16 years HEC-recognized education for MS; 18 years for PhD)",
-          "supportingExcerpt": "Eligibility Criteria Pakistani citizens with strong academic histories, residing (throughout the process) in Pakistan and committed to returning and serving Pakistan are welcome to apply. Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal",
-          "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
-          "verificationStatus": "Officially Confirmed",
-          "observedAt": "2026-10-21T14:49:28.286Z"
-        }
-      ]
-    },
-    {
-      "id": "3ebaaf79-522c-4eab-9a95-b16d0e44ec81",
-      "programId": "prog-usefp-fulbright-cs-micro",
-      "scholarshipId": "sch-usefp-fulbright-pk",
-      "claimType": "GRE_REQUIREMENT",
-      "fieldName": "greRequirement",
-      "normalizedValue": "GRE Required for all applicants (TOEFL required upon shortlisting)",
-      "supportingExcerpt": "Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal education) from an accredited university.",
-      "excerptHash": "cbe048c126bf9f57bede9bf774672dfb977b3a7da06af024a9d911304a6f7384",
-      "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
-      "sourceDomain": "www.usefp.org",
-      "sourceOrganization": "USEFP Pakistan",
-      "pageSection": "Testing Requirements",
-      "retrievedAt": "2026-10-22T12:22:31.334Z",
-      "extractedAt": "2026-10-21T14:49:28.286Z",
-      "lastContentChangeAt": "2026-10-21T14:49:28.286Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Unverified",
-      "evidenceQualityScore": 0.35,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "WEEKLY",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "b9a6fc07-e9c3-44fd-9996-ad7a8e0af4f2",
-          "claimId": "3ebaaf79-522c-4eab-9a95-b16d0e44ec81",
-          "normalizedValue": "GRE Required for all applicants (TOEFL required upon shortlisting)",
-          "supportingExcerpt": "Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal education) from an accredited university.",
-          "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
-          "verificationStatus": "Unverified",
-          "observedAt": "2026-10-21T14:49:28.286Z"
-        }
-      ]
-    },
-    {
-      "id": "ee6eaaec-e9f0-4477-a7e7-c99c9574f8f5",
-      "programId": "prog-csc-uk-msc-cs-micro",
-      "scholarshipId": "sch-commonwealth-masters-uk",
-      "claimType": "STIPEND_AMOUNT",
-      "fieldName": "stipendAmountAnnual",
-      "normalizedValue": "GBP 17424 (£1,452/month outside London or £1,781/month in London) + Full UK Tuition + Return Airfare",
-      "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
-      "excerptHash": "3b16e81addaa2095934e68c08c99e881221cab1cb8e043388aa5e4dc94614341",
-      "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
-      "sourceDomain": "cscuk.fcdo.gov.uk",
-      "sourceOrganization": "Commonwealth Scholarship Commission (FCDO UK)",
-      "pageSection": "Financial Support & Terms",
-      "retrievedAt": "2026-10-22T12:22:32.863Z",
-      "extractedAt": "2026-10-21T14:49:29.757Z",
-      "lastContentChangeAt": "2026-10-21T14:49:29.757Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Officially Confirmed",
-      "evidenceQualityScore": 0.88,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "DAILY",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "3a8eea24-ed25-4b19-a86c-e3ba569607ec",
-          "claimId": "ee6eaaec-e9f0-4477-a7e7-c99c9574f8f5",
-          "normalizedValue": "GBP 17424 (£1,452/month outside London or £1,781/month in London) + Full UK Tuition + Return Airfare",
-          "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
-          "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
-          "verificationStatus": "Officially Confirmed",
-          "observedAt": "2026-10-21T14:49:29.757Z"
-        }
-      ]
-    },
-    {
-      "id": "4384f27b-241f-45f7-9d64-fa2a88f4e2f2",
-      "programId": "prog-csc-uk-msc-cs-micro",
-      "scholarshipId": "sch-commonwealth-masters-uk",
-      "claimType": "CITIZENSHIP_RULE",
-      "fieldName": "citizenshipRule",
-      "normalizedValue": "Citizen & permanent resident of Pakistan (Eligible Commonwealth Country)",
-      "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
-      "excerptHash": "3b16e81addaa2095934e68c08c99e881221cab1cb8e043388aa5e4dc94614341",
-      "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
-      "sourceDomain": "cscuk.fcdo.gov.uk",
-      "sourceOrganization": "Commonwealth Scholarship Commission (FCDO UK)",
-      "pageSection": "Eligibility & Eligible Countries",
-      "retrievedAt": "2026-10-22T12:22:32.863Z",
-      "extractedAt": "2026-10-21T14:49:29.757Z",
-      "lastContentChangeAt": "2026-10-21T14:49:29.757Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Officially Confirmed",
-      "evidenceQualityScore": 0.88,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "DAILY",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "e4cc433c-586a-4aa6-bc11-1d8209f16ab5",
-          "claimId": "4384f27b-241f-45f7-9d64-fa2a88f4e2f2",
-          "normalizedValue": "Citizen & permanent resident of Pakistan (Eligible Commonwealth Country)",
-          "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
-          "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
-          "verificationStatus": "Officially Confirmed",
-          "observedAt": "2026-10-21T14:49:29.757Z"
-        }
-      ]
-    },
-    {
-      "id": "0fb2bbbb-b1fa-4695-a1be-f26b83f7acf1",
-      "programId": "prog-csc-uk-msc-cs-micro",
-      "scholarshipId": "sch-commonwealth-masters-uk",
-      "claimType": "NOMINATION_PROCESS",
-      "fieldName": "nominationProcess",
-      "normalizedValue": "Requires dual application: CSC Online Portal + National Nominating Agency (HEC Pakistan)",
-      "supportingExcerpt": "There are two types of nominator invited to participate in the Master’s Scholarship programme : National nominating agencies – this is the main route of application.",
-      "excerptHash": "578da23adf123be207f3e571ec726a9f37babbb881790a586b4d61e6cd95ed9c",
-      "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
-      "sourceDomain": "cscuk.fcdo.gov.uk",
-      "sourceOrganization": "Commonwealth Scholarship Commission (FCDO UK)",
-      "pageSection": "How to Apply — National Nominating Agencies",
-      "retrievedAt": "2026-10-22T12:22:32.863Z",
-      "extractedAt": "2026-10-21T14:49:29.757Z",
-      "lastContentChangeAt": "2026-10-21T14:49:29.757Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Unverified",
-      "evidenceQualityScore": 0.35,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "WEEKLY",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "f46d4ea1-0638-4333-aec9-b015dd1f2774",
-          "claimId": "0fb2bbbb-b1fa-4695-a1be-f26b83f7acf1",
-          "normalizedValue": "Requires dual application: CSC Online Portal + National Nominating Agency (HEC Pakistan)",
-          "supportingExcerpt": "There are two types of nominator invited to participate in the Master’s Scholarship programme : National nominating agencies – this is the main route of application.",
-          "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
-          "verificationStatus": "Unverified",
-          "observedAt": "2026-10-21T14:49:29.757Z"
-        }
-      ]
-    },
-    {
-      "id": "9a191075-79ac-4bbb-bdf8-a6cec2ae70f3",
-      "programId": "prog-chevening-uk-msc",
-      "scholarshipId": "sch-chevening-pakistan",
-      "claimType": "DEADLINE",
-      "fieldName": "applicationWindowStatus",
-      "normalizedValue": "Closed for current window (Opens August for next UK Master’s intake)",
-      "supportingExcerpt": "Pakistan (Chevening Scholarship) | Chevening Skip to content Chevening in Pakistan Learn in the UK, lead at home, shape the world. Closed for applications Applications for 202 7 -202 8 Chevening Scholarships are now closed. Chevening is the UK Government’s prestigious international scholarships programme. Funded by the",
-      "excerptHash": "db08a55c692f3a28a5f4dc5b5572114457c717ea3c83d8c0888cfe01bc908241",
-      "sourceUrl": "https://www.chevening.org/scholarship/pakistan/",
-      "sourceDomain": "www.chevening.org",
-      "sourceOrganization": "Chevening UK Government Scholarships (Pakistan)",
-      "pageSection": "Chevening in Pakistan — Application Status",
-      "retrievedAt": "2026-10-22T12:22:33.626Z",
-      "extractedAt": "2026-10-21T14:49:30.131Z",
-      "lastContentChangeAt": "2026-10-21T14:49:30.131Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Unverified",
-      "evidenceQualityScore": 0.2,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "DAILY",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "d91accbb-abda-40e1-ae61-23b361aa5ecf",
-          "claimId": "9a191075-79ac-4bbb-bdf8-a6cec2ae70f3",
-          "normalizedValue": "Closed for current window (Opens August for next UK Master’s intake)",
-          "supportingExcerpt": "Pakistan (Chevening Scholarship) | Chevening Skip to content Chevening in Pakistan Learn in the UK, lead at home, shape the world. Closed for applications Applications for 202 7 -202 8 Chevening Scholarships are now closed. Chevening is the UK Government’s prestigious international scholarships programme. Funded by the",
-          "sourceUrl": "https://www.chevening.org/scholarship/pakistan/",
-          "verificationStatus": "Unverified",
-          "observedAt": "2026-10-21T14:49:30.131Z"
-        }
-      ]
-    },
-    {
-      "id": "76f4ab12-c1d4-419a-81bd-97f07316abaf",
-      "programId": "prog-mext-japan-cs-micro",
-      "scholarshipId": "sch-mext-japan-research",
-      "claimType": "STIPEND_AMOUNT",
-      "fieldName": "stipendAmountAnnual",
-      "normalizedValue": "JPY 1728000 (¥143,000–¥145,000/month) + 100% Tuition & Entrance Exam Waiver + Round-Trip Airfare",
-      "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
-      "excerptHash": "6ea56bc580edf63d8afdc8853e52a86c2ae4397aa7014e3d94da61481747cb98",
-      "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-      "sourceDomain": "www.studyinjapan.go.jp",
-      "sourceOrganization": "MEXT / Japan Student Services Organization (JASSO)",
-      "pageSection": "Types of MEXT Scholarships — Research Students",
-      "retrievedAt": "2026-10-22T12:22:33.991Z",
-      "extractedAt": "2026-10-21T14:49:30.489Z",
-      "lastContentChangeAt": "2026-10-21T14:49:30.489Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Official Source, Not Fully Verified",
-      "evidenceQualityScore": 0.88,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "EVERY_3_DAYS",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "353777d3-61ae-4091-99e3-2932aeae5e5e",
-          "claimId": "76f4ab12-c1d4-419a-81bd-97f07316abaf",
-          "normalizedValue": "JPY 1728000 (¥143,000–¥145,000/month) + 100% Tuition & Entrance Exam Waiver + Round-Trip Airfare",
-          "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
-          "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-          "verificationStatus": "Officially Confirmed",
-          "observedAt": "2026-10-21T14:49:30.489Z"
-        }
-      ]
-    },
-    {
-      "id": "4d00873b-c6ad-4e99-a7ab-af1a08cd938d",
-      "programId": "prog-mext-japan-cs-micro",
-      "scholarshipId": "sch-mext-japan-research",
-      "claimType": "AGE_LIMIT",
-      "fieldName": "maxAgeLimit",
-      "normalizedValue": "Under 35 years of age and a college graduate (16 years of schooling)",
-      "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
-      "excerptHash": "6ea56bc580edf63d8afdc8853e52a86c2ae4397aa7014e3d94da61481747cb98",
-      "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-      "sourceDomain": "www.studyinjapan.go.jp",
-      "sourceOrganization": "MEXT / JASSO",
-      "pageSection": "Research Students — Target & Age Limit",
-      "retrievedAt": "2026-10-22T12:22:33.991Z",
-      "extractedAt": "2026-10-21T14:49:30.489Z",
-      "lastContentChangeAt": "2026-10-21T14:49:30.489Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Unverified",
-      "evidenceQualityScore": 0.35,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "WEEKLY",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "f26ed1de-4f33-441b-af45-136dc686259c",
-          "claimId": "4d00873b-c6ad-4e99-a7ab-af1a08cd938d",
-          "normalizedValue": "Under 35 years of age and a college graduate (16 years of schooling)",
-          "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
-          "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-          "verificationStatus": "Unverified",
-          "observedAt": "2026-10-21T14:49:30.489Z"
-        }
-      ]
-    },
-    {
       "id": "ac8d32d7-5174-46e5-aaa4-06816a002c38",
       "programId": "prog-kaust-cs-bioscience",
       "scholarshipId": "sch-kaust-fellowship",
@@ -9978,74 +10231,6 @@
       ]
     },
     {
-      "id": "b6f4c547-3b02-463f-b63d-b5e6a87434a3",
-      "programId": "prog-daad-germany-cs-micro",
-      "scholarshipId": "sch-daad-germany-epos-phd",
-      "claimType": "STIPEND_AMOUNT",
-      "fieldName": "stipendAmountAnnual",
-      "normalizedValue": "EUR 11904 (€992/month for Master’s or €1,300/month for Doctoral candidates) + Health Insurance + Travel Allowance + Tuition-Free German University Study",
-      "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
-      "excerptHash": "b08902fba98961b6c03247f8a69a0ba702af2dd051d1fae9575c6b80f8e2acb0",
-      "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
-      "sourceDomain": "www.daad.de",
-      "sourceOrganization": "German Academic Exchange Service (DAAD)",
-      "pageSection": "DAAD Scholarships — Overview & Benefits",
-      "retrievedAt": "2026-10-22T12:22:08.729Z",
-      "extractedAt": "2026-10-22T12:22:08.729Z",
-      "lastContentChangeAt": "2026-10-22T12:22:08.729Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Official Source, Not Fully Verified",
-      "evidenceQualityScore": 0.88,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "DAILY",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "0097c179-0ea4-4d46-b5bd-f0419566dcd7",
-          "claimId": "b6f4c547-3b02-463f-b63d-b5e6a87434a3",
-          "normalizedValue": "EUR 11904 (€992/month for Master’s or €1,300/month for Doctoral candidates) + Health Insurance + Travel Allowance + Tuition-Free German University Study",
-          "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
-          "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
-          "verificationStatus": "Officially Confirmed",
-          "observedAt": "2026-10-22T12:22:08.729Z"
-        }
-      ]
-    },
-    {
-      "id": "d0bb085a-de6a-409a-8812-75141d001d97",
-      "programId": "prog-daad-germany-cs-micro",
-      "scholarshipId": "sch-daad-germany-epos-phd",
-      "claimType": "CITIZENSHIP_RULE",
-      "fieldName": "citizenshipRule",
-      "normalizedValue": "Graduates from developing and newly industrialized countries including Pakistan",
-      "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
-      "excerptHash": "b08902fba98961b6c03247f8a69a0ba702af2dd051d1fae9575c6b80f8e2acb0",
-      "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
-      "sourceDomain": "www.daad.de",
-      "sourceOrganization": "German Academic Exchange Service (DAAD)",
-      "pageSection": "Eligibility — Developing Countries & International Graduates",
-      "retrievedAt": "2026-10-22T12:22:08.729Z",
-      "extractedAt": "2026-10-22T12:22:08.729Z",
-      "lastContentChangeAt": "2026-10-22T12:22:08.729Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Officially Confirmed",
-      "evidenceQualityScore": 0.88,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "WEEKLY",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "47af4f3a-4e86-4de1-b9c2-da98d5d70cf6",
-          "claimId": "d0bb085a-de6a-409a-8812-75141d001d97",
-          "normalizedValue": "Graduates from developing and newly industrialized countries including Pakistan",
-          "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
-          "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
-          "verificationStatus": "Officially Confirmed",
-          "observedAt": "2026-10-22T12:22:08.729Z"
-        }
-      ]
-    },
-    {
       "id": "4119fba4-d418-4e93-b78e-d4d244116b2f",
       "programId": "prog-mpg-imprs-phd-cs",
       "scholarshipId": "sch-mpg-imprs-contract",
@@ -10110,74 +10295,6 @@
           "sourceUrl": "https://www.tum.de/en/studies/degree-programs",
           "verificationStatus": "Unverified",
           "observedAt": "2026-10-22T12:22:17.008Z"
-        }
-      ]
-    },
-    {
-      "id": "553e59df-ed27-488d-9d4f-d5a3157a32eb",
-      "programId": "prog-ucas-phd-cs-micro",
-      "scholarshipId": "sch-ucas-anso-castwas",
-      "claimType": "STIPEND_AMOUNT",
-      "fieldName": "stipendAmountAnnual",
-      "normalizedValue": "CNY 72000 (¥6,000–¥7,000/month for PhD; ¥3,000/month for Master’s) + 100% Tuition Waiver + Free On-Campus Accommodation + Medical Insurance + International Airfare",
-      "supportingExcerpt": "Click here to update… 您的浏览器已禁用JavaScript,(da)启(kai)用才能正常访问！ University of Chinese Academy of Sciences Chinese About UCAS Introduction History Administration Offices Statistics & Facts Contact Admission Undergraduate Graduate International Students Continuing Education Summer Sessions Research Research Programs Research Achievements Publications Theses Join Us Job Vacancy Work at UCAS Notice Faculty/Staff Students Cam",
-      "excerptHash": "c487c202e2fcb562e2cdfde826a1ee6b24c1486d06cfd2e95484018e8ad296cc",
-      "sourceUrl": "https://english.ucas.ac.cn/",
-      "sourceDomain": "english.ucas.ac.cn",
-      "sourceOrganization": "University of Chinese Academy of Sciences (UCAS / ANSO / CAS-TWAS)",
-      "pageSection": "Admission — International Students & Scholarship Programs of UCAS",
-      "retrievedAt": "2026-10-22T12:22:18.054Z",
-      "extractedAt": "2026-10-22T12:22:18.054Z",
-      "lastContentChangeAt": "2026-10-22T12:22:18.054Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Official Source, Not Fully Verified",
-      "evidenceQualityScore": 0.88,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "DAILY",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "68d9c263-74ac-4536-a95f-99d70b90bece",
-          "claimId": "553e59df-ed27-488d-9d4f-d5a3157a32eb",
-          "normalizedValue": "CNY 72000 (¥6,000–¥7,000/month for PhD; ¥3,000/month for Master’s) + 100% Tuition Waiver + Free On-Campus Accommodation + Medical Insurance + International Airfare",
-          "supportingExcerpt": "Click here to update… 您的浏览器已禁用JavaScript,(da)启(kai)用才能正常访问！ University of Chinese Academy of Sciences Chinese About UCAS Introduction History Administration Offices Statistics & Facts Contact Admission Undergraduate Graduate International Students Continuing Education Summer Sessions Research Research Programs Research Achievements Publications Theses Join Us Job Vacancy Work at UCAS Notice Faculty/Staff Students Cam",
-          "sourceUrl": "https://english.ucas.ac.cn/",
-          "verificationStatus": "Officially Confirmed",
-          "observedAt": "2026-10-22T12:22:18.054Z"
-        }
-      ]
-    },
-    {
-      "id": "07d00b64-6e3d-49e2-ac35-090c3267bdcf",
-      "programId": "prog-tsinghua-cs-micro",
-      "scholarshipId": "sch-tsinghua-cgs",
-      "claimType": "STIPEND_AMOUNT",
-      "fieldName": "stipendAmountAnnual",
-      "normalizedValue": "CNY 42000 (¥3,500/month Doctoral / ¥3,000/month Master’s CGS Type B) + 100% Tuition + On-Campus Dormitory + Comprehensive Medical Insurance",
-      "supportingExcerpt": "Tsinghua University Students Faculty & Staff Alumni Visitor Media  中文  About General Information History Current Administrators Former Presidents Facts and Figures Admissions Undergraduate Graduate International Students Non-Degree Programs Summer School Continuing Education Online Education Schools & Departments Research Research Programs Prospective Researchers Collaborating Institutions Facilities Publications R",
-      "excerptHash": "805535b4c90a990b76bfa78e36cc13656cccb15eb223aed795a3cf751920064b",
-      "sourceUrl": "https://www.tsinghua.edu.cn/en/",
-      "sourceDomain": "www.tsinghua.edu.cn",
-      "sourceOrganization": "Tsinghua University Graduate Admissions",
-      "pageSection": "Admissions — Graduate & International Students",
-      "retrievedAt": "2026-10-22T12:22:18.517Z",
-      "extractedAt": "2026-10-22T12:22:18.517Z",
-      "lastContentChangeAt": "2026-10-22T12:22:18.517Z",
-      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
-      "verificationStatus": "Official Source, Not Fully Verified",
-      "evidenceQualityScore": 0.88,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "EVERY_3_DAYS",
-      "conflictingClaimIds": [],
-      "versions": [
-        {
-          "id": "ea9d0f48-cf0a-4ebb-b428-3017f9ff3bf9",
-          "claimId": "07d00b64-6e3d-49e2-ac35-090c3267bdcf",
-          "normalizedValue": "CNY 42000 (¥3,500/month Doctoral / ¥3,000/month Master’s CGS Type B) + 100% Tuition + On-Campus Dormitory + Comprehensive Medical Insurance",
-          "supportingExcerpt": "Tsinghua University Students Faculty & Staff Alumni Visitor Media  中文  About General Information History Current Administrators Former Presidents Facts and Figures Admissions Undergraduate Graduate International Students Non-Degree Programs Summer School Continuing Education Online Education Schools & Departments Research Research Programs Prospective Researchers Collaborating Institutions Facilities Publications R",
-          "sourceUrl": "https://www.tsinghua.edu.cn/en/",
-          "verificationStatus": "Officially Confirmed",
-          "observedAt": "2026-10-22T12:22:18.517Z"
         }
       ]
     },
@@ -10824,6 +10941,890 @@
       "freshnessPolicy": "WEEKLY",
       "conflictingClaimIds": [],
       "versions": []
+    },
+    {
+      "id": "418c5460-bf76-492a-b5b7-27ddf28612a5",
+      "programId": "prog-usefp-fulbright-cs",
+      "scholarshipId": "sch-usefp-fulbright-pk",
+      "claimType": "TUITION_COVERAGE",
+      "fieldName": "tuitionAndStipendCoverage",
+      "normalizedValue": "100% Tuition + Textbooks + Round-Trip Airfare + Living Stipend + Health Insurance + J-1 Visa Support",
+      "supportingExcerpt": "USEFP - Fulbright Degree Promoting Mutual Understanding through Exchanges FUTURE APPLICANTS Undergraduate Students Global UGRAD Graduate Students Fulbright PhD & Masters Mid-Career Professionals Humphrey FLTA Journalism CCIP CCAP TEA Senior Scholar Fulbright Specialist Program Fulbright Scholar Program U.S. Applicants",
+      "excerptHash": "258ccbcf3ebfd47ce4625fa96cdff3e0bd8f12eaf6c6f70b28a11d1ac5aeb398",
+      "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+      "sourceDomain": "www.usefp.org",
+      "sourceOrganization": "USEFP Pakistan (Fulbright Commission)",
+      "pageSection": "Grant Benefits",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "1b155ee2-1b63-450d-b649-753d59442d0d",
+          "claimId": "c8408a73-8de4-46e4-9228-a03ffc583b62",
+          "normalizedValue": "100% Tuition + Textbooks + Round-Trip Airfare + Living Stipend + Health Insurance + J-1 Visa Support",
+          "supportingExcerpt": "USEFP - Fulbright Degree Promoting Mutual Understanding through Exchanges FUTURE APPLICANTS Undergraduate Students Global UGRAD Graduate Students Fulbright PhD & Masters Mid-Career Professionals Humphrey FLTA Journalism CCIP CCAP TEA Senior Scholar Fulbright Specialist Program Fulbright Scholar Program U.S. Applicants",
+          "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-21T14:49:28.286Z"
+        }
+      ]
+    },
+    {
+      "id": "43ea9c8d-e3c3-4faf-9658-a1fc50ce1ae4",
+      "programId": "prog-usefp-fulbright-cs",
+      "scholarshipId": "sch-usefp-fulbright-pk",
+      "claimType": "CITIZENSHIP_RULE",
+      "fieldName": "citizenshipAndResidencyRule",
+      "normalizedValue": "Pakistani citizens residing in Pakistan (16 years HEC-recognized education for MS; 18 years for PhD)",
+      "supportingExcerpt": "Eligibility Criteria Pakistani citizens with strong academic histories, residing (throughout the process) in Pakistan and committed to returning and serving Pakistan are welcome to apply. Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal",
+      "excerptHash": "ce7e2727405c8779833a7e5c4c551fe7fa9d373c567deb47c1a51dc8da878c7e",
+      "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+      "sourceDomain": "www.usefp.org",
+      "sourceOrganization": "USEFP Pakistan",
+      "pageSection": "Eligibility Criteria",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "7ef9b7a7-04a1-40d9-888e-8fe20f962d8d",
+          "claimId": "4442d6fe-f248-4d49-810a-a0935a67886e",
+          "normalizedValue": "Pakistani citizens residing in Pakistan (16 years HEC-recognized education for MS; 18 years for PhD)",
+          "supportingExcerpt": "Eligibility Criteria Pakistani citizens with strong academic histories, residing (throughout the process) in Pakistan and committed to returning and serving Pakistan are welcome to apply. Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal",
+          "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-21T14:49:28.286Z"
+        }
+      ]
+    },
+    {
+      "id": "d358aa55-0bdc-4a40-b82b-d1010efffbd3",
+      "programId": "prog-usefp-fulbright-cs",
+      "scholarshipId": "sch-usefp-fulbright-pk",
+      "claimType": "GRE_REQUIREMENT",
+      "fieldName": "greRequirement",
+      "normalizedValue": "GRE Required for all applicants (TOEFL required upon shortlisting)",
+      "supportingExcerpt": "Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal education) from an accredited university.",
+      "excerptHash": "cbe048c126bf9f57bede9bf774672dfb977b3a7da06af024a9d911304a6f7384",
+      "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+      "sourceDomain": "www.usefp.org",
+      "sourceOrganization": "USEFP Pakistan",
+      "pageSection": "Testing Requirements",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Unverified",
+      "evidenceQualityScore": 0.35,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "b9a6fc07-e9c3-44fd-9996-ad7a8e0af4f2",
+          "claimId": "3ebaaf79-522c-4eab-9a95-b16d0e44ec81",
+          "normalizedValue": "GRE Required for all applicants (TOEFL required upon shortlisting)",
+          "supportingExcerpt": "Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal education) from an accredited university.",
+          "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+          "verificationStatus": "Unverified",
+          "observedAt": "2026-10-21T14:49:28.286Z"
+        }
+      ]
+    },
+    {
+      "id": "5a82a437-f9ef-4333-bb0a-a8f82899f215",
+      "programId": "prog-usefp-fulbright-microbio",
+      "scholarshipId": "sch-usefp-fulbright-pk",
+      "claimType": "TUITION_COVERAGE",
+      "fieldName": "tuitionAndStipendCoverage",
+      "normalizedValue": "100% Tuition + Textbooks + Round-Trip Airfare + Living Stipend + Health Insurance + J-1 Visa Support",
+      "supportingExcerpt": "USEFP - Fulbright Degree Promoting Mutual Understanding through Exchanges FUTURE APPLICANTS Undergraduate Students Global UGRAD Graduate Students Fulbright PhD & Masters Mid-Career Professionals Humphrey FLTA Journalism CCIP CCAP TEA Senior Scholar Fulbright Specialist Program Fulbright Scholar Program U.S. Applicants",
+      "excerptHash": "258ccbcf3ebfd47ce4625fa96cdff3e0bd8f12eaf6c6f70b28a11d1ac5aeb398",
+      "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+      "sourceDomain": "www.usefp.org",
+      "sourceOrganization": "USEFP Pakistan (Fulbright Commission)",
+      "pageSection": "Grant Benefits",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "1b155ee2-1b63-450d-b649-753d59442d0d",
+          "claimId": "c8408a73-8de4-46e4-9228-a03ffc583b62",
+          "normalizedValue": "100% Tuition + Textbooks + Round-Trip Airfare + Living Stipend + Health Insurance + J-1 Visa Support",
+          "supportingExcerpt": "USEFP - Fulbright Degree Promoting Mutual Understanding through Exchanges FUTURE APPLICANTS Undergraduate Students Global UGRAD Graduate Students Fulbright PhD & Masters Mid-Career Professionals Humphrey FLTA Journalism CCIP CCAP TEA Senior Scholar Fulbright Specialist Program Fulbright Scholar Program U.S. Applicants",
+          "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-21T14:49:28.286Z"
+        }
+      ]
+    },
+    {
+      "id": "072864df-ecc2-499c-bd27-d4a9af5e3cee",
+      "programId": "prog-usefp-fulbright-microbio",
+      "scholarshipId": "sch-usefp-fulbright-pk",
+      "claimType": "CITIZENSHIP_RULE",
+      "fieldName": "citizenshipAndResidencyRule",
+      "normalizedValue": "Pakistani citizens residing in Pakistan (16 years HEC-recognized education for MS; 18 years for PhD)",
+      "supportingExcerpt": "Eligibility Criteria Pakistani citizens with strong academic histories, residing (throughout the process) in Pakistan and committed to returning and serving Pakistan are welcome to apply. Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal",
+      "excerptHash": "ce7e2727405c8779833a7e5c4c551fe7fa9d373c567deb47c1a51dc8da878c7e",
+      "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+      "sourceDomain": "www.usefp.org",
+      "sourceOrganization": "USEFP Pakistan",
+      "pageSection": "Eligibility Criteria",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "7ef9b7a7-04a1-40d9-888e-8fe20f962d8d",
+          "claimId": "4442d6fe-f248-4d49-810a-a0935a67886e",
+          "normalizedValue": "Pakistani citizens residing in Pakistan (16 years HEC-recognized education for MS; 18 years for PhD)",
+          "supportingExcerpt": "Eligibility Criteria Pakistani citizens with strong academic histories, residing (throughout the process) in Pakistan and committed to returning and serving Pakistan are welcome to apply. Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal",
+          "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-21T14:49:28.286Z"
+        }
+      ]
+    },
+    {
+      "id": "25507710-8648-4994-a1b8-fa83f89c58c3",
+      "programId": "prog-usefp-fulbright-microbio",
+      "scholarshipId": "sch-usefp-fulbright-pk",
+      "claimType": "GRE_REQUIREMENT",
+      "fieldName": "greRequirement",
+      "normalizedValue": "GRE Required for all applicants (TOEFL required upon shortlisting)",
+      "supportingExcerpt": "Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal education) from an accredited university.",
+      "excerptHash": "cbe048c126bf9f57bede9bf774672dfb977b3a7da06af024a9d911304a6f7384",
+      "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+      "sourceDomain": "www.usefp.org",
+      "sourceOrganization": "USEFP Pakistan",
+      "pageSection": "Testing Requirements",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Unverified",
+      "evidenceQualityScore": 0.35,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "b9a6fc07-e9c3-44fd-9996-ad7a8e0af4f2",
+          "claimId": "3ebaaf79-522c-4eab-9a95-b16d0e44ec81",
+          "normalizedValue": "GRE Required for all applicants (TOEFL required upon shortlisting)",
+          "supportingExcerpt": "Eligible Master's applicants will have a four-year Bachelor's degree or a Bachelor's and Master's combination (16 years of formal education) and PhD applicants will have Master's, M.Phil., or a comparable degree (18 years of formal education) from an accredited university.",
+          "sourceUrl": "https://www.usefp.org/scholarships/fulbright-degree.cfm",
+          "verificationStatus": "Unverified",
+          "observedAt": "2026-10-21T14:49:28.286Z"
+        }
+      ]
+    },
+    {
+      "id": "dd46ca80-ffb9-4a93-83eb-161386563b98",
+      "programId": "prog-csc-uk-msc-cs",
+      "scholarshipId": "sch-commonwealth-masters-uk",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "GBP 17424 (£1,452/month outside London or £1,781/month in London) + Full UK Tuition + Return Airfare",
+      "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
+      "excerptHash": "3b16e81addaa2095934e68c08c99e881221cab1cb8e043388aa5e4dc94614341",
+      "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+      "sourceDomain": "cscuk.fcdo.gov.uk",
+      "sourceOrganization": "Commonwealth Scholarship Commission (FCDO UK)",
+      "pageSection": "Financial Support & Terms",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "3a8eea24-ed25-4b19-a86c-e3ba569607ec",
+          "claimId": "ee6eaaec-e9f0-4477-a7e7-c99c9574f8f5",
+          "normalizedValue": "GBP 17424 (£1,452/month outside London or £1,781/month in London) + Full UK Tuition + Return Airfare",
+          "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
+          "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-21T14:49:29.757Z"
+        }
+      ]
+    },
+    {
+      "id": "7c27bb40-8fe4-4132-9930-9f107332c27c",
+      "programId": "prog-csc-uk-msc-cs",
+      "scholarshipId": "sch-commonwealth-masters-uk",
+      "claimType": "CITIZENSHIP_RULE",
+      "fieldName": "citizenshipRule",
+      "normalizedValue": "Citizen & permanent resident of Pakistan (Eligible Commonwealth Country)",
+      "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
+      "excerptHash": "3b16e81addaa2095934e68c08c99e881221cab1cb8e043388aa5e4dc94614341",
+      "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+      "sourceDomain": "cscuk.fcdo.gov.uk",
+      "sourceOrganization": "Commonwealth Scholarship Commission (FCDO UK)",
+      "pageSection": "Eligibility & Eligible Countries",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "e4cc433c-586a-4aa6-bc11-1d8209f16ab5",
+          "claimId": "4384f27b-241f-45f7-9d64-fa2a88f4e2f2",
+          "normalizedValue": "Citizen & permanent resident of Pakistan (Eligible Commonwealth Country)",
+          "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
+          "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-21T14:49:29.757Z"
+        }
+      ]
+    },
+    {
+      "id": "81cb27c2-bee4-4a59-8c46-bc52d2db68af",
+      "programId": "prog-csc-uk-msc-cs",
+      "scholarshipId": "sch-commonwealth-masters-uk",
+      "claimType": "NOMINATION_PROCESS",
+      "fieldName": "nominationProcess",
+      "normalizedValue": "Requires dual application: CSC Online Portal + National Nominating Agency (HEC Pakistan)",
+      "supportingExcerpt": "There are two types of nominator invited to participate in the Master’s Scholarship programme : National nominating agencies – this is the main route of application.",
+      "excerptHash": "578da23adf123be207f3e571ec726a9f37babbb881790a586b4d61e6cd95ed9c",
+      "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+      "sourceDomain": "cscuk.fcdo.gov.uk",
+      "sourceOrganization": "Commonwealth Scholarship Commission (FCDO UK)",
+      "pageSection": "How to Apply — National Nominating Agencies",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Unverified",
+      "evidenceQualityScore": 0.35,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "f46d4ea1-0638-4333-aec9-b015dd1f2774",
+          "claimId": "0fb2bbbb-b1fa-4695-a1be-f26b83f7acf1",
+          "normalizedValue": "Requires dual application: CSC Online Portal + National Nominating Agency (HEC Pakistan)",
+          "supportingExcerpt": "There are two types of nominator invited to participate in the Master’s Scholarship programme : National nominating agencies – this is the main route of application.",
+          "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+          "verificationStatus": "Unverified",
+          "observedAt": "2026-10-21T14:49:29.757Z"
+        }
+      ]
+    },
+    {
+      "id": "f7979270-edba-450d-be3a-a653d4ff32b6",
+      "programId": "prog-csc-uk-msc-microbio",
+      "scholarshipId": "sch-commonwealth-masters-uk",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "GBP 17424 (£1,452/month outside London or £1,781/month in London) + Full UK Tuition + Return Airfare",
+      "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
+      "excerptHash": "3b16e81addaa2095934e68c08c99e881221cab1cb8e043388aa5e4dc94614341",
+      "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+      "sourceDomain": "cscuk.fcdo.gov.uk",
+      "sourceOrganization": "Commonwealth Scholarship Commission (FCDO UK)",
+      "pageSection": "Financial Support & Terms",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "3a8eea24-ed25-4b19-a86c-e3ba569607ec",
+          "claimId": "ee6eaaec-e9f0-4477-a7e7-c99c9574f8f5",
+          "normalizedValue": "GBP 17424 (£1,452/month outside London or £1,781/month in London) + Full UK Tuition + Return Airfare",
+          "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
+          "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-21T14:49:29.757Z"
+        }
+      ]
+    },
+    {
+      "id": "87a41be6-759c-4ebb-bee7-de746dc9a306",
+      "programId": "prog-csc-uk-msc-microbio",
+      "scholarshipId": "sch-commonwealth-masters-uk",
+      "claimType": "CITIZENSHIP_RULE",
+      "fieldName": "citizenshipRule",
+      "normalizedValue": "Citizen & permanent resident of Pakistan (Eligible Commonwealth Country)",
+      "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
+      "excerptHash": "3b16e81addaa2095934e68c08c99e881221cab1cb8e043388aa5e4dc94614341",
+      "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+      "sourceDomain": "cscuk.fcdo.gov.uk",
+      "sourceOrganization": "Commonwealth Scholarship Commission (FCDO UK)",
+      "pageSection": "Eligibility & Eligible Countries",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "e4cc433c-586a-4aa6-bc11-1d8209f16ab5",
+          "claimId": "4384f27b-241f-45f7-9d64-fa2a88f4e2f2",
+          "normalizedValue": "Citizen & permanent resident of Pakistan (Eligible Commonwealth Country)",
+          "supportingExcerpt": "Commonwealth Master’s Scholarships - Commonwealth Scholarship Commission in the UK Commonwealth Master’s Scholarships by Alumni Team | Sep 15, 2020 COMMONWEALTH MASTER’S SCHOLARSHIPS Overview How to apply Supporting documentation Advice for applicants Choosing a university/course Applicant eligibility Eligible countrie",
+          "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-21T14:49:29.757Z"
+        }
+      ]
+    },
+    {
+      "id": "dd5bc1a4-7714-4af8-808f-2344497c4168",
+      "programId": "prog-csc-uk-msc-microbio",
+      "scholarshipId": "sch-commonwealth-masters-uk",
+      "claimType": "NOMINATION_PROCESS",
+      "fieldName": "nominationProcess",
+      "normalizedValue": "Requires dual application: CSC Online Portal + National Nominating Agency (HEC Pakistan)",
+      "supportingExcerpt": "There are two types of nominator invited to participate in the Master’s Scholarship programme : National nominating agencies – this is the main route of application.",
+      "excerptHash": "578da23adf123be207f3e571ec726a9f37babbb881790a586b4d61e6cd95ed9c",
+      "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+      "sourceDomain": "cscuk.fcdo.gov.uk",
+      "sourceOrganization": "Commonwealth Scholarship Commission (FCDO UK)",
+      "pageSection": "How to Apply — National Nominating Agencies",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Unverified",
+      "evidenceQualityScore": 0.35,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "f46d4ea1-0638-4333-aec9-b015dd1f2774",
+          "claimId": "0fb2bbbb-b1fa-4695-a1be-f26b83f7acf1",
+          "normalizedValue": "Requires dual application: CSC Online Portal + National Nominating Agency (HEC Pakistan)",
+          "supportingExcerpt": "There are two types of nominator invited to participate in the Master’s Scholarship programme : National nominating agencies – this is the main route of application.",
+          "sourceUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+          "verificationStatus": "Unverified",
+          "observedAt": "2026-10-21T14:49:29.757Z"
+        }
+      ]
+    },
+    {
+      "id": "c23630c4-c121-4cce-8028-e282b6d2a408",
+      "programId": "prog-chevening-uk-msc-cs",
+      "scholarshipId": "sch-chevening-pakistan",
+      "claimType": "DEADLINE",
+      "fieldName": "applicationWindowStatus",
+      "normalizedValue": "Closed for current window (Opens August for next UK Master’s intake)",
+      "supportingExcerpt": "Pakistan (Chevening Scholarship) | Chevening Skip to content Chevening in Pakistan Learn in the UK, lead at home, shape the world. Closed for applications Applications for 202 7 -202 8 Chevening Scholarships are now closed. Chevening is the UK Government’s prestigious international scholarships programme. Funded by the",
+      "excerptHash": "db08a55c692f3a28a5f4dc5b5572114457c717ea3c83d8c0888cfe01bc908241",
+      "sourceUrl": "https://www.chevening.org/scholarship/pakistan/",
+      "sourceDomain": "www.chevening.org",
+      "sourceOrganization": "Chevening UK Government Scholarships (Pakistan)",
+      "pageSection": "Chevening in Pakistan — Application Status",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Unverified",
+      "evidenceQualityScore": 0.2,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "d91accbb-abda-40e1-ae61-23b361aa5ecf",
+          "claimId": "9a191075-79ac-4bbb-bdf8-a6cec2ae70f3",
+          "normalizedValue": "Closed for current window (Opens August for next UK Master’s intake)",
+          "supportingExcerpt": "Pakistan (Chevening Scholarship) | Chevening Skip to content Chevening in Pakistan Learn in the UK, lead at home, shape the world. Closed for applications Applications for 202 7 -202 8 Chevening Scholarships are now closed. Chevening is the UK Government’s prestigious international scholarships programme. Funded by the",
+          "sourceUrl": "https://www.chevening.org/scholarship/pakistan/",
+          "verificationStatus": "Unverified",
+          "observedAt": "2026-10-21T14:49:30.131Z"
+        }
+      ]
+    },
+    {
+      "id": "3aa52f19-bff6-444c-aa16-123831b97a4c",
+      "programId": "prog-chevening-uk-msc-microbio",
+      "scholarshipId": "sch-chevening-pakistan",
+      "claimType": "DEADLINE",
+      "fieldName": "applicationWindowStatus",
+      "normalizedValue": "Closed for current window (Opens August for next UK Master’s intake)",
+      "supportingExcerpt": "Pakistan (Chevening Scholarship) | Chevening Skip to content Chevening in Pakistan Learn in the UK, lead at home, shape the world. Closed for applications Applications for 202 7 -202 8 Chevening Scholarships are now closed. Chevening is the UK Government’s prestigious international scholarships programme. Funded by the",
+      "excerptHash": "db08a55c692f3a28a5f4dc5b5572114457c717ea3c83d8c0888cfe01bc908241",
+      "sourceUrl": "https://www.chevening.org/scholarship/pakistan/",
+      "sourceDomain": "www.chevening.org",
+      "sourceOrganization": "Chevening UK Government Scholarships (Pakistan)",
+      "pageSection": "Chevening in Pakistan — Application Status",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Unverified",
+      "evidenceQualityScore": 0.2,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "d91accbb-abda-40e1-ae61-23b361aa5ecf",
+          "claimId": "9a191075-79ac-4bbb-bdf8-a6cec2ae70f3",
+          "normalizedValue": "Closed for current window (Opens August for next UK Master’s intake)",
+          "supportingExcerpt": "Pakistan (Chevening Scholarship) | Chevening Skip to content Chevening in Pakistan Learn in the UK, lead at home, shape the world. Closed for applications Applications for 202 7 -202 8 Chevening Scholarships are now closed. Chevening is the UK Government’s prestigious international scholarships programme. Funded by the",
+          "sourceUrl": "https://www.chevening.org/scholarship/pakistan/",
+          "verificationStatus": "Unverified",
+          "observedAt": "2026-10-21T14:49:30.131Z"
+        }
+      ]
+    },
+    {
+      "id": "e015b217-382f-4fd2-ba80-e9e12eff42aa",
+      "programId": "prog-mext-japan-cs",
+      "scholarshipId": "sch-mext-japan-research",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "JPY 1728000 (¥143,000–¥145,000/month) + 100% Tuition & Entrance Exam Waiver + Round-Trip Airfare",
+      "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
+      "excerptHash": "6ea56bc580edf63d8afdc8853e52a86c2ae4397aa7014e3d94da61481747cb98",
+      "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+      "sourceDomain": "www.studyinjapan.go.jp",
+      "sourceOrganization": "MEXT / Japan Student Services Organization (JASSO)",
+      "pageSection": "Types of MEXT Scholarships — Research Students",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Official Source, Not Fully Verified",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "EVERY_3_DAYS",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "353777d3-61ae-4091-99e3-2932aeae5e5e",
+          "claimId": "76f4ab12-c1d4-419a-81bd-97f07316abaf",
+          "normalizedValue": "JPY 1728000 (¥143,000–¥145,000/month) + 100% Tuition & Entrance Exam Waiver + Round-Trip Airfare",
+          "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
+          "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-21T14:49:30.489Z"
+        }
+      ]
+    },
+    {
+      "id": "aa5d7282-469b-4362-9b3d-059988d38f4c",
+      "programId": "prog-mext-japan-cs",
+      "scholarshipId": "sch-mext-japan-research",
+      "claimType": "AGE_LIMIT",
+      "fieldName": "maxAgeLimit",
+      "normalizedValue": "Under 35 years of age and a college graduate (16 years of schooling)",
+      "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
+      "excerptHash": "6ea56bc580edf63d8afdc8853e52a86c2ae4397aa7014e3d94da61481747cb98",
+      "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+      "sourceDomain": "www.studyinjapan.go.jp",
+      "sourceOrganization": "MEXT / JASSO",
+      "pageSection": "Research Students — Target & Age Limit",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Unverified",
+      "evidenceQualityScore": 0.35,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "f26ed1de-4f33-441b-af45-136dc686259c",
+          "claimId": "4d00873b-c6ad-4e99-a7ab-af1a08cd938d",
+          "normalizedValue": "Under 35 years of age and a college graduate (16 years of schooling)",
+          "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
+          "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+          "verificationStatus": "Unverified",
+          "observedAt": "2026-10-21T14:49:30.489Z"
+        }
+      ]
+    },
+    {
+      "id": "bd88b6e2-33f9-4baf-a67f-e24e0a6b9b0a",
+      "programId": "prog-mext-japan-microbio",
+      "scholarshipId": "sch-mext-japan-research",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "JPY 1728000 (¥143,000–¥145,000/month) + 100% Tuition & Entrance Exam Waiver + Round-Trip Airfare",
+      "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
+      "excerptHash": "6ea56bc580edf63d8afdc8853e52a86c2ae4397aa7014e3d94da61481747cb98",
+      "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+      "sourceDomain": "www.studyinjapan.go.jp",
+      "sourceOrganization": "MEXT / Japan Student Services Organization (JASSO)",
+      "pageSection": "Types of MEXT Scholarships — Research Students",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Official Source, Not Fully Verified",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "EVERY_3_DAYS",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "353777d3-61ae-4091-99e3-2932aeae5e5e",
+          "claimId": "76f4ab12-c1d4-419a-81bd-97f07316abaf",
+          "normalizedValue": "JPY 1728000 (¥143,000–¥145,000/month) + 100% Tuition & Entrance Exam Waiver + Round-Trip Airfare",
+          "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
+          "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-21T14:49:30.489Z"
+        }
+      ]
+    },
+    {
+      "id": "7fb113ac-c8f1-43e4-b1f2-35c91b6d5df9",
+      "programId": "prog-mext-japan-microbio",
+      "scholarshipId": "sch-mext-japan-research",
+      "claimType": "AGE_LIMIT",
+      "fieldName": "maxAgeLimit",
+      "normalizedValue": "Under 35 years of age and a college graduate (16 years of schooling)",
+      "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
+      "excerptHash": "6ea56bc580edf63d8afdc8853e52a86c2ae4397aa7014e3d94da61481747cb98",
+      "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+      "sourceDomain": "www.studyinjapan.go.jp",
+      "sourceOrganization": "MEXT / JASSO",
+      "pageSection": "Research Students — Target & Age Limit",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Unverified",
+      "evidenceQualityScore": 0.35,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "f26ed1de-4f33-441b-af45-136dc686259c",
+          "claimId": "4d00873b-c6ad-4e99-a7ab-af1a08cd938d",
+          "normalizedValue": "Under 35 years of age and a college graduate (16 years of schooling)",
+          "supportingExcerpt": "Japanese Government (MEXT) Scholarship｜Study in Japan Official Website Planning to Study in Japan Scholarships HOME Planning to Study in Japan Scholarships Japanese Government (MEXT) Scholarship Table of contents Types Types and Their Status Eligibility Examinations Required for Embassy Recommendation Application Proce",
+          "sourceUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
+          "verificationStatus": "Unverified",
+          "observedAt": "2026-10-21T14:49:30.489Z"
+        }
+      ]
+    },
+    {
+      "id": "52419947-0bdb-4767-9d85-3b685871673c",
+      "programId": "prog-daad-germany-cs",
+      "scholarshipId": "sch-daad-germany-epos-phd",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "EUR 11904 (€992/month for Master’s or €1,300/month for Doctoral candidates) + Health Insurance + Travel Allowance + Tuition-Free German University Study",
+      "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
+      "excerptHash": "b08902fba98961b6c03247f8a69a0ba702af2dd051d1fae9575c6b80f8e2acb0",
+      "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+      "sourceDomain": "www.daad.de",
+      "sourceOrganization": "German Academic Exchange Service (DAAD)",
+      "pageSection": "DAAD Scholarships — Overview & Benefits",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Official Source, Not Fully Verified",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "0097c179-0ea4-4d46-b5bd-f0419566dcd7",
+          "claimId": "b6f4c547-3b02-463f-b63d-b5e6a87434a3",
+          "normalizedValue": "EUR 11904 (€992/month for Master’s or €1,300/month for Doctoral candidates) + Health Insurance + Travel Allowance + Tuition-Free German University Study",
+          "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
+          "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-22T12:22:08.729Z"
+        }
+      ]
+    },
+    {
+      "id": "16425b7e-a7ca-456a-be60-e657682f2f5f",
+      "programId": "prog-daad-germany-cs",
+      "scholarshipId": "sch-daad-germany-epos-phd",
+      "claimType": "CITIZENSHIP_RULE",
+      "fieldName": "citizenshipRule",
+      "normalizedValue": "Graduates from developing and newly industrialized countries including Pakistan",
+      "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
+      "excerptHash": "b08902fba98961b6c03247f8a69a0ba702af2dd051d1fae9575c6b80f8e2acb0",
+      "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+      "sourceDomain": "www.daad.de",
+      "sourceOrganization": "German Academic Exchange Service (DAAD)",
+      "pageSection": "Eligibility — Developing Countries & International Graduates",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "47af4f3a-4e86-4de1-b9c2-da98d5d70cf6",
+          "claimId": "d0bb085a-de6a-409a-8812-75141d001d97",
+          "normalizedValue": "Graduates from developing and newly industrialized countries including Pakistan",
+          "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
+          "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-22T12:22:08.729Z"
+        }
+      ]
+    },
+    {
+      "id": "78acb359-b5db-4256-b63b-9469e479d63d",
+      "programId": "prog-daad-germany-microbio",
+      "scholarshipId": "sch-daad-germany-epos-phd",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "EUR 11904 (€992/month for Master’s or €1,300/month for Doctoral candidates) + Health Insurance + Travel Allowance + Tuition-Free German University Study",
+      "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
+      "excerptHash": "b08902fba98961b6c03247f8a69a0ba702af2dd051d1fae9575c6b80f8e2acb0",
+      "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+      "sourceDomain": "www.daad.de",
+      "sourceOrganization": "German Academic Exchange Service (DAAD)",
+      "pageSection": "DAAD Scholarships — Overview & Benefits",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Official Source, Not Fully Verified",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "0097c179-0ea4-4d46-b5bd-f0419566dcd7",
+          "claimId": "b6f4c547-3b02-463f-b63d-b5e6a87434a3",
+          "normalizedValue": "EUR 11904 (€992/month for Master’s or €1,300/month for Doctoral candidates) + Health Insurance + Travel Allowance + Tuition-Free German University Study",
+          "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
+          "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-22T12:22:08.729Z"
+        }
+      ]
+    },
+    {
+      "id": "68c70a75-19f7-40bc-91a4-17ed059398e8",
+      "programId": "prog-daad-germany-microbio",
+      "scholarshipId": "sch-daad-germany-epos-phd",
+      "claimType": "CITIZENSHIP_RULE",
+      "fieldName": "citizenshipRule",
+      "normalizedValue": "Graduates from developing and newly industrialized countries including Pakistan",
+      "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
+      "excerptHash": "b08902fba98961b6c03247f8a69a0ba702af2dd051d1fae9575c6b80f8e2acb0",
+      "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+      "sourceDomain": "www.daad.de",
+      "sourceOrganization": "German Academic Exchange Service (DAAD)",
+      "pageSection": "Eligibility — Developing Countries & International Graduates",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "47af4f3a-4e86-4de1-b9c2-da98d5d70cf6",
+          "claimId": "d0bb085a-de6a-409a-8812-75141d001d97",
+          "normalizedValue": "Graduates from developing and newly industrialized countries including Pakistan",
+          "supportingExcerpt": "DAAD Scholarships - An Overview - DAAD Would you like to study, carry out research or learn German in Germany and are you looking for funding?",
+          "sourceUrl": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-22T12:22:08.729Z"
+        }
+      ]
+    },
+    {
+      "id": "7ffcce2a-013d-4a84-b95f-bf4207bb10dd",
+      "programId": "prog-ucas-phd-cs",
+      "scholarshipId": "sch-ucas-anso-castwas",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "CNY 72000 (¥6,000–¥7,000/month for PhD; ¥3,000/month for Master’s) + 100% Tuition Waiver + Free On-Campus Accommodation + Medical Insurance + International Airfare",
+      "supportingExcerpt": "Click here to update… 您的浏览器已禁用JavaScript,(da)启(kai)用才能正常访问！ University of Chinese Academy of Sciences Chinese About UCAS Introduction History Administration Offices Statistics & Facts Contact Admission Undergraduate Graduate International Students Continuing Education Summer Sessions Research Research Programs Research Achievements Publications Theses Join Us Job Vacancy Work at UCAS Notice Faculty/Staff Students Cam",
+      "excerptHash": "c487c202e2fcb562e2cdfde826a1ee6b24c1486d06cfd2e95484018e8ad296cc",
+      "sourceUrl": "https://english.ucas.ac.cn/",
+      "sourceDomain": "english.ucas.ac.cn",
+      "sourceOrganization": "University of Chinese Academy of Sciences (UCAS / ANSO / CAS-TWAS)",
+      "pageSection": "Admission — International Students & Scholarship Programs of UCAS",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Official Source, Not Fully Verified",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "68d9c263-74ac-4536-a95f-99d70b90bece",
+          "claimId": "553e59df-ed27-488d-9d4f-d5a3157a32eb",
+          "normalizedValue": "CNY 72000 (¥6,000–¥7,000/month for PhD; ¥3,000/month for Master’s) + 100% Tuition Waiver + Free On-Campus Accommodation + Medical Insurance + International Airfare",
+          "supportingExcerpt": "Click here to update… 您的浏览器已禁用JavaScript,(da)启(kai)用才能正常访问！ University of Chinese Academy of Sciences Chinese About UCAS Introduction History Administration Offices Statistics & Facts Contact Admission Undergraduate Graduate International Students Continuing Education Summer Sessions Research Research Programs Research Achievements Publications Theses Join Us Job Vacancy Work at UCAS Notice Faculty/Staff Students Cam",
+          "sourceUrl": "https://english.ucas.ac.cn/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-22T12:22:18.054Z"
+        }
+      ]
+    },
+    {
+      "id": "22edbf4d-85b8-410b-abf2-9072dded05e5",
+      "programId": "prog-ucas-phd-microbio",
+      "scholarshipId": "sch-ucas-anso-castwas",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "CNY 72000 (¥6,000–¥7,000/month for PhD; ¥3,000/month for Master’s) + 100% Tuition Waiver + Free On-Campus Accommodation + Medical Insurance + International Airfare",
+      "supportingExcerpt": "Click here to update… 您的浏览器已禁用JavaScript,(da)启(kai)用才能正常访问！ University of Chinese Academy of Sciences Chinese About UCAS Introduction History Administration Offices Statistics & Facts Contact Admission Undergraduate Graduate International Students Continuing Education Summer Sessions Research Research Programs Research Achievements Publications Theses Join Us Job Vacancy Work at UCAS Notice Faculty/Staff Students Cam",
+      "excerptHash": "c487c202e2fcb562e2cdfde826a1ee6b24c1486d06cfd2e95484018e8ad296cc",
+      "sourceUrl": "https://english.ucas.ac.cn/",
+      "sourceDomain": "english.ucas.ac.cn",
+      "sourceOrganization": "University of Chinese Academy of Sciences (UCAS / ANSO / CAS-TWAS)",
+      "pageSection": "Admission — International Students & Scholarship Programs of UCAS",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Official Source, Not Fully Verified",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "DAILY",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "68d9c263-74ac-4536-a95f-99d70b90bece",
+          "claimId": "553e59df-ed27-488d-9d4f-d5a3157a32eb",
+          "normalizedValue": "CNY 72000 (¥6,000–¥7,000/month for PhD; ¥3,000/month for Master’s) + 100% Tuition Waiver + Free On-Campus Accommodation + Medical Insurance + International Airfare",
+          "supportingExcerpt": "Click here to update… 您的浏览器已禁用JavaScript,(da)启(kai)用才能正常访问！ University of Chinese Academy of Sciences Chinese About UCAS Introduction History Administration Offices Statistics & Facts Contact Admission Undergraduate Graduate International Students Continuing Education Summer Sessions Research Research Programs Research Achievements Publications Theses Join Us Job Vacancy Work at UCAS Notice Faculty/Staff Students Cam",
+          "sourceUrl": "https://english.ucas.ac.cn/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-22T12:22:18.054Z"
+        }
+      ]
+    },
+    {
+      "id": "5de57551-51d9-4cda-809e-b75050ffabbf",
+      "programId": "prog-tsinghua-cs",
+      "scholarshipId": "sch-tsinghua-cgs",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "CNY 42000 (¥3,500/month Doctoral / ¥3,000/month Master’s CGS Type B) + 100% Tuition + On-Campus Dormitory + Comprehensive Medical Insurance",
+      "supportingExcerpt": "Tsinghua University Students Faculty & Staff Alumni Visitor Media  中文  About General Information History Current Administrators Former Presidents Facts and Figures Admissions Undergraduate Graduate International Students Non-Degree Programs Summer School Continuing Education Online Education Schools & Departments Research Research Programs Prospective Researchers Collaborating Institutions Facilities Publications R",
+      "excerptHash": "805535b4c90a990b76bfa78e36cc13656cccb15eb223aed795a3cf751920064b",
+      "sourceUrl": "https://www.tsinghua.edu.cn/en/",
+      "sourceDomain": "www.tsinghua.edu.cn",
+      "sourceOrganization": "Tsinghua University Graduate Admissions",
+      "pageSection": "Admissions — Graduate & International Students",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Official Source, Not Fully Verified",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "EVERY_3_DAYS",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "ea9d0f48-cf0a-4ebb-b428-3017f9ff3bf9",
+          "claimId": "07d00b64-6e3d-49e2-ac35-090c3267bdcf",
+          "normalizedValue": "CNY 42000 (¥3,500/month Doctoral / ¥3,000/month Master’s CGS Type B) + 100% Tuition + On-Campus Dormitory + Comprehensive Medical Insurance",
+          "supportingExcerpt": "Tsinghua University Students Faculty & Staff Alumni Visitor Media  中文  About General Information History Current Administrators Former Presidents Facts and Figures Admissions Undergraduate Graduate International Students Non-Degree Programs Summer School Continuing Education Online Education Schools & Departments Research Research Programs Prospective Researchers Collaborating Institutions Facilities Publications R",
+          "sourceUrl": "https://www.tsinghua.edu.cn/en/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-22T12:22:18.517Z"
+        }
+      ]
+    },
+    {
+      "id": "287b2fa8-c9c3-43e5-b849-f6749ae80cc4",
+      "programId": "prog-tsinghua-microbio",
+      "scholarshipId": "sch-tsinghua-cgs",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "CNY 42000 (¥3,500/month Doctoral / ¥3,000/month Master’s CGS Type B) + 100% Tuition + On-Campus Dormitory + Comprehensive Medical Insurance",
+      "supportingExcerpt": "Tsinghua University Students Faculty & Staff Alumni Visitor Media  中文  About General Information History Current Administrators Former Presidents Facts and Figures Admissions Undergraduate Graduate International Students Non-Degree Programs Summer School Continuing Education Online Education Schools & Departments Research Research Programs Prospective Researchers Collaborating Institutions Facilities Publications R",
+      "excerptHash": "805535b4c90a990b76bfa78e36cc13656cccb15eb223aed795a3cf751920064b",
+      "sourceUrl": "https://www.tsinghua.edu.cn/en/",
+      "sourceDomain": "www.tsinghua.edu.cn",
+      "sourceOrganization": "Tsinghua University Graduate Admissions",
+      "pageSection": "Admissions — Graduate & International Students",
+      "retrievedAt": "2026-10-23T13:29:16.000Z",
+      "extractedAt": "2026-10-23T13:29:16.000Z",
+      "lastContentChangeAt": "2026-10-23T13:29:16.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Official Source, Not Fully Verified",
+      "evidenceQualityScore": 0.88,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "EVERY_3_DAYS",
+      "conflictingClaimIds": [],
+      "versions": [
+        {
+          "id": "ea9d0f48-cf0a-4ebb-b428-3017f9ff3bf9",
+          "claimId": "07d00b64-6e3d-49e2-ac35-090c3267bdcf",
+          "normalizedValue": "CNY 42000 (¥3,500/month Doctoral / ¥3,000/month Master’s CGS Type B) + 100% Tuition + On-Campus Dormitory + Comprehensive Medical Insurance",
+          "supportingExcerpt": "Tsinghua University Students Faculty & Staff Alumni Visitor Media  中文  About General Information History Current Administrators Former Presidents Facts and Figures Admissions Undergraduate Graduate International Students Non-Degree Programs Summer School Continuing Education Online Education Schools & Departments Research Research Programs Prospective Researchers Collaborating Institutions Facilities Publications R",
+          "sourceUrl": "https://www.tsinghua.edu.cn/en/",
+          "verificationStatus": "Officially Confirmed",
+          "observedAt": "2026-10-22T12:22:18.517Z"
+        }
+      ]
     }
   ],
   "eligibilityResults": [],
