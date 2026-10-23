@@ -2529,13 +2529,13 @@
     "Cybersecurity",
     "Software Engineering"
    ],
-   "deadlineDate": "2026-12-03T12:00:00Z",
+   "deadlineDate": "2026-12-08T23:59:59Z",
    "deadlineTimezone": "GMT",
    "applicationCycle": "2027-2028",
    "separateApplicationReq": false,
    "fundingClassification": "Fully Funded — Confirmed",
    "verificationStatus": "Officially Confirmed",
-   "lastCheckedAt": "2026-10-22T12:22:23.248Z",
+   "lastCheckedAt": "2026-10-23T17:55:00Z",
    "fundingPackage": {
     "id": "fp-sch-gates-cambridge",
     "scholarshipId": "sch-gates-cambridge",
@@ -2569,7 +2569,7 @@
     "87503e91-7d82-4140-ada4-68031f91b0df"
    ],
    "createdAt": "2026-10-22T12:22:23.248Z",
-   "updatedAt": "2026-10-22T12:22:23.248Z",
+   "updatedAt": "2026-10-23T17:55:00Z",
    "opportunityType": "FOUNDATION_FELLOWSHIP"
   },
   {
