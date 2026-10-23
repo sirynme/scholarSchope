@@ -64,12 +64,25 @@ export interface DatabaseSchema {
 
 const DATA_DIR = path.resolve(process.cwd(), '.data');
 const DB_FILE = path.join(DATA_DIR, 'scholarscope-db.json');
+const TMP_DB_FILE = '/tmp/scholarscope-db.json';
 
 export class DatabaseConfigurationError extends Error {
   constructor(message: string) {
     super(message);
     this.name = 'DatabaseConfigurationError';
   }
+}
+
+export function resolvePostgresConnectionString(env: NodeJS.ProcessEnv = process.env): string {
+  return (
+    env.DATABASE_URL ||
+    env.POSTGRES_PRISMA_URL ||
+    env.POSTGRES_URL ||
+    env.POSTGRES_URL_NON_POOLING ||
+    env.NEON_DATABASE_URL ||
+    env.SUPABASE_DB_URL ||
+    ''
+  ).trim();
 }
 
 /**
@@ -86,7 +99,7 @@ export function assertStorageConfiguration(env: NodeJS.ProcessEnv = process.env)
 } {
   const isVercelServerless = env.VERCEL === '1' || Boolean(env.VERCEL_ENV);
   const strictPg = env.SCHOLARSCOPE_STRICT_PG === '1';
-  const rawDbUrl = (env.DATABASE_URL || '').trim();
+  const rawDbUrl = resolvePostgresConnectionString(env);
   const hasRealPostgresUrl =
     rawDbUrl.startsWith('postgres://') || rawDbUrl.startsWith('postgresql://')
       ? !rawDbUrl.includes('user:password@ep-example')
@@ -1002,63 +1015,96 @@ export class LocalJsonFileStorageAdapter implements StorageAdapter {
 }
 
 function loadJsonSnapshotFromDisk(): DatabaseSchema {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  if (fs.existsSync(DB_FILE)) {
-    try {
-      const raw = fs.readFileSync(DB_FILE, 'utf8');
-      const parsed = JSON.parse(raw) as DatabaseSchema;
-      const nowIso = new Date().toISOString();
-      const canonicalSources = getInitialOfficialSourceRegistry(nowIso);
-      for (const src of canonicalSources) {
-        if (!parsed.sources.some((s) => s.id === src.id || s.seedUrl === src.seedUrl)) {
-          parsed.sources.push(src);
-        }
-      }
-      for (const p of parsed.profiles) {
-        const mandatory = ['Germany', 'United Kingdom', 'United States', 'Japan', 'China'];
-        for (const mc of mandatory) {
-          if (!p.preferredCountries.includes(mc)) {
-            p.preferredCountries.push(mc);
+  const isVercel = process.env.VERCEL === '1' || Boolean(process.env.VERCEL_ENV);
+  const candidateFiles = isVercel ? [TMP_DB_FILE, DB_FILE] : [DB_FILE, TMP_DB_FILE];
+
+  for (const fileToRead of candidateFiles) {
+    if (fs.existsSync(fileToRead)) {
+      try {
+        const raw = fs.readFileSync(fileToRead, 'utf8');
+        const parsed = JSON.parse(raw) as DatabaseSchema;
+        const nowIso = new Date().toISOString();
+        const canonicalSources = getInitialOfficialSourceRegistry(nowIso);
+        for (const src of canonicalSources) {
+          if (!parsed.sources.some((s) => s.id === src.id || s.seedUrl === src.seedUrl)) {
+            parsed.sources.push(src);
           }
         }
-      }
-      reconcileDataQualityAndStalePlaceholders(parsed);
-      return parsed;
-    } catch {
-      try {
-        fs.copyFileSync(DB_FILE, `${DB_FILE}.corrupted-${Date.now()}.bak`);
+        for (const p of parsed.profiles) {
+          const mandatory = ['Germany', 'United Kingdom', 'United States', 'Japan', 'China'];
+          for (const mc of mandatory) {
+            if (!p.preferredCountries.includes(mc)) {
+              p.preferredCountries.push(mc);
+            }
+          }
+        }
+        reconcileDataQualityAndStalePlaceholders(parsed);
+        return parsed;
       } catch {
-        // ignore backup error
+        try {
+          if (!isVercel) {
+            fs.copyFileSync(fileToRead, `${fileToRead}.corrupted-${Date.now()}.bak`);
+          }
+        } catch {
+          // ignore backup error on read-only filesystem
+        }
       }
     }
   }
+
   const initial = createInitialDatabase();
   writeJsonSnapshotToDisk(initial);
   return initial;
 }
 
 function writeJsonSnapshotToDisk(db: DatabaseSchema): void {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+  const isVercel = process.env.VERCEL === '1' || Boolean(process.env.VERCEL_ENV);
+  if (!isVercel) {
+    try {
+      if (!fs.existsSync(DATA_DIR)) {
+        fs.mkdirSync(DATA_DIR, { recursive: true });
+      }
+      const tmpFile = `${DB_FILE}.tmp-${process.pid}`;
+      fs.writeFileSync(tmpFile, JSON.stringify(db, null, 2), 'utf8');
+      fs.renameSync(tmpFile, DB_FILE);
+      return;
+    } catch {
+      // Fall back to /tmp if current directory is read-only
+    }
   }
-  const tmpFile = `${DB_FILE}.tmp-${process.pid}`;
-  fs.writeFileSync(tmpFile, JSON.stringify(db, null, 2), 'utf8');
-  fs.renameSync(tmpFile, DB_FILE);
+  try {
+    const tmpTarget = `${TMP_DB_FILE}.tmp-${process.pid}`;
+    fs.writeFileSync(tmpTarget, JSON.stringify(db, null, 2), 'utf8');
+    fs.renameSync(tmpTarget, TMP_DB_FILE);
+  } catch {
+    // Ignore write failure if /tmp is unavailable
+  }
 }
 
 export function getActiveStorageAdapter(env: NodeJS.ProcessEnv = process.env): StorageAdapter {
   if (activeStorageAdapter) {
     return activeStorageAdapter;
   }
-  const config = assertStorageConfiguration(env);
-  if (config.mode === 'POSTGRESQL_PRISMA') {
+  const rawDbUrl = resolvePostgresConnectionString(env);
+  const hasRealPostgresUrl =
+    rawDbUrl.startsWith('postgres://') || rawDbUrl.startsWith('postgresql://')
+      ? !rawDbUrl.includes('user:password@ep-example')
+      : false;
+
+  if (hasRealPostgresUrl) {
+    if (!process.env.DATABASE_URL) {
+      process.env.DATABASE_URL = rawDbUrl;
+    }
     activeStorageAdapter = new PostgresPrismaStorageAdapter({
-      connectionString: env.DATABASE_URL,
+      connectionString: rawDbUrl,
     });
     return activeStorageAdapter;
   }
+
+  if (env.SCHOLARSCOPE_STRICT_PG === '1') {
+    assertStorageConfiguration(env);
+  }
+
   activeStorageAdapter = new LocalJsonFileStorageAdapter();
   return activeStorageAdapter;
 }
@@ -1069,16 +1115,83 @@ export function setActiveStorageAdapter(adapter: StorageAdapter | null): void {
   storageHydrated = false;
 }
 
-export async function ensureStorageHydrated(): Promise<DatabaseSchema> {
-  const adapter = getActiveStorageAdapter();
-  if (adapter.mode === 'POSTGRESQL_PRISMA') {
-    await pendingWritePromise;
-    const loaded = await adapter.loadDatabase();
+async function loadFromPostgresWithResilience(adapter: StorageAdapter): Promise<DatabaseSchema> {
+  try {
+    let loaded: DatabaseSchema;
+    try {
+      loaded = await adapter.loadDatabase();
+    } catch (firstErr) {
+      const msg = firstErr instanceof Error ? firstErr.message : String(firstErr);
+      const isMissingTable =
+        /does not exist|P2021|42P01/i.test(msg) &&
+        adapter instanceof PostgresPrismaStorageAdapter &&
+        Boolean(adapter.pool);
+
+      if (!isMissingTable) {
+        throw firstErr;
+      }
+
+      const migrationFile = path.resolve(
+        process.cwd(),
+        'prisma/migrations/20261022000000_init_scholarscope_postgres/migration.sql'
+      );
+      if (fs.existsSync(migrationFile) && adapter.pool) {
+        const sql = fs.readFileSync(migrationFile, 'utf8');
+        await adapter.pool.query(sql);
+        loaded = await adapter.loadDatabase();
+      } else {
+        throw firstErr;
+      }
+    }
+
+    // If connected to a real external PostgreSQL database that has 0 programs, automatically seed the verified catalogue from bundled .data/scholarscope-db.json
+    const isRealExternalPg =
+      adapter instanceof PostgresPrismaStorageAdapter &&
+      Boolean(resolvePostgresConnectionString(process.env)) &&
+      process.env.NODE_ENV !== 'test';
+
+    if (isRealExternalPg && loaded.programs.length === 0 && fs.existsSync(DB_FILE)) {
+      const snapshot = loadJsonSnapshotFromDisk();
+      const seeded: DatabaseSchema = {
+        ...loaded,
+        institutions: snapshot.institutions,
+        departments: snapshot.departments,
+        programs: snapshot.programs,
+        scholarships: snapshot.scholarships,
+        claims: snapshot.claims,
+        sources: snapshot.sources,
+        fetchAttempts: snapshot.fetchAttempts,
+        snapshots: snapshot.snapshots,
+        researchRuns: snapshot.researchRuns,
+        changeEvents: snapshot.changeEvents,
+        systemHealth: snapshot.systemHealth,
+      };
+      await adapter.saveDatabase(seeded);
+      loaded = seeded;
+    }
+
     if (loaded.sources.length === 0) {
       loaded.sources = getInitialOfficialSourceRegistry(new Date().toISOString());
     }
     reconcileDataQualityAndStalePlaceholders(loaded);
-    memoryDbCache = loaded;
+    return loaded;
+  } catch (err) {
+    if (process.env.SCHOLARSCOPE_STRICT_PG === '1' || process.env.NODE_ENV === 'test') {
+      throw err;
+    }
+    console.warn(
+      '[ScholarScope DB] PostgreSQL query error; falling back to bundled verified snapshot:',
+      redactDatabaseError(err).message
+    );
+    return loadJsonSnapshotFromDisk();
+  }
+}
+
+export async function ensureStorageHydrated(): Promise<DatabaseSchema> {
+  const adapter = getActiveStorageAdapter();
+  if (adapter.mode === 'POSTGRESQL_PRISMA') {
+    await pendingWritePromise;
+    memoryDbCache = await loadFromPostgresWithResilience(adapter);
     storageHydrated = true;
     return memoryDbCache;
   }
@@ -1089,11 +1202,7 @@ export async function loadDbAsync(): Promise<DatabaseSchema> {
   const adapter = getActiveStorageAdapter();
   if (adapter.mode === 'POSTGRESQL_PRISMA') {
     await pendingWritePromise;
-    const loaded = await adapter.loadDatabase();
-    if (loaded.sources.length === 0) {
-      loaded.sources = getInitialOfficialSourceRegistry(new Date().toISOString());
-    }
-    reconcileDataQualityAndStalePlaceholders(loaded);
+    const loaded = await loadFromPostgresWithResilience(adapter);
     memoryDbCache = loaded;
     storageHydrated = true;
     return loaded;

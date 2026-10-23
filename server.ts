@@ -1,5 +1,4 @@
 import express, { Request, Response, NextFunction } from 'express';
-import { createServer as createViteServer } from 'vite';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import dotenv from 'dotenv';
@@ -41,8 +40,22 @@ const CRON_SECRET = process.env.CRON_SECRET || 'scholarscope-cron-secret-2026';
 const SESSION_SECRET =
   process.env.SESSION_SECRET || 'scholarscope-hmac-session-secret-2026-production';
 
-// Validate storage configuration (fails fast on Vercel serverless if DATABASE_URL is missing)
-const storageConfig = assertStorageConfiguration();
+function getStorageConfigSafe() {
+  try {
+    return assertStorageConfiguration();
+  } catch (err) {
+    if (process.env.SCHOLARSCOPE_STRICT_PG === '1') {
+      throw err;
+    }
+    return {
+      mode: 'LOCAL_ACID_FILE_STORE' as const,
+      databaseUrlConfigured: false,
+      isVercelServerless: Boolean(process.env.VERCEL === '1' || process.env.VERCEL_ENV),
+    };
+  }
+}
+
+const storageConfig = getStorageConfigSafe();
 
 // In-memory session map + HMAC-SHA256 stateless signed session token verification
 const activeSessions = new Map<string, string>();
@@ -217,7 +230,7 @@ async function startServer() {
     const currentDb = loadDb();
     res.json({
       ok: true,
-      storage: storageConfig,
+      storage: getStorageConfigSafe(),
       systemHealth: currentDb.systemHealth,
       counts: {
         institutions: currentDb.institutions.length,
@@ -1542,13 +1555,15 @@ async function startServer() {
   // ==========================================================================
   // Vite Middleware (Development) or Static Asset Serving (Production)
   // ==========================================================================
-  if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+  if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL && !process.env.VERCEL_ENV) {
+    const vitePkgName = 'vite';
+    const { createServer: createViteServer } = await import(vitePkgName);
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);
-  } else if (!process.env.VERCEL) {
+  } else if (!process.env.VERCEL && !process.env.VERCEL_ENV) {
     const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath));
     app.get('*', (_req, res) => {

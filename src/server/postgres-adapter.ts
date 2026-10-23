@@ -86,7 +86,16 @@ export function createPrismaClientWithPgPool(
     return { prisma, pool: injectedPool };
   }
 
-  const dbUrl = (connectionString ?? process.env.DATABASE_URL ?? '').trim();
+  const dbUrl = (
+    connectionString ??
+    process.env.DATABASE_URL ??
+    process.env.POSTGRES_PRISMA_URL ??
+    process.env.POSTGRES_URL ??
+    process.env.POSTGRES_URL_NON_POOLING ??
+    process.env.NEON_DATABASE_URL ??
+    process.env.SUPABASE_DB_URL ??
+    ''
+  ).trim();
   if (!dbUrl || (!dbUrl.startsWith('postgres://') && !dbUrl.startsWith('postgresql://'))) {
     throw new Error(
       'PostgreSQL connection string (DATABASE_URL) is missing or invalid. Expected postgres:// or postgresql:// URI.'
@@ -100,11 +109,13 @@ export function createPrismaClientWithPgPool(
     };
   }
 
+  const isLocalHost = dbUrl.includes('localhost') || dbUrl.includes('127.0.0.1');
   const pool = new pg.Pool({
     connectionString: dbUrl,
     max: Number(process.env.PG_POOL_MAX ?? 5),
     idleTimeoutMillis: 30_000,
     connectionTimeoutMillis: 10_000,
+    ssl: isLocalHost ? undefined : { rejectUnauthorized: false },
   });
 
   const adapter = new PrismaPg(pool);
