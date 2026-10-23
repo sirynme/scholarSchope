@@ -1,0 +1,678 @@
+# ScholarScope — Complete Autonomous Graduate Admissions & Scholarship Intelligence Platform
+
+## Master Engineering and Execution Specification
+
+### 1. Mission and Role
+
+Act as a principal full-stack engineer, research automation engineer, data architect, security engineer, product designer, and DevOps engineer.
+
+Build **ScholarScope**, a complete, multi-user web platform that autonomously discovers international graduate programs, scholarships, research positions, and funding opportunities; extracts official requirements; verifies evidence; evaluates eligibility; compares funding packages; monitors changes; and sends notifications.
+
+The application must be suitable for students worldwide, not a single user's personal profile. Each user must be able to configure their citizenship, academic background, target degrees, research interests, preferred countries, budget, and funding requirements.
+
+Build the actual application in the available development environment. Inspect existing files, implement the system, run commands, test functionality, fix errors, and prepare it for deployment.
+
+Do not stop after producing a plan, scaffold, static dashboard, or attractive frontend.
+
+### 2. Non-Negotiable Requirements
+
+1. **Real live data only:** Production opportunity records must originate from actual discovered or explicitly configured sources.
+2. **No demo data:** Never seed the production database with invented universities, scholarships, deadlines, funding amounts, eligibility results, charts, or activity.
+3. **Autonomous daily operation:** Discover new opportunities, revisit existing sources, detect changes, recalculate matches, and issue notifications automatically after deployment and configuration.
+4. **Official-source-first research:** Prefer university, department, government, scholarship-administrator, and official application websites.
+5. **Evidence for every material claim:** Preserve source URLs, supporting excerpts, retrieval timestamps, and verification status.
+6. **Honest uncertainty:** Missing, conflicting, inaccessible, or outdated information must remain explicitly identified.
+7. **Independent verification:** Distinguish successful extraction from actual verification and independent corroboration.
+8. **Transparent funding:** Never classify tuition-only awards as fully funded.
+9. **Real operational status:** Dashboard metrics, automation health, research logs, and notification status must reflect persisted records and actual execution.
+10. **No false completion claims:** Never claim a test passed, source was verified, job ran, email was delivered, or deployment succeeded unless the result is confirmed.
+
+Use fabricated or synthetic records only in isolated automated test fixtures, never in the production opportunity database.
+
+Routine discovery, extraction, validation, matching, monitoring, and notification must require no human interaction. Initial account authorization, infrastructure credentials, and optional user preference changes are acceptable setup requirements.
+
+---
+
+### 3. Technology Stack
+
+Use one consistent, maintainable stack:
+
+- Next.js App Router and TypeScript with strict mode.
+- React and Tailwind CSS.
+- shadcn/ui for accessible interface components.
+- PostgreSQL on Neon.
+- Prisma ORM with versioned database migrations.
+- Zod for input and extraction validation.
+- Secure managed authentication or Auth.js with properly implemented sessions.
+- Vercel hosting and Cron.
+- A persistent PostgreSQL-backed job queue.
+- Resend for optional transactional email.
+- Vitest for unit and integration tests.
+- Playwright for browser-based end-to-end tests.
+- GitHub Actions for continuous integration.
+
+Use server components by default and client components only where interactivity requires them.
+
+**Provider policy:** No paid APIs and no runtime AI calls by default. Implement provider interfaces so optional search APIs, language models, and browser workers can be added later through explicit configuration.
+
+The initial system must still function using public official directories, permitted web retrieval, public sitemaps, feeds, structured metadata, and links discovered from verified sources.
+
+Do not promise unlimited global coverage using free infrastructure.
+
+---
+
+### 4. General-Purpose User Profiles
+
+Create an onboarding flow and editable settings for:
+
+- Citizenship and residency.
+- Current degree, university, GPA, grading scale, and graduation date.
+- Academic transcripts and prerequisite courses.
+- Target degree levels: MS, MSc, PhD, and configurable alternatives.
+- Fields: Computer Science, AI, Machine Learning, Data Science, Software Engineering, Cybersecurity, Biology, Microbiology, and other configurable disciplines.
+- Preferred countries and universities.
+- English-language test results, GRE, and other relevant qualifications.
+- Research experience, publications, projects, employment, and technical skills.
+- Available application budget.
+- Funding requirements and minimum acceptable living support.
+- Preferred intakes and application cycles.
+- Notification channels and reminder preferences.
+
+Allow users to change preferences without rebuilding or restarting the system.
+
+Support different academic systems without applying an invented GPA conversion. Distinguish requirements satisfied, failed requirements, and requirements that cannot yet be evaluated.
+
+Use a general public opportunity database shared across users, while keeping profiles, saved opportunities, application tasks, notes, and notifications private to their owners.
+
+---
+
+### 5. Autonomous Live Discovery Engine
+
+Build a source-discovery system that finds new opportunities without requiring users to submit individual URLs.
+
+#### Discovery sources
+
+Use permitted and publicly accessible:
+
+- Official university graduate-admissions directories.
+- University department and research-laboratory websites.
+- Government scholarship portals.
+- National scholarship agencies.
+- Official university scholarship listings.
+- Graduate research assistantships and funded research positions.
+- Official fellowship and international-student funding programs.
+- Public sitemaps and RSS/Atom feeds.
+- Public APIs where available.
+- Search providers when explicitly configured.
+- Relevant official links discovered from previously indexed pages.
+
+Start with a configurable registry of authoritative source domains and expand it by following relevant links, directory entries, sitemaps, and related official sources.
+
+#### Search strategy
+
+Generate search queries based on country, citizenship eligibility, degree, academic discipline, funding type, intake, and application cycle.
+
+Search for both open opportunities and upcoming funding cycles. Preserve historical records when useful, but clearly distinguish expired opportunities from active applications.
+
+Avoid repeatedly searching the same narrow group of institutions. Track discovery coverage across countries, disciplines, degree levels, source categories, and search methods.
+
+#### Discovery pipeline
+
+For every scheduled run:
+
+1. Load source policies, user preferences, and outstanding research jobs.
+2. Prioritize relevant queries, newly discovered sources, high-value opportunities, and deadline-sensitive records.
+3. Discover candidate URLs from permitted sources.
+4. Normalize URLs and deduplicate candidates.
+5. Fetch accessible content within configured limits.
+6. Extract programs, awards, deadlines, eligibility rules, and funding claims.
+7. Validate extracted values using schemas and deterministic rules.
+8. Retrieve additional authoritative evidence where necessary.
+9. Store supported claims and their provenance.
+10. Update opportunity and scholarship relationships.
+11. Recalculate eligibility and funding classifications.
+12. Compare the latest observations with previous versions.
+13. Create deduplicated notifications.
+14. Persist execution results, failures, coverage metrics, and follow-up jobs.
+
+The discovery engine must find new opportunities rather than merely refresh a fixed list of URLs.
+
+If search APIs are unavailable, continue with configured official sources and discovered links. Clearly disclose reduced discovery coverage.
+
+Never claim comprehensive worldwide coverage unless the actual coverage can be demonstrated.
+
+---
+
+### 6. Live Retrieval and Extraction
+
+Support ordinary HTML, structured metadata, JSON, XML sitemaps, RSS/Atom, and publicly accessible PDFs.
+
+Use an optional browser worker for JavaScript-rendered websites when necessary. Keep long-running processing outside constrained serverless requests.
+
+Extract:
+
+**Institution and program**
+- University, department, country, campus, program title, degree level, duration, research field, intake, and official application URL.
+
+**Admission requirements**
+- Minimum GPA and grading scale.
+- Accepted academic backgrounds and prerequisite courses.
+- Language tests and minimum scores.
+- GRE and other examinations.
+- Citizenship and residency restrictions.
+- Research, work, supervisor, or publication requirements.
+- Application opening dates, deadlines, fees, and required documents.
+
+**Scholarships and funding**
+- Awarding organization and scholarship name.
+- Eligible degrees, countries, citizenships, and fields.
+- Tuition and mandatory-fee coverage.
+- Stipend amount, currency, frequency, and duration.
+- Accommodation, insurance, travel, and relocation support.
+- Award renewal conditions.
+- Funding guarantees, selection criteria, and separate application requirements.
+
+**Application procedures**
+- Required documents.
+- Application stages.
+- Supervisor contact requirements.
+- Separate scholarship applications.
+- Official application portals.
+- Contact details when explicitly published.
+
+Represent unknown values as null or an explicit unknown state. Do not infer a deadline from a previous year or manufacture a current application cycle.
+
+Store the original source text and relevant page or PDF section for each important claim.
+
+---
+
+### 7. Evidence, Verification, and Trust
+
+Create a first-class evidence system.
+
+Every important extracted claim must retain:
+
+- Claim identifier and type.
+- Normalized value.
+- Original supporting text.
+- Official source URL and domain.
+- Source organization.
+- Retrieval and extraction timestamps.
+- Last observed content-change timestamp where known.
+- Page section or PDF page where available.
+- Verification method and status.
+- Confidence or evidence-quality score.
+- Relevant application cycle.
+- Historical versions.
+- Conflicting evidence references.
+
+#### Verification statuses
+
+Use the following explicit statuses:
+
+- **Officially Confirmed:** Supported by a relevant authoritative source and passed validation.
+- **Cross-Verified:** Independently corroborated by another authoritative source.
+- **Official Source, Not Fully Verified:** Found on an official page but incomplete or ambiguous.
+- **Conflicting Evidence:** Relevant authoritative sources disagree.
+- **Stale:** The claim requires a refresh under its freshness policy.
+- **Unverified:** Sufficient supporting evidence is unavailable.
+- **Unavailable:** The source cannot currently be accessed.
+
+An HTTP 200 response, successful parser, or model-generated confidence score does not prove factual correctness.
+
+Cross-verification requires independent evidence. Two pages repeating the same copied announcement must not automatically count as independent confirmation.
+
+Use the appropriate authority for each claim: university admissions pages for admission criteria, scholarship administrators for award conditions, and official application portals for submission deadlines.
+
+Never overwrite a supported fact with a conflicting value without preserving both versions and the conflict.
+
+---
+
+### 8. Funding Analysis
+
+Use deterministic funding rules, not free-form AI judgments.
+
+Classify opportunities as:
+
+- Fully Funded — Confirmed.
+- Tuition Funded, Living Costs Covered.
+- Tuition Funded, Living Costs Uncertain.
+- Partially Funded.
+- Tuition Only.
+- Stipend Only.
+- Conditional Funding.
+- Self-Funded.
+- Funding Unverified.
+
+To qualify as Fully Funded — Confirmed, the evidence must establish that the applicant's category can access the award and that the funding adequately covers tuition, applicable mandatory fees, and living expenses for the relevant period.
+
+Preserve whether funding is guaranteed, competitive, conditional, or dependent on a separate application.
+
+Compare documented stipends with current, appropriately sourced living-cost benchmarks where available. Display the benchmark source, currency, date, calculation, and uncertainty.
+
+If adequate living support cannot be established, do not classify the opportunity as fully funded.
+
+Track funding duration, renewal rules, payment frequency, insurance, accommodation, travel, and other benefits separately. Never assume these are included merely because an award is advertised as generous.
+
+---
+
+### 9. Eligibility and Opportunity Ranking
+
+Calculate three separate outputs:
+
+1. Admission eligibility.
+2. Scholarship eligibility.
+3. Funding completeness.
+
+Use statuses:
+
+- Likely Eligible.
+- Potentially Eligible.
+- Not Eligible.
+- Insufficient Information.
+- Needs Verification.
+
+For each decision, show the profile value, published requirement, source evidence, result, missing information, and next recommended action.
+
+A missing profile field must not automatically make someone ineligible. An unresolved requirement must not be treated as satisfied.
+
+Rank opportunities using explainable factors:
+
+- Confirmed funding completeness.
+- Admission and scholarship eligibility.
+- Academic and research relevance.
+- Citizenship eligibility.
+- Country preferences.
+- Deadline proximity.
+- Source authority.
+- Evidence quality and freshness.
+- Remaining application effort.
+
+Show the reason for each ranking. Do not fabricate admission probabilities or guarantee admission, funding, or visas.
+
+Recalculate affected results whenever relevant evidence or a user's profile changes.
+
+---
+
+### 10. Database Architecture
+
+Create versioned Prisma migrations and a normalized PostgreSQL schema containing:
+
+- Users and profiles.
+- User preferences and academic qualifications.
+- Institutions and departments.
+- Programs and application cycles.
+- Scholarships and funding awards.
+- Program-scholarship relationships.
+- Source registry and source policies.
+- Discovered URLs and normalized URL identities.
+- Fetch attempts and source snapshots.
+- Evidence claims and historical claim versions.
+- Admission requirements and eligibility restrictions.
+- Funding packages and conditions.
+- Eligibility results and ranking explanations.
+- Research runs, queued jobs, attempts, and leases.
+- Parser health and provider usage.
+- Change events and audit logs.
+- Saved opportunities and application tracking.
+- Tasks and document checklists.
+- In-app notifications and email delivery records.
+- System health and scheduler status.
+
+Use UUIDs, foreign keys, appropriate indexes, unique constraints, timestamps, and transactional updates.
+
+Prevent duplicate records through stable source identities and normalized URLs. Preserve historical evidence rather than silently replacing previous observations.
+
+Separate shared research data from user-owned information.
+
+Implement authorization and database access controls so users cannot access or modify other users' profiles, saved opportunities, notes, tasks, or notifications.
+
+---
+
+### 11. Durable Automation and Daily Monitoring
+
+Implement a PostgreSQL-backed job queue with:
+
+- Atomic job claiming.
+- Unique idempotency keys.
+- Processing leases.
+- Retry limits and exponential backoff with jitter.
+- Stale-job recovery.
+- Bounded batch sizes.
+- Per-domain concurrency limits.
+- Execution logs.
+- Graceful recovery after failures.
+
+Use Vercel Cron as a secure scheduler and dispatcher, not as an unlimited crawler.
+
+Run discovery and monitoring daily. Prioritize deadline-sensitive opportunities, changed funding conditions, new sources, stale records, and previous failures. Use shorter refresh intervals for urgent opportunities where resources permit.
+
+Suggested starting refresh policies:
+
+- Open and deadline-sensitive opportunities: daily.
+- Other active opportunities: every few days.
+- General admission requirements: weekly.
+- Stable institutional metadata: monthly.
+
+These are scheduling targets, not guarantees. Record actual successful checks and missed runs.
+
+Use `CRON_SECRET` or an equivalent secure mechanism for scheduled endpoints.
+
+Maintain actual automation states:
+
+- Active.
+- Degraded.
+- Paused.
+- Failed.
+
+Derive these states from job history, recent successful runs, queue health, and provider availability.
+
+Detect missed schedules, stuck jobs, repeated source failures, exhausted quotas, and unavailable notification providers.
+
+The platform must resume unfinished work automatically and must not depend on a person pressing a daily research button.
+
+---
+
+### 12. Change Detection and Notifications
+
+Compare each new source observation with its previous version.
+
+Detect changes to deadlines, eligibility restrictions, GPA requirements, language tests, fees, funding amounts, tuition coverage, stipend duration, renewal conditions, documents, application URLs, and program availability.
+
+Distinguish genuine changes from navigation updates, formatting changes, extraction errors, temporary server failures, and access-denied pages.
+
+Never treat a failed fetch as proof that an opportunity has closed.
+
+Generate deduplicated notifications for:
+
+- New relevant opportunities.
+- Newly confirmed fully funded options.
+- Changed eligibility requirements.
+- Changed funding or stipend details.
+- New, revised, or approaching deadlines.
+- Broken official links.
+- Conflicting or stale evidence.
+- Failed scheduled research runs.
+- Material reductions in source coverage.
+
+Support configurable deadline reminders, such as 30, 14, 7, and 1 day before the deadline.
+
+Never issue ordinary deadline reminders for unverified dates without explicitly marking the uncertainty.
+
+Use Resend for optional email and persistent in-app notifications as the fallback. Track pending, sent, failed, and retried deliveries. Do not claim an email was delivered merely because a request was submitted.
+
+---
+
+### 13. Website Pages and User Experience
+
+Build a professional, responsive, accessible interface with real database-backed behavior.
+
+Required pages:
+
+1. Registration, login, and account recovery.
+2. Profile onboarding and settings.
+3. Research dashboard.
+4. Global opportunity discovery.
+5. University directory.
+6. Graduate program directory.
+7. Scholarship directory.
+8. Opportunity details and evidence.
+9. Eligibility comparison.
+10. Funding and living-cost analysis.
+11. Deadline calendar.
+12. Saved opportunities.
+13. Application tracker.
+14. Tasks and document checklists.
+15. Notifications and change history.
+16. Research activity and job monitor.
+17. Source registry and coverage.
+18. Administrative controls.
+
+Provide filtering by country, discipline, degree level, citizenship eligibility, funding type, deadline, verification status, and application cycle.
+
+Provide sorting, pagination, loading states, meaningful empty states, and actionable error messages.
+
+Opportunity detail pages must show funding breakdowns, eligibility decisions, deadlines, official links, supporting excerpts, verification status, last-check timestamps, conflicts, and historical changes.
+
+Dashboard metrics must come from actual persisted data. No hardcoded counters, simulated activity charts, or fake success badges.
+
+Support application statuses: Researching, Preparing Documents, Ready to Apply, Submitted, Interview, Offer Received, Accepted, and Rejected.
+
+Keep private notes, tasks, and document checklists synchronized with relevant research updates without overwriting user-entered information.
+
+Never submit applications or contact universities automatically on a user's behalf.
+
+---
+
+### 14. Administration and System Health
+
+Provide authorized administrative tools to:
+
+- Inspect source coverage and health.
+- Add, disable, or configure sources.
+- View and retry failed jobs.
+- Inspect extraction and verification errors.
+- View historical source changes.
+- Configure rate limits and scheduling.
+- Inspect email delivery.
+- View provider quotas and resource consumption.
+- Pause and resume automation.
+- Run bounded diagnostic research jobs.
+- Review audit logs.
+
+Normal operation must not require an administrator to approve each opportunity.
+
+Automatically store supported claims and retain uncertain records with explicit verification statuses.
+
+Isolate failing sources so one website cannot exhaust the entire research budget.
+
+---
+
+### 15. Security and Privacy
+
+Implement:
+
+- Secure authentication and session management.
+- Row-level authorization and user-data isolation.
+- Zod validation for API inputs.
+- Parameterized database operations through Prisma.
+- Rate limiting.
+- Appropriate security headers and content-security policies.
+- Secure cookies.
+- CSRF protection where applicable.
+- Environment-variable validation.
+- Audit logging for sensitive operations.
+- Secret redaction in logs.
+- Account deletion and data-retention procedures.
+- SSRF protection, redirect validation, DNS revalidation, and blocking of private or link-local destinations.
+- Request timeouts, content-size limits, and per-domain rate limits.
+- Prompt-injection defenses for untrusted web content.
+
+Respect robots.txt, website terms, rate limits, and access restrictions. Never bypass CAPTCHAs, paywalls, logins, or technical access controls.
+
+Do not expose database credentials, scheduler secrets, or provider keys to the client.
+
+Minimize personal data sent to external providers. Optional integrations must be disabled until explicitly configured.
+
+---
+
+### 16. Free-Tier-First Resource Management
+
+Optimize for sustainable operation within free-tier limits.
+
+Implement caching, conditional requests, incremental crawling, URL deduplication, content hashes, bounded concurrency, and priority-based scheduling.
+
+Measure actual request volume, database usage, execution duration, queue depth, provider quota consumption, and failure rates.
+
+When a quota is exhausted:
+
+1. Record the failure.
+2. Preserve existing data and evidence.
+3. Prioritize important open opportunities.
+4. Resume remaining jobs when capacity becomes available.
+5. Mark the system Degraded if coverage is materially affected.
+
+Do not silently stop searching or label a partial run as a comprehensive search.
+
+Document which capabilities depend on optional paid infrastructure, even though those services remain disabled by default.
+
+---
+
+### 17. Testing and Quality Assurance
+
+Implement and execute tests for:
+
+- URL normalization and deduplication.
+- Official-source discovery and parsing.
+- Evidence provenance and verification statuses.
+- Independent-source corroboration.
+- Conflicting and stale evidence.
+- Eligibility rules and missing profile fields.
+- GPA and grading-scale handling.
+- Funding classifications and stipend comparisons.
+- Deadline parsing and timezone handling.
+- Historical changes.
+- Duplicate notification prevention.
+- Queue claiming, retries, and stale-job recovery.
+- Authentication and private-data isolation.
+- Scheduler authentication.
+- SSRF and unsafe redirects.
+- Rate limiting.
+- Empty databases and corrupted records.
+- External source failures.
+- Email delivery failures.
+- Dashboard filters and pagination.
+
+Use isolated fixture HTML and sample documents in tests. Keep test fixtures out of the production research database.
+
+Run:
+
+- Dependency installation.
+- Linting.
+- TypeScript checks.
+- Unit tests.
+- Integration tests.
+- End-to-end tests where possible.
+- Migration validation.
+- Production builds.
+- A limited live-source verification run when network access is available.
+
+Record the actual outcome of every command. Fix failures where possible and explicitly document any blocked checks.
+
+---
+
+### 18. Deployment and Repository Requirements
+
+Create a complete project containing:
+
+- `package.json` and lockfile.
+- Strict TypeScript configuration.
+- Next.js configuration.
+- Tailwind and shadcn/ui setup.
+- Prisma schema and migrations.
+- Secure authentication implementation.
+- Source registry and discovery modules.
+- Extraction and evidence modules.
+- Eligibility and funding engines.
+- Job queue and Cron handlers.
+- Notification services.
+- Automated tests.
+- GitHub Actions workflow.
+- `.env.example`.
+- `.gitignore`.
+- `README.md`.
+- `MEMORY.md`.
+- `docs/ARCHITECTURE.md`.
+- `docs/SETUP.md`.
+- `docs/OPERATIONS.md`.
+
+Create `MEMORY.md` before implementation. Track current phase, completed work, pending tasks, dated decisions, confirmed facts, blockers, and the last update. Update it as tasks complete, and read it before resuming work.
+
+Document database creation, migration commands, environment variables, authentication setup, Vercel deployment, Cron scheduling, email configuration, testing, troubleshooting, backups, and source onboarding.
+
+Never commit credentials or claim successful deployment without confirmation.
+
+---
+
+### 19. Mandatory Final Verification
+
+Before declaring completion, verify:
+
+**A. Build quality**
+- TypeScript checks pass.
+- Linting passes.
+- Tests pass or documented failures remain.
+- Production build succeeds.
+
+**B. Functional workflows**
+- Register and authenticate.
+- Complete or skip profile onboarding.
+- View real opportunities.
+- Apply filters and sorting.
+- Open opportunity details and evidence.
+- Save opportunities and create application tasks.
+- Access administrative features only when authorized.
+
+**C. Automation**
+- Scheduled endpoints reject unauthorized requests.
+- An authorized scheduled job can execute.
+- Jobs are persisted and recoverable.
+- Duplicate processing does not create duplicate records or alerts.
+- The latest run status reflects actual execution.
+
+**D. Data integrity**
+- Verify discovered source URLs.
+- Preserve evidence for important claims.
+- Detect missing or conflicting information.
+- Check funding classifications.
+- Identify expired or stale records.
+- Report inaccessible sources and incomplete records.
+
+**E. Reliability and security**
+- Test an empty production-like database.
+- Simulate an unavailable external source.
+- Test malformed records.
+- Test concurrent requests.
+- Verify user-data isolation.
+- Confirm secrets are not exposed.
+
+**F. Live-data proof**
+- Identify the official sources actually accessed.
+- Record actual HTTP results and retrieval times.
+- Report how many authentic opportunities were discovered and persisted.
+- Demonstrate evidence-linked claims and actual job logs.
+- Report whether the live-data and notification pipelines were successfully exercised.
+
+If network access is blocked, explicitly mark live-source verification as environment-blocked. Do not convert a blocked check into a pass.
+
+---
+
+### 20. Definition of Done
+
+ScholarScope is complete when the real application can discover authentic opportunities, persist them, preserve evidence, evaluate eligibility, classify funding, display the results, monitor sources, detect changes, and generate notifications.
+
+Operational completion additionally requires a confirmed deployment, configured daily scheduling, a successful scheduled run, persisted real-source records, and verified notification processing or clearly documented provider limitations.
+
+At completion, provide:
+
+1. Implemented features.
+2. Important project files.
+3. Database and security status.
+4. Actual official sources accessed.
+5. Real records discovered and persisted, if any.
+6. Evidence and verification results.
+7. Automation status and latest confirmed run.
+8. Tests and commands actually executed.
+9. Build and deployment status.
+10. Required environment variables.
+11. Exact remaining setup steps.
+12. Known issues and free-tier limitations.
+13. The complete current `MEMORY.md`.
+
+Never fabricate records, evidence, tests, deployment status, coverage, or successful automation.
+
+### Execution Instruction
+
+Inspect the existing repository first. Implement the actual system incrementally, run and fix the code, and continue beyond the scaffold. Preserve useful existing work, document blockers, and use sensible defaults without unnecessary questions.
+
+**Build a reliable live-data research platform, not a demonstration of what such a platform might look like.**

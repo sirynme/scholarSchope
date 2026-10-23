@@ -1,0 +1,554 @@
+// ScholarScope — Normalized PostgreSQL Schema (Prisma ORM)
+// Versioned schema for multi-user graduate admissions & scholarship intelligence
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_DATABASE_URL")
+}
+
+model User {
+  id                  String                  @id
+  email               String                  @unique
+  passwordHash        String
+  fullName            String
+  role                String                  @default("student") // "student" | "admin"
+  onboardingCompleted Boolean                 @default(false)
+  createdAt           DateTime                @default(now())
+  updatedAt           DateTime                @updatedAt
+  profile             UserProfile?
+  qualifications      UserQualification[]
+  eligibilityResults  EligibilityResult[]
+  savedOpportunities  SavedOpportunity[]
+  tasks               ApplicationTask[]
+  checklistItems      DocumentChecklistItem[]
+  notifications       Notification[]
+  emailDeliveries     EmailDelivery[]
+  auditLogs           AuditLog[]
+}
+
+model RevokedSessionToken {
+  tokenHash String   @id
+  userId    String?
+  revokedAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+model UserProfile {
+  id                         String   @id
+  userId                     String   @unique
+  user                       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  citizenship                String?
+  residencyCountry           String?
+  ageYears                   Int?
+  hecEquivalenceConfirmed    Boolean  @default(false)
+  currentDegree              String?
+  currentUniversity          String?
+  gpaValue                   Float?
+  gradingScale               String?
+  gradingClassification      String?
+  graduationDate             String?
+  completedPrerequisites     String[]
+  englishTestType            String?
+  englishTestScore           Float?
+  greVerbal                  Int?
+  greQuant                   Int?
+  greWriting                 Float?
+  researchMonths             Int      @default(0)
+  publicationsCount          Int      @default(0)
+  workExperienceMonths       Int      @default(0)
+  technicalSkills            String[]
+  applicationBudgetUsd       Float?
+  targetDegrees              String[]
+  targetFields               String[]
+  fundingPreferenceMode      String?
+  preferredCountries         String[]
+  preferredUniversities      String[]
+  requireFullFunding         Boolean  @default(false)
+  minAnnualLivingSupportUsd  Float?
+  preferredIntakes           String[]
+  applicationCycles          String[]
+  emailNotificationsEnabled  Boolean  @default(true)
+  inAppNotificationsEnabled  Boolean  @default(true)
+  reminderDaysBeforeDeadline Int[]
+  updatedAt                  DateTime @updatedAt
+}
+
+model UserQualification {
+  id            String   @id
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title         String
+  institution   String
+  category      String
+  details       String
+  completedDate String?
+  createdAt     DateTime @default(now())
+
+  @@index([userId])
+}
+
+model Institution {
+  id                 String       @id
+  name               String
+  country            String
+  city               String?
+  campus             String?
+  officialDomain     String
+  officialWebsiteUrl String
+  authorityTier      String
+  lastVerifiedAt     DateTime?
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+  departments        Department[]
+  programs           Program[]
+
+  @@index([country])
+  @@index([officialDomain])
+}
+
+model Department {
+  id            String      @id
+  institutionId String
+  institution   Institution @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  name          String
+  researchAreas String[]
+  websiteUrl    String?
+  programs      Program[]
+
+  @@index([institutionId])
+}
+
+model Program {
+  id                     String                 @id
+  institutionId          String
+  institution            Institution            @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  departmentId           String?
+  department             Department?            @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+  title                  String
+  degreeLevel            String
+  discipline             String
+  broadField             String?
+  specializations        String[]
+  opportunityType        String?
+  globalRegion           String?
+  durationMonths         Int?
+  intakeTerm             String?
+  applicationCycle       String?
+  officialProgramUrl     String
+  officialApplicationUrl String?
+  contactEmail           String?
+  applicationStages      String[]
+  applicationFeeAmount   Float?
+  applicationFeeCurrency String?
+  supervisorContactReq   String                 @default("UNKNOWN")
+  deadlineDate           DateTime?
+  deadlineTimezone       String?
+  openingDate            DateTime?
+  isActive               Boolean                @default(true)
+  isExpired              Boolean                @default(false)
+  verificationStatus     String                 @default("Unverified")
+  fundingClassification  String                 @default("Funding Unverified")
+  scholarshipIds         String[]
+  claimIds               String[]
+  lastCheckedAt          DateTime?
+  createdAt              DateTime               @default(now())
+  updatedAt              DateTime               @updatedAt
+  requirement            AdmissionRequirement?
+  scholarships           ProgramScholarship[]
+  claims                 EvidenceClaim[]
+  eligibilityResults     EligibilityResult[]
+  savedByUsers           SavedOpportunity[]
+  tasks                  ApplicationTask[]
+
+  @@index([institutionId])
+  @@index([degreeLevel, discipline])
+  @@index([verificationStatus, fundingClassification])
+  @@index([officialProgramUrl])
+}
+
+model AdmissionRequirement {
+  id                       String   @id
+  programId                String   @unique
+  program                  Program  @relation(fields: [programId], references: [id], onDelete: Cascade)
+  minGpa                   Float?
+  gradingScale             String?
+  minGradingClassification String?
+  acceptedBackgrounds      String[]
+  prerequisiteCourses      String[]
+  ieltsMinScore            Float?
+  toeflMinScore            Float?
+  greRequirement           String   @default("UNKNOWN")
+  citizenshipRule          String?
+  excludedCitizenships     String[]
+  maxAgeLimit              Int?
+  residencyRule            String?
+  workExperienceReq        String?
+  feeWaiverAvailable       Boolean?
+  researchExpRequired      Boolean  @default(false)
+  requiredDocuments        String[]
+  verificationStatus       String   @default("Unverified")
+  supportingClaimIds       String[]
+}
+
+model Scholarship {
+  id                     String               @id
+  name                   String
+  awardingOrganization   String
+  authorityType          String
+  opportunityType        String?
+  country                String
+  officialUrl            String
+  eligibleDegrees        String[]
+  eligibleCountries      String[]
+  excludedCitizenships   String[]
+  eligibleFields         String[]
+  deadlineDate           DateTime?
+  deadlineTimezone       String?
+  applicationCycle       String?
+  separateApplicationReq Boolean              @default(true)
+  nominationProcessNote  String?
+  fundingClassification  String               @default("Funding Unverified")
+  verificationStatus     String               @default("Unverified")
+  claimIds               String[]
+  lastCheckedAt          DateTime?
+  createdAt              DateTime             @default(now())
+  updatedAt              DateTime             @updatedAt
+  fundingPackage         FundingPackage?
+  programs               ProgramScholarship[]
+  claims                 EvidenceClaim[]
+
+  @@index([country, fundingClassification])
+  @@index([officialUrl])
+}
+
+model FundingPackage {
+  id                         String      @id
+  scholarshipId              String      @unique
+  scholarship                Scholarship @relation(fields: [scholarshipId], references: [id], onDelete: Cascade)
+  tuitionCoveragePercent     Float?
+  mandatoryFeesCovered       Boolean?
+  stipendAmountAnnual        Float?
+  stipendCurrency            String?
+  stipendAmountUsdApprox     Float?
+  stipendFrequency           String      @default("UNKNOWN")
+  durationMonths             Int?
+  accommodationCovered       Boolean?
+  healthInsuranceCovered     Boolean?
+  travelAllowanceCovered     Boolean?
+  relocationSupportCovered   Boolean?
+  renewalConditions          String?
+  awardBasis                 String      @default("COMPETITIVE")
+  livingCostBenchmarkAnnual  Float?
+  livingCostBenchmarkCurr    String?
+  livingCostBenchmarkSource  String?
+  livingCostBenchmarkDate    String?
+  livingCostSurplusOrDeficit Float?
+  livingCostAdequacyStatus   String      @default("UNCERTAIN")
+  classification             String      @default("Funding Unverified")
+  classificationExplanation  String
+  updatedAt                  DateTime    @updatedAt
+}
+
+model ProgramScholarship {
+  programId     String
+  program       Program     @relation(fields: [programId], references: [id], onDelete: Cascade)
+  scholarshipId String
+  scholarship   Scholarship @relation(fields: [scholarshipId], references: [id], onDelete: Cascade)
+
+  @@id([programId, scholarshipId])
+}
+
+model EvidenceClaim {
+  id                   String         @id
+  programId            String?
+  program              Program?       @relation(fields: [programId], references: [id], onDelete: Cascade)
+  scholarshipId        String?
+  scholarship          Scholarship?   @relation(fields: [scholarshipId], references: [id], onDelete: Cascade)
+  claimType            String
+  fieldName            String
+  normalizedValue      String
+  supportingExcerpt    String
+  excerptHash          String
+  sourceUrl            String
+  sourceDomain         String
+  sourceOrganization   String
+  pageSection          String?
+  retrievedAt          DateTime
+  extractedAt          DateTime       @default(now())
+  lastContentChangeAt  DateTime?
+  verificationMethod   String
+  verificationStatus   String         @default("Unverified")
+  evidenceQualityScore Int            @default(0)
+  applicationCycle     String?
+  freshnessPolicy      String         @default("WEEKLY")
+  conflictingClaimIds  String[]
+  versions             ClaimVersion[]
+
+  @@index([programId, claimType])
+  @@index([scholarshipId, claimType])
+  @@index([sourceDomain])
+}
+
+model ClaimVersion {
+  id                 String        @id
+  claimId            String
+  claim              EvidenceClaim @relation(fields: [claimId], references: [id], onDelete: Cascade)
+  normalizedValue    String
+  supportingExcerpt  String
+  sourceUrl          String
+  verificationStatus String
+  observedAt         DateTime      @default(now())
+
+  @@index([claimId])
+}
+
+model EligibilityResult {
+  id                         String   @id
+  userId                     String
+  user                       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  programId                  String
+  program                    Program  @relation(fields: [programId], references: [id], onDelete: Cascade)
+  admissionStatus            String
+  scholarshipStatus          String
+  fundingCompletenessStatus  String
+  pakistaniEligibilityStatus String?
+  overallRankScore           Float
+  decisionsJson              String
+  rankingFactorsJson         String
+  evaluatedAt                DateTime @default(now())
+
+  @@unique([userId, programId])
+  @@index([userId, overallRankScore])
+}
+
+model SourceRegistry {
+  id                  String           @id
+  name                String
+  domain              String
+  seedUrl             String           @unique
+  category            String
+  country             String
+  authorityLevel      String           @default("PRIMARY_OFFICIAL")
+  refreshPolicy       String           @default("DAILY")
+  priority            String?          @default("NORMAL")
+  rateLimitPerMinute  Int              @default(10)
+  maxConcurrency      Int              @default(2)
+  enabled             Boolean          @default(true)
+  robotsTxtAllowed    Boolean          @default(true)
+  lastFetchedAt       DateTime?
+  lastHttpStatus      Int?
+  lastResponseTimeMs  Int?
+  consecutiveFailures Int              @default(0)
+  isolatedUntil       DateTime?
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
+  fetchAttempts       FetchAttempt[]
+  snapshots           SourceSnapshot[]
+
+  @@index([domain])
+  @@index([country])
+}
+
+model FetchAttempt {
+  id              String         @id
+  sourceId        String
+  source          SourceRegistry @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  url             String
+  normalizedUrl   String
+  httpStatus      Int?
+  responseTimeMs  Int
+  contentType     String?
+  bytesReceived   Int?
+  etag            String?
+  lastModifiedHdr String?
+  errorMessage    String?
+  attemptedAt     DateTime       @default(now())
+
+  @@index([sourceId, attemptedAt])
+  @@index([normalizedUrl])
+}
+
+model SourceSnapshot {
+  id                   String         @id
+  sourceId             String
+  source               SourceRegistry @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  normalizedUrl        String
+  contentHash          String
+  title                String?
+  extractedTextSnippet String
+  discoveredChildLinks String[]
+  retrievedAt          DateTime       @default(now())
+
+  @@index([sourceId, normalizedUrl])
+}
+
+model JobQueueItem {
+  id             String    @id
+  idempotencyKey String    @unique
+  jobType        String
+  targetDomain   String
+  sourceId       String?
+  url            String?
+  priority       Int       @default(5)
+  status         String    @default("QUEUED")
+  attempts       Int       @default(0)
+  maxAttempts    Int       @default(3)
+  leaseOwner     String?
+  leaseExpiresAt DateTime?
+  nextRunAt      DateTime  @default(now())
+  lastError      String?
+  executionLog   String[]
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([status, nextRunAt, priority])
+  @@index([targetDomain, status])
+}
+
+model ResearchRun {
+  id                   String    @id
+  triggerType          String
+  status               String
+  sourcesChecked       Int       @default(0)
+  urlsDiscovered       Int       @default(0)
+  httpSuccessCount     Int       @default(0)
+  httpFailureCount     Int       @default(0)
+  claimsExtracted      Int       @default(0)
+  changesDetected      Int       @default(0)
+  notificationsCreated Int       @default(0)
+  summaryLog           String[]
+  startedAt            DateTime  @default(now())
+  completedAt          DateTime?
+}
+
+model ChangeEvent {
+  id              String   @id
+  entityType      String
+  entityId        String
+  entityTitle     String
+  fieldChanged    String
+  previousValue   String?
+  newValue        String?
+  sourceUrl       String
+  isGenuineChange Boolean  @default(true)
+  detectedAt      DateTime @default(now())
+
+  @@index([entityId, detectedAt])
+}
+
+model SavedOpportunity {
+  id                String   @id
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  programId         String
+  program           Program  @relation(fields: [programId], references: [id], onDelete: Cascade)
+  applicationStatus String   @default("Researching")
+  privateNotes      String   @default("")
+  priorityLevel     String   @default("HIGH")
+  savedAt           DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([userId, programId])
+}
+
+model ApplicationTask {
+  id                 String    @id
+  userId             String
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  programId          String?
+  program            Program?  @relation(fields: [programId], references: [id], onDelete: Cascade)
+  title              String
+  category           String
+  dueDate            DateTime?
+  completed          Boolean   @default(false)
+  syncedFromEvidence Boolean   @default(false)
+  userNotes          String    @default("")
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@index([userId, dueDate])
+}
+
+model DocumentChecklistItem {
+  id                String   @id
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  programId         String?
+  documentName      String
+  status            String   @default("MISSING")
+  sourceRequirement String?
+  userNotes         String   @default("")
+  updatedAt         DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model Notification {
+  id              String   @id
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dedupeKey       String
+  category        String
+  title           String
+  message         String
+  sourceUrl       String?
+  isUncertainDate Boolean  @default(false)
+  read            Boolean  @default(false)
+  createdAt       DateTime @default(now())
+
+  @@unique([userId, dedupeKey])
+  @@index([userId, read, createdAt])
+}
+
+model EmailDelivery {
+  id             String   @id
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  notificationId String?
+  recipientEmail String
+  subject        String
+  provider       String   @default("RESEND")
+  status         String
+  providerMsgId  String?
+  errorMessage   String?
+  attempts       Int      @default(1)
+  createdAt      DateTime @default(now())
+
+  @@index([userId])
+}
+
+model AuditLog {
+  id         String   @id
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action     String
+  targetType String
+  targetId   String?
+  details    String
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model SystemHealth {
+  id                    String    @id @default("singleton")
+  automationState       String    @default("Active")
+  stateReason           String    @default("Scheduled runs healthy")
+  cronSchedule          String    @default("0 2 * * *")
+  lastScheduledRunAt    DateTime?
+  lastSuccessfulRunAt   DateTime?
+  missedRunsCount       Int       @default(0)
+  totalRequestsMade     Int       @default(0)
+  totalBytesFetched     BigInt    @default(0)
+  searchProviderEnabled Boolean   @default(false)
+  aiProviderEnabled     Boolean   @default(false)
+  emailProviderEnabled  Boolean   @default(false)
+  updatedAt             DateTime  @updatedAt
+}
