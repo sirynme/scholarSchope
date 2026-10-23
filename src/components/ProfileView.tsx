@@ -279,19 +279,19 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
 
   return (
     <div className="space-y-8">
-      <div className="border-b border-slate-200 pb-4 flex flex-wrap items-center justify-between gap-4">
+      <div className="border-b border-stone-200 pb-4 flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-slate-900">
+          <h1 className="text-xl font-bold text-stone-900">
             Pakistani Applicant Profile, Academic Scales & 5-Country Preferences
           </h1>
-          <p className="text-xs text-slate-600 mt-1">
+          <p className="text-xs text-stone-600 mt-1">
             ScholarScope evaluates your exact grading scale without invented linear conversions. Missing fields are flagged as Insufficient Information rather than disqualifying you.
           </p>
         </div>
         <button
           type="button"
           onClick={handleSelectAllFiveCountries}
-          className="px-3.5 py-2 text-xs font-semibold text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-md transition-colors"
+          className="px-3.5 py-2 text-xs font-semibold text-stone-900 bg-stone-100 hover:bg-stone-200 border border-stone-300 rounded-md transition-colors"
         >
           Include All 5 Priority Countries (DE · UK · US · JP · CN)
         </button>
@@ -321,39 +321,39 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
       )}
 
       {/* Progressive Onboarding Quick Summary Bar */}
-      <div className="bg-slate-900 text-white rounded-lg p-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-xs">
+      <div className="bg-stone-900 text-white rounded-lg p-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-xs">
         <div>
-          <span className="text-slate-400 block text-[11px]">Citizenship & Residency</span>
+          <span className="text-stone-400 block text-[11px]">Citizenship & Residency</span>
           <span className="font-semibold text-white">
             {citizenship || 'Unset'} ({residencyCountry || 'Unset'})
           </span>
         </div>
         <div>
-          <span className="text-slate-400 block text-[11px]">Academic Scale & GPA</span>
+          <span className="text-stone-400 block text-[11px]">Academic Scale & GPA</span>
           <span className="font-mono font-semibold text-white">
             {gpaValue ? `${gpaValue} / ${gradingScale}` : 'GPA Unset'}
           </span>
         </div>
         <div>
-          <span className="text-slate-400 block text-[11px]">English Exam Status</span>
+          <span className="text-stone-400 block text-[11px]">English Exam Status</span>
           <span className="font-mono font-semibold text-white">
             {englishTestType} {englishTestScore ? `(${englishTestScore})` : ''}
           </span>
         </div>
         <div>
-          <span className="text-slate-400 block text-[11px]">Target Fields</span>
+          <span className="text-stone-400 block text-[11px]">Target Fields</span>
           <span className="font-semibold text-white truncate block">
             {targetFields.slice(0, 2).join(', ') || 'Computer Science, Microbiology'}
           </span>
         </div>
         <div>
-          <span className="text-slate-400 block text-[11px]">Target Degrees</span>
+          <span className="text-stone-400 block text-[11px]">Target Degrees</span>
           <span className="font-mono font-semibold text-white">
             {targetDegrees.join(', ') || 'MSc, PhD'}
           </span>
         </div>
         <div>
-          <span className="text-slate-400 block text-[11px]">Priority Countries Active</span>
+          <span className="text-stone-400 block text-[11px]">Priority Countries Active</span>
           <span className="font-mono font-semibold text-emerald-400">
             {MANDATORY_FIVE_COUNTRIES.filter((c) => preferredCountries.includes(c)).length}/5 Core
           </span>
@@ -362,13 +362,13 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
 
       <form onSubmit={handleSubmit} className="space-y-8">
         {/* 1. Citizenship, Academic Standing & Grading Scale */}
-        <section className="bg-white border border-slate-200 rounded-lg p-6 space-y-5">
-          <h2 className="text-sm font-semibold text-slate-900 border-b border-slate-100 pb-2">
+        <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-5">
+          <h2 className="text-sm font-semibold text-stone-900 border-b border-stone-100 pb-2">
             01. Citizenship, Degree & Multi-System Grading Scale
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
-              <label htmlFor="prof-citizenship" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-citizenship" className="block text-xs font-medium text-stone-700 mb-1">
                 Country of Citizenship (Prioritized: Pakistan)
               </label>
               <input
@@ -377,12 +377,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 value={citizenship}
                 onChange={(e) => setCitizenship(e.target.value)}
                 placeholder="e.g. Pakistan"
-                className="w-full px-3 py-2 text-xs border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-residency" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-residency" className="block text-xs font-medium text-stone-700 mb-1">
                 Country of Current Residency (Required for USEFP / HEC / Commonwealth)
               </label>
               <input
@@ -391,12 +391,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 value={residencyCountry}
                 onChange={(e) => setResidencyCountry(e.target.value)}
                 placeholder="e.g. Pakistan"
-                className="w-full px-3 py-2 text-xs border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-age" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-age" className="block text-xs font-medium text-stone-700 mb-1">
                 Applicant Age (Years — Evaluated for MEXT / HEC Age Caps)
               </label>
               <input
@@ -407,12 +407,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 value={ageYears}
                 onChange={(e) => setAgeYears(e.target.value)}
                 placeholder="e.g. 24"
-                className="w-full px-3 py-2 text-xs font-mono border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs font-mono border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-degree" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-degree" className="block text-xs font-medium text-stone-700 mb-1">
                 Current / Most Recent Degree
               </label>
               <input
@@ -421,12 +421,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 value={currentDegree}
                 onChange={(e) => setCurrentDegree(e.target.value)}
                 placeholder="e.g. BS in Computer Science or BS in Microbiology"
-                className="w-full px-3 py-2 text-xs border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-univ" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-univ" className="block text-xs font-medium text-stone-700 mb-1">
                 Current / Awarding University
               </label>
               <input
@@ -435,19 +435,19 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 value={currentUniversity}
                 onChange={(e) => setCurrentUniversity(e.target.value)}
                 placeholder="e.g. NUST Islamabad, LUMS, Quaid-i-Azam University"
-                className="w-full px-3 py-2 text-xs border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-scale" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-scale" className="block text-xs font-medium text-stone-700 mb-1">
                 Official Grading Scale (No Invented Conversion)
               </label>
               <select
                 id="prof-scale"
                 value={gradingScale}
                 onChange={(e) => setGradingScale(e.target.value as GradingScale)}
-                className="w-full px-3 py-2 text-xs border border-slate-300 rounded-md bg-white"
+                className="w-full px-3 py-2 text-xs border border-stone-300 rounded-md bg-white"
               >
                 <option value="4.0">4.0 Scale (HEC Pakistan / US Standard CGPA)</option>
                 <option value="100%">100% Percentage / Annual System Scale</option>
@@ -459,7 +459,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
             </div>
 
             <div>
-              <label htmlFor="prof-gpa" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-gpa" className="block text-xs font-medium text-stone-700 mb-1">
                 Numeric GPA / Grade Value (Leave blank if unknown)
               </label>
               <input
@@ -469,19 +469,19 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 value={gpaValue}
                 onChange={(e) => setGpaValue(e.target.value)}
                 placeholder="e.g. 3.88"
-                className="w-full px-3 py-2 text-xs font-mono border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs font-mono border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-honors" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-honors" className="block text-xs font-medium text-stone-700 mb-1">
                 Honours / Degree Classification (if applicable)
               </label>
               <select
                 id="prof-honors"
                 value={gradingClassification}
                 onChange={(e) => setGradingClassification(e.target.value)}
-                className="w-full px-3 py-2 text-xs border border-slate-300 rounded-md bg-white"
+                className="w-full px-3 py-2 text-xs border border-stone-300 rounded-md bg-white"
               >
                 <option value="">None / Numeric Only</option>
                 <option value="First Class">First Class Honours / 1st Division</option>
@@ -491,7 +491,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
             </div>
 
             <div>
-              <label htmlFor="prof-grad-date" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-grad-date" className="block text-xs font-medium text-stone-700 mb-1">
                 Graduation Date (Actual or Expected)
               </label>
               <input
@@ -499,12 +499,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 type="date"
                 value={graduationDate}
                 onChange={(e) => setGraduationDate(e.target.value)}
-                className="w-full px-3 py-2 text-xs font-mono border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs font-mono border border-stone-300 rounded-md"
               />
             </div>
 
             <div className="sm:col-span-2 lg:col-span-3">
-              <label htmlFor="prof-prereqs" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-prereqs" className="block text-xs font-medium text-stone-700 mb-1">
                 Completed Prerequisite Courses (Comma-separated)
               </label>
               <input
@@ -513,27 +513,27 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 value={prereqsText}
                 onChange={(e) => setPrereqsText(e.target.value)}
                 placeholder="Algorithms, Linear Algebra, Molecular Biology, Microbial Genetics, Biochemistry..."
-                className="w-full px-3 py-2 text-xs border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs border border-stone-300 rounded-md"
               />
             </div>
           </div>
         </section>
 
         {/* 2. Language Tests, GRE, Research & Budget */}
-        <section className="bg-white border border-slate-200 rounded-lg p-6 space-y-5">
-          <h2 className="text-sm font-semibold text-slate-900 border-b border-slate-100 pb-2">
+        <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-5">
+          <h2 className="text-sm font-semibold text-stone-900 border-b border-stone-100 pb-2">
             02. Language Examinations, GRE, Research Experience & Budget
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div>
-              <label htmlFor="prof-eng-type" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-eng-type" className="block text-xs font-medium text-stone-700 mb-1">
                 English Language Qualification
               </label>
               <select
                 id="prof-eng-type"
                 value={englishTestType}
                 onChange={(e) => setEnglishTestType(e.target.value as any)}
-                className="w-full px-3 py-2 text-xs border border-slate-300 rounded-md bg-white"
+                className="w-full px-3 py-2 text-xs border border-stone-300 rounded-md bg-white"
               >
                 <option value="IELTS">IELTS Academic</option>
                 <option value="TOEFL_IBT">TOEFL iBT</option>
@@ -544,7 +544,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
             </div>
 
             <div>
-              <label htmlFor="prof-eng-score" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-eng-score" className="block text-xs font-medium text-stone-700 mb-1">
                 English Test Overall Score
               </label>
               <input
@@ -554,12 +554,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 value={englishTestScore}
                 onChange={(e) => setEnglishTestScore(e.target.value)}
                 placeholder="e.g. 8.0 or 108"
-                className="w-full px-3 py-2 text-xs font-mono border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs font-mono border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-gre-q" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-gre-q" className="block text-xs font-medium text-stone-700 mb-1">
                 GRE Quantitative (130–170, optional)
               </label>
               <input
@@ -568,12 +568,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 value={greQuant}
                 onChange={(e) => setGreQuant(e.target.value)}
                 placeholder="168"
-                className="w-full px-3 py-2 text-xs font-mono border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs font-mono border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-gre-v" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-gre-v" className="block text-xs font-medium text-stone-700 mb-1">
                 GRE Verbal (130–170, optional)
               </label>
               <input
@@ -582,12 +582,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 value={greVerbal}
                 onChange={(e) => setGreVerbal(e.target.value)}
                 placeholder="162"
-                className="w-full px-3 py-2 text-xs font-mono border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs font-mono border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-res-mos" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-res-mos" className="block text-xs font-medium text-stone-700 mb-1">
                 Research Experience (Months)
               </label>
               <input
@@ -596,12 +596,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 min={0}
                 value={researchMonths}
                 onChange={(e) => setResearchMonths(e.target.value)}
-                className="w-full px-3 py-2 text-xs font-mono border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs font-mono border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-pubs" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-pubs" className="block text-xs font-medium text-stone-700 mb-1">
                 Peer-Reviewed Publications
               </label>
               <input
@@ -610,12 +610,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 min={0}
                 value={publicationsCount}
                 onChange={(e) => setPublicationsCount(e.target.value)}
-                className="w-full px-3 py-2 text-xs font-mono border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs font-mono border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-work" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-work" className="block text-xs font-medium text-stone-700 mb-1">
                 Work / Industry Experience (Months)
               </label>
               <input
@@ -624,12 +624,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 min={0}
                 value={workExperienceMonths}
                 onChange={(e) => setWorkExperienceMonths(e.target.value)}
-                className="w-full px-3 py-2 text-xs font-mono border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs font-mono border border-stone-300 rounded-md"
               />
             </div>
 
             <div>
-              <label htmlFor="prof-budget" className="block text-xs font-medium text-slate-700 mb-1">
+              <label htmlFor="prof-budget" className="block text-xs font-medium text-stone-700 mb-1">
                 Application Fee Budget (USD)
               </label>
               <input
@@ -639,13 +639,13 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 value={applicationBudgetUsd}
                 onChange={(e) => setApplicationBudgetUsd(e.target.value)}
                 placeholder="250"
-                className="w-full px-3 py-2 text-xs font-mono border border-slate-300 rounded-md"
+                className="w-full px-3 py-2 text-xs font-mono border border-stone-300 rounded-md"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="prof-skills" className="block text-xs font-medium text-slate-700 mb-1">
+            <label htmlFor="prof-skills" className="block text-xs font-medium text-stone-700 mb-1">
               Technical & Laboratory Skills (Comma-separated)
             </label>
             <input
@@ -654,20 +654,20 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
               value={skillsText}
               onChange={(e) => setSkillsText(e.target.value)}
               placeholder="Python, PyTorch, C++, PCR, Whole-Genome Sequencing, Antimicrobial Susceptibility Testing, Bioinformatics..."
-              className="w-full px-3 py-2 text-xs border border-slate-300 rounded-md"
+              className="w-full px-3 py-2 text-xs border border-stone-300 rounded-md"
             />
           </div>
         </section>
 
         {/* 3. Target Degrees, CS & Microbiology Taxonomies, Countries & Funding Preferences */}
-        <section className="bg-white border border-slate-200 rounded-lg p-6 space-y-5">
-          <h2 className="text-sm font-semibold text-slate-900 border-b border-slate-100 pb-2">
+        <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-5">
+          <h2 className="text-sm font-semibold text-stone-900 border-b border-stone-100 pb-2">
             03. Target Degrees, Computer Science & Microbiology Specializations & Funding Preferences
           </h2>
 
           <div className="space-y-5">
             <div>
-              <span className="block text-xs font-medium text-slate-700 mb-2">
+              <span className="block text-xs font-medium text-stone-700 mb-2">
                 Target Degree & Pathway Levels
               </span>
               <div className="flex flex-wrap gap-2">
@@ -680,8 +680,8 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                       onClick={() => toggleItem(targetDegrees, deg, setTargetDegrees)}
                       className={`px-3 py-1.5 text-xs font-medium rounded-md border transition-colors ${
                         active
-                          ? 'bg-slate-900 text-white border-slate-900'
-                          : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'
+                          ? 'bg-stone-900 text-white border-stone-900'
+                          : 'bg-white text-stone-700 border-stone-300 hover:bg-stone-50'
                       }`}
                     >
                       {deg}
@@ -692,7 +692,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
             </div>
 
             <div>
-              <span className="block text-xs font-medium text-slate-700 mb-2">
+              <span className="block text-xs font-medium text-stone-700 mb-2">
                 Broad Target Disciplines (Computer Science, Microbiology & Bioinformatics)
               </span>
               <div className="flex flex-wrap gap-2">
@@ -705,8 +705,8 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                       onClick={() => toggleItem(targetFields, field, setTargetFields)}
                       className={`px-3 py-1.5 text-xs font-medium rounded-md border transition-colors ${
                         active
-                          ? 'bg-slate-900 text-white border-slate-900'
-                          : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'
+                          ? 'bg-stone-900 text-white border-stone-900'
+                          : 'bg-white text-stone-700 border-stone-300 hover:bg-stone-50'
                       }`}
                     >
                       {field}
@@ -716,9 +716,9 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-2 border-t border-slate-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-2 border-t border-stone-100">
               <div className="space-y-2">
-                <span className="block text-xs font-semibold text-slate-800">
+                <span className="block text-xs font-semibold text-stone-800">
                   Computer Science Specializations (12 Subfields)
                 </span>
                 <div className="flex flex-wrap gap-1.5">
@@ -737,8 +737,8 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                         }
                         className={`px-2.5 py-1 text-[11px] font-medium rounded border transition-colors ${
                           active
-                            ? 'bg-slate-900 text-white border-slate-900'
-                            : 'bg-slate-50 text-slate-700 border-slate-300 hover:bg-slate-100'
+                            ? 'bg-stone-900 text-white border-stone-900'
+                            : 'bg-stone-50 text-stone-700 border-stone-300 hover:bg-stone-100'
                         }`}
                       >
                         {spec.label}
@@ -749,7 +749,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
               </div>
 
               <div className="space-y-2">
-                <span className="block text-xs font-semibold text-slate-800">
+                <span className="block text-xs font-semibold text-stone-800">
                   Microbiology Specializations (15 Subfields)
                 </span>
                 <div className="flex flex-wrap gap-1.5">
@@ -768,8 +768,8 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                         }
                         className={`px-2.5 py-1 text-[11px] font-medium rounded border transition-colors ${
                           active
-                            ? 'bg-slate-900 text-white border-slate-900'
-                            : 'bg-slate-50 text-slate-700 border-slate-300 hover:bg-slate-100'
+                            ? 'bg-stone-900 text-white border-stone-900'
+                            : 'bg-stone-50 text-stone-700 border-stone-300 hover:bg-stone-100'
                         }`}
                       >
                         {spec.label}
@@ -781,7 +781,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
             </div>
 
             <div>
-              <span className="block text-xs font-medium text-slate-700 mb-2">
+              <span className="block text-xs font-medium text-stone-700 mb-2">
                 Preferred Destination Countries Worldwide
               </span>
               <div className="flex flex-wrap gap-2">
@@ -796,8 +796,8 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                       }
                       className={`px-3 py-1.5 text-xs font-medium rounded-md border transition-colors ${
                         active
-                          ? 'bg-slate-900 text-white border-slate-900'
-                          : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'
+                          ? 'bg-stone-900 text-white border-stone-900'
+                          : 'bg-white text-stone-700 border-stone-300 hover:bg-stone-50'
                       }`}
                     >
                       {country}
@@ -807,11 +807,11 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3 border-t border-slate-100">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3 border-t border-stone-100">
               <div>
                 <label
                   htmlFor="prof-funding-mode"
-                  className="block text-xs font-medium text-slate-700 mb-1"
+                  className="block text-xs font-medium text-stone-700 mb-1"
                 >
                   Funding Preference Mode (4-Tier Filter)
                 </label>
@@ -823,7 +823,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                     setFundingPreferenceMode(mode);
                     setRequireFullFunding(mode === 'FULLY_FUNDED_ONLY');
                   }}
-                  className="w-full px-3 py-1.5 text-xs border border-slate-300 rounded-md bg-white"
+                  className="w-full px-3 py-1.5 text-xs border border-stone-300 rounded-md bg-white"
                 >
                   <option value="FULLY_FUNDED_ONLY">
                     1. Fully Funded Only (100% Tuition + Benchmarked Stipend)
@@ -841,7 +841,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
               </div>
 
               <div>
-                <label htmlFor="prof-min-stipend" className="block text-xs font-medium text-slate-700 mb-1">
+                <label htmlFor="prof-min-stipend" className="block text-xs font-medium text-stone-700 mb-1">
                   Min Acceptable Annual Living Support (USD)
                 </label>
                 <input
@@ -849,12 +849,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                   type="number"
                   value={minAnnualLivingSupportUsd}
                   onChange={(e) => setMinAnnualLivingSupportUsd(e.target.value)}
-                  className="w-full px-3 py-1.5 text-xs font-mono border border-slate-300 rounded-md"
+                  className="w-full px-3 py-1.5 text-xs font-mono border border-stone-300 rounded-md"
                 />
               </div>
 
               <div>
-                <label htmlFor="prof-reminders" className="block text-xs font-medium text-slate-700 mb-1">
+                <label htmlFor="prof-reminders" className="block text-xs font-medium text-stone-700 mb-1">
                   Deadline Reminder Windows (Days Before)
                 </label>
                 <input
@@ -863,7 +863,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                   value={reminderDays}
                   onChange={(e) => setReminderDays(e.target.value)}
                   placeholder="30, 14, 7, 1"
-                  className="w-full px-3 py-1.5 text-xs font-mono border border-slate-300 rounded-md"
+                  className="w-full px-3 py-1.5 text-xs font-mono border border-stone-300 rounded-md"
                 />
               </div>
             </div>
@@ -873,7 +873,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
             <button
               type="submit"
               disabled={saving}
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-md transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-white bg-stone-900 hover:bg-stone-800 rounded-md transition-colors"
             >
               <Save className="w-4 h-4" />
               <span>{saving ? 'Recalculating Matches…' : 'Save Profile & Recalculate All Matches'}</span>
@@ -883,8 +883,8 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
       </form>
 
       {/* 4. Academic Transcripts, Publications & Qualifications Ledger */}
-      <section className="bg-white border border-slate-200 rounded-lg p-6 space-y-5">
-        <h2 className="text-sm font-semibold text-slate-900 border-b border-slate-100 pb-2">
+      <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-5">
+        <h2 className="text-sm font-semibold text-stone-900 border-b border-stone-100 pb-2">
           04. Verified Academic Transcripts, Publications & Projects ({qualifications.length})
         </h2>
 
@@ -892,22 +892,22 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
           {qualifications.map((q) => (
             <div
               key={q.id}
-              className="flex items-start justify-between gap-4 border border-slate-200 rounded-md p-3.5 text-xs"
+              className="flex items-start justify-between gap-4 border border-stone-200 rounded-md p-3.5 text-xs"
             >
               <div className="space-y-1">
-                <div className="font-semibold text-slate-900">
-                  {q.title} <span className="font-normal text-slate-500">· {q.institution} · {q.category.toUpperCase()}</span>
+                <div className="font-semibold text-stone-900">
+                  {q.title} <span className="font-normal text-stone-500">· {q.institution} · {q.category.toUpperCase()}</span>
                 </div>
-                <p className="text-slate-600">{q.details}</p>
+                <p className="text-stone-600">{q.details}</p>
                 {q.completedDate && (
-                  <div className="text-[11px] font-mono text-slate-500">Date: {q.completedDate}</div>
+                  <div className="text-[11px] font-mono text-stone-500">Date: {q.completedDate}</div>
                 )}
               </div>
               <button
                 type="button"
                 onClick={() => onDeleteQualification(q.id)}
                 aria-label={`Delete qualification ${q.title}`}
-                className="p-1.5 text-slate-400 hover:text-red-600 transition-colors"
+                className="p-1.5 text-stone-400 hover:text-red-600 transition-colors"
               >
                 <Trash2 className="w-4 h-4" />
               </button>
@@ -915,7 +915,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
           ))}
         </div>
 
-        <form onSubmit={handleAddQual} className="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-3 border-t border-slate-100">
+        <form onSubmit={handleAddQual} className="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-3 border-t border-stone-100">
           <input
             type="text"
             required
@@ -923,7 +923,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
             onChange={(e) => setQualTitle(e.target.value)}
             placeholder="Qualification / Paper Title"
             aria-label="Qualification Title"
-            className="px-3 py-2 text-xs border border-slate-300 rounded-md"
+            className="px-3 py-2 text-xs border border-stone-300 rounded-md"
           />
           <input
             type="text"
@@ -932,13 +932,13 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
             onChange={(e) => setQualInst(e.target.value)}
             placeholder="Institution / Venue"
             aria-label="Qualification Institution"
-            className="px-3 py-2 text-xs border border-slate-300 rounded-md"
+            className="px-3 py-2 text-xs border border-stone-300 rounded-md"
           />
           <select
             value={qualCat}
             onChange={(e) => setQualCat(e.target.value)}
             aria-label="Qualification Category"
-            className="px-3 py-2 text-xs border border-slate-300 rounded-md bg-white"
+            className="px-3 py-2 text-xs border border-stone-300 rounded-md bg-white"
           >
             <option value="transcript">Academic Transcript</option>
             <option value="publication">Research Publication</option>
@@ -948,7 +948,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
           </select>
           <button
             type="submit"
-            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-slate-900 hover:bg-slate-800 rounded-md"
+            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-md"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>Add Qualification Record</span>
@@ -959,7 +959,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
             onChange={(e) => setQualDetails(e.target.value)}
             placeholder="Supporting details (grade breakdown, DOI, supervisor, key coursework)..."
             aria-label="Qualification Details"
-            className="sm:col-span-4 px-3 py-2 text-xs border border-slate-300 rounded-md"
+            className="sm:col-span-4 px-3 py-2 text-xs border border-stone-300 rounded-md"
           />
         </form>
       </section>

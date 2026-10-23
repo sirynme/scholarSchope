@@ -1,13 +1,14 @@
 import React from 'react';
 import {
   ArrowRight,
-  Bookmark,
-  Calendar,
+  BadgeCheck,
+  CalendarClock,
   CheckCircle2,
+  ChevronDown,
   Compass,
-  ExternalLink,
   Info,
-  ShieldCheck,
+  Search,
+  Sparkles,
 } from 'lucide-react';
 import {
   ApplicationStatus,
@@ -25,16 +26,15 @@ import {
   DocumentChecklistItemRecord,
 } from '../lib/types';
 import {
-  buildRecommendedOpportunities,
   buildStudentNextSteps,
-  computeStudentHomeMetrics,
   deriveStudentAutomationNotice,
   getProgramStudyDestination,
   JourneySectionId,
   mapDeadlineStatus,
-  mapStudentFundingSummary,
   StudentPrimaryNavId,
 } from '../lib/student-dashboard';
+import { OPPORTUNITY_TYPE_META } from '../lib/opportunity-presentation';
+import { OpportunityCard } from './OpportunityCard';
 
 interface HomeViewProps {
   currentUser: {
@@ -56,10 +56,15 @@ interface HomeViewProps {
   systemHealth: SystemHealthRecord;
   latestRun: ResearchRunRecord | null;
   sources: SourceRegistryRecord[];
-  onNavigate: (view: StudentPrimaryNavId, options?: { journeySection?: JourneySectionId; quickFilter?: string }) => void;
+  onNavigate: (
+    view: StudentPrimaryNavId,
+    options?: { journeySection?: JourneySectionId; quickFilter?: string; searchQuery?: string }
+  ) => void;
   onInspectProgram: (programId: string) => void;
   onSaveOrUpdateOpportunity: (programId: string, status?: ApplicationStatus, notes?: string) => Promise<void>;
 }
+
+const COUNTRY_CHIPS = ['Germany', 'United Kingdom', 'United States', 'Japan', 'China'];
 
 export const HomeView: React.FC<HomeViewProps> = ({
   currentUser,
@@ -79,31 +84,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
   onInspectProgram,
   onSaveOrUpdateOpportunity,
 }) => {
-  const metrics = React.useMemo(
-    () =>
-      computeStudentHomeMetrics({
-        programs,
-        institutions,
-        scholarships,
-        eligibilityResults,
-        savedOpportunities,
-        profile,
-      }),
-    [programs, institutions, scholarships, eligibilityResults, savedOpportunities, profile]
-  );
-
-  const recommended = React.useMemo(
-    () =>
-      buildRecommendedOpportunities({
-        programs,
-        institutions,
-        scholarships,
-        eligibilityResults,
-        profile,
-        limit: 6,
-      }),
-    [programs, institutions, scholarships, eligibilityResults, profile]
-  );
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const [legendOpen, setLegendOpen] = React.useState(false);
 
   const nextSteps = React.useMemo(
     () =>
@@ -120,541 +102,376 @@ export const HomeView: React.FC<HomeViewProps> = ({
   );
 
   const automationNotice = React.useMemo(
-    () =>
-      deriveStudentAutomationNotice({
-        systemHealth,
-        latestRun,
-        sources,
-        programs,
-      }),
+    () => deriveStudentAutomationNotice({ systemHealth, latestRun, sources, programs }),
     [systemHealth, latestRun, sources, programs]
   );
 
-  const upcomingDeadlinesList = React.useMemo(() => {
+  const closingSoon = React.useMemo(() => {
     return programs
-      .map((program) => ({
-        program,
-        deadline: mapDeadlineStatus(program),
-        destination: getProgramStudyDestination(program, institutions, scholarships),
-        funding: mapStudentFundingSummary(program, scholarships),
-      }))
-      .filter(
-        (item) =>
-          item.deadline.status === 'CLOSING_SOON' || item.deadline.status === 'OPEN'
-      )
-      .sort((a, b) => (a.deadline.daysRemaining ?? 9999) - (b.deadline.daysRemaining ?? 9999));
-  }, [programs, institutions, scholarships]);
+      .map((p) => ({ program: p, deadline: mapDeadlineStatus(p) }))
+      .filter((x) => x.deadline.status === 'CLOSING_SOON' && !x.program.isExpired)
+      .sort((a, b) => (a.deadline.daysRemaining ?? 9999) - (b.deadline.daysRemaining ?? 9999))
+      .slice(0, 3);
+  }, [programs]);
+
+  const fullyFunded = React.useMemo(() => {
+    return programs
+      .filter((p) => p.fundingClassification === 'Fully Funded — Confirmed' && !p.isExpired)
+      .slice(0, 6);
+  }, [programs]);
 
   const savedProgramIds = React.useMemo(
     () => new Set(savedOpportunities.map((s) => s.programId)),
     [savedOpportunities]
   );
 
-  const firstName = currentUser?.fullName ? currentUser.fullName.split(' ')[0] : 'Student';
+  const fullyFundedCount = programs.filter(
+    (p) => p.fundingClassification === 'Fully Funded — Confirmed'
+  ).length;
+
+  const lastChecked = React.useMemo(() => {
+    const dates = programs
+      .map((p) => p.lastCheckedAt)
+      .filter(Boolean)
+      .sort()
+      .reverse();
+    if (!dates[0]) return null;
+    return new Date(dates[0] as string).toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    });
+  }, [programs]);
+
+  const firstName = currentUser?.fullName ? currentUser.fullName.split(' ')[0] : null;
+
+  const submitSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    onNavigate('explore', { searchQuery: searchQuery.trim() });
+  };
+
+  const goToProfile = () => onNavigate('profile');
 
   return (
-    <div className="space-y-8">
-      {/* ==================================================================
-          A & B. WELCOMING HERO & ONE PRIMARY ACTION ("Explore opportunities")
-         ================================================================== */}
-      <section className="bg-white border border-slate-200 rounded-xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div className="space-y-2 max-w-3xl">
-          <div className="text-xs font-medium text-slate-500">
-            ScholarScope · Pakistani Graduate Scholarship & Admission Guide
+    <div className="space-y-10">
+      {/* ================= HERO — search first, human words ================= */}
+      <section className="relative overflow-hidden rounded-3xl bg-stone-900 text-white px-6 py-10 md:px-12 md:py-14">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-40"
+          style={{
+            background:
+              'radial-gradient(600px 300px at 15% 20%, rgba(16,185,129,0.25), transparent 60%), radial-gradient(500px 280px at 85% 80%, rgba(251,191,36,0.18), transparent 60%)',
+          }}
+        />
+        <div className="relative max-w-2xl space-y-5">
+          <div className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-emerald-300">
+            <BadgeCheck className="w-4 h-4" />
+            Verified scholarships · for Pakistani students
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
-            Assalam-o-Alaikum, {firstName}. Find verified scholarships that fit your academic background.
+          <h2 className="text-3xl md:text-[2.75rem] font-bold tracking-tight leading-[1.1]">
+            {firstName ? (
+              <>
+                Assalam-o-Alaikum, {firstName}.<br />
+                Let's find your funded degree.
+              </>
+            ) : (
+              <>
+                Find a funded master's
+                <br />
+                or PhD abroad.
+              </>
+            )}
           </h2>
-          <p className="text-sm text-slate-600 leading-relaxed">
-            Compare official Master&apos;s and PhD programs in Computer Science and Microbiology across Germany, the United Kingdom, the United States, Japan, and China — with transparent funding breakdowns, Pakistani degree equivalence guidance, and direct links to official university portals.
+          <p className="text-[15px] text-stone-300 leading-relaxed max-w-xl">
+            Every stipend, deadline and requirement here was checked against an official
+            source — no guesswork, no sponsored listings. Tell us what you're looking for.
           </p>
-        </div>
 
-        <div className="shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          <button
-            type="button"
-            onClick={() => onNavigate('explore')}
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-lg transition-colors shadow-xs"
-          >
-            <Compass className="w-4 h-4" />
-            <span>Explore opportunities</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          <form onSubmit={submitSearch} className="relative max-w-xl">
+            <Search className="w-5 h-5 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Try “DAAD”, “PhD computer science”, “Japan”…"
+              aria-label="Search scholarships"
+              className="w-full pl-12 pr-28 py-3.5 rounded-2xl bg-white/10 border border-white/20 text-white placeholder:text-stone-400 text-[15px] focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:bg-white/15"
+            />
+            <button
+              type="submit"
+              className="absolute right-1.5 top-1/2 -translate-y-1/2 px-5 py-2 rounded-xl bg-emerald-400 text-stone-950 text-sm font-bold hover:bg-emerald-300 transition-colors"
+            >
+              Search
+            </button>
+          </form>
+
+          <div className="flex flex-wrap items-center gap-2 pt-1">
+            <span className="text-xs text-stone-400 mr-1">Popular:</span>
+            {COUNTRY_CHIPS.map((c) => (
+              <button
+                key={c}
+                type="button"
+                onClick={() => onNavigate('explore', { searchQuery: c })}
+                className="px-3 py-1.5 text-xs font-semibold rounded-full border border-white/20 text-stone-200 hover:bg-white/10 transition-colors"
+              >
+                {c}
+              </button>
+            ))}
+            <button
+              type="button"
+              onClick={() => onNavigate('explore', { quickFilter: 'CONFIRMED_FULL_FUNDING' })}
+              className="px-3 py-1.5 text-xs font-semibold rounded-full bg-amber-300/15 border border-amber-300/40 text-amber-200 hover:bg-amber-300/25 transition-colors"
+            >
+              ✨ Fully funded only
+            </button>
+          </div>
         </div>
       </section>
 
-      {/* ==================================================================
-          STUDENT-FRIENDLY AUTOMATION / SOURCE NOTICE (Only when relevant)
-         ================================================================== */}
+      {/* ================= Trust strip — plain numbers ================= */}
+      <section className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-stone-600 px-1">
+        <span>
+          <strong className="text-stone-900 font-bold">{programs.length}</strong> opportunities
+          tracked
+        </span>
+        <span>
+          <strong className="text-emerald-700 font-bold">{fullyFundedCount}</strong> fully funded
+        </span>
+        <span>
+          <strong className="text-stone-900 font-bold">{closingSoon.length}</strong> closing within
+          60 days
+        </span>
+        {lastChecked && (
+          <span className="text-stone-400">Figures last checked {lastChecked}</span>
+        )}
+      </section>
+
+      {/* ================= Freshness notice (only when it matters) ================= */}
       {automationNotice.shouldShowNotice && (
         <section
-          aria-label="Portal update notice"
-          className="bg-amber-50/70 border border-amber-200/90 rounded-lg px-4 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs text-slate-800"
+          aria-label="Data freshness notice"
+          className="bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4 flex items-start gap-3 text-[13px] text-stone-700"
         >
-          <div className="flex items-start gap-2.5">
-            <Info className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
-            <div className="space-y-0.5">
-              <div className="font-semibold text-slate-900">
-                {automationNotice.headline}{' '}
-                <span className="font-normal text-slate-600">
-                  ({automationNotice.lastRunStateLabel} · {automationNotice.sourceHealthStateLabel})
-                </span>
-              </div>
-              <p className="text-slate-700 leading-relaxed">
-                {automationNotice.practicalImpact}
+          <Info className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+          <p className="leading-relaxed">
+            <strong className="text-stone-900">A quick heads-up:</strong>{' '}
+            {automationNotice.practicalImpact}
+          </p>
+        </section>
+      )}
+
+      {/* ================= Closing soon ================= */}
+      {closingSoon.length > 0 && (
+        <section className="space-y-4" aria-labelledby="home-closing-heading">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <h3
+                id="home-closing-heading"
+                className="text-xl font-bold text-stone-900 tracking-tight flex items-center gap-2"
+              >
+                <CalendarClock className="w-5 h-5 text-amber-600" />
+                Closing soon — don't miss these
+              </h3>
+              <p className="text-[13px] text-stone-500 mt-1">
+                Deadlines verified on official pages. If you're interested, start now.
               </p>
             </div>
+            <button
+              type="button"
+              onClick={() => onNavigate('explore')}
+              className="shrink-0 inline-flex items-center gap-1 text-[13px] font-semibold text-stone-900 hover:underline"
+            >
+              View all <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {closingSoon.map(({ program }) => (
+              <OpportunityCard
+                key={program.id}
+                program={program}
+                institutions={institutions}
+                scholarships={scholarships}
+                eligibilityResults={eligibilityResults}
+                profile={profile}
+                isSaved={savedProgramIds.has(program.id)}
+                onInspect={onInspectProgram}
+                onSave={onSaveOrUpdateOpportunity}
+                onNavigateToProfile={goToProfile}
+              />
+            ))}
           </div>
         </section>
       )}
 
-      {/* ==================================================================
-          C. FOUR SIMPLE SUMMARY CARDS WITH EXPLICIT DEFINITIONS
-         ================================================================== */}
-      <section aria-label="Your scholarship summary">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {/* Card 1: Matching preferences */}
-          <div className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between gap-3">
-            <div className="space-y-1">
-              <div className="text-xs font-semibold text-slate-600">
-                {metrics.matchingPreferences.title}
-              </div>
-              <div className="text-3xl font-bold font-mono text-slate-900 tabular-nums">
-                {metrics.matchingPreferences.value}
-              </div>
-            </div>
-            <div className="space-y-2">
-              <p className="text-[11px] text-slate-500 leading-relaxed">
-                {metrics.matchingPreferences.definition}
-              </p>
-              <button
-                type="button"
-                onClick={() => onNavigate('explore')}
-                className="inline-flex items-center gap-1 text-xs font-semibold text-slate-900 hover:underline"
-              >
-                <span>View matching programs</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-
-          {/* Card 2: Verified full-funding information */}
-          <div className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between gap-3">
-            <div className="space-y-1">
-              <div className="text-xs font-semibold text-slate-600">
-                {metrics.verifiedFullFunding.title}
-              </div>
-              <div className="text-3xl font-bold font-mono text-emerald-700 tabular-nums">
-                {metrics.verifiedFullFunding.value}
-              </div>
-            </div>
-            <div className="space-y-2">
-              <p className="text-[11px] text-slate-500 leading-relaxed">
-                {metrics.verifiedFullFunding.definition}
-              </p>
-              <button
-                type="button"
-                onClick={() => onNavigate('explore', { quickFilter: 'CONFIRMED_FULL_FUNDING' })}
-                className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-800 hover:underline"
-              >
-                <span>Filter full-funding awards</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-
-          {/* Card 3: Saved opportunities */}
-          <div className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between gap-3">
-            <div className="space-y-1">
-              <div className="text-xs font-semibold text-slate-600">
-                {metrics.savedOpportunities.title}
-              </div>
-              <div className="text-3xl font-bold font-mono text-slate-900 tabular-nums">
-                {metrics.savedOpportunities.value}
-              </div>
-            </div>
-            <div className="space-y-2">
-              <p className="text-[11px] text-slate-500 leading-relaxed">
-                {metrics.savedOpportunities.definition}
-              </p>
-              <button
-                type="button"
-                onClick={() => onNavigate('journey', { journeySection: 'saved' })}
-                className="inline-flex items-center gap-1 text-xs font-semibold text-slate-900 hover:underline"
-              >
-                <span>Open My Journey</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-
-          {/* Card 4: Upcoming deadlines */}
-          <div className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between gap-3">
-            <div className="space-y-1">
-              <div className="text-xs font-semibold text-slate-600">
-                {metrics.upcomingDeadlines.title}
-              </div>
-              <div className="text-3xl font-bold font-mono text-slate-900 tabular-nums">
-                {metrics.upcomingDeadlines.value}
-              </div>
-            </div>
-            <div className="space-y-2">
-              <p className="text-[11px] text-slate-500 leading-relaxed">
-                {metrics.upcomingDeadlines.definition}
-              </p>
-              <button
-                type="button"
-                onClick={() => onNavigate('journey', { journeySection: 'deadlines' })}
-                className="inline-flex items-center gap-1 text-xs font-semibold text-slate-900 hover:underline"
-              >
-                <span>See deadline calendar</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================================
-          D. RECOMMENDED OPPORTUNITIES BASED ON PROFILE + SAVED STATUS
-         ================================================================== */}
-      <section className="space-y-4" aria-labelledby="home-recommended-heading">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 pb-3">
+      {/* ================= Fully funded ================= */}
+      <section className="space-y-4" aria-labelledby="home-funded-heading">
+        <div className="flex items-end justify-between gap-4">
           <div>
-            <h3 id="home-recommended-heading" className="text-lg font-bold text-slate-900">
-              Recommended opportunities for your profile
+            <h3
+              id="home-funded-heading"
+              className="text-xl font-bold text-stone-900 tracking-tight flex items-center gap-2"
+            >
+              <Sparkles className="w-5 h-5 text-emerald-600" />
+              Fully funded — tuition plus living costs
             </h3>
-            <p className="text-xs text-slate-600">
-              Ranked using your target fields (
-              {profile?.targetFields && profile.targetFields.length > 0
-                ? profile.targetFields.slice(0, 3).join(', ')
-                : 'Computer Science & Microbiology'}
-              ), GPA ({profile?.gpaValue ?? '—'}/{profile?.gradingScale ?? '4.0'}), and verified scholarship evidence.
+            <p className="text-[13px] text-stone-500 mt-1">
+              These cover 100% of tuition and pay you a living stipend. The real deal.
             </p>
           </div>
           <button
             type="button"
-            onClick={() => onNavigate('explore')}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-900 hover:underline shrink-0"
+            onClick={() => onNavigate('explore', { quickFilter: 'CONFIRMED_FULL_FUNDING' })}
+            className="shrink-0 inline-flex items-center gap-1 text-[13px] font-semibold text-stone-900 hover:underline"
           >
-            <span>Browse all {programs.length} opportunities</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            View all <ArrowRight className="w-4 h-4" />
           </button>
         </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {fullyFunded.map((program) => (
+            <OpportunityCard
+              key={program.id}
+              program={program}
+              institutions={institutions}
+              scholarships={scholarships}
+              eligibilityResults={eligibilityResults}
+              profile={profile}
+              isSaved={savedProgramIds.has(program.id)}
+              onInspect={onInspectProgram}
+              onSave={onSaveOrUpdateOpportunity}
+              onNavigateToProfile={goToProfile}
+            />
+          ))}
+        </div>
+      </section>
 
-        {recommended.length > 0 ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {recommended.map((item) => {
-              const isSaved = savedProgramIds.has(item.program.id);
+      {/* ================= What do the labels mean? ================= */}
+      <section className="bg-white border border-stone-200 rounded-2xl overflow-hidden">
+        <button
+          type="button"
+          onClick={() => setLegendOpen((v) => !v)}
+          aria-expanded={legendOpen}
+          className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-stone-50 transition-colors"
+        >
+          <span className="text-[15px] font-bold text-stone-900">
+            What do these labels mean? <span className="font-normal text-stone-500">— not all “scholarships” work the same way</span>
+          </span>
+          <ChevronDown
+            className={`w-5 h-5 text-stone-400 transition-transform ${legendOpen ? 'rotate-180' : ''}`}
+          />
+        </button>
+        {legendOpen && (
+          <div className="px-5 pb-5 grid grid-cols-1 md:grid-cols-2 gap-3">
+            {Object.values(OPPORTUNITY_TYPE_META).map((meta) => {
+              const Icon = meta.icon;
               return (
-                <article
-                  key={item.program.id}
-                  className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between gap-4 hover:border-slate-300 transition-colors"
+                <div
+                  key={meta.label}
+                  className="flex gap-3 p-3.5 rounded-xl bg-stone-50 border border-stone-100"
                 >
-                  <div className="space-y-2.5">
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
-                      <span>
-                        <strong className="text-slate-900">
-                          {item.destination.institutionName}
-                        </strong>{' '}
-                        · {item.destination.destinationCountry}
-                        {item.destination.isCrossBorderAdministered
-                          ? ` (Administered in ${item.destination.administeringCountry})`
-                          : ''}
-                      </span>
-                      <span
-                        className={`font-semibold ${
-                          item.eligibility.category === 'ELIGIBLE'
-                            ? 'text-emerald-700'
-                            : item.eligibility.category === 'POTENTIALLY_ELIGIBLE'
-                            ? 'text-amber-700'
-                            : 'text-slate-600'
-                        }`}
-                      >
-                        {item.eligibility.label}
-                      </span>
-                    </div>
-
-                    <div>
-                      <button
-                        type="button"
-                        onClick={() => onInspectProgram(item.program.id)}
-                        className="text-left text-base font-bold text-slate-900 hover:underline"
-                      >
-                        {item.program.title}
-                      </button>
-                      <div className="text-xs text-slate-600 mt-0.5">
-                        {item.program.degreeLevel} · {item.program.broadField || item.program.discipline} ·{' '}
-                        <span className="font-semibold text-slate-900">
-                          {item.funding.headline}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Evidence-based explanation of relevance */}
-                    <div className="bg-slate-50 border border-slate-200/80 rounded-lg p-3 space-y-1 text-xs">
-                      <div className="font-semibold text-slate-800">
-                        Why this suits your profile:
-                      </div>
-                      <ul className="list-disc list-inside space-y-0.5 text-slate-600">
-                        {item.evidenceReasons.map((reason, idx) => (
-                          <li key={idx}>{reason}</li>
-                        ))}
-                      </ul>
+                  <span
+                    className={`shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border ${meta.badgeClass}`}
+                  >
+                    <Icon className="w-4 h-4" />
+                  </span>
+                  <div>
+                    <div className="text-[13px] font-bold text-stone-900">{meta.label}</div>
+                    <div className="text-xs text-stone-500 leading-relaxed mt-0.5">
+                      {meta.whatItIs}
                     </div>
                   </div>
-
-                  <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
-                    <div className="text-slate-600">
-                      <span>Deadline: </span>
-                      <strong className="font-mono text-slate-900">
-                        {item.deadline.formattedDate}
-                      </strong>{' '}
-                      <span className="text-slate-500">({item.deadline.label})</span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <button
-                        type="button"
-                        onClick={() => onSaveOrUpdateOpportunity(item.program.id)}
-                        className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-md border font-medium transition-colors ${
-                          isSaved
-                            ? 'bg-slate-100 border-slate-300 text-slate-900'
-                            : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
-                        }`}
-                      >
-                        <Bookmark className="w-3.5 h-3.5" />
-                        <span>{isSaved ? 'Saved' : 'Save'}</span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => onInspectProgram(item.program.id)}
-                        className="px-3 py-1.5 rounded-md bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors"
-                      >
-                        View details & evidence
-                      </button>
-                    </div>
-                  </div>
-                </article>
+                </div>
               );
             })}
-          </div>
-        ) : (
-          <div className="bg-white border border-slate-200 rounded-xl p-6 text-center space-y-3">
-            <p className="text-sm font-semibold text-slate-900">
-              No opportunities matched all of your current strict filters.
-            </p>
-            <p className="text-xs text-slate-600 max-w-lg mx-auto">
-              Update your target subjects or funding preferences in My Profile, or browse the complete verified catalogue directly.
-            </p>
-            <div className="flex justify-center gap-3">
-              <button
-                type="button"
-                onClick={() => onNavigate('explore')}
-                className="px-4 py-2 text-xs font-semibold text-white bg-slate-900 rounded-md hover:bg-slate-800"
-              >
-                Explore all opportunities
-              </button>
-              <button
-                type="button"
-                onClick={() => onNavigate('profile')}
-                className="px-4 py-2 text-xs font-semibold text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50"
-              >
-                Adjust My Profile
-              </button>
-            </div>
           </div>
         )}
       </section>
 
-      {/* ==================================================================
-          E & F. VALIDATED UPCOMING DEADLINES + HELPFUL NEXT STEPS & SAVED SUMMARY
-         ================================================================== */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* E. Validated Upcoming Deadlines */}
-        <section
-          className="lg:col-span-7 bg-white border border-slate-200 rounded-xl p-5 space-y-4"
-          aria-labelledby="home-deadlines-heading"
-        >
-          <div className="flex items-center justify-between gap-2 border-b border-slate-200 pb-3">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-slate-700" />
-              <h3 id="home-deadlines-heading" className="text-base font-bold text-slate-900">
-                Approaching deadlines (Verified dates)
-              </h3>
-            </div>
-            <button
-              type="button"
-              onClick={() => onNavigate('journey', { journeySection: 'deadlines' })}
-              className="text-xs font-semibold text-slate-700 hover:text-slate-900 hover:underline"
-            >
-              Full calendar
-            </button>
-          </div>
-
-          {upcomingDeadlinesList.length > 0 ? (
-            <div className="divide-y divide-slate-200">
-              {upcomingDeadlinesList.slice(0, 6).map((item) => (
-                <div
-                  key={item.program.id}
-                  className="py-3 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs"
-                >
-                  <div className="space-y-0.5">
-                    <button
-                      type="button"
-                      onClick={() => onInspectProgram(item.program.id)}
-                      className="font-semibold text-slate-900 hover:underline text-left"
-                    >
-                      {item.program.title}
-                    </button>
-                    <div className="text-slate-500">
-                      {item.destination.institutionName} · {item.destination.destinationCountry} ·{' '}
-                      {item.funding.headline}
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 shrink-0">
-                    <div className="text-right font-mono">
-                      <div className="font-semibold text-slate-900">
-                        {item.deadline.formattedDate}
-                      </div>
-                      <div
-                        className={`text-[11px] ${
-                          item.deadline.status === 'CLOSING_SOON'
-                            ? 'text-amber-700 font-semibold'
-                            : 'text-emerald-700'
-                        }`}
-                      >
-                        {item.deadline.label}
-                      </div>
-                    </div>
-                    <a
-                      href={item.program.officialProgramUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Open official website for ${item.program.title}`}
-                      className="p-1.5 text-slate-500 hover:text-slate-900 border border-slate-200 rounded-md"
-                    >
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-xs text-slate-600 py-4">
-              No future fixed deadlines are currently published; remaining programs operate on rolling admissions or await next-cycle dates.
-            </p>
-          )}
-        </section>
-
-        {/* F. What Should I Do Next? & Saved Snapshot */}
-        <section
-          className="lg:col-span-5 bg-white border border-slate-200 rounded-xl p-5 space-y-5"
-          aria-labelledby="home-next-steps-heading"
-        >
-          <div className="border-b border-slate-200 pb-3">
-            <h3 id="home-next-steps-heading" className="text-base font-bold text-slate-900">
-              What should I do next?
-            </h3>
-            <p className="text-xs text-slate-600">
-              Practical steps to move your scholarship applications forward.
-            </p>
-          </div>
-
+      {/* ================= Your next steps ================= */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="bg-white border border-stone-200 rounded-2xl p-6 space-y-4">
+          <h3 className="text-lg font-bold text-stone-900 tracking-tight">Your next steps</h3>
           <div className="space-y-3">
-            {nextSteps.map((step) => (
-              <div
-                key={step.id}
-                className="p-3.5 rounded-lg border border-slate-200 bg-slate-50/70 space-y-2 text-xs"
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <div className="font-semibold text-slate-900 flex items-center gap-1.5">
-                    {step.completed ? (
-                      <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
-                    ) : (
-                      <ShieldCheck className="w-4 h-4 text-slate-600 shrink-0" />
-                    )}
-                    <span>{step.title}</span>
-                  </div>
-                </div>
-                <p className="text-slate-600 leading-relaxed">{step.description}</p>
-                <div>
+            {nextSteps.slice(0, 4).map((step) => (
+              <div key={step.id} className="flex gap-3 items-start">
+                {step.completed ? (
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                ) : (
+                  <span className="w-5 h-5 rounded-full border-2 border-stone-300 shrink-0 mt-0.5" />
+                )}
+                <div className="text-[13px]">
+                  <div className="font-semibold text-stone-900">{step.title}</div>
+                  <div className="text-stone-500 leading-relaxed mt-0.5">{step.description}</div>
                   <button
                     type="button"
                     onClick={() =>
-                      onNavigate(step.targetView, {
-                        journeySection: step.targetJourneySection,
-                      })
+                      onNavigate(step.targetView, { journeySection: step.targetJourneySection })
                     }
-                    className="inline-flex items-center gap-1 font-semibold text-slate-900 hover:underline"
+                    className="inline-flex items-center gap-1 font-semibold text-stone-900 hover:underline mt-1"
                   >
-                    <span>{step.actionLabel}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    {step.actionLabel} <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
             ))}
           </div>
+        </div>
 
-          {/* Saved Opportunities Quick Status / Helpful Empty State */}
-          <div className="pt-3 border-t border-slate-200 space-y-2">
-            <div className="flex items-center justify-between text-xs">
-              <span className="font-semibold text-slate-900">
-                Your Saved Opportunities ({savedOpportunities.length})
-              </span>
-              {savedOpportunities.length > 0 && (
-                <button
-                  type="button"
-                  onClick={() => onNavigate('journey', { journeySection: 'saved' })}
-                  className="font-semibold text-slate-700 hover:text-slate-900 hover:underline"
-                >
-                  Manage in My Journey
-                </button>
-              )}
-            </div>
-
-            {savedOpportunities.length > 0 ? (
-              <div className="space-y-2">
-                {savedOpportunities.slice(0, 3).map((saved) => {
-                  const prog = programs.find((p) => p.id === saved.programId);
-                  if (!prog) return null;
-                  const dest = getProgramStudyDestination(prog, institutions, scholarships);
-                  return (
-                    <div
-                      key={saved.id}
-                      className="flex items-center justify-between gap-2 p-2.5 rounded border border-slate-200 bg-white text-xs"
-                    >
-                      <button
-                        type="button"
-                        onClick={() => onInspectProgram(prog.id)}
-                        className="font-medium text-slate-900 hover:underline text-left truncate"
-                      >
-                        {prog.title} ({dest.destinationCountry})
-                      </button>
-                      <span className="font-mono text-[11px] text-slate-600 shrink-0">
-                        {saved.applicationStatus}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            ) : (
-              <div className="p-3.5 rounded-lg border border-dashed border-slate-300 bg-slate-50/50 text-xs text-slate-600 space-y-2">
-                <p>
-                  You haven&apos;t saved any opportunities yet. Bookmark programs that interest you to generate a personalized document checklist and deadline tracker.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('explore')}
-                  className="px-3 py-1.5 text-xs font-semibold text-slate-900 bg-white border border-slate-300 rounded-md hover:bg-slate-50"
-                >
-                  Explore opportunities to save
-                </button>
-              </div>
+        <div className="bg-white border border-stone-200 rounded-2xl p-6 space-y-4">
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-bold text-stone-900 tracking-tight">
+              Saved ({savedOpportunities.length})
+            </h3>
+            {savedOpportunities.length > 0 && (
+              <button
+                type="button"
+                onClick={() => onNavigate('journey', { journeySection: 'saved' })}
+                className="text-[13px] font-semibold text-stone-700 hover:text-stone-900 hover:underline"
+              >
+                Open My Journey
+              </button>
             )}
           </div>
-        </section>
-      </div>
+          {savedOpportunities.length > 0 ? (
+            <div className="space-y-2">
+              {savedOpportunities.slice(0, 4).map((saved) => {
+                const prog = programs.find((p) => p.id === saved.programId);
+                if (!prog) return null;
+                const dest = getProgramStudyDestination(prog, institutions, scholarships);
+                return (
+                  <button
+                    key={saved.id}
+                    type="button"
+                    onClick={() => onInspectProgram(prog.id)}
+                    className="w-full text-left p-3 rounded-xl border border-stone-200 hover:border-stone-300 hover:bg-stone-50 transition-colors"
+                  >
+                    <div className="text-[13px] font-semibold text-stone-900 truncate">
+                      {prog.title}
+                    </div>
+                    <div className="text-xs text-stone-500 mt-0.5">
+                      {dest.destinationCountry} · {saved.applicationStatus}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="text-[13px] text-stone-500 leading-relaxed space-y-3">
+              <p>
+                Nothing saved yet. Tap the bookmark on any opportunity and it lands here —
+                with a document checklist and deadline reminders.
+              </p>
+              <button
+                type="button"
+                onClick={() => onNavigate('explore')}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-stone-900 text-white text-[13px] font-semibold hover:bg-stone-700 transition-colors"
+              >
+                <Compass className="w-4 h-4" /> Browse opportunities
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
     </div>
   );
 };

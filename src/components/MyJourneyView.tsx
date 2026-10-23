@@ -172,20 +172,20 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Header & Section Tabs */}
-      <section className="bg-white border border-slate-200 rounded-xl p-6 space-y-5">
+      <section className="bg-white border border-stone-200 rounded-xl p-6 space-y-5">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-1">
-            <h2 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
+            <h2 className="text-xl md:text-2xl font-bold text-stone-900 tracking-tight">
               My Journey
             </h2>
-            <p className="text-xs text-slate-600">
+            <p className="text-xs text-stone-600">
               Manage your saved scholarships, application stages, preparation tasks, required documents, and verified closing dates in one place.
             </p>
           </div>
           <button
             type="button"
             onClick={onNavigateToExplore}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors self-start md:self-auto"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-stone-900 bg-stone-100 hover:bg-stone-200 rounded-lg transition-colors self-start md:self-auto"
           >
             <Compass className="w-3.5 h-3.5" />
             <span>Find more opportunities</span>
@@ -194,7 +194,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
 
         {/* Sub-navigation Tabs */}
         <div
-          className="flex flex-wrap items-center gap-2 pt-3 border-t border-slate-200"
+          className="flex flex-wrap items-center gap-2 pt-3 border-t border-stone-200"
           role="tablist"
           aria-label="My Journey sections"
         >
@@ -236,8 +236,8 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                 onClick={() => onSelectSection(tab.id)}
                 className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg border transition-colors ${
                   active
-                    ? 'bg-slate-900 text-white border-slate-900'
-                    : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                    ? 'bg-stone-900 text-white border-stone-900'
+                    : 'bg-white text-stone-700 border-stone-200 hover:bg-stone-50'
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -269,16 +269,16 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                 return (
                   <article
                     key={saved.id}
-                    className="bg-white border border-slate-200 rounded-xl p-5 space-y-4"
+                    className="bg-white border border-stone-200 rounded-xl p-5 space-y-4"
                   >
                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                       <div className="space-y-1">
-                        <div className="text-xs text-slate-600">
-                          <strong className="text-slate-900">{dest.institutionName}</strong> ·{' '}
+                        <div className="text-xs text-stone-600">
+                          <strong className="text-stone-900">{dest.institutionName}</strong> ·{' '}
                           {dest.destinationCountry} · {prog.degreeLevel} ·{' '}
                           {prog.broadField || prog.discipline}
                         </div>
-                        <h3 className="text-lg font-bold text-slate-900">
+                        <h3 className="text-lg font-bold text-stone-900">
                           <button
                             type="button"
                             onClick={() => onInspectProgram(prog.id)}
@@ -287,10 +287,10 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                             {prog.title}
                           </button>
                         </h3>
-                        <div className="text-xs text-slate-600">
-                          Funding: <strong className="text-slate-900">{funding.headline}</strong> ·
+                        <div className="text-xs text-stone-600">
+                          Funding: <strong className="text-stone-900">{funding.headline}</strong> ·
                           Deadline:{' '}
-                          <strong className="font-mono text-slate-900">
+                          <strong className="font-mono text-stone-900">
                             {deadline.formattedDate}
                           </strong>{' '}
                           ({deadline.label})
@@ -300,7 +300,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                       <div className="flex flex-wrap items-center gap-2 shrink-0">
                         <label
                           htmlFor={`stage-${saved.id}`}
-                          className="text-xs font-medium text-slate-600"
+                          className="text-xs font-medium text-stone-600"
                         >
                           Application Stage:
                         </label>
@@ -314,7 +314,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                               saved.privateNotes
                             )
                           }
-                          className="px-2.5 py-1.5 text-xs font-semibold bg-slate-50 border border-slate-300 rounded-md text-slate-900"
+                          className="px-2.5 py-1.5 text-xs font-semibold bg-stone-50 border border-stone-300 rounded-md text-stone-900"
                         >
                           {APPLICATION_STAGES.map((st) => (
                             <option key={st} value={st}>
@@ -326,7 +326,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                         <button
                           type="button"
                           onClick={() => onInspectProgram(prog.id)}
-                          className="px-3 py-1.5 text-xs font-semibold bg-slate-900 text-white rounded-md hover:bg-slate-800"
+                          className="px-3 py-1.5 text-xs font-semibold bg-stone-900 text-white rounded-md hover:bg-stone-800"
                         >
                           View Details
                         </button>
@@ -335,25 +335,25 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                           type="button"
                           onClick={() => onDeleteSavedOpportunity(prog.id)}
                           aria-label={`Remove ${prog.title} from saved opportunities`}
-                          className="p-1.5 text-slate-500 hover:text-red-700 border border-slate-200 rounded-md transition-colors"
+                          className="p-1.5 text-stone-500 hover:text-red-700 border border-stone-200 rounded-md transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3 border-t border-slate-100 text-xs">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3 border-t border-stone-100 text-xs">
                       <div>
-                        <span className="text-slate-500 block mb-1">Personal Notes</span>
-                        <p className="text-slate-800 bg-slate-50 p-2.5 rounded border border-slate-200">
+                        <span className="text-stone-500 block mb-1">Personal Notes</span>
+                        <p className="text-stone-800 bg-stone-50 p-2.5 rounded border border-stone-200">
                           {saved.privateNotes ||
                             'No personal notes added yet. Open details to add notes.'}
                         </p>
                       </div>
-                      <div className="flex flex-col justify-between bg-slate-50 p-3 rounded border border-slate-200">
+                      <div className="flex flex-col justify-between bg-stone-50 p-3 rounded border border-stone-200">
                         <div>
-                          <span className="text-slate-500 block">Document Readiness</span>
-                          <span className="font-mono font-semibold text-slate-900">
+                          <span className="text-stone-500 block">Document Readiness</span>
+                          <span className="font-mono font-semibold text-stone-900">
                             {readyDocs} of {linkedDocs.length} required documents ready
                           </span>
                         </div>
@@ -361,7 +361,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                           <button
                             type="button"
                             onClick={() => onSelectSection('documents')}
-                            className="font-semibold text-slate-900 hover:underline"
+                            className="font-semibold text-stone-900 hover:underline"
                           >
                             Open Document Checklist →
                           </button>
@@ -369,7 +369,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                             href={prog.officialProgramUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-slate-700 hover:text-slate-900 underline"
+                            className="inline-flex items-center gap-1 text-stone-700 hover:text-stone-900 underline"
                           >
                             <span>Official portal</span>
                             <ExternalLink className="w-3 h-3" />
@@ -382,17 +382,17 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
               })}
             </div>
           ) : (
-            <div className="bg-white border border-slate-200 rounded-xl p-8 text-center space-y-3">
-              <h3 className="text-base font-bold text-slate-900">
+            <div className="bg-white border border-stone-200 rounded-xl p-8 text-center space-y-3">
+              <h3 className="text-base font-bold text-stone-900">
                 You haven&apos;t saved any opportunities or applications yet
               </h3>
-              <p className="text-xs text-slate-600 max-w-lg mx-auto">
+              <p className="text-xs text-stone-600 max-w-lg mx-auto">
                 Explore verified scholarships in Computer Science and Microbiology and click &ldquo;Save opportunity&rdquo; to track your application progress and required documents here.
               </p>
               <button
                 type="button"
                 onClick={onNavigateToExplore}
-                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-slate-900 rounded-lg hover:bg-slate-800"
+                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-stone-900 rounded-lg hover:bg-stone-800"
               >
                 <Compass className="w-4 h-4" />
                 <span>Explore opportunities</span>
@@ -409,9 +409,9 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
         <section className="space-y-5" aria-label="Application preparation tasks">
           <form
             onSubmit={handleAddTaskSubmit}
-            className="bg-white border border-slate-200 rounded-xl p-5 space-y-3"
+            className="bg-white border border-stone-200 rounded-xl p-5 space-y-3"
           >
-            <h3 className="text-sm font-bold text-slate-900">Add a New Preparation Task</h3>
+            <h3 className="text-sm font-bold text-stone-900">Add a New Preparation Task</h3>
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 text-xs">
               <div className="sm:col-span-5">
                 <label htmlFor="new-task-title" className="sr-only">
@@ -423,7 +423,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                   value={newTaskTitle}
                   onChange={(e) => setNewTaskTitle(e.target.value)}
                   placeholder="e.g., Request HEC degree attestation or contact TU Munich supervisor"
-                  className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-md text-slate-900"
+                  className="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-md text-stone-900"
                 />
               </div>
               <div className="sm:col-span-2">
@@ -436,7 +436,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                   onChange={(e) =>
                     setNewTaskCategory(e.target.value as ApplicationTaskRecord['category'])
                   }
-                  className="w-full px-2.5 py-2 bg-white border border-slate-300 rounded-md text-slate-900"
+                  className="w-full px-2.5 py-2 bg-white border border-stone-300 rounded-md text-stone-900"
                 >
                   <option value="DOCUMENT">Documents & Attestation</option>
                   <option value="SUPERVISOR_CONTACT">Supervisor Contact</option>
@@ -453,7 +453,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                   id="new-task-program"
                   value={newTaskProgramId}
                   onChange={(e) => setNewTaskProgramId(e.target.value)}
-                  className="w-full px-2.5 py-2 bg-white border border-slate-300 rounded-md text-slate-900"
+                  className="w-full px-2.5 py-2 bg-white border border-stone-300 rounded-md text-stone-900"
                 >
                   <option value="">General (All Applications)</option>
                   {programs.map((p) => (
@@ -469,11 +469,11 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                   aria-label="Task due date"
                   value={newTaskDueDate}
                   onChange={(e) => setNewTaskDueDate(e.target.value)}
-                  className="w-full px-2 py-2 bg-white border border-slate-300 rounded-md text-slate-900 font-mono"
+                  className="w-full px-2 py-2 bg-white border border-stone-300 rounded-md text-stone-900 font-mono"
                 />
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-1 px-3 py-2 font-semibold text-white bg-slate-900 rounded-md hover:bg-slate-800 shrink-0"
+                  className="inline-flex items-center justify-center gap-1 px-3 py-2 font-semibold text-white bg-stone-900 rounded-md hover:bg-stone-800 shrink-0"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add</span>
@@ -483,7 +483,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
           </form>
 
           {tasks.length > 0 ? (
-            <div className="bg-white border border-slate-200 rounded-xl divide-y divide-slate-200">
+            <div className="bg-white border border-stone-200 rounded-xl divide-y divide-stone-200">
               {tasks.map((task) => {
                 const linkedProg = programs.find((p) => p.id === task.programId);
                 return (
@@ -496,17 +496,17 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                         type="checkbox"
                         checked={task.completed}
                         onChange={(e) => onToggleTask(task.id, e.target.checked)}
-                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-slate-900"
+                        className="mt-0.5 h-4 w-4 rounded border-stone-300 text-stone-900"
                       />
                       <div>
                         <span
                           className={`font-semibold block ${
-                            task.completed ? 'line-through text-slate-400' : 'text-slate-900'
+                            task.completed ? 'line-through text-stone-400' : 'text-stone-900'
                           }`}
                         >
                           {task.title}
                         </span>
-                        <span className="text-slate-500">
+                        <span className="text-stone-500">
                           {TASK_CATEGORY_LABELS[task.category] || task.category}
                           {linkedProg ? ` · Program: ${linkedProg.title}` : ''}
                           {task.dueDate ? ` · Due: ${task.dueDate.slice(0, 10)}` : ''}
@@ -518,7 +518,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                       type="button"
                       onClick={() => onDeleteTask(task.id)}
                       aria-label={`Delete task ${task.title}`}
-                      className="p-1.5 text-slate-400 hover:text-red-700 self-end sm:self-center"
+                      className="p-1.5 text-stone-400 hover:text-red-700 self-end sm:self-center"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -527,7 +527,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
               })}
             </div>
           ) : (
-            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center text-xs text-slate-600">
+            <div className="bg-white border border-stone-200 rounded-xl p-6 text-center text-xs text-stone-600">
               No preparation tasks added yet. Use the form above to add tasks for HEC attestation, recommendation letters, or supervisor emails.
             </div>
           )}
@@ -541,9 +541,9 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
         <section className="space-y-5" aria-label="Application document checklist">
           <form
             onSubmit={handleAddDocSubmit}
-            className="bg-white border border-slate-200 rounded-xl p-5 space-y-3"
+            className="bg-white border border-stone-200 rounded-xl p-5 space-y-3"
           >
-            <h3 className="text-sm font-bold text-slate-900">Add a Document to Your Checklist</h3>
+            <h3 className="text-sm font-bold text-stone-900">Add a Document to Your Checklist</h3>
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 text-xs">
               <div className="sm:col-span-4">
                 <input
@@ -552,7 +552,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                   value={newDocName}
                   onChange={(e) => setNewDocName(e.target.value)}
                   placeholder="e.g., HEC Attested BS Transcript & Degree"
-                  className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-md text-slate-900"
+                  className="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-md text-stone-900"
                 />
               </div>
               <div className="sm:col-span-4">
@@ -560,7 +560,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                   aria-label="Associated program"
                   value={newDocProgramId}
                   onChange={(e) => setNewDocProgramId(e.target.value)}
-                  className="w-full px-2.5 py-2 bg-white border border-slate-300 rounded-md text-slate-900"
+                  className="w-full px-2.5 py-2 bg-white border border-stone-300 rounded-md text-stone-900"
                 >
                   <option value="">General Document (All Programs)</option>
                   {programs.map((p) => (
@@ -577,11 +577,11 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                   value={newDocNotes}
                   onChange={(e) => setNewDocNotes(e.target.value)}
                   placeholder="Optional note (e.g., 2 sealed copies)"
-                  className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-md text-slate-900"
+                  className="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-md text-stone-900"
                 />
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-1 px-3 py-2 font-semibold text-white bg-slate-900 rounded-md hover:bg-slate-800 shrink-0"
+                  className="inline-flex items-center gap-1 px-3 py-2 font-semibold text-white bg-stone-900 rounded-md hover:bg-stone-800 shrink-0"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add</span>
@@ -591,7 +591,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
           </form>
 
           {checklistItems.length > 0 ? (
-            <div className="bg-white border border-slate-200 rounded-xl divide-y divide-slate-200">
+            <div className="bg-white border border-stone-200 rounded-xl divide-y divide-stone-200">
               {checklistItems.map((item) => {
                 const linkedProg = programs.find((p) => p.id === item.programId);
                 return (
@@ -600,8 +600,8 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                     className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
                   >
                     <div className="space-y-0.5">
-                      <div className="font-semibold text-slate-900">{item.documentName}</div>
-                      <div className="text-slate-500">
+                      <div className="font-semibold text-stone-900">{item.documentName}</div>
+                      <div className="text-stone-500">
                         {linkedProg ? `Program: ${linkedProg.title}` : 'General Application Document'}
                         {item.userNotes ? ` · Note: ${item.userNotes}` : ''}
                       </div>
@@ -618,7 +618,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                             item.userNotes
                           )
                         }
-                        className="px-2.5 py-1.5 text-xs font-semibold bg-slate-50 border border-slate-300 rounded-md text-slate-900"
+                        className="px-2.5 py-1.5 text-xs font-semibold bg-stone-50 border border-stone-300 rounded-md text-stone-900"
                       >
                         <option value="MISSING">Missing</option>
                         <option value="DRAFTING">Drafting / In Progress</option>
@@ -630,7 +630,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                         type="button"
                         onClick={() => onDeleteChecklistItem(item.id)}
                         aria-label={`Remove ${item.documentName}`}
-                        className="p-1.5 text-slate-400 hover:text-red-700"
+                        className="p-1.5 text-stone-400 hover:text-red-700"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
@@ -640,7 +640,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
               })}
             </div>
           ) : (
-            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center text-xs text-slate-600">
+            <div className="bg-white border border-stone-200 rounded-xl p-6 text-center text-xs text-stone-600">
               Your document checklist is empty. When you save an opportunity, its required documents are automatically added here.
             </div>
           )}
@@ -651,17 +651,17 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
           TAB 4: VALIDATED DEADLINES CALENDAR
          ================================================================== */}
       {activeSection === 'deadlines' && (
-        <section className="bg-white border border-slate-200 rounded-xl p-5 space-y-4">
-          <div className="border-b border-slate-200 pb-3">
-            <h3 className="text-base font-bold text-slate-900">
+        <section className="bg-white border border-stone-200 rounded-xl p-5 space-y-4">
+          <div className="border-b border-stone-200 pb-3">
+            <h3 className="text-base font-bold text-stone-900">
               Verified Scholarship & Admission Deadlines
             </h3>
-            <p className="text-xs text-slate-600">
+            <p className="text-xs text-stone-600">
               Saved opportunities appear first, sorted by closing date. Programs without a fixed published date are clearly marked.
             </p>
           </div>
 
-          <div className="divide-y divide-slate-200">
+          <div className="divide-y divide-stone-200">
             {validatedDeadlines.map((item) => (
               <div
                 key={item.program.id}
@@ -672,7 +672,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                     <button
                       type="button"
                       onClick={() => onInspectProgram(item.program.id)}
-                      className="font-bold text-slate-900 hover:underline text-left"
+                      className="font-bold text-stone-900 hover:underline text-left"
                     >
                       {item.program.title}
                     </button>
@@ -680,7 +680,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                       <span className="font-semibold text-emerald-800">· Saved in My Journey</span>
                     )}
                   </div>
-                  <div className="text-slate-600">
+                  <div className="text-stone-600">
                     {item.destination.institutionName} · {item.destination.destinationCountry} ·{' '}
                     {item.funding.headline}
                   </div>
@@ -688,7 +688,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
 
                 <div className="flex items-center gap-3 shrink-0">
                   <div className="text-right font-mono">
-                    <div className="font-semibold text-slate-900">
+                    <div className="font-semibold text-stone-900">
                       {item.deadline.formattedDate}
                     </div>
                     <div
@@ -697,7 +697,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                           ? 'text-amber-700 font-semibold'
                           : item.deadline.status === 'OPEN'
                           ? 'text-emerald-700'
-                          : 'text-slate-500'
+                          : 'text-stone-500'
                       }`}
                     >
                       {item.deadline.label}
@@ -706,7 +706,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
                   <button
                     type="button"
                     onClick={() => onInspectProgram(item.program.id)}
-                    className="px-3 py-1.5 font-semibold text-slate-800 border border-slate-300 rounded-md hover:bg-slate-50"
+                    className="px-3 py-1.5 font-semibold text-stone-800 border border-stone-300 rounded-md hover:bg-stone-50"
                   >
                     Details
                   </button>
@@ -721,13 +721,13 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
           TAB 5: PORTAL UPDATES & NOTIFICATIONS
          ================================================================== */}
       {activeSection === 'updates' && (
-        <section className="bg-white border border-slate-200 rounded-xl p-5 space-y-4">
-          <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+        <section className="bg-white border border-stone-200 rounded-xl p-5 space-y-4">
+          <div className="flex items-center justify-between border-b border-stone-200 pb-3">
             <div>
-              <h3 className="text-base font-bold text-slate-900">
+              <h3 className="text-base font-bold text-stone-900">
                 Scholarship & Deadline Updates
               </h3>
-              <p className="text-xs text-slate-600">
+              <p className="text-xs text-stone-600">
                 Real-time alerts when a monitored official portal updates its stipend, deadline, or eligibility rules.
               </p>
             </div>
@@ -735,7 +735,7 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
               <button
                 type="button"
                 onClick={onMarkNotificationsRead}
-                className="px-3 py-1.5 text-xs font-semibold text-slate-700 border border-slate-300 rounded-md hover:bg-slate-50"
+                className="px-3 py-1.5 text-xs font-semibold text-stone-700 border border-stone-300 rounded-md hover:bg-stone-50"
               >
                 Mark all read
               </button>
@@ -743,21 +743,21 @@ export const MyJourneyView: React.FC<MyJourneyViewProps> = ({
           </div>
 
           {notifications.length > 0 ? (
-            <div className="divide-y divide-slate-200">
+            <div className="divide-y divide-stone-200">
               {notifications.map((notif) => (
                 <div key={notif.id} className="py-3.5 first:pt-0 last:pb-0 space-y-1 text-xs">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="font-bold text-slate-900">{notif.title}</span>
-                    <span className="font-mono text-[11px] text-slate-500">
+                    <span className="font-bold text-stone-900">{notif.title}</span>
+                    <span className="font-mono text-[11px] text-stone-500">
                       {notif.createdAt.slice(0, 10)}
                     </span>
                   </div>
-                  <p className="text-slate-600 leading-relaxed">{notif.message}</p>
+                  <p className="text-stone-600 leading-relaxed">{notif.message}</p>
                 </div>
               ))}
             </div>
           ) : (
-            <p className="text-xs text-slate-600 py-4">
+            <p className="text-xs text-stone-600 py-4">
               No portal change alerts recorded yet.
             </p>
           )}

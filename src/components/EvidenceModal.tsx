@@ -30,8 +30,14 @@ import {
   mapStudentEligibilityCategory,
   mapStudentFundingSummary,
   mapStudentVerificationConfidence,
-  OPPORTUNITY_TYPE_LABELS,
 } from '../lib/student-dashboard';
+import {
+  getOpportunityTypeMeta,
+  getProgramTypeKey,
+  humanDeadlinePill,
+  humanFundingLine,
+  humanRequirementsLine,
+} from '../lib/opportunity-presentation';
 import { OFFICIAL_LIVING_COST_BENCHMARKS } from '../lib/funding-engine';
 
 interface EvidenceModalProps {
@@ -51,16 +57,24 @@ interface EvidenceModalProps {
 }
 
 const CLAIM_TYPE_LABELS: Record<string, string> = {
-  TUITION_COVERAGE: 'Tuition Coverage',
-  STIPEND_AMOUNT: 'Living Stipend',
-  MANDATORY_FEES: 'Mandatory Fees',
-  LIVING_COST_BENCHMARK: 'Official Living-Cost Benchmark',
-  ELIGIBILITY_CITIZENSHIP: 'Pakistani / International Eligibility',
-  ELIGIBILITY_GPA: 'Minimum Academic Grade / GPA',
-  ELIGIBILITY_LANGUAGE: 'English Language Requirement',
-  DEADLINE_DATE: 'Application Deadline',
-  SUPERVISOR_REQUIREMENT: 'Supervisor Contact Policy',
+  TUITION_COVERAGE: 'Tuition coverage',
+  STIPEND_AMOUNT: 'Living stipend',
+  MANDATORY_FEES: 'Mandatory fees',
+  LIVING_COST_BENCHMARK: 'Living-cost benchmark',
+  ELIGIBILITY_CITIZENSHIP: 'Who can apply',
+  ELIGIBILITY_GPA: 'Grade requirement',
+  ELIGIBILITY_LANGUAGE: 'English requirement',
+  DEADLINE_DATE: 'Application deadline',
+  SUPERVISOR_REQUIREMENT: 'Supervisor contact',
 };
+
+function SectionTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="text-base font-bold text-stone-900 tracking-tight border-b border-stone-200 pb-2">
+      {children}
+    </h3>
+  );
+}
 
 export const EvidenceModal: React.FC<EvidenceModalProps> = ({
   program,
@@ -95,9 +109,7 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
   React.useEffect(() => {
     if (!program) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-      }
+      if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
@@ -112,6 +124,10 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
   const studentFunding = mapStudentFundingSummary(program, scholarships);
   const studentDeadline = mapDeadlineStatus(program);
   const studentVerification = mapStudentVerificationConfidence(program);
+  const funding = humanFundingLine(program, scholarships);
+  const deadlinePill = humanDeadlinePill(program);
+  const typeMeta = getOpportunityTypeMeta(getProgramTypeKey(program, scholarships));
+  const TypeIcon = typeMeta.icon;
 
   const primaryScholarship = scholarships[0];
   const pkg = primaryScholarship?.fundingPackage;
@@ -133,9 +149,7 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
   );
 
   const recentAttempts = fetchAttempts
-    .filter((f) =>
-      linkedSource ? f.sourceId === linkedSource.id : f.url.includes(programDomain)
-    )
+    .filter((f) => (linkedSource ? f.sourceId === linkedSource.id : f.url.includes(programDomain)))
     .slice(0, 5);
 
   const tuitionClaim = claims.find((c) => c.claimType === 'TUITION_COVERAGE');
@@ -146,24 +160,16 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
     try {
       await onSaveOrUpdate(program.id, status, notes);
       setSaveFeedback(
-        savedRecord
-          ? 'Saved changes to your application tracker.'
-          : 'Saved to My Journey and synced required documents.'
+        savedRecord ? 'Updated in your application tracker.' : 'Saved to My Journey.'
       );
     } finally {
       setSaving(false);
     }
   };
 
-  const opportunityTypeLabel =
-    (program.opportunityType && OPPORTUNITY_TYPE_LABELS[program.opportunityType]) ||
-    (primaryScholarship?.opportunityType &&
-      OPPORTUNITY_TYPE_LABELS[primaryScholarship.opportunityType]) ||
-    'Graduate Scholarship / Program';
-
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-end bg-slate-900/50 backdrop-blur-[1px]"
+      className="fixed inset-0 z-50 flex items-center justify-end bg-stone-950/50 backdrop-blur-[1px]"
       role="dialog"
       aria-modal="true"
       aria-labelledby="opportunity-detail-title"
@@ -171,285 +177,226 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="relative h-full w-full max-w-4xl overflow-y-auto bg-white border-l border-slate-200 p-6 md:p-8 flex flex-col gap-8">
-        {/* Top Back Navigation Bar */}
-        <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
+      <div className="relative h-full w-full max-w-4xl overflow-y-auto bg-stone-50 border-l border-stone-200 flex flex-col">
+        {/* Top bar */}
+        <div className="sticky top-0 z-10 bg-stone-50/95 backdrop-blur border-b border-stone-200 px-6 md:px-8 py-4 flex items-center justify-between gap-4">
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 hover:text-slate-900 px-3 py-1.5 rounded-md border border-slate-200 hover:bg-slate-50 transition-colors"
+            className="inline-flex items-center gap-2 text-[13px] font-semibold text-stone-700 hover:text-stone-900 px-3 py-2 rounded-xl border border-stone-200 bg-white hover:bg-stone-100 transition-colors"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to opportunities</span>
+            <ArrowLeft className="w-4 h-4" />
+            Back
           </button>
-
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-500">
-              {studentVerification.label}
-            </span>
-            <button
-              type="button"
-              onClick={onClose}
-              aria-label="Close opportunity details"
-              className="p-1.5 text-slate-500 hover:text-slate-900 border border-slate-200 rounded-md transition-colors"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          </div>
+          <span
+            className={`inline-flex items-center gap-1.5 text-xs font-semibold ${
+              studentVerification.tier === 'CONFIRMED'
+                ? 'text-emerald-700'
+                : studentVerification.tier === 'UNAVAILABLE'
+                ? 'text-red-700'
+                : 'text-amber-700'
+            }`}
+          >
+            <ShieldCheck className="w-4 h-4" />
+            {studentVerification.label}
+          </span>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close details"
+            className="p-2 text-stone-500 hover:text-stone-900 border border-stone-200 bg-white rounded-xl transition-colors"
+          >
+            <X className="w-4 h-4" />
+          </button>
         </div>
 
-        {/* ==================================================================
-            1. OVERVIEW
-           ================================================================== */}
-        <section className="space-y-4" aria-labelledby="section-overview">
-          <div className="space-y-2">
-            <h3
-              id="section-overview"
-              className="text-xs font-semibold uppercase tracking-wider text-slate-500"
-            >
-              1. Overview
-            </h3>
-
-            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-600">
-              <span className="font-semibold text-slate-900">{destination.institutionName}</span>
-              <span aria-hidden="true">·</span>
-              <span className="font-medium text-slate-800">
-                Study Destination: {destination.destinationCountry}
-              </span>
-              {destination.isCrossBorderAdministered && (
-                <>
-                  <span aria-hidden="true">·</span>
-                  <span className="text-slate-600">
-                    Administered in {destination.administeringCountry}
-                  </span>
-                </>
-              )}
-              {destination.city && (
-                <>
-                  <span aria-hidden="true">·</span>
-                  <span>{destination.city}</span>
-                </>
-              )}
-              <span aria-hidden="true">·</span>
-              <span className="font-mono font-semibold text-slate-900">{program.degreeLevel}</span>
-              <span aria-hidden="true">·</span>
-              <span className="font-medium text-slate-800">
-                {program.broadField || program.discipline}
-              </span>
-            </div>
-
-            <h2
-              id="opportunity-detail-title"
-              className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight"
-            >
-              {program.title}
-            </h2>
-
-            <p className="text-xs text-slate-600 leading-relaxed">
-              {opportunityTypeLabel}
-              {primaryScholarship ? ` · Linked Award: ${primaryScholarship.name}` : ''} ·{' '}
-              {studentVerification.explanation}
-            </p>
-          </div>
-
-          {/* Key Summary Strip */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 bg-slate-50 border border-slate-200 rounded-lg p-4 text-xs">
-            <div>
-              <span className="text-slate-500 block">Your Eligibility Assessment</span>
+        <div className="px-6 md:px-8 py-8 space-y-10 max-w-3xl">
+          {/* ============ AT A GLANCE ============ */}
+          <section className="space-y-5">
+            <div className="space-y-3">
               <span
-                className={`mt-1 block font-semibold ${
-                  studentEligibility.category === 'ELIGIBLE'
-                    ? 'text-emerald-700'
-                    : studentEligibility.category === 'NOT_ELIGIBLE'
-                    ? 'text-red-700'
-                    : studentEligibility.category === 'POTENTIALLY_ELIGIBLE'
-                    ? 'text-amber-700'
-                    : 'text-slate-700'
-                }`}
+                title={typeMeta.whatItIs}
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border ${typeMeta.badgeClass}`}
               >
-                {studentEligibility.label}
+                <TypeIcon className="w-4 h-4" />
+                {typeMeta.label}
               </span>
+              <p className="text-[13px] text-stone-500 leading-relaxed max-w-xl">
+                {typeMeta.whatItIs}
+              </p>
+              <div className="text-[13px] text-stone-500 font-medium">
+                {destination.institutionName} · {destination.destinationCountry}
+                {destination.city ? ` · ${destination.city}` : ''} · {program.degreeLevel}
+              </div>
+              <h2
+                id="opportunity-detail-title"
+                className="text-2xl md:text-3xl font-bold text-stone-900 tracking-tight leading-tight"
+              >
+                {program.title}
+              </h2>
+              {primaryScholarship && (
+                <p className="text-[13px] text-stone-500">
+                  Funded through{' '}
+                  <span className="font-semibold text-stone-800">{primaryScholarship.name}</span>
+                </p>
+              )}
             </div>
-            <div>
-              <span className="text-slate-500 block">Funding Summary</span>
-              <span className="mt-1 block font-semibold text-slate-900">
-                {studentFunding.headline}
-              </span>
-            </div>
-            <div>
-              <span className="text-slate-500 block">Application Deadline</span>
-              <span className="mt-1 block font-mono font-semibold text-slate-900">
-                {studentDeadline.formattedDate}{' '}
-                <span className="font-sans font-normal text-slate-600">
-                  ({studentDeadline.label})
+
+            {/* Key facts */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="bg-white border border-stone-200 rounded-2xl p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-1.5">
+                  You get
+                </div>
+                <div
+                  className={`text-sm font-bold ${funding.isFull ? 'text-emerald-800' : 'text-stone-900'}`}
+                >
+                  {funding.headline}
+                </div>
+              </div>
+              <div className="bg-white border border-stone-200 rounded-2xl p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-1.5">
+                  You need
+                </div>
+                <div className="text-sm font-bold text-stone-900">
+                  {humanRequirementsLine(program)}
+                </div>
+              </div>
+              <div className="bg-white border border-stone-200 rounded-2xl p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-1.5">
+                  Deadline
+                </div>
+                <span
+                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border ${deadlinePill.pillClass}`}
+                >
+                  <span className={`w-1.5 h-1.5 rounded-full ${deadlinePill.dotClass}`} />
+                  {deadlinePill.text}
                 </span>
-              </span>
+                <div className="text-[11px] text-stone-400 mt-1.5">{deadlinePill.sub}</div>
+              </div>
             </div>
-            <div>
-              <span className="text-slate-500 block">Verification Confidence</span>
-              <span
-                className={`mt-1 block font-semibold ${
-                  studentVerification.tier === 'CONFIRMED'
-                    ? 'text-emerald-700'
-                    : studentVerification.tier === 'UNAVAILABLE'
-                    ? 'text-red-700'
-                    : 'text-amber-700'
-                }`}
-              >
-                {studentVerification.label}
-              </span>
-            </div>
-          </div>
 
-          {/* Official Links & Save Action Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border border-slate-200 p-4 rounded-lg">
-            <div className="flex flex-wrap items-center gap-4 text-xs">
+            {/* Actions */}
+            <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href={program.officialProgramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-semibold text-slate-900 underline underline-offset-4 hover:text-slate-700"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-stone-900 text-white text-sm font-bold hover:bg-stone-700 transition-colors"
               >
-                <span>Official Program Website ({programDomain || 'official-portal'})</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                Official program page <ExternalLink className="w-4 h-4" />
               </a>
               {program.officialApplicationUrl && (
                 <a
                   href={program.officialApplicationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-white border border-stone-300 text-stone-900 text-sm font-bold hover:bg-stone-100 transition-colors"
                 >
-                  <span>Official Application Portal</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  Application portal <ExternalLink className="w-4 h-4" />
                 </a>
               )}
             </div>
 
-            <div className="flex flex-wrap items-center gap-2">
-              <label htmlFor="detail-app-status" className="text-xs text-slate-600 font-medium">
-                Stage:
-              </label>
-              <select
-                id="detail-app-status"
-                value={status}
-                onChange={(e) => setStatus(e.target.value as ApplicationStatus)}
-                className="px-2.5 py-1.5 text-xs font-medium bg-white border border-slate-300 rounded-md text-slate-900"
-              >
-                <option value="Researching">Researching</option>
-                <option value="Preparing Documents">Preparing Documents</option>
-                <option value="Ready to Apply">Ready to Apply</option>
-                <option value="Submitted">Submitted</option>
-                <option value="Interview">Interview</option>
-                <option value="Offer Received">Offer Received</option>
-                <option value="Accepted">Accepted</option>
-                <option value="Rejected">Rejected</option>
-              </select>
+            {/* Save */}
+            <div className="bg-white border border-stone-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center gap-3">
+              <div className="flex items-center gap-2 flex-1">
+                <label htmlFor="detail-app-status" className="text-[13px] text-stone-500 font-medium">
+                  Track as:
+                </label>
+                <select
+                  id="detail-app-status"
+                  value={status}
+                  onChange={(e) => setStatus(e.target.value as ApplicationStatus)}
+                  className="px-3 py-2 text-[13px] font-medium bg-stone-50 border border-stone-300 rounded-xl text-stone-900"
+                >
+                  <option value="Researching">Researching</option>
+                  <option value="Preparing Documents">Preparing documents</option>
+                  <option value="Ready to Apply">Ready to apply</option>
+                  <option value="Submitted">Submitted</option>
+                  <option value="Interview">Interview</option>
+                  <option value="Offer Received">Offer received</option>
+                  <option value="Accepted">Accepted</option>
+                  <option value="Rejected">Rejected</option>
+                </select>
+              </div>
               <button
                 type="button"
                 onClick={handleSave}
                 disabled={saving}
-                className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-md transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white bg-emerald-700 hover:bg-emerald-600 rounded-xl transition-colors disabled:opacity-60"
               >
-                <Bookmark className="w-3.5 h-3.5" />
-                <span>{savedRecord ? 'Update Saved Opportunity' : 'Save Opportunity'}</span>
+                <Bookmark className="w-4 h-4" />
+                {savedRecord ? 'Update saved' : 'Save to My Journey'}
               </button>
             </div>
-          </div>
+            {saveFeedback && (
+              <div className="flex items-center gap-2 text-[13px] text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3">
+                <CheckCircle2 className="w-4 h-4 shrink-0" />
+                {saveFeedback}
+              </div>
+            )}
+          </section>
 
-          {saveFeedback && (
-            <div className="flex items-center gap-2 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-md px-3 py-2">
-              <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-700" />
-              <span>{saveFeedback}</span>
-            </div>
-          )}
-        </section>
-
-        {/* ==================================================================
-            2. ELIGIBILITY REQUIREMENTS
-           ================================================================== */}
-        <section className="space-y-3" aria-labelledby="section-eligibility">
-          <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-slate-200 pb-2">
-            <h3 id="section-eligibility" className="text-sm font-semibold text-slate-900">
-              2. Eligibility requirements
-            </h3>
-            <span className="text-xs text-slate-600">
-              Assessment:{' '}
-              <strong
-                className={
-                  studentEligibility.category === 'ELIGIBLE'
-                    ? 'text-emerald-700'
-                    : studentEligibility.category === 'NOT_ELIGIBLE'
-                    ? 'text-red-700'
-                    : studentEligibility.category === 'POTENTIALLY_ELIGIBLE'
-                    ? 'text-amber-700'
-                    : 'text-slate-800'
-                }
-              >
-                {studentEligibility.label}
-              </strong>
-            </span>
-          </div>
-
-          <div className="border border-slate-200 rounded-lg p-4 bg-slate-50/70 space-y-2 text-xs">
-            <div className="flex items-start gap-2">
-              <Info className="w-4 h-4 text-slate-600 shrink-0 mt-0.5" />
-              <div className="space-y-1">
-                <p className="font-semibold text-slate-900">
-                  {studentEligibility.label} — {studentEligibility.shortExplanation}
-                </p>
-                <p className="text-slate-600">
-                  ScholarScope never marks you as &ldquo;Not eligible&rdquo; simply because a profile field is blank or a source page did not state a numeric threshold. Only an explicit mismatch against a published rule results in &ldquo;Not eligible&rdquo;.
+          {/* ============ CAN YOU APPLY? ============ */}
+          <section className="space-y-4">
+            <SectionTitle>Can you apply?</SectionTitle>
+            <div className="bg-white border border-stone-200 rounded-2xl p-5 space-y-3">
+              <div className="flex items-start gap-2.5">
+                <Info className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
+                <p className="text-[13px] text-stone-600 leading-relaxed">
+                  <strong
+                    className={
+                      studentEligibility.category === 'ELIGIBLE'
+                        ? 'text-emerald-700'
+                        : studentEligibility.category === 'NOT_ELIGIBLE'
+                        ? 'text-red-700'
+                        : studentEligibility.category === 'POTENTIALLY_ELIGIBLE'
+                        ? 'text-amber-700'
+                        : 'text-stone-900'
+                    }
+                  >
+                    {studentEligibility.label}
+                  </strong>{' '}
+                  — {studentEligibility.shortExplanation || 'Complete your profile for a personal check.'}
                 </p>
               </div>
-            </div>
-
-            {studentEligibility.category === 'NOT_ASSESSED' && onNavigateToProfile && (
-              <div className="pt-2">
+              <p className="text-xs text-stone-400 leading-relaxed">
+                We only mark you "not eligible" on an explicit published rule — never just
+                because a profile field is blank.
+              </p>
+              {studentEligibility.category === 'NOT_ASSESSED' && onNavigateToProfile && (
                 <button
                   type="button"
                   onClick={() => {
                     onClose();
                     onNavigateToProfile();
                   }}
-                  className="px-3 py-1.5 text-xs font-semibold text-slate-900 bg-white border border-slate-300 rounded-md hover:bg-slate-50"
+                  className="px-4 py-2 text-[13px] font-bold text-white bg-stone-900 rounded-xl hover:bg-stone-700"
                 >
-                  Complete My Profile to Check Eligibility
+                  Complete my profile to check
                 </button>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
 
-          {eligibility && eligibility.decisions.length > 0 && (
-            <div className="overflow-x-auto border border-slate-200 rounded-lg">
-              <table className="w-full text-left border-collapse text-xs">
-                <thead>
-                  <tr className="border-b border-slate-200 bg-slate-50 text-slate-600">
-                    <th className="py-2.5 px-3 font-semibold">Requirement</th>
-                    <th className="py-2.5 px-3 font-semibold">Your Profile</th>
-                    <th className="py-2.5 px-3 font-semibold">Published Rule</th>
-                    <th className="py-2.5 px-3 font-semibold">Status</th>
-                    <th className="py-2.5 px-3 font-semibold">What to Check Next</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200">
-                  {eligibility.decisions.map((d, idx) => {
-                    const ruleLabel =
-                      d.result === 'Likely Eligible'
-                        ? 'Eligible'
-                        : d.result === 'Not Eligible'
-                        ? 'Not eligible'
-                        : d.result === 'Insufficient Information'
-                        ? 'Not assessed (profile incomplete)'
-                        : 'Potentially eligible';
-                    return (
-                      <tr key={idx} className="hover:bg-slate-50/80">
-                        <td className="py-2.5 px-3 font-medium text-slate-900">{d.criterion}</td>
-                        <td className="py-2.5 px-3 font-mono text-slate-700">{d.profileValue}</td>
-                        <td className="py-2.5 px-3 font-mono text-slate-700">
-                          {d.publishedRequirement}
-                        </td>
-                        <td className="py-2.5 px-3 font-semibold">
+            {eligibility && eligibility.decisions.length > 0 && (
+              <div className="overflow-x-auto border border-stone-200 rounded-2xl bg-white">
+                <table className="w-full text-left text-[13px]">
+                  <thead>
+                    <tr className="border-b border-stone-200 bg-stone-50 text-stone-500">
+                      <th className="py-3 px-4 font-semibold text-xs">Requirement</th>
+                      <th className="py-3 px-4 font-semibold text-xs">You</th>
+                      <th className="py-3 px-4 font-semibold text-xs">They ask for</th>
+                      <th className="py-3 px-4 font-semibold text-xs">Result</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-stone-100">
+                    {eligibility.decisions.map((d, idx) => (
+                      <tr key={idx}>
+                        <td className="py-3 px-4 font-medium text-stone-900">{d.criterion}</td>
+                        <td className="py-3 px-4 text-stone-600">{d.profileValue}</td>
+                        <td className="py-3 px-4 text-stone-600">{d.publishedRequirement}</td>
+                        <td className="py-3 px-4 font-semibold">
                           <span
                             className={
                               d.result === 'Likely Eligible'
@@ -459,600 +406,361 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
                                 : 'text-amber-700'
                             }
                           >
-                            {ruleLabel}
+                            {d.result === 'Likely Eligible'
+                              ? '✓ Eligible'
+                              : d.result === 'Not Eligible'
+                              ? '✕ Not eligible'
+                              : d.result === 'Insufficient Information'
+                              ? '○ Need more info'
+                              : '◐ Possibly'}
                           </span>
                           {d.missingInformation && (
-                            <div className="text-[11px] font-normal text-slate-500 mt-0.5">
-                              Note: {d.missingInformation}
+                            <div className="text-[11px] font-normal text-stone-400 mt-0.5">
+                              {d.missingInformation}
                             </div>
                           )}
                         </td>
-                        <td className="py-2.5 px-3 text-slate-600">{d.nextRecommendedAction}</td>
                       </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          )}
-
-          {primaryScholarship && (
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border border-slate-200 rounded-lg p-4 bg-white text-xs">
-              <div>
-                <span className="text-slate-500 block">Pakistani Citizenship Rule</span>
-                <span className="font-semibold text-slate-900">
-                  {primaryScholarship.excludedCitizenships.includes('Pakistan')
-                    ? 'Ineligible based on explicit citizenship rule'
-                    : 'Open to Pakistani citizens'}
-                </span>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-              <div>
-                <span className="text-slate-500 block">Eligible Applicant Group</span>
-                <span className="font-semibold text-slate-900">
-                  {primaryScholarship.eligibleCountries.join(', ')}
-                </span>
-              </div>
-              <div>
-                <span className="text-slate-500 block">Residency & Age Limit</span>
-                <span className="font-mono text-slate-800">
-                  {req.residencyRule || 'Standard international rule'} · Max Age:{' '}
-                  {req.maxAgeLimit ? `${req.maxAgeLimit} years` : 'No published age cap'}
-                </span>
-              </div>
-            </div>
-          )}
-        </section>
-
-        {/* ==================================================================
-            3. ACADEMIC REQUIREMENTS
-           ================================================================== */}
-        <section className="space-y-3" aria-labelledby="section-academic">
-          <h3
-            id="section-academic"
-            className="text-sm font-semibold text-slate-900 border-b border-slate-200 pb-2"
-          >
-            3. Academic requirements
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 border border-slate-200 rounded-lg p-4 bg-white text-xs">
-            <div>
-              <span className="text-slate-500 block">Required Prior Degree</span>
-              <span className="font-semibold text-slate-900">
-                {req.acceptedBackgrounds.length > 0
-                  ? `Bachelor's or Master's in ${req.acceptedBackgrounds.slice(0, 2).join(' or ')}`
-                  : '16-year BS / MSc / MPhil degree in relevant field'}
-              </span>
-            </div>
-            <div>
-              <span className="text-slate-500 block">Minimum Grade / GPA</span>
-              <span className="font-mono font-semibold text-slate-900">
-                {req.minGpa !== null
-                  ? `${req.minGpa} on ${req.gradingScale || '4.0'} scale`
-                  : req.minGradingClassification || 'Not explicitly stated on summary page'}
-              </span>
-            </div>
-            <div>
-              <span className="text-slate-500 block">English Language Requirement</span>
-              <span className="font-mono font-semibold text-slate-900">
-                {req.ieltsMinScore === null && req.toeflMinScore === null
-                  ? 'Check department exemption or medium-of-instruction certificate rules'
-                  : `IELTS ${req.ieltsMinScore ?? '—'} / TOEFL iBT ${req.toeflMinScore ?? '—'}`}
-              </span>
-            </div>
-            <div>
-              <span className="text-slate-500 block">GRE / Standardized Test</span>
-              <span className="font-semibold text-slate-900">{req.greRequirement}</span>
-            </div>
-            <div>
-              <span className="text-slate-500 block">Research Experience & Supervisor</span>
-              <span className="font-semibold text-slate-900">
-                Research experience: {req.researchExpRequired ? 'Required' : 'Helpful'} · Supervisor contact:{' '}
-                {program.supervisorContactReq === 'REQUIRED'
-                  ? 'Required before applying'
-                  : program.supervisorContactReq === 'RECOMMENDED'
-                  ? 'Recommended'
-                  : 'Not required prior to application'}
-              </span>
-            </div>
-            <div>
-              <span className="text-slate-500 block">Program Duration & Mode</span>
-              <span className="font-mono font-semibold text-slate-900">
-                Full-time · {program.durationMonths ? `${program.durationMonths} months` : 'Standard duration'}
-              </span>
-            </div>
-            <div className="sm:col-span-2 lg:col-span-3 pt-2 border-t border-slate-100">
-              <span className="text-slate-500 block mb-1">
-                Relevant Specializations & Prerequisite Subjects
-              </span>
-              <span className="text-slate-800">
-                {program.specializations && program.specializations.length > 0
-                  ? program.specializations.join(' · ')
-                  : program.discipline}
-                {req.prerequisiteCourses.length > 0 &&
-                  ` · Prerequisites: ${req.prerequisiteCourses.join(', ')}`}
-              </span>
-            </div>
-          </div>
-        </section>
-
-        {/* ==================================================================
-            4. FUNDING BREAKDOWN
-           ================================================================== */}
-        <section className="space-y-3" aria-labelledby="section-funding">
-          <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-slate-200 pb-2">
-            <h3 id="section-funding" className="text-sm font-semibold text-slate-900">
-              4. Funding breakdown
-            </h3>
-            <span className="text-xs font-semibold text-slate-800">{studentFunding.headline}</span>
-          </div>
-
-          <div className="border border-slate-200 rounded-lg p-4 bg-white space-y-4 text-xs">
-            {pkg?.classificationExplanation && (
-              <p className="text-slate-700 leading-relaxed bg-slate-50 p-3 rounded border border-slate-200">
-                {pkg.classificationExplanation}
-              </p>
             )}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div>
-                <span className="text-slate-500 block">1. Tuition Coverage</span>
-                <span className="font-semibold text-slate-900 mt-0.5 block">
-                  {studentFunding.tuitionText}
-                </span>
-                {tuitionClaim && (
-                  <span className="text-[11px] font-mono text-slate-500 block mt-0.5">
-                    Published tuition: {tuitionClaim.normalizedValue}
-                  </span>
-                )}
+            {primaryScholarship && (
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[13px]">
+                <div className="bg-white border border-stone-200 rounded-2xl p-4">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-1">
+                    For Pakistanis
+                  </div>
+                  <div className="font-semibold text-stone-900">
+                    {primaryScholarship.excludedCitizenships.includes('Pakistan')
+                      ? 'Not open to Pakistanis'
+                      : '✓ Open to Pakistanis'}
+                  </div>
+                </div>
+                <div className="bg-white border border-stone-200 rounded-2xl p-4">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-1">
+                    Who it's for
+                  </div>
+                  <div className="font-medium text-stone-800">
+                    {primaryScholarship.eligibleCountries.slice(0, 3).join(', ')}
+                    {primaryScholarship.eligibleCountries.length > 3 && ' + more'}
+                  </div>
+                </div>
+                <div className="bg-white border border-stone-200 rounded-2xl p-4">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-1">
+                    Age limit
+                  </div>
+                  <div className="font-medium text-stone-800">
+                    {req.maxAgeLimit ? `${req.maxAgeLimit} years` : 'None published'}
+                  </div>
+                </div>
               </div>
+            )}
+          </section>
 
-              <div>
-                <span className="text-slate-500 block">2. Living Stipend</span>
-                <span className="font-mono font-semibold text-slate-900 mt-0.5 block">
-                  {studentFunding.stipendText}
-                </span>
-              </div>
-
-              <div>
-                <span className="text-slate-500 block">3. Mandatory Fees</span>
-                <span className="font-semibold text-slate-900 mt-0.5 block">
-                  {studentFunding.mandatoryFeesText}
-                </span>
-                {program.applicationFeeAmount !== null && (
-                  <span className="text-[11px] font-mono text-slate-500 block mt-0.5">
-                    Application fee: {program.applicationFeeCurrency || ''}{' '}
-                    {program.applicationFeeAmount}
-                    {req.feeWaiverAvailable ? ' (waiver available)' : ''}
-                  </span>
-                )}
-              </div>
-
-              <div>
-                <span className="text-slate-500 block">4. Health Insurance</span>
-                <span className="font-semibold text-slate-900 mt-0.5 block">
-                  {pkg?.healthInsuranceCovered === true
-                    ? 'Covered by scholarship / fellowship'
-                    : pkg?.healthInsuranceCovered === false
-                    ? 'Not covered (student responsibility)'
-                    : 'Not explicitly stated on summary page'}
-                </span>
-              </div>
-
-              <div>
-                <span className="text-slate-500 block">5. Travel / Airfare Allowance</span>
-                <span className="font-semibold text-slate-900 mt-0.5 block">
-                  {pkg?.travelAllowanceCovered === true
-                    ? 'Return airfare / travel allowance included'
-                    : pkg?.travelAllowanceCovered === false
-                    ? 'Not covered'
-                    : 'Not explicitly stated on summary page'}
-                </span>
-              </div>
-
-              <div>
-                <span className="text-slate-500 block">6. Housing / Accommodation</span>
-                <span className="font-semibold text-slate-900 mt-0.5 block">
-                  {pkg?.accommodationCovered === true
-                    ? 'University dormitory or housing subsidy included'
-                    : pkg?.accommodationCovered === false
-                    ? 'Paid from living stipend / independent'
-                    : 'Covered via living stipend or not separately stated'}
-                </span>
-              </div>
+          {/* ============ WHAT YOU NEED ============ */}
+          <section className="space-y-4">
+            <SectionTitle>What you need</SectionTitle>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[13px]">
+              {[
+                ['Previous degree', req.acceptedBackgrounds.length > 0
+                  ? req.acceptedBackgrounds.slice(0, 2).join(' / ')
+                  : 'BS / MSc in a relevant field'],
+                ['Grades', req.minGpa !== null
+                  ? `${req.minGpa} on ${req.gradingScale || '4.0'}`
+                  : req.minGradingClassification || 'Not stated — check official page'],
+                ['English', req.ieltsMinScore === null && req.toeflMinScore === null
+                  ? 'Check exemption / medium-of-instruction rules'
+                  : `IELTS ${req.ieltsMinScore ?? '—'} / TOEFL ${req.toeflMinScore ?? '—'}`],
+                ['GRE / tests', req.greRequirement || 'Not required'],
+                ['Research & supervisor', `Research: ${req.researchExpRequired ? 'required' : 'helpful'} · Supervisor: ${
+                  program.supervisorContactReq === 'REQUIRED' ? 'contact first' : program.supervisorContactReq === 'RECOMMENDED' ? 'recommended' : 'not needed yet'
+                }`],
+                ['Duration', program.durationMonths ? `${program.durationMonths} months, full-time` : 'Full-time'],
+              ].map(([label, value]) => (
+                <div key={label} className="bg-white border border-stone-200 rounded-2xl p-4">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-1">
+                    {label}
+                  </div>
+                  <div className="font-semibold text-stone-900">{value}</div>
+                </div>
+              ))}
             </div>
+            {((program.specializations && program.specializations.length > 0) || req.prerequisiteCourses.length > 0) && (
+              <p className="text-[13px] text-stone-500 leading-relaxed">
+                <strong className="text-stone-800">Relevant areas:</strong>{' '}
+                {[...(program.specializations || []), ...req.prerequisiteCourses.map((c) => `needs ${c}`)]
+                  .slice(0, 6)
+                  .join(' · ')}
+              </p>
+            )}
+          </section>
 
-            {/* National Living-Cost Benchmark Comparison */}
-            <div className="pt-3 border-t border-slate-200 space-y-1.5">
-              <span className="text-slate-500 block font-medium">
-                7. Living-Cost Benchmark Comparison (Curated Policy Reference Constant — Not Live-Extracted from Program Page)
-              </span>
-              {pkg?.livingCostBenchmarkAnnual !== null &&
-              pkg?.livingCostBenchmarkAnnual !== undefined ? (
-                <div className="flex flex-wrap items-center justify-between gap-2 bg-slate-50 p-3 rounded border border-slate-200">
-                  <div className="space-y-0.5">
-                    <div className="font-semibold text-slate-900">
-                      Reference Benchmark Constant:{' '}
-                      <span className="font-mono">
-                        {pkg.livingCostBenchmarkCurr}{' '}
-                        {pkg.livingCostBenchmarkAnnual.toLocaleString()}/year
-                      </span>
+          {/* ============ WHAT YOU GET ============ */}
+          <section className="space-y-4">
+            <SectionTitle>What you get</SectionTitle>
+            <div className="bg-white border border-stone-200 rounded-2xl p-5 space-y-4">
+              {pkg?.classificationExplanation && (
+                <p className="text-[13px] text-stone-600 leading-relaxed bg-stone-50 p-4 rounded-xl border border-stone-100">
+                  {pkg.classificationExplanation}
+                </p>
+              )}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[13px]">
+                <div>
+                  <div className="text-stone-400 font-medium mb-0.5">Tuition</div>
+                  <div className="font-semibold text-stone-900">{studentFunding.tuitionText}</div>
+                  {tuitionClaim && (
+                    <div className="text-[11px] text-stone-400 mt-0.5">
+                      Published: {tuitionClaim.normalizedValue}
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <div className="text-stone-400 font-medium mb-0.5">Living stipend</div>
+                  <div className="font-semibold text-stone-900">{studentFunding.stipendText}</div>
+                </div>
+                <div>
+                  <div className="text-stone-400 font-medium mb-0.5">University fees</div>
+                  <div className="font-semibold text-stone-900">{studentFunding.mandatoryFeesText}</div>
+                  {program.applicationFeeAmount !== null && (
+                    <div className="text-[11px] text-stone-400 mt-0.5">
+                      Application fee: {program.applicationFeeCurrency || ''} {program.applicationFeeAmount}
+                      {req.feeWaiverAvailable ? ' (waiver available)' : ''}
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <div className="text-stone-400 font-medium mb-0.5">Health insurance</div>
+                  <div className="font-semibold text-stone-900">
+                    {pkg?.healthInsuranceCovered === true ? '✓ Covered'
+                      : pkg?.healthInsuranceCovered === false ? '✕ Not covered' : 'Not stated'}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-stone-400 font-medium mb-0.5">Travel</div>
+                  <div className="font-semibold text-stone-900">
+                    {pkg?.travelAllowanceCovered === true ? '✓ Included'
+                      : pkg?.travelAllowanceCovered === false ? '✕ Not covered' : 'Not stated'}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-stone-400 font-medium mb-0.5">Housing</div>
+                  <div className="font-semibold text-stone-900">
+                    {pkg?.accommodationCovered === true ? '✓ Included'
+                      : pkg?.accommodationCovered === false ? 'From your stipend' : 'Not stated separately'}
+                  </div>
+                </div>
+              </div>
+
+              {pkg?.livingCostBenchmarkAnnual !== null && pkg?.livingCostBenchmarkAnnual !== undefined && (
+                <div className="pt-4 border-t border-stone-100">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-2">
+                    Can you actually live on it?
+                  </div>
+                  <div className="flex flex-wrap items-center justify-between gap-3 bg-stone-50 p-4 rounded-xl border border-stone-100">
+                    <div className="text-[13px] text-stone-600">
+                      Official cost of living: <strong className="text-stone-900">
+                        {pkg.livingCostBenchmarkCurr} {pkg.livingCostBenchmarkAnnual.toLocaleString()}/yr
+                      </strong>
                       {OFFICIAL_LIVING_COST_BENCHMARKS[destination.destinationCountry] && (
-                        <span className="ml-1.5 text-[11px] font-normal text-slate-600">
-                          · Category:{' '}
-                          {
-                            OFFICIAL_LIVING_COST_BENCHMARKS[destination.destinationCountry]
-                              .benchmarkCategoryLabel
-                          }
-                        </span>
+                        <span className="text-stone-400"> · {OFFICIAL_LIVING_COST_BENCHMARKS[destination.destinationCountry].benchmarkCategoryLabel}</span>
                       )}
                     </div>
-                    <div className="text-[11px] text-slate-600">
-                      Reference Policy Source: {pkg.livingCostBenchmarkSource || 'National reference standard'}{' '}
-                      {pkg.livingCostBenchmarkDate ? `(Effective ${pkg.livingCostBenchmarkDate})` : ''}{' '}
-                      · Curated reference constant used to evaluate stipend adequacy; not a live DOM excerpt from the university page.
-                    </div>
-                  </div>
-                  <div className="text-right font-mono">
                     <span
-                      className={`font-semibold ${
-                        pkg.livingCostAdequacyStatus === 'ADEQUATE'
-                          ? 'text-emerald-700'
-                          : pkg.livingCostAdequacyStatus === 'INSUFFICIENT'
-                          ? 'text-red-700'
-                          : 'text-amber-700'
+                      className={`font-bold text-sm ${
+                        pkg.livingCostAdequacyStatus === 'ADEQUATE' ? 'text-emerald-700'
+                        : pkg.livingCostAdequacyStatus === 'INSUFFICIENT' ? 'text-red-700' : 'text-amber-700'
                       }`}
                     >
-                      {pkg.livingCostSurplusOrDeficit !== null &&
-                      pkg.livingCostSurplusOrDeficit !== undefined
-                        ? `${pkg.livingCostSurplusOrDeficit >= 0 ? '+' : ''}${
-                            pkg.livingCostBenchmarkCurr
-                          } ${pkg.livingCostSurplusOrDeficit.toLocaleString()}/yr (${
-                            pkg.livingCostAdequacyStatus
-                          })`
+                      {pkg.livingCostSurplusOrDeficit !== null && pkg.livingCostSurplusOrDeficit !== undefined
+                        ? `${pkg.livingCostSurplusOrDeficit >= 0 ? '+' : ''}${pkg.livingCostBenchmarkCurr} ${pkg.livingCostSurplusOrDeficit.toLocaleString()}/yr`
                         : pkg.livingCostAdequacyStatus}
                     </span>
                   </div>
                 </div>
-              ) : (
-                <p className="text-slate-600">
-                  No scholarship stipend is linked for benchmark comparison, or living costs must be covered independently.
-                </p>
               )}
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* ==================================================================
-            5. DEADLINES
-           ================================================================== */}
-        <section className="space-y-3" aria-labelledby="section-deadlines">
-          <h3
-            id="section-deadlines"
-            className="text-sm font-semibold text-slate-900 border-b border-slate-200 pb-2"
-          >
-            5. Deadlines
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 border border-slate-200 rounded-lg p-4 bg-white text-xs">
-            <div>
-              <span className="text-slate-500 block">Program Closing Date</span>
-              <span className="font-mono font-semibold text-slate-900">
-                {program.deadlineDate ? program.deadlineDate.slice(0, 10) : 'Not yet published / Rolling'}
-              </span>
+          {/* ============ WHEN TO APPLY ============ */}
+          <section className="space-y-4">
+            <SectionTitle>When to apply</SectionTitle>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 text-[13px]">
+              <div className="bg-white border border-stone-200 rounded-2xl p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-1">Program deadline</div>
+                <div className="font-bold text-stone-900">
+                  {program.deadlineDate ? program.deadlineDate.slice(0, 10) : 'Rolling'}
+                </div>
+              </div>
+              <div className="bg-white border border-stone-200 rounded-2xl p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-1">Scholarship deadline</div>
+                <div className="font-bold text-stone-900">
+                  {primaryScholarship?.deadlineDate ? primaryScholarship.deadlineDate.slice(0, 10)
+                    : program.deadlineDate ? program.deadlineDate.slice(0, 10) : 'Check portal'}
+                </div>
+              </div>
+              <div className="bg-white border border-stone-200 rounded-2xl p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-1">Intake</div>
+                <div className="font-bold text-stone-900">{program.intakeTerm || 'Autumn'}</div>
+              </div>
+              <div className="bg-white border border-stone-200 rounded-2xl p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-1">Status</div>
+                <div className={`font-bold ${studentDeadline.status === 'CLOSING_SOON' ? 'text-amber-700' : studentDeadline.status === 'OPEN' ? 'text-emerald-700' : 'text-stone-700'}`}>
+                  {studentDeadline.label}
+                </div>
+              </div>
             </div>
-            <div>
-              <span className="text-slate-500 block">Scholarship Closing Date</span>
-              <span className="font-mono font-semibold text-slate-900">
-                {primaryScholarship?.deadlineDate
-                  ? primaryScholarship.deadlineDate.slice(0, 10)
-                  : program.deadlineDate
-                  ? program.deadlineDate.slice(0, 10)
-                  : 'Check official scholarship portal'}
-              </span>
-            </div>
-            <div>
-              <span className="text-slate-500 block">Intake Term & Academic Cycle</span>
-              <span className="font-semibold text-slate-900">
-                {program.intakeTerm || 'Autumn Intake'} · {program.applicationCycle || '2026–2027'}
-              </span>
-            </div>
-            <div>
-              <span className="text-slate-500 block">Current Status</span>
-              <span
-                className={`font-mono font-semibold ${
-                  studentDeadline.status === 'CLOSING_SOON'
-                    ? 'text-amber-700'
-                    : studentDeadline.status === 'OPEN'
-                    ? 'text-emerald-700'
-                    : 'text-slate-700'
-                }`}
-              >
-                {studentDeadline.label}
-              </span>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        {/* ==================================================================
-            6. REQUIRED DOCUMENTS
-           ================================================================== */}
-        <section className="space-y-3" aria-labelledby="section-documents">
-          <h3
-            id="section-documents"
-            className="text-sm font-semibold text-slate-900 border-b border-slate-200 pb-2"
-          >
-            6. Required documents ({req.requiredDocuments.length})
-          </h3>
-          <div className="border border-slate-200 rounded-lg p-4 bg-white space-y-3">
+          {/* ============ DOCUMENTS ============ */}
+          <section className="space-y-4">
+            <SectionTitle>Documents you'll need ({req.requiredDocuments.length})</SectionTitle>
             {req.requiredDocuments.length > 0 ? (
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-800">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {req.requiredDocuments.map((doc, idx) => (
                   <li
                     key={idx}
-                    className="flex items-center justify-between gap-2 p-2.5 rounded bg-slate-50 border border-slate-200"
+                    className="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-stone-200 text-[13px] font-medium text-stone-800"
                   >
-                    <span className="inline-flex items-center gap-2 font-medium text-slate-900">
-                      <FileText className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-                      <span>{doc}</span>
-                    </span>
-                    <span className="text-[11px] text-slate-500">
-                      {savedRecord ? 'Added to My Journey' : 'Save to track'}
-                    </span>
+                    <FileText className="w-4 h-4 text-stone-400 shrink-0" />
+                    {doc}
                   </li>
                 ))}
               </ul>
             ) : (
-              <p className="text-xs text-slate-600">
-                Document checklist items are not separately itemized on the summary page. Save this opportunity to track standard graduate documents in My Journey.
+              <p className="text-[13px] text-stone-500">
+                No separate list published — save this opportunity and we'll track the standard
+                graduate documents for you in My Journey.
               </p>
             )}
-          </div>
-        </section>
+          </section>
 
-        {/* ==================================================================
-            7. APPLICATION STEPS
-           ================================================================== */}
-        <section className="space-y-3" aria-labelledby="section-steps">
-          <h3
-            id="section-steps"
-            className="text-sm font-semibold text-slate-900 border-b border-slate-200 pb-2"
-          >
-            7. Application steps
-          </h3>
-          <div className="border border-slate-200 rounded-lg p-4 bg-white space-y-3 text-xs text-slate-700">
-            <ol className="list-decimal list-inside space-y-2 leading-relaxed">
-              <li>
-                <strong className="text-slate-900">Review official program requirements:</strong>{' '}
-                Confirm your degree equivalence (such as 16-year HEC education for Pakistani BS/MSc holders) and language test validity on{' '}
-                <a
-                  href={program.officialProgramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline font-medium text-slate-900"
-                >
-                  {programDomain || 'the official website'}
-                </a>
-                .
-              </li>
-              <li>
-                <strong className="text-slate-900">Supervisor contact:</strong>{' '}
-                {program.supervisorContactReq === 'REQUIRED'
-                  ? 'Contact a potential faculty supervisor with your CV and research proposal to secure provisional acceptance before submitting.'
-                  : 'Prior supervisor acceptance is not mandatory before submitting the online application.'}
-              </li>
-              <li>
-                <strong className="text-slate-900">Scholarship & admission submission:</strong>{' '}
-                {primaryScholarship?.nominationProcessNote
+          {/* ============ HOW TO APPLY ============ */}
+          <section className="space-y-4">
+            <SectionTitle>How to apply</SectionTitle>
+            <ol className="space-y-3">
+              {[
+                `Check the official requirements — degree equivalence and English test rules — on the program page.`,
+                program.supervisorContactReq === 'REQUIRED'
+                  ? 'Contact a potential supervisor with your CV and proposal before applying — it is required.'
+                  : 'No need to contact a supervisor before applying.',
+                primaryScholarship?.nominationProcessNote
                   ? primaryScholarship.nominationProcessNote
                   : primaryScholarship?.separateApplicationReq
-                  ? `Submit both the university admission application and the separate ${primaryScholarship.name} application before the closing date.`
-                  : 'Submit your graduate application via the official university portal; eligible applicants are considered for linked funding.'}
-              </li>
+                  ? `Apply twice: once for university admission, once for the ${primaryScholarship.name} — before the deadline.`
+                  : 'Apply through the official portal; eligible applicants are considered for funding automatically.',
+              ].map((step, i) => (
+                <li key={i} className="flex gap-3.5 bg-white border border-stone-200 rounded-2xl p-4">
+                  <span className="shrink-0 w-7 h-7 rounded-full bg-stone-900 text-white text-[13px] font-bold flex items-center justify-center">
+                    {i + 1}
+                  </span>
+                  <p className="text-[13px] text-stone-700 leading-relaxed pt-0.5">{step}</p>
+                </li>
+              ))}
             </ol>
-
-            {/* Personal Notes box for saved tracker */}
-            <div className="pt-3 border-t border-slate-200 space-y-1.5">
-              <label htmlFor="student-private-notes" className="block text-xs font-semibold text-slate-800">
-                Your Personal Application Notes (saved to My Journey)
+            <div className="bg-white border border-stone-200 rounded-2xl p-4 space-y-2">
+              <label htmlFor="student-private-notes" className="block text-[13px] font-bold text-stone-900">
+                Your notes
               </label>
               <textarea
                 id="student-private-notes"
                 rows={2}
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="Add notes about professors to email, HEC attestation progress, or essay drafts..."
-                className="w-full p-2.5 text-xs bg-slate-50 border border-slate-300 rounded-md text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900"
+                placeholder="Professors to email, HEC attestation progress, essay drafts…"
+                className="w-full p-3 text-[13px] bg-stone-50 border border-stone-300 rounded-xl text-stone-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-stone-900"
               />
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* ==================================================================
-            8. OFFICIAL SOURCES AND SUPPORTING EVIDENCE
-           ================================================================== */}
-        <section className="space-y-4" aria-labelledby="section-evidence">
-          <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-slate-200 pb-2">
-            <h3 id="section-evidence" className="text-sm font-semibold text-slate-900">
-              8. Official sources and supporting evidence
-            </h3>
-            <span className="text-xs text-slate-600">
-              {claims.length} verified source {claims.length === 1 ? 'excerpt' : 'excerpts'}
-            </span>
-          </div>
-
-          <p className="text-xs text-slate-600 leading-relaxed">
-            Every key fact shown above is backed by an excerpt from an official university or scholarship authority page. Verification status is shown beside each claim.
-          </p>
-
-          {/* Student-Readable Claims List */}
-          <div className="space-y-3">
-            {claims.map((claim) => {
-              const friendlyClaimLabel =
-                CLAIM_TYPE_LABELS[claim.claimType] || `${claim.claimType} (${claim.fieldName})`;
-              const isConfirmed =
-                claim.verificationStatus === 'Officially Confirmed' ||
-                claim.verificationStatus === 'Cross-Verified';
-              const isUnavailable =
-                claim.verificationStatus === 'Unavailable' ||
-                claim.verificationStatus === 'Conflicting Evidence';
-
-              return (
-                <div
-                  key={claim.id}
-                  className="border border-slate-200 rounded-lg p-4 space-y-2 bg-white"
-                >
-                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
-                    <div className="font-semibold text-slate-900">
-                      {friendlyClaimLabel}:{' '}
-                      <span className="font-mono font-normal text-slate-800">
-                        {claim.normalizedValue}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <ShieldCheck
-                        className={`w-3.5 h-3.5 ${
-                          isConfirmed
-                            ? 'text-emerald-700'
-                            : isUnavailable
-                            ? 'text-red-700'
-                            : 'text-amber-700'
-                        }`}
-                      />
-                      <span
-                        className={`font-semibold ${
-                          isConfirmed
-                            ? 'text-emerald-700'
-                            : isUnavailable
-                            ? 'text-red-700'
-                            : 'text-amber-700'
-                        }`}
-                      >
+          {/* ============ HOW WE VERIFIED THIS ============ */}
+          <section className="space-y-4">
+            <SectionTitle>How we verified this</SectionTitle>
+            <p className="text-[13px] text-stone-500 leading-relaxed">
+              Every key fact above is backed by a quote from an official page. Nothing here is
+              guessed.
+            </p>
+            <div className="space-y-3">
+              {claims.map((claim) => {
+                const label = CLAIM_TYPE_LABELS[claim.claimType] || claim.claimType;
+                const confirmed =
+                  claim.verificationStatus === 'Officially Confirmed' ||
+                  claim.verificationStatus === 'Cross-Verified';
+                const bad =
+                  claim.verificationStatus === 'Unavailable' ||
+                  claim.verificationStatus === 'Conflicting Evidence';
+                return (
+                  <div key={claim.id} className="border border-stone-200 rounded-2xl p-4 space-y-2.5 bg-white">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="text-[13px] font-bold text-stone-900">
+                        {label}: <span className="font-medium text-stone-700">{claim.normalizedValue}</span>
+                      </div>
+                      <span className={`inline-flex items-center gap-1.5 text-xs font-semibold ${confirmed ? 'text-emerald-700' : bad ? 'text-red-700' : 'text-amber-700'}`}>
+                        <ShieldCheck className="w-3.5 h-3.5" />
                         {claim.verificationStatus}
                       </span>
                     </div>
-                  </div>
-
-                  <blockquote className="text-xs text-slate-700 bg-slate-50 p-3 rounded border border-slate-200 leading-relaxed">
-                    &ldquo;{claim.supportingExcerpt}&rdquo;
-                  </blockquote>
-
-                  <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-500">
-                    <span>
-                      Source: <strong className="text-slate-700">{claim.sourceOrganization}</strong> (
-                      {claim.sourceDomain}) · Checked {claim.retrievedAt.slice(0, 10)}
-                    </span>
-                    <a
-                      href={claim.sourceUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 font-medium text-slate-700 underline hover:text-slate-900"
-                    >
-                      <span>View official page</span>
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Expandable "Sources and verification" technical disclosure */}
-          <div className="border border-slate-200 rounded-lg bg-slate-50/60 overflow-hidden">
-            <button
-              type="button"
-              onClick={() => setShowTechnicalSources((prev) => !prev)}
-              aria-expanded={showTechnicalSources}
-              className="w-full flex items-center justify-between gap-4 px-4 py-3 text-left text-xs font-semibold text-slate-800 hover:bg-slate-100/80 transition-colors"
-            >
-              <span className="inline-flex items-center gap-2">
-                <HelpCircle className="w-4 h-4 text-slate-500" />
-                <span>Sources and verification (Technical audit & cryptographic provenance)</span>
-              </span>
-              {showTechnicalSources ? (
-                <ChevronUp className="w-4 h-4 text-slate-600" />
-              ) : (
-                <ChevronDown className="w-4 h-4 text-slate-600" />
-              )}
-            </button>
-
-            {showTechnicalSources && (
-              <div className="p-4 border-t border-slate-200 bg-white space-y-4 text-xs">
-                <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
-                  <div>
-                    <span className="text-slate-500 block">Registered Domain</span>
-                    <span className="font-mono font-semibold text-slate-900">
-                      {linkedSource?.domain || programDomain || 'Official Portal'}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-slate-500 block">Last Verified Timestamp</span>
-                    <span className="font-mono text-slate-900">
-                      {program.lastCheckedAt
-                        ? program.lastCheckedAt.slice(0, 19).replace('T', ' ') + ' UTC'
-                        : 'Not recorded'}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-slate-500 block">Refresh Cadence</span>
-                    <span className="font-mono text-slate-900">
-                      {linkedSource?.refreshPolicy || 'DAILY'}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-slate-500 block">Evidence Record Count</span>
-                    <span className="font-mono text-slate-900">{claims.length} claims</span>
-                  </div>
-                </div>
-
-                <div className="space-y-2 pt-2 border-t border-slate-100">
-                  <div className="text-[11px] font-semibold text-slate-700">
-                    Cryptographic Excerpt Hashes (SHA-256) & Extraction Confidence
-                  </div>
-                  <div className="space-y-1.5 font-mono text-[11px] text-slate-600">
-                    {claims.map((claim) => (
-                      <div
-                        key={`tech-${claim.id}`}
-                        className="flex flex-wrap items-center justify-between gap-2 p-2 rounded bg-slate-50 border border-slate-200"
+                    <blockquote className="text-[13px] text-stone-600 bg-stone-50 p-3.5 rounded-xl border border-stone-100 leading-relaxed">
+                      “{claim.supportingExcerpt}”
+                    </blockquote>
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] text-stone-400">
+                      <span>
+                        <strong className="text-stone-600">{claim.sourceOrganization}</strong> · checked {claim.retrievedAt.slice(0, 10)}
+                      </span>
+                      <a
+                        href={claim.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 font-semibold text-stone-600 underline hover:text-stone-900"
                       >
-                        <span>
-                          {claim.claimType} ({claim.fieldName})
-                        </span>
-                        <span>
-                          Method: {claim.verificationMethod} (
-                          {Math.round(claim.evidenceQualityScore * 100)}%) · SHA-256:{' '}
-                          {claim.excerptHash.slice(0, 16)}… · Versions: {claim.versions.length}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {recentAttempts.length > 0 && (
-                  <div className="space-y-1.5 pt-2 border-t border-slate-100">
-                    <div className="text-[11px] font-semibold text-slate-700">
-                      Recent Automated Retrieval Log
+                        Official page <ExternalLink className="w-3 h-3" />
+                      </a>
                     </div>
-                    {recentAttempts.map((att) => (
-                      <div
-                        key={att.id}
-                        className="flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-600"
-                      >
-                        <span>
-                          {att.attemptedAt.slice(0, 19).replace('T', ' ')} UTC ·{' '}
-                          {att.httpStatus ? `Status ${att.httpStatus}` : 'Network Error'}
-                        </span>
-                        <span>
-                          {att.responseTimeMs}ms ·{' '}
-                          {att.bytesReceived !== null && att.bytesReceived > 0
-                            ? `${(att.bytesReceived / 1024).toFixed(1)} KB`
-                            : att.errorMessage || 'No payload'}
-                        </span>
-                      </div>
-                    ))}
                   </div>
-                )}
-              </div>
-            )}
-          </div>
-        </section>
+                );
+              })}
+            </div>
+
+            {/* Technical disclosure */}
+            <div className="border border-stone-200 rounded-2xl bg-white overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setShowTechnicalSources((v) => !v)}
+                aria-expanded={showTechnicalSources}
+                className="w-full flex items-center justify-between gap-4 px-5 py-3.5 text-left text-[13px] font-semibold text-stone-800 hover:bg-stone-50 transition-colors"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <HelpCircle className="w-4 h-4 text-stone-400" />
+                  Technical audit trail
+                </span>
+                {showTechnicalSources ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+              </button>
+              {showTechnicalSources && (
+                <div className="p-5 border-t border-stone-200 space-y-4 text-xs text-stone-500">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div><div className="font-semibold text-stone-400 text-[11px]">Domain</div><div className="font-mono text-stone-800">{linkedSource?.domain || programDomain}</div></div>
+                    <div><div className="font-semibold text-stone-400 text-[11px]">Last checked</div><div className="font-mono text-stone-800">{program.lastCheckedAt ? program.lastCheckedAt.slice(0, 10) : '—'}</div></div>
+                    <div><div className="font-semibold text-stone-400 text-[11px]">Refresh</div><div className="font-mono text-stone-800">{linkedSource?.refreshPolicy || 'DAILY'}</div></div>
+                    <div><div className="font-semibold text-stone-400 text-[11px]">Evidence records</div><div className="font-mono text-stone-800">{claims.length}</div></div>
+                  </div>
+                  {recentAttempts.length > 0 && (
+                    <div className="space-y-1.5">
+                      <div className="font-semibold text-stone-700">Recent page checks</div>
+                      {recentAttempts.map((att) => (
+                        <div key={att.id} className="flex justify-between gap-2 font-mono text-[11px]">
+                          <span>{att.attemptedAt.slice(0, 10)} · {att.httpStatus ? `HTTP ${att.httpStatus}` : 'network error'}</span>
+                          <span>{att.responseTimeMs}ms</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

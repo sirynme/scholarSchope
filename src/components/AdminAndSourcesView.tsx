@@ -227,15 +227,15 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
   };
 
   const subTabNav = (
-    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
+    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200 pb-3">
       <div className="flex flex-wrap items-center gap-2">
         <button
           type="button"
           onClick={() => setSubTab('sources')}
           className={`px-3.5 py-1.5 text-xs font-semibold rounded-md border transition-colors ${
             subTab === 'sources'
-              ? 'bg-slate-900 text-white border-slate-900'
-              : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'
+              ? 'bg-stone-900 text-white border-stone-900'
+              : 'bg-white text-stone-700 border-stone-300 hover:bg-stone-50'
           }`}
         >
           01. 5-Country Coverage & Source Registry ({sources.length})
@@ -245,8 +245,8 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
           onClick={() => setSubTab('jobs')}
           className={`px-3.5 py-1.5 text-xs font-semibold rounded-md border transition-colors ${
             subTab === 'jobs'
-              ? 'bg-slate-900 text-white border-slate-900'
-              : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'
+              ? 'bg-stone-900 text-white border-stone-900'
+              : 'bg-white text-stone-700 border-stone-300 hover:bg-stone-50'
           }`}
         >
           02. Durable Job Queue & Research Runs ({researchRuns.length})
@@ -256,8 +256,8 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
           onClick={() => setSubTab('admin')}
           className={`px-3.5 py-1.5 text-xs font-semibold rounded-md border transition-colors ${
             subTab === 'admin'
-              ? 'bg-slate-900 text-white border-slate-900'
-              : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'
+              ? 'bg-stone-900 text-white border-stone-900'
+              : 'bg-white text-stone-700 border-stone-300 hover:bg-stone-50'
           }`}
         >
           03. Admin & Scheduler Governance ({systemHealth.automationState})
@@ -268,7 +268,7 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
         type="button"
         onClick={onTriggerDiscoveryRun}
         disabled={runningDiscovery}
-        className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-md transition-colors"
+        className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold text-white bg-stone-900 hover:bg-stone-800 rounded-md transition-colors"
       >
         <RefreshCw className={`w-3.5 h-3.5 ${runningDiscovery ? 'animate-spin' : ''}`} />
         <span>{runningDiscovery ? 'Executing Live 5-Country Crawl…' : 'Run Live 5-Country Discovery Now'}</span>
@@ -293,10 +293,10 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
         {subTabNav}
 
         <div>
-          <h1 className="text-xl font-bold text-slate-900">
+          <h1 className="text-xl font-bold text-stone-900">
             5-Country Coverage Matrix, Official Source Registry & Retrieval Telemetry
           </h1>
-          <p className="text-xs text-slate-600 mt-1">
+          <p className="text-xs text-stone-600 mt-1">
             Every discovery cycle prioritizes all five mandatory destination countries: Germany, United Kingdom, United States, Japan, and China.
           </p>
         </div>
@@ -304,18 +304,18 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
         {/* 5-Country Coverage Matrix */}
         {countryCoverage.length > 0 && (
           <section className="space-y-3">
-            <h2 className="text-sm font-semibold text-slate-900">
+            <h2 className="text-sm font-semibold text-stone-900">
               Mandatory 5-Country Coverage & Discovery Health Matrix
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4">
               {countryCoverage.map((cc) => (
                 <div
                   key={cc.country}
-                  className="bg-white border border-slate-200 rounded-lg p-4 flex flex-col justify-between gap-3"
+                  className="bg-white border border-stone-200 rounded-lg p-4 flex flex-col justify-between gap-3"
                 >
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-sm font-bold text-slate-900">{cc.country}</span>
+                      <span className="text-sm font-bold text-stone-900">{cc.country}</span>
                       <span
                         className={`text-[11px] font-mono font-semibold ${
                           cc.freshnessStatus === 'Fresh (< 24h)'
@@ -328,34 +328,34 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                         {cc.freshnessStatus}
                       </span>
                     </div>
-                    <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100 text-xs font-mono">
+                    <div className="grid grid-cols-2 gap-2 pt-2 border-t border-stone-100 text-xs font-mono">
                       <div>
-                        <span className="text-[10px] font-sans text-slate-500 block">Sources (200 OK)</span>
-                        <span className="font-semibold text-slate-900">
+                        <span className="text-[10px] font-sans text-stone-500 block">Sources (200 OK)</span>
+                        <span className="font-semibold text-stone-900">
                           {cc.http200SourcesCount}/{cc.configuredSourcesCount}
                         </span>
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans text-slate-500 block">Restricted/Fail</span>
+                        <span className="text-[10px] font-sans text-stone-500 block">Restricted/Fail</span>
                         <span className="font-semibold text-amber-700">{cc.failedOrRestrictedSourcesCount}</span>
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans text-slate-500 block">Opportunities</span>
-                        <span className="font-semibold text-slate-900">{cc.opportunitiesDiscoveredCount}</span>
+                        <span className="text-[10px] font-sans text-stone-500 block">Opportunities</span>
+                        <span className="font-semibold text-stone-900">{cc.opportunitiesDiscoveredCount}</span>
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans text-slate-500 block">Fully Funded</span>
+                        <span className="text-[10px] font-sans text-stone-500 block">Fully Funded</span>
                         <span className="font-semibold text-emerald-700">{cc.fullyFundedCount}</span>
                       </div>
                     </div>
-                    <div className="text-[11px] text-slate-600 pt-1 font-mono">
+                    <div className="text-[11px] text-stone-600 pt-1 font-mono">
                       CS: <strong>{cc.csOpportunitiesCount}</strong> · Micro: <strong>{cc.microbiologyOpportunitiesCount}</strong> · Jobs: {cc.pendingJobsCount}
                     </div>
-                    <p className="text-[11px] text-slate-500 leading-snug pt-1">
+                    <p className="text-[11px] text-stone-500 leading-snug pt-1">
                       {cc.pakistaniPathwaySummary}
                     </p>
                   </div>
-                  <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-500">
+                  <div className="pt-2 border-t border-stone-100 flex items-center justify-between text-[10px] font-mono text-stone-500">
                     <span>
                       Last:{' '}
                       {cc.lastRetrievalAt ? cc.lastRetrievalAt.slice(0, 16).replace('T', ' ') : 'Pending'}
@@ -365,7 +365,7 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                       onClick={() =>
                         setCountryFilter(countryFilter === cc.country ? 'ALL' : cc.country)
                       }
-                      className="text-slate-900 font-sans font-semibold underline"
+                      className="text-stone-900 font-sans font-semibold underline"
                     >
                       {countryFilter === cc.country ? 'Show All' : 'Filter Sources'}
                     </button>
@@ -377,28 +377,28 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
         )}
 
         {/* Coverage Disclosure & Telemetry Strip */}
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 bg-white border border-slate-200 rounded-lg p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 bg-white border border-stone-200 rounded-lg p-4">
           <div>
-            <span className="text-xs text-slate-500 block">Registered Official Sources</span>
-            <span className="text-lg font-bold font-mono text-slate-900">{sources.length}</span>
-            <span className="text-[11px] text-slate-500 block">Across {countriesCovered.length} countries</span>
+            <span className="text-xs text-stone-500 block">Registered Official Sources</span>
+            <span className="text-lg font-bold font-mono text-stone-900">{sources.length}</span>
+            <span className="text-[11px] text-stone-500 block">Across {countriesCovered.length} countries</span>
           </div>
           <div>
-            <span className="text-xs text-slate-500 block">Live HTTP 200 Verified</span>
+            <span className="text-xs text-stone-500 block">Live HTTP 200 Verified</span>
             <span className="text-lg font-bold font-mono text-emerald-700">{http200Count}</span>
-            <span className="text-[11px] text-slate-500 block">Substantive HTML extracted</span>
+            <span className="text-[11px] text-stone-500 block">Substantive HTML extracted</span>
           </div>
           <div>
-            <span className="text-xs text-slate-500 block">Access Restricted (403/412)</span>
+            <span className="text-xs text-stone-500 block">Access Restricted (403/412)</span>
             <span className="text-lg font-bold font-mono text-amber-700">{restrictedCount}</span>
-            <span className="text-[11px] text-slate-500 block">Explicitly marked Unavailable</span>
+            <span className="text-[11px] text-stone-500 block">Explicitly marked Unavailable</span>
           </div>
           <div>
-            <span className="text-xs text-slate-500 block">Discovery Coverage Mode</span>
-            <span className="text-sm font-semibold text-slate-900">
+            <span className="text-xs text-stone-500 block">Discovery Coverage Mode</span>
+            <span className="text-sm font-semibold text-stone-900">
               {systemHealth.searchProviderEnabled ? 'Registry + Grounded Search' : 'Official Registry + Link Crawl'}
             </span>
-            <span className="text-[11px] text-slate-500 block">
+            <span className="text-[11px] text-stone-500 block">
               {systemHealth.searchProviderEnabled
                 ? 'Optional Search Grounding active'
                 : 'Paid APIs disabled by default (Bounded coverage)'}
@@ -408,7 +408,7 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
 
         {/* Source Country Filter Bar */}
         <div className="flex flex-wrap items-center gap-2 text-xs">
-          <span className="font-semibold text-slate-700">Filter Source Registry by Country:</span>
+          <span className="font-semibold text-stone-700">Filter Source Registry by Country:</span>
           {['ALL', 'Germany', 'United Kingdom', 'United States', 'Japan', 'China', 'Pakistan'].map((c) => (
             <button
               key={c}
@@ -416,8 +416,8 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
               onClick={() => setCountryFilter(c)}
               className={`px-2.5 py-1 rounded border font-medium ${
                 countryFilter === c
-                  ? 'bg-slate-900 text-white border-slate-900'
-                  : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'
+                  ? 'bg-stone-900 text-white border-stone-900'
+                  : 'bg-white text-stone-700 border-stone-300 hover:bg-stone-50'
               }`}
             >
               {c === 'ALL' ? `All (${sources.length})` : c}
@@ -426,10 +426,10 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
         </div>
 
         {/* Source Registry Table */}
-        <div className="bg-white border border-slate-200 rounded-lg overflow-x-auto">
+        <div className="bg-white border border-stone-200 rounded-lg overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="border-b border-slate-200 bg-slate-50 text-slate-600">
+              <tr className="border-b border-stone-200 bg-stone-50 text-stone-600">
                 <th className="py-3 px-4 font-semibold">Official Source & Seed URL</th>
                 <th className="py-3 px-4 font-semibold">Category & Country</th>
                 <th className="py-3 px-4 font-semibold">Priority & Policy</th>
@@ -439,30 +439,30 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                 {userRole === 'admin' && <th className="py-3 px-4 font-semibold">Control</th>}
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200">
+            <tbody className="divide-y divide-stone-200">
               {filteredSources.map((src) => (
-                <tr key={src.id} className="hover:bg-slate-50/80">
+                <tr key={src.id} className="hover:bg-stone-50/80">
                   <td className="py-3 px-4">
-                    <div className="font-semibold text-slate-900">{src.name}</div>
+                    <div className="font-semibold text-stone-900">{src.name}</div>
                     <a
                       href={src.seedUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[11px] font-mono text-slate-500 hover:text-slate-900 underline"
+                      className="inline-flex items-center gap-1 text-[11px] font-mono text-stone-500 hover:text-stone-900 underline"
                     >
                       <span>{src.seedUrl}</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </td>
-                  <td className="py-3 px-4 text-slate-700">
-                    <div className="font-semibold text-slate-900">{src.country}</div>
-                    <div className="text-[11px] text-slate-500">{src.category}</div>
+                  <td className="py-3 px-4 text-stone-700">
+                    <div className="font-semibold text-stone-900">{src.country}</div>
+                    <div className="text-[11px] text-stone-500">{src.category}</div>
                   </td>
-                  <td className="py-3 px-4 font-mono text-slate-700">
+                  <td className="py-3 px-4 font-mono text-stone-700">
                     <div>
                       Priority: <strong>{src.priority || 'HIGH'}</strong>
                     </div>
-                    <div className="text-[11px] text-slate-500">
+                    <div className="text-[11px] text-stone-500">
                       {src.refreshPolicy} ({src.rateLimitPerMinute}/min)
                     </div>
                   </td>
@@ -472,13 +472,13 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                     ) : src.lastHttpStatus ? (
                       <span className="text-red-700 font-semibold">HTTP {src.lastHttpStatus}</span>
                     ) : (
-                      <span className="text-slate-400">Pending</span>
+                      <span className="text-stone-400">Pending</span>
                     )}
                   </td>
-                  <td className="py-3 px-4 font-mono text-slate-700">
+                  <td className="py-3 px-4 font-mono text-stone-700">
                     {src.lastResponseTimeMs !== null ? `${src.lastResponseTimeMs} ms` : '—'}
                   </td>
-                  <td className="py-3 px-4 font-mono text-slate-600">
+                  <td className="py-3 px-4 font-mono text-stone-600">
                     {src.lastFetchedAt ? src.lastFetchedAt.slice(0, 19).replace('T', ' ') : 'Never'}
                   </td>
                   {userRole === 'admin' && (
@@ -490,7 +490,7 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                           onChange={(e) =>
                             handleChangePriority(src.id, e.target.value as 'HIGH' | 'NORMAL' | 'LOW')
                           }
-                          className="px-1.5 py-1 text-[11px] border border-slate-300 rounded bg-white"
+                          className="px-1.5 py-1 text-[11px] border border-stone-300 rounded bg-white"
                         >
                           <option value="HIGH">HIGH</option>
                           <option value="NORMAL">NORMAL</option>
@@ -499,7 +499,7 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                         <button
                           type="button"
                           onClick={() => handleToggleSource(src.id, !src.enabled)}
-                          className="px-2.5 py-1 text-xs font-medium border border-slate-300 rounded hover:bg-slate-100"
+                          className="px-2.5 py-1 text-xs font-medium border border-stone-300 rounded hover:bg-stone-100"
                         >
                           {src.enabled ? 'Pause' : 'Resume'}
                         </button>
@@ -514,20 +514,20 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
 
         {/* Recent Source Snapshots & Content Hashes */}
         <section className="space-y-3">
-          <h2 className="text-sm font-semibold text-slate-900">
+          <h2 className="text-sm font-semibold text-stone-900">
             Persisted Source Snapshots & SHA-256 Content Hashes ({snapshots.length})
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 min-w-0">
             {snapshots.slice(0, 6).map((snap) => (
-              <div key={snap.id} className="bg-white border border-slate-200 rounded-lg p-4 space-y-2 text-xs min-w-0 overflow-hidden">
-                <div className="font-semibold text-slate-900 truncate">{snap.title || snap.normalizedUrl}</div>
-                <div className="font-mono text-[11px] text-slate-500 break-all">
+              <div key={snap.id} className="bg-white border border-stone-200 rounded-lg p-4 space-y-2 text-xs min-w-0 overflow-hidden">
+                <div className="font-semibold text-stone-900 truncate">{snap.title || snap.normalizedUrl}</div>
+                <div className="font-mono text-[11px] text-stone-500 break-all">
                   URL: {snap.normalizedUrl} · Hash: {snap.contentHash.slice(0, 16)}…
                 </div>
-                <p className="text-slate-600 font-mono text-[11px] line-clamp-3 break-words bg-slate-50 p-2 rounded border border-slate-100">
+                <p className="text-stone-600 font-mono text-[11px] line-clamp-3 break-words bg-stone-50 p-2 rounded border border-stone-100">
                   {snap.extractedTextSnippet}
                 </p>
-                <div className="text-[11px] text-slate-500">
+                <div className="text-[11px] text-stone-500">
                   Discovered Child Official Links: <strong>{snap.discoveredChildLinks.length}</strong> · Retrieved: {snap.retrievedAt.slice(0, 19).replace('T', ' ')} UTC
                 </div>
               </div>
@@ -546,24 +546,24 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
       <div className="space-y-7">
         {subTabNav}
         <div>
-          <h1 className="text-xl font-bold text-slate-900">
+          <h1 className="text-xl font-bold text-stone-900">
             Research Activity, Durable Job Queue & Execution Logs
           </h1>
-          <p className="text-xs text-slate-600 mt-1">
+          <p className="text-xs text-stone-600 mt-1">
             PostgreSQL-compatible job queue with atomic claiming, unique idempotency keys, processing leases, and per-domain concurrency limits.
           </p>
         </div>
 
         {/* Research Runs Log */}
         <section className="space-y-3">
-          <h2 className="text-sm font-semibold text-slate-900">
+          <h2 className="text-sm font-semibold text-stone-900">
             Persisted Research Run History ({researchRuns.length})
           </h2>
           <div className="space-y-3">
             {researchRuns.map((run) => (
-              <div key={run.id} className="bg-white border border-slate-200 rounded-lg p-4 space-y-2 text-xs">
+              <div key={run.id} className="bg-white border border-stone-200 rounded-lg p-4 space-y-2 text-xs">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div className="font-semibold text-slate-900">
+                  <div className="font-semibold text-stone-900">
                     Run {run.id.slice(0, 8)} · Trigger: <span className="font-mono">{run.triggerType}</span> · Status:{' '}
                     <span
                       className={
@@ -577,14 +577,14 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                       {run.status}
                     </span>
                   </div>
-                  <div className="font-mono text-[11px] text-slate-500">
+                  <div className="font-mono text-[11px] text-stone-500">
                     Started: {run.startedAt.slice(0, 19).replace('T', ' ')} UTC
                   </div>
                 </div>
-                <div className="font-mono text-[11px] text-slate-700">
+                <div className="font-mono text-[11px] text-stone-700">
                   Sources Checked: {run.sourcesChecked} · HTTP 200 OK: {run.httpSuccessCount} · HTTP Restricted/Failed: {run.httpFailureCount} · Claims Updated: {run.claimsExtracted} · Child Links Discovered: {run.urlsDiscovered}
                 </div>
-                <div className="bg-slate-50 border border-slate-200 rounded p-2.5 font-mono text-[11px] text-slate-600 space-y-1">
+                <div className="bg-stone-50 border border-stone-200 rounded p-2.5 font-mono text-[11px] text-stone-600 space-y-1">
                   {run.summaryLog.map((line, i) => (
                     <div key={i}>{line}</div>
                   ))}
@@ -596,13 +596,13 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
 
         {/* Durable Job Queue Table */}
         <section className="space-y-3">
-          <h2 className="text-sm font-semibold text-slate-900">
+          <h2 className="text-sm font-semibold text-stone-900">
             Durable Job Queue Items & Lease Telemetry ({jobQueue.length})
           </h2>
-          <div className="bg-white border border-slate-200 rounded-lg overflow-x-auto">
+          <div className="bg-white border border-stone-200 rounded-lg overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50 text-slate-600">
+                <tr className="border-b border-stone-200 bg-stone-50 text-stone-600">
                   <th className="py-2.5 px-3 font-semibold">Idempotency Key</th>
                   <th className="py-2.5 px-3 font-semibold">Domain & Type</th>
                   <th className="py-2.5 px-3 font-semibold">Status</th>
@@ -611,11 +611,11 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                   {userRole === 'admin' && <th className="py-2.5 px-3 font-semibold">Action</th>}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200">
+              <tbody className="divide-y divide-stone-200">
                 {jobQueue.map((j) => (
-                  <tr key={j.id} className="hover:bg-slate-50/80">
-                    <td className="py-2.5 px-3 font-mono text-[11px] text-slate-800">{j.idempotencyKey}</td>
-                    <td className="py-2.5 px-3 font-mono text-[11px] text-slate-600">
+                  <tr key={j.id} className="hover:bg-stone-50/80">
+                    <td className="py-2.5 px-3 font-mono text-[11px] text-stone-800">{j.idempotencyKey}</td>
+                    <td className="py-2.5 px-3 font-mono text-[11px] text-stone-600">
                       {j.targetDomain} · {j.jobType}
                     </td>
                     <td className="py-2.5 px-3 font-mono font-semibold">
@@ -631,10 +631,10 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                         {j.status}
                       </span>
                     </td>
-                    <td className="py-2.5 px-3 font-mono text-slate-700">
+                    <td className="py-2.5 px-3 font-mono text-stone-700">
                       {j.attempts}/{j.maxAttempts}
                     </td>
-                    <td className="py-2.5 px-3 font-mono text-[11px] text-slate-600">
+                    <td className="py-2.5 px-3 font-mono text-[11px] text-stone-600">
                       {j.lastError || j.executionLog[j.executionLog.length - 1] || '—'}
                     </td>
                     {userRole === 'admin' && (
@@ -642,7 +642,7 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                         <button
                           type="button"
                           onClick={() => handleRetryJob(j.id)}
-                          className="px-2.5 py-1 text-xs font-medium border border-slate-300 rounded hover:bg-slate-100"
+                          className="px-2.5 py-1 text-xs font-medium border border-stone-300 rounded hover:bg-stone-100"
                         >
                           Retry Job
                         </button>
@@ -665,10 +665,10 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
     <div className="space-y-7">
       {subTabNav}
       <div>
-        <h1 className="text-xl font-bold text-slate-900">
+        <h1 className="text-xl font-bold text-stone-900">
           Administrative Controls, Scheduler Governance & Optional Provider Interfaces
         </h1>
-        <p className="text-xs text-slate-600 mt-1">
+        <p className="text-xs text-stone-600 mt-1">
           Role-protected system controls (`role: {userRole}`). Manage automation state, onboard official sources with SSRF validation, and configure optional AI/Search providers.
         </p>
       </div>
@@ -694,13 +694,13 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
       ) : (
         <>
           {/* 1. Automation State & Resource Consumption */}
-          <section className="bg-white border border-slate-200 rounded-lg p-6 space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-3">
+          <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-stone-100 pb-3">
               <div>
-                <h2 className="text-sm font-semibold text-slate-900">
+                <h2 className="text-sm font-semibold text-stone-900">
                   01. Automation Scheduler State & Free-Tier Resource Telemetry
                 </h2>
-                <p className="text-xs text-slate-600 mt-0.5">
+                <p className="text-xs text-stone-600 mt-0.5">
                   Current State: <strong className="font-mono">{systemHealth.automationState}</strong> — {systemHealth.stateReason}
                 </p>
               </div>
@@ -718,7 +718,7 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                   <button
                     type="button"
                     onClick={() => handleToggleAutomation('PAUSE')}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-md"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-stone-900 bg-stone-100 hover:bg-stone-200 border border-stone-300 rounded-md"
                   >
                     <Pause className="w-3.5 h-3.5" />
                     <span>Pause Automation</span>
@@ -729,22 +729,22 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
               <div>
-                <span className="text-slate-500 font-sans block">Cron Schedule</span>
-                <span className="font-semibold text-slate-900">{systemHealth.cronSchedule} (Daily)</span>
+                <span className="text-stone-500 font-sans block">Cron Schedule</span>
+                <span className="font-semibold text-stone-900">{systemHealth.cronSchedule} (Daily)</span>
               </div>
               <div>
-                <span className="text-slate-500 font-sans block">Total HTTP Requests</span>
-                <span className="font-semibold text-slate-900">{systemHealth.totalRequestsMade}</span>
+                <span className="text-stone-500 font-sans block">Total HTTP Requests</span>
+                <span className="font-semibold text-stone-900">{systemHealth.totalRequestsMade}</span>
               </div>
               <div>
-                <span className="text-slate-500 font-sans block">Total Bytes Fetched</span>
-                <span className="font-semibold text-slate-900">
+                <span className="text-stone-500 font-sans block">Total Bytes Fetched</span>
+                <span className="font-semibold text-stone-900">
                   {(systemHealth.totalBytesFetched / 1024).toFixed(1)} KB
                 </span>
               </div>
               <div>
-                <span className="text-slate-500 font-sans block">Last Successful Run</span>
-                <span className="font-semibold text-slate-900">
+                <span className="text-stone-500 font-sans block">Last Successful Run</span>
+                <span className="font-semibold text-stone-900">
                   {systemHealth.lastSuccessfulRunAt
                     ? systemHealth.lastSuccessfulRunAt.slice(0, 19).replace('T', ' ')
                     : 'Pending'}
@@ -754,8 +754,8 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
           </section>
 
           {/* 2. Onboard Official Source (with SSRF Validation) */}
-          <section className="bg-white border border-slate-200 rounded-lg p-6 space-y-4">
-            <h2 className="text-sm font-semibold text-slate-900 border-b border-slate-100 pb-2">
+          <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-4">
+            <h2 className="text-sm font-semibold text-stone-900 border-b border-stone-100 pb-2">
               02. Onboard Authoritative Official Source Domain (SSRF Protected)
             </h2>
             <form onSubmit={handleAddSource} className="grid grid-cols-1 sm:grid-cols-5 gap-3">
@@ -766,7 +766,7 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                 onChange={(e) => setNewName(e.target.value)}
                 placeholder="Official Organization & Page Name"
                 aria-label="Official Source Name"
-                className="sm:col-span-2 px-3 py-2 text-xs border border-slate-300 rounded-md"
+                className="sm:col-span-2 px-3 py-2 text-xs border border-stone-300 rounded-md"
               />
               <input
                 type="url"
@@ -775,7 +775,7 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                 onChange={(e) => setNewUrl(e.target.value)}
                 placeholder="https://official-university.edu/scholarships"
                 aria-label="Official Seed URL"
-                className="sm:col-span-2 px-3 py-2 text-xs font-mono border border-slate-300 rounded-md"
+                className="sm:col-span-2 px-3 py-2 text-xs font-mono border border-stone-300 rounded-md"
               />
               <input
                 type="text"
@@ -784,13 +784,13 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                 onChange={(e) => setNewCountry(e.target.value)}
                 placeholder="Country"
                 aria-label="Source Country"
-                className="px-3 py-2 text-xs border border-slate-300 rounded-md"
+                className="px-3 py-2 text-xs border border-stone-300 rounded-md"
               />
               <select
                 value={newCategory}
                 onChange={(e) => setNewCategory(e.target.value)}
                 aria-label="Source Category"
-                className="sm:col-span-2 px-3 py-2 text-xs border border-slate-300 rounded-md bg-white"
+                className="sm:col-span-2 px-3 py-2 text-xs border border-stone-300 rounded-md bg-white"
               >
                 <option value="UNIVERSITY_SCHOLARSHIP">University Scholarship Portal</option>
                 <option value="UNIVERSITY_DIRECTORY">University Graduate Directory</option>
@@ -803,7 +803,7 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                 value={newPolicy}
                 onChange={(e) => setNewPolicy(e.target.value)}
                 aria-label="Refresh Policy"
-                className="sm:col-span-2 px-3 py-2 text-xs border border-slate-300 rounded-md bg-white"
+                className="sm:col-span-2 px-3 py-2 text-xs border border-stone-300 rounded-md bg-white"
               >
                 <option value="DAILY">Refresh Daily (Deadline-Sensitive)</option>
                 <option value="EVERY_3_DAYS">Refresh Every 3 Days</option>
@@ -812,7 +812,7 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
               </select>
               <button
                 type="submit"
-                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-md"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-stone-900 hover:bg-stone-800 rounded-md"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add Official Source</span>
@@ -821,12 +821,12 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
           </section>
 
           {/* 3. Optional Provider Interfaces (Google Search Grounding & High-Thinking) */}
-          <section className="bg-white border border-slate-200 rounded-lg p-6 space-y-5">
-            <div className="border-b border-slate-100 pb-2">
-              <h2 className="text-sm font-semibold text-slate-900">
+          <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-5">
+            <div className="border-b border-stone-100 pb-2">
+              <h2 className="text-sm font-semibold text-stone-900">
                 03. Optional Provider Interfaces (Section 3 Provider Policy — Disabled by Default)
               </h2>
-              <p className="text-xs text-slate-600 mt-0.5">
+              <p className="text-xs text-stone-600 mt-0.5">
                 Core discovery, verification, funding analysis, and eligibility operate 100% deterministically without runtime AI calls. Enable optional providers below to run live Google Search Grounding (`gemini-3.8-flash`) or High-Thinking reasoning (`gemini-4-argon` with `ThinkingLevel.HIGH`).
               </p>
             </div>
@@ -837,9 +837,9 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                   type="checkbox"
                   checked={systemHealth.searchProviderEnabled}
                   onChange={(e) => handleToggleProviders('searchProviderEnabled', e.target.checked)}
-                  className="rounded border-slate-300"
+                  className="rounded border-stone-300"
                 />
-                <span className="font-semibold text-slate-900">
+                <span className="font-semibold text-stone-900">
                   Enable Google Search Grounding (`gemini-3.8-flash` + `googleSearch`)
                 </span>
               </label>
@@ -849,9 +849,9 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                   type="checkbox"
                   checked={systemHealth.aiProviderEnabled}
                   onChange={(e) => handleToggleProviders('aiProviderEnabled', e.target.checked)}
-                  className="rounded border-slate-300"
+                  className="rounded border-stone-300"
                 />
-                <span className="font-semibold text-slate-900">
+                <span className="font-semibold text-stone-900">
                   Enable High-Thinking Evaluator (`gemini-4-argon` + `ThinkingLevel.HIGH`)
                 </span>
               </label>
@@ -859,8 +859,8 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
               {/* Grounded Search Box */}
-              <form onSubmit={handleRunGroundedSearch} className="space-y-3 border border-slate-200 rounded-lg p-4 bg-slate-50/50">
-                <div className="text-xs font-semibold text-slate-900 flex items-center gap-1.5">
+              <form onSubmit={handleRunGroundedSearch} className="space-y-3 border border-stone-200 rounded-lg p-4 bg-stone-50/50">
+                <div className="text-xs font-semibold text-stone-900 flex items-center gap-1.5">
                   <Search className="w-3.5 h-3.5" />
                   <span>Grounded Official-Source Web Search (`gemini-3.8-flash`)</span>
                 </div>
@@ -869,29 +869,29 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   aria-label="Grounded Search Query"
-                  className="w-full px-3 py-2 text-xs bg-white border border-slate-300 rounded-md"
+                  className="w-full px-3 py-2 text-xs bg-white border border-stone-300 rounded-md"
                 />
                 <button
                   type="submit"
                   disabled={searching}
-                  className="px-3.5 py-1.5 text-xs font-medium text-white bg-slate-900 hover:bg-slate-800 rounded-md"
+                  className="px-3.5 py-1.5 text-xs font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-md"
                 >
                   {searching ? 'Searching Official Web Sources…' : 'Execute Grounded Search'}
                 </button>
                 {searchResult && (
-                  <div className="mt-3 p-3 bg-white border border-slate-200 rounded text-xs space-y-2">
-                    <div className="font-mono text-[11px] text-slate-500">Model: {searchResult.model}</div>
-                    <p className="text-slate-800 whitespace-pre-line">{searchResult.answer}</p>
+                  <div className="mt-3 p-3 bg-white border border-stone-200 rounded text-xs space-y-2">
+                    <div className="font-mono text-[11px] text-stone-500">Model: {searchResult.model}</div>
+                    <p className="text-stone-800 whitespace-pre-line">{searchResult.answer}</p>
                     {searchResult.citations.length > 0 && (
-                      <div className="pt-2 border-t border-slate-100 space-y-1">
-                        <div className="font-semibold text-[11px] text-slate-600">Grounded Citations:</div>
+                      <div className="pt-2 border-t border-stone-100 space-y-1">
+                        <div className="font-semibold text-[11px] text-stone-600">Grounded Citations:</div>
                         {searchResult.citations.map((c, i) => (
                           <a
                             key={i}
                             href={c.uri}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block text-[11px] font-mono text-slate-700 underline truncate"
+                            className="block text-[11px] font-mono text-stone-700 underline truncate"
                           >
                             {c.title} — {c.uri}
                           </a>
@@ -903,8 +903,8 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
               </form>
 
               {/* High Thinking Box */}
-              <form onSubmit={handleRunDeepThinking} className="space-y-3 border border-slate-200 rounded-lg p-4 bg-slate-50/50">
-                <div className="text-xs font-semibold text-slate-900 flex items-center gap-1.5">
+              <form onSubmit={handleRunDeepThinking} className="space-y-3 border border-stone-200 rounded-lg p-4 bg-stone-50/50">
+                <div className="text-xs font-semibold text-stone-900 flex items-center gap-1.5">
                   <Cpu className="w-3.5 h-3.5" />
                   <span>Complex Strategy Evaluator (`gemini-4-argon` · `ThinkingLevel.HIGH`)</span>
                 </div>
@@ -913,21 +913,21 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
                   value={thinkingPrompt}
                   onChange={(e) => setThinkingPrompt(e.target.value)}
                   aria-label="High Thinking Evaluation Prompt"
-                  className="w-full px-3 py-2 text-xs bg-white border border-slate-300 rounded-md"
+                  className="w-full px-3 py-2 text-xs bg-white border border-stone-300 rounded-md"
                 />
                 <button
                   type="submit"
                   disabled={thinkingLoading}
-                  className="px-3.5 py-1.5 text-xs font-medium text-white bg-slate-900 hover:bg-slate-800 rounded-md"
+                  className="px-3.5 py-1.5 text-xs font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-md"
                 >
                   {thinkingLoading ? 'Reasoning with ThinkingLevel.HIGH…' : 'Run High-Thinking Analysis'}
                 </button>
                 {thinkingResult && (
-                  <div className="mt-3 p-3 bg-white border border-slate-200 rounded text-xs space-y-2">
-                    <div className="font-mono text-[11px] text-slate-500">
+                  <div className="mt-3 p-3 bg-white border border-stone-200 rounded text-xs space-y-2">
+                    <div className="font-mono text-[11px] text-stone-500">
                       Model: {thinkingResult.model} · ThinkingLevel: {thinkingResult.thinkingLevel}
                     </div>
-                    <p className="text-slate-800 whitespace-pre-line">{thinkingResult.analysis}</p>
+                    <p className="text-stone-800 whitespace-pre-line">{thinkingResult.analysis}</p>
                   </div>
                 )}
               </form>
@@ -935,19 +935,19 @@ export const AdminAndSourcesView: React.FC<AdminAndSourcesViewProps> = ({
           </section>
 
           {/* 4. Security Audit Logs */}
-          <section className="bg-white border border-slate-200 rounded-lg p-6 space-y-3">
-            <h2 className="text-sm font-semibold text-slate-900 border-b border-slate-100 pb-2">
+          <section className="bg-white border border-stone-200 rounded-lg p-6 space-y-3">
+            <h2 className="text-sm font-semibold text-stone-900 border-b border-stone-100 pb-2">
               04. Redacted Security & Operational Audit Logs ({auditLogs.length})
             </h2>
-            <div className="max-h-72 overflow-y-auto divide-y divide-slate-100 text-xs font-mono">
+            <div className="max-h-72 overflow-y-auto divide-y divide-stone-100 text-xs font-mono">
               {auditLogs.slice(0, 30).map((log) => (
                 <div key={log.id} className="py-2 flex flex-wrap items-center justify-between gap-2">
                   <div>
-                    <span className="font-semibold text-slate-900">{log.action}</span>{' '}
-                    <span className="text-slate-500">[{log.targetType}]</span> —{' '}
-                    <span className="text-slate-700">{log.details}</span>
+                    <span className="font-semibold text-stone-900">{log.action}</span>{' '}
+                    <span className="text-stone-500">[{log.targetType}]</span> —{' '}
+                    <span className="text-stone-700">{log.details}</span>
                   </div>
-                  <span className="text-[11px] text-slate-400">
+                  <span className="text-[11px] text-stone-400">
                     {log.createdAt.slice(0, 19).replace('T', ' ')} UTC
                   </span>
                 </div>
