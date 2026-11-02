@@ -381,19 +381,6 @@
       "updatedAt": "2026-10-23T13:20:53.000Z"
     },
     {
-      "id": "inst-swedish-institute-2027",
-      "name": "Swedish Institute",
-      "country": "Sweden",
-      "city": "Stockholm",
-      "campus": "",
-      "officialDomain": "si.se",
-      "officialWebsiteUrl": "https://si.se/",
-      "authorityTier": "TIER_1_OFFICIAL",
-      "lastVerifiedAt": "2026-10-23T13:20:53.000Z",
-      "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-23T13:20:53.000Z"
-    },
-    {
       "id": "inst-hkpfs-2027",
       "name": "Research Grants Council (Hong Kong PhD Fellowship Scheme)",
       "country": "Hong Kong",
@@ -431,6 +418,58 @@
       "lastVerifiedAt": "2026-10-26T05:21:11.000Z",
       "createdAt": "2026-10-26T05:21:11.000Z",
       "updatedAt": "2026-10-26T05:21:11.000Z"
+    },
+    {
+      "id": "inst-sydney-australia",
+      "name": "University of Sydney",
+      "country": "Australia",
+      "city": "Sydney",
+      "campus": "Camperdown/Darlington Campus",
+      "officialDomain": "sydney.edu.au",
+      "officialWebsiteUrl": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html",
+      "authorityTier": "UNIVERSITY",
+      "lastVerifiedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "inst-ubc-canada",
+      "name": "University of British Columbia (UBC)",
+      "country": "Canada",
+      "city": "Vancouver",
+      "campus": "Vancouver Campus",
+      "officialDomain": "ubc.ca",
+      "officialWebsiteUrl": "https://www.grad.ubc.ca/awards/four-year-doctoral-fellowship-4yf",
+      "authorityTier": "UNIVERSITY",
+      "lastVerifiedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "inst-campus-france-eiffel",
+      "name": "Campus France (France Excellence Eiffel Scholarship)",
+      "country": "France",
+      "city": "Paris",
+      "campus": "French higher education institutions",
+      "officialDomain": "campusfrance.org",
+      "officialWebsiteUrl": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program",
+      "authorityTier": "UNIVERSITY",
+      "lastVerifiedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "inst-melbourne-australia",
+      "name": "University of Melbourne",
+      "country": "Australia",
+      "city": "Melbourne",
+      "campus": "Parkville Campus",
+      "officialDomain": "unimelb.edu.au",
+      "officialWebsiteUrl": "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships",
+      "authorityTier": "UNIVERSITY",
+      "lastVerifiedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     }
   ],
   "departments": [
@@ -672,6 +711,54 @@
         "Genomics"
       ],
       "websiteUrl": "https://www.hbku.edu.qa/en/scholarship"
+    },
+    {
+      "id": "dept-sydney-rtp",
+      "institutionId": "inst-sydney-australia",
+      "name": "Sydney Graduate Research Programmes (all faculties)",
+      "researchAreas": [
+        "Computer Science",
+        "Microbiology",
+        "Artificial Intelligence",
+        "Life Sciences"
+      ],
+      "websiteUrl": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html"
+    },
+    {
+      "id": "dept-ubc-4yf",
+      "institutionId": "inst-ubc-canada",
+      "name": "UBC Graduate Programmes (all faculties)",
+      "researchAreas": [
+        "Computer Science",
+        "Microbiology",
+        "Artificial Intelligence",
+        "Life Sciences"
+      ],
+      "websiteUrl": "https://www.grad.ubc.ca/awards/four-year-doctoral-fellowship-4yf"
+    },
+    {
+      "id": "dept-campus-france-eiffel",
+      "institutionId": "inst-campus-france-eiffel",
+      "name": "French higher education institutions (nominating institutions)",
+      "researchAreas": [
+        "Computer Science",
+        "Microbiology",
+        "Engineering",
+        "Sciences"
+      ],
+      "websiteUrl": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program"
+    },
+    {
+      "id": "dept-melbourne-grs",
+      "institutionId": "inst-melbourne-australia",
+      "name": "Melbourne Graduate Research Programmes (all faculties)",
+      "researchAreas": [
+        "Computer Science",
+        "Microbiology",
+        "Artificial Intelligence",
+        "Life Sciences"
+      ],
+      "websiteUrl": "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships"
     }
   ],
   "programs": [
@@ -753,9 +840,9 @@
         "b85bd473-3b11-4347-b2f6-73db414575df",
         "87503e91-7d82-4140-ada4-68031f91b0df"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:23.248Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Computer Science",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -841,9 +928,9 @@
         "bbf6f1d7-b363-4050-8d21-e2b0e398bb4a",
         "5d866e37-3aa7-42ca-96a8-10414e0d1cd6"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:40.793Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Computer Science",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -926,9 +1013,9 @@
         "c97baccd-328a-4b4a-a606-9f10cb334979",
         "7d4f9bf1-475a-4125-b4d7-421c618fe139"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:42.632Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Computer Science",
       "specializations": [
         "Cybersecurity and Information Security",
@@ -1008,9 +1095,9 @@
       "claimIds": [
         "ef3b4589-7fef-46b0-8d14-d85f67f83044"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:24.707Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Computer Science",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -1089,9 +1176,9 @@
       "claimIds": [
         "f91a2305-2a0e-4d20-ab65-8ce6cdcc6bdc"
       ],
-      "lastCheckedAt": "2026-10-22T12:22:42.714Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:42.714Z",
-      "updatedAt": "2026-10-22T12:22:42.714Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Computer Science",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -1170,9 +1257,9 @@
       "claimIds": [
         "f0baa488-f3af-4a36-a480-2537f4b9eb04"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:28.748Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Bioinformatics and Computational Biology",
@@ -1232,9 +1319,9 @@
       "claimIds": [
         "1b0b387d-041f-4fec-8a01-18a89bfd9d9e"
       ],
-      "lastCheckedAt": "2026-10-22T12:22:29.112Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:29.112Z",
-      "updatedAt": "2026-10-22T12:22:29.112Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Computer Science",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -1327,9 +1414,9 @@
         "ac8d32d7-5174-46e5-aaa4-06816a002c38",
         "11c58493-2574-4094-bbc9-746ab65731fa"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:44.044Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-hec-pk-unavail",
@@ -1389,9 +1476,9 @@
       "claimIds": [
         "63b2dd36-81ff-41df-b71a-1807acbfd262"
       ],
-      "lastCheckedAt": "2026-10-22T12:22:47.383Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-21T14:58:00.540Z",
-      "updatedAt": "2026-10-22T12:22:47.383Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-cam-mphil-pathology-selffunded",
@@ -1470,9 +1557,9 @@
       "claimIds": [
         "c9b4e5f1-86e3-4a5c-95da-345a69a0ccc2"
       ],
-      "lastCheckedAt": "2026-10-22T12:22:36.289Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:36.289Z",
-      "updatedAt": "2026-10-22T12:22:36.289Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-mit-phd-microbiology",
@@ -1559,9 +1646,9 @@
       "claimIds": [
         "48c09c37-01e3-48b0-a926-d9970ad0f3c5"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:35.556Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-cam-phd-pathology-micro",
@@ -1648,9 +1735,9 @@
       "claimIds": [
         "c9b4e5f1-86e3-4a5c-95da-345a69a0ccc2"
       ],
-      "lastCheckedAt": "2026-10-23T17:35:00Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:36.289Z",
-      "updatedAt": "2026-10-23T17:35:00Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-mpg-imprs-phd-cs",
@@ -1676,16 +1763,16 @@
       "officialApplicationUrl": "https://www.mpg.de/en/imprs",
       "contactEmail": "imprs@mpi-inf.mpg.de",
       "applicationStages": [
-        "Submit online application to the relevant IMPRS portal (Saarbr\u00fccken / T\u00fcbingen)",
+        "Each IMPRS school runs its own call and deadline \u2014 check the school page (e.g. IMPRS Intelligent Systems 15 Nov 2026, IMPRS Plant Sciences 5 Jan 2027, IMPRS EvolBio 10 Jan 2027)",
         "Faculty screening and technical interview symposium",
         "Direct employment contract offer with Max Planck Institute and partner German university enrollment"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "EUR",
       "supervisorContactReq": "RECOMMENDED",
-      "deadlineDate": "2026-12-15T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CET",
-      "openingDate": "2026-09-01T00:00:00Z",
+      "openingDate": null,
       "isActive": true,
       "isExpired": false,
       "verificationStatus": "Officially Confirmed",
@@ -1733,9 +1820,9 @@
       "claimIds": [
         "4119fba4-d418-4e93-b78e-d4d244116b2f"
       ],
-      "lastCheckedAt": "2026-10-22T12:22:13.680Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:13.680Z",
-      "updatedAt": "2026-10-22T12:22:13.680Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-mpg-imprs-phd-micro",
@@ -1763,16 +1850,16 @@
       "officialApplicationUrl": "https://www.mpg.de/en/imprs",
       "contactEmail": "imprs@mpi-marburg.mpg.de",
       "applicationStages": [
-        "Online application submission via IMPRS Microbiology / Infectious Biology portal",
-        "Panel review and virtual selection symposium with Max Planck PIs",
-        "Salaried doctoral employment contract offer"
+        "Each IMPRS school runs its own call and deadline \u2014 check the school page (e.g. IMPRS Intelligent Systems 15 Nov 2026, IMPRS Plant Sciences 5 Jan 2027, IMPRS EvolBio 10 Jan 2027)",
+        "Faculty screening and technical interview symposium",
+        "Direct employment contract offer with Max Planck Institute and partner German university enrollment"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "EUR",
       "supervisorContactReq": "RECOMMENDED",
-      "deadlineDate": "2027-01-31T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CET",
-      "openingDate": "2026-10-01T00:00:00Z",
+      "openingDate": null,
       "isActive": true,
       "isExpired": false,
       "verificationStatus": "Officially Confirmed",
@@ -1821,9 +1908,9 @@
       "claimIds": [
         "4119fba4-d418-4e93-b78e-d4d244116b2f"
       ],
-      "lastCheckedAt": "2026-10-22T12:22:13.680Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:13.680Z",
-      "updatedAt": "2026-10-22T12:22:13.680Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-tum-msc-informatics",
@@ -1907,9 +1994,9 @@
       "claimIds": [
         "c3e7bd02-5428-44e5-9e6e-4a2a6f6fe585"
       ],
-      "lastCheckedAt": "2026-10-22T12:22:17.008Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:17.008Z",
-      "updatedAt": "2026-10-22T12:22:17.008Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-pku-phd-micro-bioinfo",
@@ -1937,7 +2024,7 @@
       "officialApplicationUrl": "https://english.pku.edu.cn/",
       "contactEmail": "study@pku.edu.cn",
       "applicationStages": [
-        "Submit online application on PKU International Student Service System (Agency Code 10001)",
+        "Confirm the 2027 CGS call on the PKU/CSC portal when published, then submit online on PKU International Student Service System (Agency Code 10001)",
         "School of Life Sciences / PKUHSC faculty committee interview",
         "PKU Scholarship & CGS Fellowship nomination confirmation"
       ],
@@ -1999,9 +2086,9 @@
       "claimIds": [
         "3ebffb3c-d029-4d1c-b70f-f7ba8ca40481"
       ],
-      "lastCheckedAt": "2026-10-22T12:22:19.859Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:19.859Z",
-      "updatedAt": "2026-10-22T12:22:19.859Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-campuschina-csc-unavail",
@@ -2062,9 +2149,9 @@
       "claimIds": [
         "e4d3d0cc-3d7b-4cbd-ad17-e511d493ec60"
       ],
-      "lastCheckedAt": "2026-10-22T12:22:19.969Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:19.969Z",
-      "updatedAt": "2026-10-22T12:22:19.969Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-erasmus-mundus-2027",
@@ -2080,14 +2167,14 @@
       "officialApplicationUrl": "https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en",
       "contactEmail": "",
       "applicationStages": [
-        "Pick a consortium from the official EMJM catalogue (218 programmes; CS-relevant: CoDaS, EDISS)",
-        "Apply directly to the chosen consortium \u2014 there is no central EMJM application",
-        "Each consortium sets its own deadline (most fall Oct 2026\u2013Jan 2027; CoDaS: 5 Jan 2027)"
+        "Pick a consortium from the official EMJM catalogue \u2014 there is no central EMJM application and no single central deadline",
+        "Apply directly to the chosen consortium \u2014 most deadlines fall Oct 2026\u2013Jan 2027 (CoDaS: 5 Jan 2027)",
+        "Not every catalogue programme offers an Erasmus Mundus scholarship \u2014 check the programme page"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "EUR",
       "supervisorContactReq": "NOT_REQUIRED",
-      "deadlineDate": "2027-01-05T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CET",
       "openingDate": null,
       "isActive": true,
@@ -2135,9 +2222,9 @@
         "ccc6a807-c56b-4236-8424-bcd56dbffbd0",
         "f771eea3-21a3-4b36-91b0-a3852f878b54"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -2162,14 +2249,14 @@
       "officialApplicationUrl": "https://www.sbw-berlin.de/en/",
       "contactEmail": "",
       "applicationStages": [
-        "Complete the first application stage on sbw-berlin.de (rolling; aim by 31 Dec 2026 for 2027 intake)",
+        "Rolling applications all year via sbw.berlin.de \u2014 no fixed deadline; decisions for the following semester are made at the beginning of February and August",
         "Submit proof of social/non-profit engagement with a recommendation letter from the organisation",
         "Secure admission to a Berlin/Potsdam university via uni-assist and complete the visa process"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "EUR",
       "supervisorContactReq": "NOT_REQUIRED",
-      "deadlineDate": "2026-12-31T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CET",
       "openingDate": null,
       "isActive": true,
@@ -2214,9 +2301,9 @@
         "3b15ccd8-9026-4df5-aec9-1d894c6374fe",
         "03b0b488-87a8-4f3d-a6a1-050dc3a5d910"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -2241,14 +2328,14 @@
       "officialApplicationUrl": "https://knight-hennessy.stanford.edu/admission",
       "contactEmail": "",
       "applicationStages": [
-        "Apply to Knight-Hennessy when the 2028 cohort opens (~June 2027; expected close ~Oct 2027)",
+        "Apply to Knight-Hennessy when the 2028 cohort opens (June 2027; closing date not yet published \u2014 expected ~Oct 2027; 2027 cohort closed 6 Oct 2026)",
         "Separately apply and be admitted to a full-time Stanford graduate programme (meet the earlier of the programme deadline or 1 Dec)",
         "Finalists attend an in-person selection weekend"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "USD",
       "supervisorContactReq": "NOT_REQUIRED",
-      "deadlineDate": "2027-10-06T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "America/Los_Angeles",
       "openingDate": "2027-06-01T00:00:00Z",
       "isActive": true,
@@ -2293,9 +2380,9 @@
         "1985720c-9370-435e-8924-12dd159c1757",
         "946e556c-c27e-4ab4-a5e4-216434e380ff"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -2322,7 +2409,7 @@
       "applicationStages": [
         "Secure an Imperial supervisor who agrees to supervise your PhD",
         "Apply via standard Imperial PhD admissions and select the President's option in the funding section",
-        "Three selection rounds: 2 Nov 2026, 11 Jan 2027, 1 Mar 2027 (final) \u2014 the department nominates candidates"
+        "Three selection rounds: 2 Nov 2026 (CLOSED), 11 Jan 2027, 1 Mar 2027 (final) \u2014 the department nominates candidates"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "GBP",
@@ -2370,9 +2457,9 @@
         "6d0ba487-5924-4602-9f38-7fbbc5878fd0",
         "2630d48c-e95c-4261-af9c-ef98a9c42083"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -2398,9 +2485,9 @@
       "officialApplicationUrl": "https://www.oist.jp/admissions",
       "contactEmail": "",
       "applicationStages": [
-        "Submit the online application by 15 Nov 2026 (at least 2 referee letters must reach OIST first)",
+        "Single round: submit the online application by 15 Nov 2026 (23:59 JST; at least 2 referee letters must reach OIST first; \u00a55,000 fee, no waivers)",
         "Shortlisting in late December 2026",
-        "Online Admissions Workshop interviews 18 Jan\u20137 Feb 2027; results mid-Feb 2027"
+        "Online Admissions Workshop interviews 18 Jan\u20137 Feb 2027; results mid-Feb 2027; enrolment 1 May 2027, 1 Sep 2027, or 1 Jan 2028"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "JPY",
@@ -2450,9 +2537,9 @@
         "3badf90d-3536-4b15-a962-fd91627daca9",
         "2da68c60-5ecd-4887-bf79-5cd8cb9d643c"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Bioinformatics and Computational Biology",
@@ -2478,14 +2565,14 @@
       "officialApplicationUrl": "https://www.adb.org/what-we-do/funds/adb-japan-scholarship-program",
       "contactEmail": "",
       "applicationStages": [
-        "Apply for admission at an ADB-JSP designated institution and request JSP consideration (no direct application to ADB)",
+        "No single ADB deadline: apply for admission at an ADB-JSP designated institution and request JSP consideration (no direct application to ADB; Pakistan partner: LUMS)",
         "Institution deadlines vary: Ritsumeikan APU 5 Nov 2026 & 8 Jan 2027; U Tokyo Frontier Sciences 10 Dec 2026; U Tokyo GraSPP 1 Nov\u20131 Dec 2026",
         "The institution nominates candidates to ADB for final selection"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "JPY",
       "supervisorContactReq": "NOT_REQUIRED",
-      "deadlineDate": "2026-12-10T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "Asia/Tokyo",
       "openingDate": null,
       "isActive": true,
@@ -2530,9 +2617,9 @@
         "2faed073-47aa-420c-bdf0-98b7f28277df",
         "125adbbb-c51e-4e4c-a38b-77a94c3bc4a0"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Data Science, Big Data, and Analytics",
@@ -2608,9 +2695,9 @@
         "f528d6b8-599e-4b16-a571-1ffcb7606bb5",
         "dfcc9925-75c2-47da-b3b5-aae78e0fe190"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Data Science, Big Data, and Analytics",
@@ -2636,9 +2723,10 @@
       "officialApplicationUrl": "https://www.turkiyeburslari.gov.tr/en",
       "contactEmail": "",
       "applicationStages": [
-        "Apply 10 Jan\u201320 Feb 2027 via the TBBS online system; list up to 12 university programmes in order of preference",
+        "2027 call not yet announced (2026 call announced 29 Dec 2025); recurring annual window 10 Jan\u201320 Feb \u2014 confirm on turkiyeburslari.gov.tr when the call publishes; list up to 12 university programmes in order of preference",
         "Evaluation Mar\u2013Apr 2027; interviews Apr\u2013Jun 2027",
-        "Results ~Aug 2027; arrival Sep 2027; compulsory Turkish year, then degree starts autumn 2028"
+        "Results ~Aug 2027; arrival Sep 2027; compulsory Turkish year, then degree starts autumn 2028",
+        "Note: check the TBBS programme search \u2014 T\u00fcrkiye Scholarships does not award scholarships in health-science fields"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "TRY",
@@ -2688,9 +2776,9 @@
         "edd4beef-0e15-48a0-8b87-a0422b304349",
         "b4cf2357-8fe2-4868-9dc5-cfa2c8d44fe1"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -2717,9 +2805,9 @@
       "officialApplicationUrl": "https://www.studyinkorea.go.kr/",
       "contactEmail": "",
       "applicationStages": [
-        "Embassy track (~Feb 2027, short ~2-week window) via the Korean Embassy in Islamabad \u2014 up to 3 university choices",
+        "2027 GKS-G guidelines not yet published (as of Nov 2026); expected embassy window Feb\u2013Mar 2027 (~2 weeks) via the Korean Embassy in Islamabad \u2014 confirm the exact window on studyinkorea.go.kr; up to 3 university choices",
         "OR University track (deadlines vary by institution, typically Mar\u2013Apr 2027) \u2014 1 university only; applying through both tracks disqualifies",
-        "NIIED announces 2027 graduate-cycle dates on studyinkorea.go.kr \u2014 confirm the exact window when published"
+        "Do not confuse with GKS-U (undergraduate): its 2027 embassy track closed 30 Sep 2026"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "KRW",
@@ -2768,9 +2856,9 @@
         "412ab19f-3f4b-496e-bfd3-19f90df11bda",
         "f4158682-d13c-4cfa-8a60-ccb5b4fc2b6c"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -2847,9 +2935,9 @@
         "c5ac7ceb-7879-4a37-a683-f40a5ffd194d",
         "6b240f28-77d8-484e-9469-dad67f301298"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -2860,85 +2948,6 @@
       ],
       "opportunityType": "RESEARCH_STUDENTSHIP",
       "globalRegion": "Asia"
-    },
-    {
-      "id": "prog-swedish-institute-2027",
-      "institutionId": "inst-swedish-institute-2027",
-      "departmentId": "dept-swedish-institute-2027",
-      "title": "Swedish Institute Scholarship for Global Professionals 2027 \u2014 Fully Funded Master's in Sweden",
-      "degreeLevel": "MSc",
-      "discipline": "Master's programmes in Sweden including Computer Science, Engineering and related STEM fields (SI-designated programmes)",
-      "durationMonths": 24,
-      "intakeTerm": "Autumn 2027",
-      "applicationCycle": "2027-2028",
-      "officialProgramUrl": "https://si.se/",
-      "officialApplicationUrl": "https://si.se/",
-      "contactEmail": "",
-      "applicationStages": [
-        "Step 1: apply to eligible master's programmes via University Admissions (16 Oct 2026\u201315 Jan 2027)",
-        "Step 2: apply for the SI scholarship 8\u201324 Feb 2027 (closes 14:59 CET)",
-        "Results late April 2027; studies start autumn 2027"
-      ],
-      "applicationFeeAmount": 0,
-      "applicationFeeCurrency": "SEK",
-      "supervisorContactReq": "NOT_REQUIRED",
-      "deadlineDate": "2027-02-24T13:59:00Z",
-      "deadlineTimezone": "Europe/Stockholm",
-      "openingDate": null,
-      "isActive": true,
-      "isExpired": false,
-      "verificationStatus": "Cross-Verified",
-      "fundingClassification": "Fully Funded \u2014 Confirmed",
-      "scholarshipIds": [
-        "sch-swedish-institute-2027"
-      ],
-      "requirement": {
-        "id": "req-swedish-institute-2027",
-        "programId": "prog-swedish-institute-2027",
-        "minGpa": null,
-        "gradingScale": "4.0",
-        "acceptedBackgrounds": [
-          "Computer Science",
-          "Engineering",
-          "All fields with SI-designated programmes"
-        ],
-        "prerequisiteCourses": [
-          "Bachelor's degree"
-        ],
-        "ieltsMinScore": null,
-        "toeflMinScore": null,
-        "greRequirement": "NOT_REQUIRED",
-        "citizenshipRule": "Citizen of an eligible country \u2014 Pakistan is on the list",
-        "excludedCitizenships": [],
-        "workExperienceReq": "Minimum 3,000 hours of demonstrated work experience PLUS demonstrated leadership experience (employer, entrepreneurial or civil-society) \u2014 the real filter; fresh graduates are effectively excluded",
-        "feeWaiverAvailable": true,
-        "researchExpRequired": false,
-        "requiredDocuments": [
-          "University Admissions application",
-          "SI scholarship application",
-          "CV",
-          "Letters of reference",
-          "Proof of work and leadership experience",
-          "Motivation letter"
-        ],
-        "verificationStatus": "Officially Confirmed"
-      },
-      "claimIds": [
-        "1760c6a0-6edd-4bb3-9c80-1cd064f98cfe",
-        "b26c6a78-76ef-46e9-a86f-322344d14712"
-      ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
-      "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
-      "broadField": "Interdisciplinary (CS & Bio)",
-      "specializations": [
-        "Artificial Intelligence and Machine Learning",
-        "Data Science, Big Data, and Analytics",
-        "Software Engineering and Programming Languages",
-        "Bioinformatics and Computational Biology"
-      ],
-      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
-      "globalRegion": "Europe"
     },
     {
       "id": "prog-hkpfs-2027",
@@ -3004,9 +3013,9 @@
         "38e2b383-e5e5-43a1-9a8e-7ca66e02ca76",
         "476ebb76-8bc6-40fa-b52c-98666d48a4d4"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -3102,9 +3111,9 @@
         "43ea9c8d-e3c3-4faf-9658-a1fc50ce1ae4",
         "d358aa55-0bdc-4a40-b82b-d1010efffbd3"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:31.334Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-usefp-fulbright-microbio",
@@ -3191,9 +3200,9 @@
         "072864df-ecc2-499c-bd27-d4a9af5e3cee",
         "25507710-8648-4994-a1b8-fa83f89c58c3"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:31.334Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-csc-uk-msc-cs",
@@ -3277,9 +3286,9 @@
         "7c27bb40-8fe4-4132-9930-9f107332c27c",
         "81cb27c2-bee4-4a59-8c46-bc52d2db68af"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:32.863Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-csc-uk-msc-microbio",
@@ -3364,9 +3373,9 @@
         "87a41be6-759c-4ebb-bee7-de746dc9a306",
         "dd5bc1a4-7714-4af8-808f-2344497c4168"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:32.863Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-chevening-uk-msc-cs",
@@ -3444,9 +3453,9 @@
       "claimIds": [
         "c23630c4-c121-4cce-8028-e282b6d2a408"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:33.626Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-chevening-uk-msc-microbio",
@@ -3524,9 +3533,9 @@
       "claimIds": [
         "3aa52f19-bff6-444c-aa16-123831b97a4c"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:33.626Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-mext-japan-cs",
@@ -3551,7 +3560,8 @@
       "officialApplicationUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
       "contactEmail": null,
       "applicationStages": [
-        "Embassy Recommendation (written exam & interview at Embassy of Japan in Pakistan) OR University Recommendation",
+        "Embassy track (Pakistan) for 2027 entry CLOSED 26 May 2026; 2028 embassy round expected Apr\u2013May 2027 \u2014 check the Embassy of Japan in Pakistan page",
+        "University Recommendation track: deadlines vary by Japanese university",
         "Request Letter of Provisional Acceptance from Japanese graduate professor",
         "Final MEXT selection and placement"
       ],
@@ -3609,9 +3619,9 @@
         "e015b217-382f-4fd2-ba80-e9e12eff42aa",
         "aa5d7282-469b-4362-9b3d-059988d38f4c"
       ],
-      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:33.991Z",
-      "updatedAt": "2026-10-23T13:29:16.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-mext-japan-microbio",
@@ -3636,7 +3646,8 @@
       "officialApplicationUrl": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
       "contactEmail": null,
       "applicationStages": [
-        "Embassy Recommendation (written exam & interview at Embassy of Japan in Pakistan) OR University Recommendation",
+        "Embassy track (Pakistan) for 2027 entry CLOSED 26 May 2026; 2028 embassy round expected Apr\u2013May 2027 \u2014 check the Embassy of Japan in Pakistan page",
+        "University Recommendation track: deadlines vary by Japanese university",
         "Request Letter of Provisional Acceptance from Japanese graduate professor",
         "Final MEXT selection and placement"
       ],
@@ -3693,9 +3704,9 @@
         "bd88b6e2-33f9-4baf-a67f-e24e0a6b9b0a",
         "7fb113ac-c8f1-43e4-b1f2-35c91b6d5df9"
       ],
-      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:33.991Z",
-      "updatedAt": "2026-10-23T13:29:16.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-daad-germany-cs",
@@ -3720,16 +3731,16 @@
       "officialApplicationUrl": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/",
       "contactEmail": "info@daad.de",
       "applicationStages": [
-        "Select eligible German university program or doctoral supervisor via DAAD Scholarship Database",
+        "Deadlines vary by programme: EPOS deadlines are set by each German course (several 2027 courses already closed); doctoral-grant rounds vary by country \u2014 check the DAAD Scholarship Database for your course/country",
         "Submit application package via the DAAD Portal including research proposal / motivation letter",
         "Selection committee review in Bonn and German Embassy Islamabad visa processing"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "EUR",
       "supervisorContactReq": "REQUIRED",
-      "deadlineDate": "2026-10-31T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CET",
-      "openingDate": "2026-07-01T00:00:00Z",
+      "openingDate": null,
       "isActive": true,
       "isExpired": false,
       "verificationStatus": "Officially Confirmed",
@@ -3780,9 +3791,9 @@
         "52419947-0bdb-4767-9d85-3b685871673c",
         "16425b7e-a7ca-456a-be60-e657682f2f5f"
       ],
-      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:08.729Z",
-      "updatedAt": "2026-10-23T13:29:16.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-daad-germany-microbio",
@@ -3808,16 +3819,16 @@
       "officialApplicationUrl": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/",
       "contactEmail": "info@daad.de",
       "applicationStages": [
-        "Select eligible German university program or doctoral supervisor via DAAD Scholarship Database",
+        "Deadlines vary by programme: EPOS deadlines are set by each German course (several 2027 courses already closed); doctoral-grant rounds vary by country \u2014 check the DAAD Scholarship Database for your course/country",
         "Submit application package via the DAAD Portal including research proposal / motivation letter",
         "Selection committee review in Bonn and German Embassy Islamabad visa processing"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "EUR",
       "supervisorContactReq": "REQUIRED",
-      "deadlineDate": "2026-10-31T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CET",
-      "openingDate": "2026-07-01T00:00:00Z",
+      "openingDate": null,
       "isActive": true,
       "isExpired": false,
       "verificationStatus": "Officially Confirmed",
@@ -3867,9 +3878,9 @@
         "78acb359-b5db-4256-b63b-9469e479d63d",
         "68c70a75-19f7-40bc-91a4-17ed059398e8"
       ],
-      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:08.729Z",
-      "updatedAt": "2026-10-23T13:29:16.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-ucas-phd-cs",
@@ -3894,16 +3905,16 @@
       "officialApplicationUrl": "https://english.ucas.ac.cn/",
       "contactEmail": "phd@ucas.ac.cn",
       "applicationStages": [
+        "2027 CAS-ANSO call not yet published (2026 call closed 31 Jan 2026); expected window Jan\u2013Feb 2027 \u2014 confirm on anso.org.cn / the UCAS portal before applying",
         "Contact a CAS host supervisor at ICT, Institute of Microbiology (IMCAS), or Wuhan Institute of Virology",
-        "Complete online admission & ANSO/UCAS scholarship application in the UCAS portal by Feb 15",
         "Institute expert panel interview and CAS Admission Notice + JW201/JW202 visa issuance"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "CNY",
       "supervisorContactReq": "RECOMMENDED",
-      "deadlineDate": "2027-02-15T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CST (UTC+8)",
-      "openingDate": "2026-10-20T00:00:00Z",
+      "openingDate": null,
       "isActive": true,
       "isExpired": false,
       "verificationStatus": "Officially Confirmed",
@@ -3951,9 +3962,9 @@
       "claimIds": [
         "7ffcce2a-013d-4a84-b95f-bf4207bb10dd"
       ],
-      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:18.054Z",
-      "updatedAt": "2026-10-23T13:29:16.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-ucas-phd-microbio",
@@ -3981,16 +3992,16 @@
       "officialApplicationUrl": "https://english.ucas.ac.cn/",
       "contactEmail": "phd@ucas.ac.cn",
       "applicationStages": [
+        "2027 CAS-ANSO call not yet published (2026 call closed 31 Jan 2026); expected window Jan\u2013Feb 2027 \u2014 confirm on anso.org.cn / the UCAS portal before applying",
         "Contact a CAS host supervisor at ICT, Institute of Microbiology (IMCAS), or Wuhan Institute of Virology",
-        "Complete online admission & ANSO/UCAS scholarship application in the UCAS portal by Feb 15",
         "Institute expert panel interview and CAS Admission Notice + JW201/JW202 visa issuance"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "CNY",
       "supervisorContactReq": "RECOMMENDED",
-      "deadlineDate": "2027-02-15T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CST (UTC+8)",
-      "openingDate": "2026-10-20T00:00:00Z",
+      "openingDate": null,
       "isActive": true,
       "isExpired": false,
       "verificationStatus": "Officially Confirmed",
@@ -4039,9 +4050,9 @@
       "claimIds": [
         "22edbf4d-85b8-410b-abf2-9072dded05e5"
       ],
-      "lastCheckedAt": "2026-10-23T13:29:16.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:18.054Z",
-      "updatedAt": "2026-10-23T13:29:16.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-tsinghua-cs",
@@ -4068,14 +4079,14 @@
       "officialApplicationUrl": "https://www.tsinghua.edu.cn/en/",
       "contactEmail": "grad@tsinghua.edu.cn",
       "applicationStages": [
-        "Submit Tsinghua International Graduate Application online before March 1",
+        "Submit Tsinghua International Graduate Application: Round 1 by 15 Dec 2026 (17:00), Round 2 by 27 Feb 2027 (17:00) \u2014 CGS applicants strongly encouraged to complete Round 1",
         "Departmental comprehensive interview and Pre-Admission Letter issuance",
         "Complete CSC Online Portal application under Type B (Agency Number 10003)"
       ],
       "applicationFeeAmount": 800,
       "applicationFeeCurrency": "CNY",
       "supervisorContactReq": "RECOMMENDED",
-      "deadlineDate": "2027-03-01T17:00:00Z",
+      "deadlineDate": "2027-02-27T17:00:00Z",
       "deadlineTimezone": "CST (UTC+8)",
       "openingDate": "2026-10-15T00:00:00Z",
       "isActive": true,
@@ -4128,9 +4139,9 @@
       "claimIds": [
         "5de57551-51d9-4cda-809e-b75050ffabbf"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:18.517Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-tsinghua-microbio",
@@ -4152,14 +4163,14 @@
       "officialApplicationUrl": "https://www.tsinghua.edu.cn/en/",
       "contactEmail": "grad@tsinghua.edu.cn",
       "applicationStages": [
-        "Submit Tsinghua International Graduate Application online before March 1",
+        "Submit Tsinghua International Graduate Application: Round 1 by 15 Dec 2026 (17:00), Round 2 by 27 Feb 2027 (17:00) \u2014 CGS applicants strongly encouraged to complete Round 1",
         "Departmental comprehensive interview and Pre-Admission Letter issuance",
         "Complete CSC Online Portal application under Type B (Agency Number 10003)"
       ],
       "applicationFeeAmount": 800,
       "applicationFeeCurrency": "CNY",
       "supervisorContactReq": "RECOMMENDED",
-      "deadlineDate": "2027-03-01T17:00:00Z",
+      "deadlineDate": "2027-02-27T17:00:00Z",
       "deadlineTimezone": "CST (UTC+8)",
       "openingDate": "2026-10-15T00:00:00Z",
       "isActive": true,
@@ -4210,9 +4221,9 @@
       "claimIds": [
         "287b2fa8-c9c3-43e5-b849-f6749ae80cc4"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-22T12:22:18.517Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-csc-shared-uk-msc-cs",
@@ -4294,9 +4305,9 @@
         "469f8bf3-7b68-4b48-9895-3da1b22d3201",
         "03e59532-cb63-4a32-9edb-0301beff2d4c"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-csc-shared-uk-msc-microbio",
@@ -4379,9 +4390,9 @@
         "1dd09fe4-cab8-4241-a758-1bde4f9f2b9f",
         "101932ae-4760-49e0-afcc-60b0be751f4f"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-ntu-npgs-phd",
@@ -4464,9 +4475,9 @@
         "7bbec350-cf31-4c80-ad12-e052c21a7a6f",
         "a6dcdd2c-7fb0-4e2f-b7e7-dff4085583d2"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-hbku-cse-phd",
@@ -4492,7 +4503,7 @@
       "applicationStages": [
         "Apply online for HBKU graduate admission by 1 Feb 2027 (international applicants)",
         "College assessment and admission decision",
-        "Scholarship considered during admissions; no separate application needed"
+        "Scholarship considered during admissions; no separate application needed \u2014 awards are NOT guaranteed (merit/need-based, subject to funds, reviewed annually)"
       ],
       "applicationFeeAmount": null,
       "applicationFeeCurrency": "QAR",
@@ -4545,9 +4556,9 @@
         "e9358363-bb9f-4ca9-90e9-d226c54bc227",
         "6f7763f8-04f2-4d88-ba15-8dfd75c63d7d"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "prog-hbku-chls-phd",
@@ -4573,7 +4584,7 @@
       "applicationStages": [
         "Apply online for HBKU graduate admission by 1 Feb 2027 (international applicants)",
         "College assessment and admission decision",
-        "Scholarship considered during admissions; no separate application needed"
+        "Scholarship considered during admissions; no separate application needed \u2014 awards are NOT guaranteed (merit/need-based, subject to funds, reviewed annually)"
       ],
       "applicationFeeAmount": null,
       "applicationFeeCurrency": "QAR",
@@ -4626,9 +4637,661 @@
         "e976cc0b-1fe3-4c5b-9bb4-2b2eed7d9adc",
         "c62c5fd1-0d54-48d4-9fd7-efb0e4da5adf"
       ],
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "prog-sydney-rtp-phd",
+      "institutionId": "inst-sydney-australia",
+      "departmentId": "dept-sydney-rtp",
+      "title": "PhD (University of Sydney RTP International Scholarship Track)",
+      "degreeLevel": "PhD",
+      "discipline": "Higher Degree by Research at the University of Sydney (all faculties; CS, AI, life sciences and all other fields)",
+      "broadField": "Interdisciplinary (CS & Bio)",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Data Science, Big Data, and Analytics",
+        "Bioinformatics and Computational Biology",
+        "Medical and Clinical Microbiology"
+      ],
+      "opportunityType": "UNIVERSITY_SCHOLARSHIP",
+      "globalRegion": "Oceania",
+      "durationMonths": 48,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html",
+      "officialApplicationUrl": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html",
+      "contactEmail": null,
+      "applicationStages": [
+        "Apply for HDR admission + separate RTP scholarship form by 18 Dec 2026 for Research Periods 3\u20134, 2027 (Periods 1\u20132, 2027 closed 11 Sep 2026)",
+        "Research Periods 1\u20132, 2028 deadline: 10 Sep 2027",
+        "RTP is a federal block-grant scheme run per-university \u2014 this listing is the University of Sydney instance"
+      ],
+      "applicationFeeAmount": null,
+      "applicationFeeCurrency": "AUD",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": "2026-12-18T23:59:59Z",
+      "deadlineTimezone": "Australia/Sydney",
+      "openingDate": null,
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded \u2014 Confirmed",
+      "scholarshipIds": [
+        "sch-sydney-rtp-2027"
+      ],
+      "requirement": {
+        "id": "req-sydney-rtp-phd",
+        "programId": "prog-sydney-rtp-phd",
+        "minGpa": null,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Microbiology",
+          "All disciplines"
+        ],
+        "prerequisiteCourses": [
+          "Research degree admission requirements of the chosen faculty"
+        ],
+        "ieltsMinScore": null,
+        "toeflMinScore": null,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Open to international students; no country exclusion stated",
+        "excludedCitizenships": [],
+        "feeWaiverAvailable": false,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "HDR admission application",
+          "Separate RTP scholarship form",
+          "Academic transcripts",
+          "Research proposal",
+          "Referee reports"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "ecb75171-82bf-4aff-9c50-82ce7125f837",
+          "bf06c397-8cf8-47ee-9456-14b2b799e590"
+        ]
+      },
+      "claimIds": [
+        "ecb75171-82bf-4aff-9c50-82ce7125f837",
+        "bf06c397-8cf8-47ee-9456-14b2b799e590"
+      ],
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "prog-sydney-rtp-msc",
+      "institutionId": "inst-sydney-australia",
+      "departmentId": "dept-sydney-rtp",
+      "title": "Master's by Research (University of Sydney RTP International Scholarship Track)",
+      "degreeLevel": "MSc",
+      "discipline": "Higher Degree by Research at the University of Sydney (all faculties; CS, AI, life sciences and all other fields)",
+      "broadField": "Interdisciplinary (CS & Bio)",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Data Science, Big Data, and Analytics",
+        "Bioinformatics and Computational Biology",
+        "Medical and Clinical Microbiology"
+      ],
+      "opportunityType": "UNIVERSITY_SCHOLARSHIP",
+      "globalRegion": "Oceania",
+      "durationMonths": 24,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html",
+      "officialApplicationUrl": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html",
+      "contactEmail": null,
+      "applicationStages": [
+        "Apply for HDR admission + separate RTP scholarship form by 18 Dec 2026 for Research Periods 3\u20134, 2027 (Periods 1\u20132, 2027 closed 11 Sep 2026)",
+        "Research Periods 1\u20132, 2028 deadline: 10 Sep 2027",
+        "Coursework Master\u2019s degrees are NOT covered \u2014 research degrees only"
+      ],
+      "applicationFeeAmount": null,
+      "applicationFeeCurrency": "AUD",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": "2026-12-18T23:59:59Z",
+      "deadlineTimezone": "Australia/Sydney",
+      "openingDate": null,
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded \u2014 Confirmed",
+      "scholarshipIds": [
+        "sch-sydney-rtp-2027"
+      ],
+      "requirement": {
+        "id": "req-sydney-rtp-msc",
+        "programId": "prog-sydney-rtp-msc",
+        "minGpa": null,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Microbiology",
+          "All disciplines"
+        ],
+        "prerequisiteCourses": [
+          "Research degree admission requirements of the chosen faculty"
+        ],
+        "ieltsMinScore": null,
+        "toeflMinScore": null,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Open to international students; no country exclusion stated",
+        "excludedCitizenships": [],
+        "feeWaiverAvailable": false,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "HDR admission application",
+          "Separate RTP scholarship form",
+          "Academic transcripts",
+          "Research proposal",
+          "Referee reports"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "557db263-9183-4cff-bfc6-eb6f24f17668",
+          "7bb3b8bc-3cc6-4ff5-96ca-821deeae4946"
+        ]
+      },
+      "claimIds": [
+        "557db263-9183-4cff-bfc6-eb6f24f17668",
+        "7bb3b8bc-3cc6-4ff5-96ca-821deeae4946"
+      ],
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "prog-ubc-4yf-phd",
+      "institutionId": "inst-ubc-canada",
+      "departmentId": "dept-ubc-4yf",
+      "title": "PhD (UBC Four Year Doctoral Fellowship Track)",
+      "degreeLevel": "PhD",
+      "discipline": "Doctoral research at the University of British Columbia, Vancouver (all graduate programmes)",
+      "broadField": "Interdisciplinary (CS & Bio)",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Data Science, Big Data, and Analytics",
+        "Bioinformatics and Computational Biology",
+        "Medical and Clinical Microbiology"
+      ],
+      "opportunityType": "UNIVERSITY_SCHOLARSHIP",
+      "globalRegion": "United States & Canada",
+      "durationMonths": 48,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.grad.ubc.ca/awards/four-year-doctoral-fellowship-4yf",
+      "officialApplicationUrl": "https://www.grad.ubc.ca/awards/four-year-doctoral-fellowship-4yf",
+      "contactEmail": null,
+      "applicationStages": [
+        "No separate fellowship application \u2014 all admitted doctoral applicants are automatically considered",
+        "Deadlines are set by each UBC graduate programme (September-admission deadlines typically Nov\u2013Apr)",
+        "Admission-linked funding, not a standalone scholarship application"
+      ],
+      "applicationFeeAmount": null,
+      "applicationFeeCurrency": "CAD",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": null,
+      "deadlineTimezone": "America/Vancouver",
+      "openingDate": null,
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded \u2014 Confirmed",
+      "scholarshipIds": [
+        "sch-ubc-4yf-2027"
+      ],
+      "requirement": {
+        "id": "req-ubc-4yf-phd",
+        "programId": "prog-ubc-4yf-phd",
+        "minGpa": null,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Microbiology",
+          "All disciplines"
+        ],
+        "prerequisiteCourses": [
+          "Doctoral admission requirements of the chosen UBC graduate programme"
+        ],
+        "ieltsMinScore": null,
+        "toeflMinScore": null,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Open to Canadian citizens, Permanent Residents and International students",
+        "excludedCitizenships": [],
+        "feeWaiverAvailable": false,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "UBC graduate programme admission application",
+          "Academic transcripts",
+          "Research proposal / statement of interest",
+          "Referee reports"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "fc09d25f-1eb7-40ed-b797-87092bc21ada",
+          "bcb9dfa0-24bd-491b-8729-863e43fe290c"
+        ]
+      },
+      "claimIds": [
+        "fc09d25f-1eb7-40ed-b797-87092bc21ada",
+        "bcb9dfa0-24bd-491b-8729-863e43fe290c"
+      ],
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "prog-eiffel-msc-2027",
+      "institutionId": "inst-campus-france-eiffel",
+      "departmentId": "dept-campus-france-eiffel",
+      "title": "Master\u2019s (France Excellence Eiffel Scholarship Track)",
+      "degreeLevel": "MSc",
+      "discipline": "Master\u2019s/PhD study in France under the France Excellence Eiffel programme (priority fields set by Campus France \u2014 confirm the target programme is in an eligible field)",
+      "broadField": "Interdisciplinary (CS & Bio)",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Data Science, Big Data, and Analytics",
+        "Bioinformatics and Computational Biology",
+        "Medical and Clinical Microbiology"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "Europe",
+      "durationMonths": 24,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program",
+      "officialApplicationUrl": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program",
+      "contactEmail": null,
+      "applicationStages": [
+        "Students cannot apply directly \u2014 a French institution must nominate you; contact universities immediately (internal deadlines commonly late Oct\u2013late Nov 2026)",
+        "Institutions submit to Campus France by 6 Jan 2027; results from the week of 12 Apr 2027",
+        "Age limit: up to 29 at Master\u2019s level",
+        "Eiffel does not pay tuition directly (government-scholarship holders typically receive a tuition waiver at public institutions \u2014 verify per institution)"
+      ],
+      "applicationFeeAmount": null,
+      "applicationFeeCurrency": "EUR",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": "2027-01-06T23:59:59Z",
+      "deadlineTimezone": "Europe/Paris",
+      "openingDate": "2026-10-01T00:00:00Z",
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Cross-Verified",
+      "fundingClassification": "Stipend Only",
+      "scholarshipIds": [
+        "sch-eiffel-2027"
+      ],
+      "requirement": {
+        "id": "req-eiffel-msc-2027",
+        "programId": "prog-eiffel-msc-2027",
+        "minGpa": null,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Microbiology",
+          "All disciplines"
+        ],
+        "prerequisiteCourses": [
+          "Relevant prior degree in the nominated field"
+        ],
+        "ieltsMinScore": null,
+        "toeflMinScore": null,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Open to foreign students; no country exclusion stated",
+        "excludedCitizenships": [],
+        "feeWaiverAvailable": false,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "Nomination by a French higher education institution",
+          "Academic transcripts",
+          "Study/research plan",
+          "Recommendation letters"
+        ],
+        "verificationStatus": "Cross-Verified",
+        "supportingClaimIds": [
+          "015efd9f-314e-4c91-bea0-d174c62375dc",
+          "c9a4efd1-f8c4-46fe-9648-cc06aa8eb68b"
+        ]
+      },
+      "claimIds": [
+        "015efd9f-314e-4c91-bea0-d174c62375dc",
+        "c9a4efd1-f8c4-46fe-9648-cc06aa8eb68b"
+      ],
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "prog-eiffel-phd-2027",
+      "institutionId": "inst-campus-france-eiffel",
+      "departmentId": "dept-campus-france-eiffel",
+      "title": "PhD (France Excellence Eiffel Scholarship Track)",
+      "degreeLevel": "PhD",
+      "discipline": "Master\u2019s/PhD study in France under the France Excellence Eiffel programme (priority fields set by Campus France \u2014 confirm the target programme is in an eligible field)",
+      "broadField": "Interdisciplinary (CS & Bio)",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Data Science, Big Data, and Analytics",
+        "Bioinformatics and Computational Biology",
+        "Medical and Clinical Microbiology"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "Europe",
+      "durationMonths": 36,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program",
+      "officialApplicationUrl": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program",
+      "contactEmail": null,
+      "applicationStages": [
+        "Students cannot apply directly \u2014 a French institution must nominate you; contact universities immediately (internal deadlines commonly late Oct\u2013late Nov 2026)",
+        "Institutions submit to Campus France by 6 Jan 2027; results from the week of 12 Apr 2027",
+        "Age limit: up to 35 at PhD level",
+        "Eiffel does not pay tuition directly (government-scholarship holders typically receive a tuition waiver at public institutions \u2014 verify per institution)"
+      ],
+      "applicationFeeAmount": null,
+      "applicationFeeCurrency": "EUR",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": "2027-01-06T23:59:59Z",
+      "deadlineTimezone": "Europe/Paris",
+      "openingDate": "2026-10-01T00:00:00Z",
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Cross-Verified",
+      "fundingClassification": "Stipend Only",
+      "scholarshipIds": [
+        "sch-eiffel-2027"
+      ],
+      "requirement": {
+        "id": "req-eiffel-phd-2027",
+        "programId": "prog-eiffel-phd-2027",
+        "minGpa": null,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Microbiology",
+          "All disciplines"
+        ],
+        "prerequisiteCourses": [
+          "Relevant prior degree in the nominated field"
+        ],
+        "ieltsMinScore": null,
+        "toeflMinScore": null,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Open to foreign students; no country exclusion stated",
+        "excludedCitizenships": [],
+        "feeWaiverAvailable": false,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "Nomination by a French higher education institution",
+          "Academic transcripts",
+          "Study/research plan",
+          "Recommendation letters"
+        ],
+        "verificationStatus": "Cross-Verified",
+        "supportingClaimIds": [
+          "68e77cda-906a-4801-88ec-1178a2c11866",
+          "bc7ea26b-5589-447f-a4fb-aeb4293034d1"
+        ]
+      },
+      "claimIds": [
+        "68e77cda-906a-4801-88ec-1178a2c11866",
+        "bc7ea26b-5589-447f-a4fb-aeb4293034d1"
+      ],
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "prog-melbourne-grs-msc",
+      "institutionId": "inst-melbourne-australia",
+      "departmentId": "dept-melbourne-grs",
+      "title": "Master's by Research (University of Melbourne Graduate Research Scholarship Track)",
+      "degreeLevel": "MSc",
+      "discipline": "Graduate research degree at the University of Melbourne (all disciplines)",
+      "broadField": "Interdisciplinary (CS & Bio)",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Data Science, Big Data, and Analytics",
+        "Bioinformatics and Computational Biology",
+        "Medical and Clinical Microbiology"
+      ],
+      "opportunityType": "UNIVERSITY_SCHOLARSHIP",
+      "globalRegion": "Oceania",
+      "durationMonths": 24,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships",
+      "officialApplicationUrl": "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships",
+      "contactEmail": null,
+      "applicationStages": [
+        "No separate scholarship form \u2014 apply for a graduate research course and you are automatically considered",
+        "Round 1 (31 Oct 2026) has closed; Round 2 closes 31 Jan 2027; Round 3 closes 15 May 2027 \u2014 check your course closing date",
+        "Full fee offset up to 2 years; living allowance up to 2 years"
+      ],
+      "applicationFeeAmount": null,
+      "applicationFeeCurrency": "AUD",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": "2027-01-31T23:59:59Z",
+      "deadlineTimezone": "Australia/Melbourne",
+      "openingDate": null,
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded \u2014 Confirmed",
+      "scholarshipIds": [
+        "sch-melbourne-grs-2027"
+      ],
+      "requirement": {
+        "id": "req-melbourne-grs-msc",
+        "programId": "prog-melbourne-grs-msc",
+        "minGpa": null,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Microbiology",
+          "All disciplines"
+        ],
+        "prerequisiteCourses": [
+          "Graduate research admission requirements of the chosen faculty"
+        ],
+        "ieltsMinScore": null,
+        "toeflMinScore": null,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Open to domestic and international students",
+        "excludedCitizenships": [],
+        "feeWaiverAvailable": false,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "Graduate research course application",
+          "Academic transcripts",
+          "Research proposal",
+          "Referee reports"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "69d1cd98-8541-46a7-b7be-677450caea5f",
+          "b6d0b60b-d6f7-4abd-9d75-cd9b6a0d4997"
+        ]
+      },
+      "claimIds": [
+        "69d1cd98-8541-46a7-b7be-677450caea5f",
+        "b6d0b60b-d6f7-4abd-9d75-cd9b6a0d4997"
+      ],
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "prog-melbourne-grs-phd",
+      "institutionId": "inst-melbourne-australia",
+      "departmentId": "dept-melbourne-grs",
+      "title": "PhD (University of Melbourne Graduate Research Scholarship Track)",
+      "degreeLevel": "PhD",
+      "discipline": "Graduate research degree at the University of Melbourne (all disciplines)",
+      "broadField": "Interdisciplinary (CS & Bio)",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Data Science, Big Data, and Analytics",
+        "Bioinformatics and Computational Biology",
+        "Medical and Clinical Microbiology"
+      ],
+      "opportunityType": "UNIVERSITY_SCHOLARSHIP",
+      "globalRegion": "Oceania",
+      "durationMonths": 48,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships",
+      "officialApplicationUrl": "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships",
+      "contactEmail": null,
+      "applicationStages": [
+        "No separate scholarship form \u2014 apply for a graduate research course and you are automatically considered",
+        "Round 1 (31 Oct 2026) has closed; Round 2 closes 31 Jan 2027; Round 3 closes 15 May 2027 \u2014 check your course closing date",
+        "Full fee offset up to 4 years; living allowance up to 3.5 years"
+      ],
+      "applicationFeeAmount": null,
+      "applicationFeeCurrency": "AUD",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": "2027-01-31T23:59:59Z",
+      "deadlineTimezone": "Australia/Melbourne",
+      "openingDate": null,
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Officially Confirmed",
+      "fundingClassification": "Fully Funded \u2014 Confirmed",
+      "scholarshipIds": [
+        "sch-melbourne-grs-2027"
+      ],
+      "requirement": {
+        "id": "req-melbourne-grs-phd",
+        "programId": "prog-melbourne-grs-phd",
+        "minGpa": null,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Microbiology",
+          "All disciplines"
+        ],
+        "prerequisiteCourses": [
+          "Graduate research admission requirements of the chosen faculty"
+        ],
+        "ieltsMinScore": null,
+        "toeflMinScore": null,
+        "greRequirement": "NOT_REQUIRED",
+        "citizenshipRule": "Open to domestic and international students",
+        "excludedCitizenships": [],
+        "feeWaiverAvailable": false,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "Graduate research course application",
+          "Academic transcripts",
+          "Research proposal",
+          "Referee reports"
+        ],
+        "verificationStatus": "Officially Confirmed",
+        "supportingClaimIds": [
+          "80b85270-d5a4-49af-97ab-a9295866d247",
+          "d487cd15-760c-4497-ae72-e244e72682c7"
+        ]
+      },
+      "claimIds": [
+        "80b85270-d5a4-49af-97ab-a9295866d247",
+        "d487cd15-760c-4497-ae72-e244e72682c7"
+      ],
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "prog-hec-uspak-kc-phd",
+      "institutionId": "inst-hec-pakistan",
+      "departmentId": null,
+      "title": "PhD in the USA (HEC US\u2013Pakistan Knowledge Corridor Scholarship Track)",
+      "degreeLevel": "PhD",
+      "discipline": "PhD at a top-100 QS-ranked US university (all fields; CS, AI, life sciences and all other disciplines)",
+      "broadField": "Interdisciplinary (CS & Bio)",
+      "specializations": [
+        "Artificial Intelligence and Machine Learning",
+        "Data Science, Big Data, and Analytics",
+        "Bioinformatics and Computational Biology",
+        "Medical and Clinical Microbiology"
+      ],
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "globalRegion": "United States & Canada",
+      "durationMonths": 60,
+      "intakeTerm": "Autumn 2027",
+      "applicationCycle": "2027-2028",
+      "officialProgramUrl": "https://www.hec.gov.pk/site/US-PAK-KC",
+      "officialApplicationUrl": "https://www.hec.gov.pk/site/US-PAK-KC",
+      "contactEmail": null,
+      "applicationStages": [
+        "Secure admission at a top-100 QS-ranked US university (Category I: top 50; Category II: 51\u2013100)",
+        "Apply via the HEC scholarship portal (scholarship.hec.gov.pk) by 30 Mar 2027 for Fall 2027 intake (Spring/Summer 2027 intake closed 30 Oct 2026)",
+        "Valid GRE General (minimum 300 total) OR HAT score (minimum 60%) required; funding up to 5 years subject to scheme conditions"
+      ],
+      "applicationFeeAmount": null,
+      "applicationFeeCurrency": "USD",
+      "supervisorContactReq": "RECOMMENDED",
+      "deadlineDate": "2027-03-30T23:59:59Z",
+      "deadlineTimezone": "Asia/Karachi",
+      "openingDate": "2026-10-27T00:00:00Z",
+      "isActive": true,
+      "isExpired": false,
+      "verificationStatus": "Cross-Verified",
+      "fundingClassification": "Fully Funded \u2014 Confirmed",
+      "scholarshipIds": [
+        "sch-hec-uspak-kc-2027"
+      ],
+      "requirement": {
+        "id": "req-hec-uspak-kc-phd",
+        "programId": "prog-hec-uspak-kc-phd",
+        "minGpa": null,
+        "gradingScale": "4.0",
+        "minGradingClassification": null,
+        "acceptedBackgrounds": [
+          "Computer Science",
+          "Microbiology",
+          "All disciplines"
+        ],
+        "prerequisiteCourses": [
+          "PhD admission at a top-100 QS-ranked US university"
+        ],
+        "ieltsMinScore": null,
+        "toeflMinScore": null,
+        "greRequirement": "REQUIRED",
+        "citizenshipRule": "Pakistani / AJ&K nationals (HEC programme)",
+        "excludedCitizenships": [],
+        "feeWaiverAvailable": false,
+        "researchExpRequired": false,
+        "requiredDocuments": [
+          "HEC portal application",
+          "US university admission offer",
+          "GRE General or HAT score report",
+          "Academic transcripts"
+        ],
+        "verificationStatus": "Cross-Verified",
+        "supportingClaimIds": [
+          "61dd3947-5b5a-4f5f-ae2b-ea1fe00e2c48",
+          "adfb405d-0a89-4b00-8d5e-1281313b9d0a"
+        ]
+      },
+      "claimIds": [
+        "61dd3947-5b5a-4f5f-ae2b-ea1fe00e2c48",
+        "adfb405d-0a89-4b00-8d5e-1281313b9d0a"
+      ],
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     }
   ],
   "scholarships": [
@@ -4669,7 +5332,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-gates-cambridge",
         "scholarshipId": "sch-gates-cambridge",
@@ -4703,7 +5366,7 @@
         "87503e91-7d82-4140-ada4-68031f91b0df"
       ],
       "createdAt": "2026-10-22T12:22:23.248Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "FOUNDATION_FELLOWSHIP"
     },
     {
@@ -4737,7 +5400,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-eth-esop",
         "scholarshipId": "sch-eth-esop",
@@ -4770,7 +5433,7 @@
         "5d866e37-3aa7-42ca-96a8-10414e0d1cd6"
       ],
       "createdAt": "2026-10-22T12:22:40.793Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "UNIVERSITY_SCHOLARSHIP"
     },
     {
@@ -4802,7 +5465,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Stipend Only",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-epfl-excellence",
         "scholarshipId": "sch-epfl-excellence",
@@ -4834,7 +5497,7 @@
         "7d4f9bf1-475a-4125-b4d7-421c618fe139"
       ],
       "createdAt": "2026-10-22T12:22:42.632Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "UNIVERSITY_SCHOLARSHIP"
     },
     {
@@ -4868,7 +5531,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Official Source, Not Fully Verified",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-mit-ra-fellowship",
         "scholarshipId": "sch-mit-ra-fellowship",
@@ -4899,7 +5562,7 @@
         "ef3b4589-7fef-46b0-8d14-d85f67f83044"
       ],
       "createdAt": "2026-10-22T12:22:24.707Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "RA_TA_ASSISTANTSHIP"
     },
     {
@@ -4931,7 +5594,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Tuition Only",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-22T12:22:42.714Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-uoft-sgs-awards",
         "scholarshipId": "sch-uoft-sgs-awards",
@@ -4962,7 +5625,7 @@
         "f91a2305-2a0e-4d20-ab65-8ce6cdcc6bdc"
       ],
       "createdAt": "2026-10-22T12:22:42.714Z",
-      "updatedAt": "2026-10-22T12:22:42.714Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "UNIVERSITY_SCHOLARSHIP"
     },
     {
@@ -5004,7 +5667,7 @@
       "nominationProcessNote": "Apply directly via USEFP online portal in Pakistan; USEFP handles university placement in the United States.",
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-usefp-fulbright-pk",
         "scholarshipId": "sch-usefp-fulbright-pk",
@@ -5037,7 +5700,7 @@
         "3ebaaf79-522c-4eab-9a95-b16d0e44ec81"
       ],
       "createdAt": "2026-10-22T12:22:31.334Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "sch-commonwealth-masters-uk",
@@ -5077,7 +5740,7 @@
       "nominationProcessNote": "Applicants from Pakistan must submit both the CSC Central Electronic Application AND the HEC Pakistan e-portal nomination application.",
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-commonwealth-masters-uk",
         "scholarshipId": "sch-commonwealth-masters-uk",
@@ -5110,7 +5773,7 @@
         "0fb2bbbb-b1fa-4695-a1be-f26b83f7acf1"
       ],
       "createdAt": "2026-10-22T12:22:32.863Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "sch-chevening-pakistan",
@@ -5145,7 +5808,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-chevening-pakistan",
         "scholarshipId": "sch-chevening-pakistan",
@@ -5176,7 +5839,7 @@
         "9a191075-79ac-4bbb-bdf8-a6cec2ae70f3"
       ],
       "createdAt": "2026-10-22T12:22:33.626Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "sch-mext-japan-research",
@@ -5216,7 +5879,7 @@
       "nominationProcessNote": "Available via Embassy of Japan in Islamabad (Embassy Recommendation) or directly through Japanese host universities (University Recommendation).",
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-22T12:22:33.991Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-mext-japan-research",
         "scholarshipId": "sch-mext-japan-research",
@@ -5248,7 +5911,7 @@
         "4d00873b-c6ad-4e99-a7ab-af1a08cd938d"
       ],
       "createdAt": "2026-10-22T12:22:33.991Z",
-      "updatedAt": "2026-10-22T12:22:33.991Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "sch-kaust-fellowship",
@@ -5284,7 +5947,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-kaust-fellowship",
         "scholarshipId": "sch-kaust-fellowship",
@@ -5316,7 +5979,7 @@
         "11c58493-2574-4094-bbc9-746ab65731fa"
       ],
       "createdAt": "2026-10-22T12:22:44.044Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "sch-daad-germany-epos-phd",
@@ -5350,14 +6013,14 @@
         "Environmental and Agricultural Microbiology",
         "Antimicrobial Resistance"
       ],
-      "deadlineDate": "2026-10-31T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CET",
       "applicationCycle": "2027-2028",
       "separateApplicationReq": true,
       "nominationProcessNote": "Apply via the official DAAD Portal (or directly to the host German university for EPOS Master\u2019s courses). No APS certificate is required for Pakistani degree holders unless residency is in China/India, though HEC attestation and German Embassy Islamabad visa appointment apply.",
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-22T12:22:08.729Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-daad-germany-epos-phd",
         "scholarshipId": "sch-daad-germany-epos-phd",
@@ -5389,7 +6052,7 @@
         "d0bb085a-de6a-409a-8812-75141d001d97"
       ],
       "createdAt": "2026-10-22T12:22:08.729Z",
-      "updatedAt": "2026-10-22T12:22:08.729Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "sch-mpg-imprs-contract",
@@ -5419,13 +6082,13 @@
         "Infectious Diseases and Pathogen Biology",
         "Immunology and Host\u2013Pathogen Interactions"
       ],
-      "deadlineDate": "2026-12-15T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CET",
       "applicationCycle": "2027-2028",
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-22T12:22:13.680Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-mpg-imprs-contract",
         "scholarshipId": "sch-mpg-imprs-contract",
@@ -5456,7 +6119,7 @@
         "4119fba4-d418-4e93-b78e-d4d244116b2f"
       ],
       "createdAt": "2026-10-22T12:22:13.680Z",
-      "updatedAt": "2026-10-22T12:22:13.680Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "sch-ucas-anso-castwas",
@@ -5493,14 +6156,14 @@
         "Infectious Diseases and Pathogen Biology",
         "Microbial Biotechnology"
       ],
-      "deadlineDate": "2027-02-15T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CST (UTC+8)",
       "applicationCycle": "2027-2028",
       "separateApplicationReq": false,
       "nominationProcessNote": "Apply directly through the UCAS International Student Online Admission System and select the ANSO / UCAS / Chinese Government Scholarship option.",
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-22T12:22:18.054Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-ucas-anso-castwas",
         "scholarshipId": "sch-ucas-anso-castwas",
@@ -5531,7 +6194,7 @@
         "553e59df-ed27-488d-9d4f-d5a3157a32eb"
       ],
       "createdAt": "2026-10-22T12:22:18.054Z",
-      "updatedAt": "2026-10-22T12:22:18.054Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "sch-tsinghua-cgs",
@@ -5564,14 +6227,14 @@
         "Virology",
         "Immunology and Host\u2013Pathogen Interactions"
       ],
-      "deadlineDate": "2027-03-01T17:00:00Z",
+      "deadlineDate": "2027-02-27T17:00:00Z",
       "deadlineTimezone": "CST (UTC+8)",
       "applicationCycle": "2027-2028",
       "separateApplicationReq": true,
       "nominationProcessNote": "Apply first through the Tsinghua Graduate Online Application System to obtain a pre-admission notice, then submit the CGS Type B application (Tsinghua Agency No. 10003).",
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-tsinghua-cgs",
         "scholarshipId": "sch-tsinghua-cgs",
@@ -5602,7 +6265,7 @@
         "07d00b64-6e3d-49e2-ac35-090c3267bdcf"
       ],
       "createdAt": "2026-10-22T12:22:18.517Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "sch-pku-international-fellowship",
@@ -5640,7 +6303,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-22T12:22:19.859Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-pku-international-fellowship",
         "scholarshipId": "sch-pku-international-fellowship",
@@ -5671,7 +6334,7 @@
         "3ebffb3c-d029-4d1c-b70f-f7ba8ca40481"
       ],
       "createdAt": "2026-10-22T12:22:19.859Z",
-      "updatedAt": "2026-10-22T12:22:19.859Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "sch-erasmus-mundus-2027",
@@ -5688,13 +6351,13 @@
       "eligibleFields": [
         "Interdisciplinary (CS & Bio)"
       ],
-      "deadlineDate": "2027-01-05T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CET",
       "applicationCycle": "2027-2028",
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-erasmus-mundus-2027",
         "scholarshipId": "sch-erasmus-mundus-2027",
@@ -5719,7 +6382,7 @@
         "f771eea3-21a3-4b36-91b0-a3852f878b54"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "GOVERNMENT_SCHOLARSHIP"
     },
     {
@@ -5737,13 +6400,13 @@
       "eligibleFields": [
         "Interdisciplinary (CS & Bio)"
       ],
-      "deadlineDate": "2026-12-31T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "CET",
       "applicationCycle": "2027-2028",
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-sbw-berlin-2027",
         "scholarshipId": "sch-sbw-berlin-2027",
@@ -5768,7 +6431,7 @@
         "03b0b488-87a8-4f3d-a6a1-050dc3a5d910"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "FOUNDATION_FELLOWSHIP"
     },
     {
@@ -5792,13 +6455,13 @@
       "eligibleFields": [
         "Interdisciplinary (CS & Bio)"
       ],
-      "deadlineDate": "2027-10-06T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "America/Los_Angeles",
       "applicationCycle": "2027-2028",
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-knight-hennessy-2028",
         "scholarshipId": "sch-knight-hennessy-2028",
@@ -5823,7 +6486,7 @@
         "946e556c-c27e-4ab4-a5e4-216434e380ff"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "FOUNDATION_FELLOWSHIP"
     },
     {
@@ -5847,7 +6510,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-imperial-presidents-phd-2027",
         "scholarshipId": "sch-imperial-presidents-phd-2027",
@@ -5872,7 +6535,7 @@
         "2630d48c-e95c-4261-af9c-ef98a9c42083"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "UNIVERSITY_SCHOLARSHIP"
     },
     {
@@ -5896,7 +6559,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-oist-phd-2027",
         "scholarshipId": "sch-oist-phd-2027",
@@ -5921,7 +6584,7 @@
         "2da68c60-5ecd-4887-bf79-5cd8cb9d643c"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "RESEARCH_STUDENTSHIP"
     },
     {
@@ -5939,13 +6602,13 @@
       "eligibleFields": [
         "Interdisciplinary (CS & Bio)"
       ],
-      "deadlineDate": "2026-12-10T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "Asia/Tokyo",
       "applicationCycle": "2027-2028",
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-adb-japan-2027",
         "scholarshipId": "sch-adb-japan-2027",
@@ -5970,7 +6633,7 @@
         "125adbbb-c51e-4e4c-a38b-77a94c3bc4a0"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "GOVERNMENT_SCHOLARSHIP"
     },
     {
@@ -5995,7 +6658,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-australia-awards-pk-2028",
         "scholarshipId": "sch-australia-awards-pk-2028",
@@ -6020,7 +6683,7 @@
         "dfcc9925-75c2-47da-b3b5-aae78e0fe190"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "GOVERNMENT_SCHOLARSHIP"
     },
     {
@@ -6045,7 +6708,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-turkiye-burslari-2027",
         "scholarshipId": "sch-turkiye-burslari-2027",
@@ -6070,7 +6733,7 @@
         "b4cf2357-8fe2-4868-9dc5-cfa2c8d44fe1"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "GOVERNMENT_SCHOLARSHIP"
     },
     {
@@ -6095,7 +6758,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-gks-korea-2027",
         "scholarshipId": "sch-gks-korea-2027",
@@ -6120,7 +6783,7 @@
         "f4158682-d13c-4cfa-8a60-ccb5b4fc2b6c"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "GOVERNMENT_SCHOLARSHIP"
     },
     {
@@ -6144,7 +6807,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-singa-2027",
         "scholarshipId": "sch-singa-2027",
@@ -6169,57 +6832,8 @@
         "6b240f28-77d8-484e-9469-dad67f301298"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "RESEARCH_STUDENTSHIP"
-    },
-    {
-      "id": "sch-swedish-institute-2027",
-      "name": "Swedish Institute Scholarship for Global Professionals 2027",
-      "awardingOrganization": "Swedish Institute",
-      "authorityType": "GOVERNMENT",
-      "country": "Sweden",
-      "officialUrl": "https://si.se/",
-      "eligibleDegrees": [
-        "MSc"
-      ],
-      "eligibleCountries": [],
-      "excludedCitizenships": [],
-      "eligibleFields": [
-        "Interdisciplinary (CS & Bio)"
-      ],
-      "deadlineDate": "2027-02-24T13:59:00Z",
-      "deadlineTimezone": "Europe/Stockholm",
-      "applicationCycle": "2027-2028",
-      "separateApplicationReq": true,
-      "fundingClassification": "Fully Funded \u2014 Confirmed",
-      "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
-      "fundingPackage": {
-        "id": "fp-sch-swedish-institute-2027",
-        "scholarshipId": "sch-swedish-institute-2027",
-        "tuitionCoveragePercent": 100,
-        "mandatoryFeesCovered": true,
-        "stipendAmountAnnual": 144000,
-        "stipendCurrency": "SEK",
-        "stipendAmountUsdApprox": 13800,
-        "stipendFrequency": "ANNUAL",
-        "durationMonths": 24,
-        "accommodationCovered": false,
-        "healthInsuranceCovered": false,
-        "travelAllowanceCovered": true,
-        "relocationSupportCovered": false,
-        "renewalConditions": "",
-        "awardBasis": "COMPETITIVE",
-        "classification": "Fully Funded \u2014 Confirmed",
-        "updatedAt": "2026-10-23T13:20:53.000Z"
-      },
-      "claimIds": [
-        "1760c6a0-6edd-4bb3-9c80-1cd064f98cfe",
-        "b26c6a78-76ef-46e9-a86f-322344d14712"
-      ],
-      "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
-      "opportunityType": "GOVERNMENT_SCHOLARSHIP"
     },
     {
       "id": "sch-hkpfs-2027",
@@ -6242,7 +6856,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-hkpfs-2027",
         "scholarshipId": "sch-hkpfs-2027",
@@ -6267,7 +6881,7 @@
         "476ebb76-8bc6-40fa-b52c-98666d48a4d4"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "opportunityType": "RESEARCH_STUDENTSHIP"
     },
     {
@@ -6305,7 +6919,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-commonwealth-shared-2027",
         "scholarshipId": "sch-commonwealth-shared-2027",
@@ -6332,7 +6946,7 @@
         "101932ae-4760-49e0-afcc-60b0be751f4f"
       ],
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z",
       "nominationProcessNote": "Apply via CSC Central AND secure admission to an approved Master's course at a participating UK university; universities nominate candidates to the CSC."
     },
     {
@@ -6359,7 +6973,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-ntu-npgs-2027",
         "scholarshipId": "sch-ntu-npgs-2027",
@@ -6385,7 +6999,7 @@
         "a6dcdd2c-7fb0-4e2f-b7e7-dff4085583d2"
       ],
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     },
     {
       "id": "sch-hbku-graduate-2027",
@@ -6411,7 +7025,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-10-26T05:21:11.000Z",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
       "fundingPackage": {
         "id": "fp-sch-hbku-graduate-2027",
         "scholarshipId": "sch-hbku-graduate-2027",
@@ -6438,7 +7052,261 @@
         "c62c5fd1-0d54-48d4-9fd7-efb0e4da5adf"
       ],
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-10-26T05:21:11.000Z"
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "sch-sydney-rtp-2027",
+      "name": "University of Sydney RTP Scholarships (International)",
+      "awardingOrganization": "University of Sydney (Australian Government Research Training Program)",
+      "authorityType": "UNIVERSITY",
+      "opportunityType": "UNIVERSITY_SCHOLARSHIP",
+      "country": "Australia",
+      "officialUrl": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html",
+      "eligibleDegrees": [
+        "PhD",
+        "MSc"
+      ],
+      "eligibleCountries": [],
+      "excludedCitizenships": [],
+      "eligibleFields": [
+        "Interdisciplinary (CS & Bio)"
+      ],
+      "deadlineDate": "2026-12-18T23:59:59Z",
+      "deadlineTimezone": "Australia/Sydney",
+      "applicationCycle": "2027-2028",
+      "separateApplicationReq": true,
+      "fundingClassification": "Fully Funded \u2014 Confirmed",
+      "verificationStatus": "Officially Confirmed",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "fundingPackage": {
+        "id": "fp-sch-sydney-rtp-2027",
+        "scholarshipId": "sch-sydney-rtp-2027",
+        "tuitionCoveragePercent": 100,
+        "mandatoryFeesCovered": true,
+        "stipendAmountAnnual": 44293,
+        "stipendCurrency": "AUD",
+        "stipendAmountUsdApprox": 28790,
+        "stipendFrequency": "MONTHLY",
+        "durationMonths": 48,
+        "accommodationCovered": false,
+        "healthInsuranceCovered": true,
+        "travelAllowanceCovered": true,
+        "relocationSupportCovered": true,
+        "renewalConditions": "Up to 14 research periods fee offset; stipend for up to 4 years (PhD) subject to progress",
+        "awardBasis": "COMPETITIVE",
+        "classification": "Fully Funded \u2014 Confirmed",
+        "updatedAt": "2026-11-02T05:34:14.000Z"
+      },
+      "claimIds": [
+        "ecb75171-82bf-4aff-9c50-82ce7125f837",
+        "bf06c397-8cf8-47ee-9456-14b2b799e590",
+        "557db263-9183-4cff-bfc6-eb6f24f17668",
+        "7bb3b8bc-3cc6-4ff5-96ca-821deeae4946"
+      ],
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "sch-ubc-4yf-2027",
+      "name": "UBC Four Year Doctoral Fellowship (4YF)",
+      "awardingOrganization": "University of British Columbia",
+      "authorityType": "UNIVERSITY",
+      "opportunityType": "UNIVERSITY_SCHOLARSHIP",
+      "country": "Canada",
+      "officialUrl": "https://www.grad.ubc.ca/awards/four-year-doctoral-fellowship-4yf",
+      "eligibleDegrees": [
+        "PhD"
+      ],
+      "eligibleCountries": [],
+      "excludedCitizenships": [],
+      "eligibleFields": [
+        "Interdisciplinary (CS & Bio)"
+      ],
+      "deadlineDate": null,
+      "deadlineTimezone": "America/Vancouver",
+      "applicationCycle": "2027-2028",
+      "separateApplicationReq": false,
+      "fundingClassification": "Fully Funded \u2014 Confirmed",
+      "verificationStatus": "Officially Confirmed",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "fundingPackage": {
+        "id": "fp-sch-ubc-4yf-2027",
+        "scholarshipId": "sch-ubc-4yf-2027",
+        "tuitionCoveragePercent": 100,
+        "mandatoryFeesCovered": true,
+        "stipendAmountAnnual": 24000,
+        "stipendCurrency": "CAD",
+        "stipendAmountUsdApprox": 17500,
+        "stipendFrequency": "MONTHLY",
+        "durationMonths": 48,
+        "accommodationCovered": false,
+        "healthInsuranceCovered": false,
+        "travelAllowanceCovered": false,
+        "relocationSupportCovered": false,
+        "renewalConditions": "Up to 4 years; no separate application \u2014 all admitted doctoral applicants considered",
+        "awardBasis": "COMPETITIVE",
+        "classification": "Fully Funded \u2014 Confirmed",
+        "updatedAt": "2026-11-02T05:34:14.000Z"
+      },
+      "claimIds": [
+        "fc09d25f-1eb7-40ed-b797-87092bc21ada",
+        "bcb9dfa0-24bd-491b-8729-863e43fe290c"
+      ],
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "sch-eiffel-2027",
+      "name": "France Excellence Eiffel Scholarship 2027",
+      "awardingOrganization": "Campus France / French Ministry for Europe and Foreign Affairs",
+      "authorityType": "GOVERNMENT",
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "country": "France",
+      "officialUrl": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program",
+      "eligibleDegrees": [
+        "MSc",
+        "PhD"
+      ],
+      "eligibleCountries": [],
+      "excludedCitizenships": [],
+      "eligibleFields": [
+        "Interdisciplinary (CS & Bio)"
+      ],
+      "deadlineDate": "2027-01-06T23:59:59Z",
+      "deadlineTimezone": "Europe/Paris",
+      "applicationCycle": "2027-2028",
+      "separateApplicationReq": false,
+      "fundingClassification": "Stipend Only",
+      "verificationStatus": "Cross-Verified",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "fundingPackage": {
+        "id": "fp-sch-eiffel-2027",
+        "scholarshipId": "sch-eiffel-2027",
+        "tuitionCoveragePercent": 0,
+        "mandatoryFeesCovered": true,
+        "stipendAmountAnnual": 14400,
+        "stipendCurrency": "EUR",
+        "stipendAmountUsdApprox": 16700,
+        "stipendFrequency": "MONTHLY",
+        "durationMonths": 24,
+        "accommodationCovered": false,
+        "healthInsuranceCovered": true,
+        "travelAllowanceCovered": true,
+        "relocationSupportCovered": false,
+        "renewalConditions": "Stipend only: Eiffel does not pay tuition directly (public-institution waivers typical); PhD rate EUR 2,000/month",
+        "awardBasis": "COMPETITIVE",
+        "classification": "Stipend Only",
+        "updatedAt": "2026-11-02T05:34:14.000Z"
+      },
+      "claimIds": [
+        "015efd9f-314e-4c91-bea0-d174c62375dc",
+        "c9a4efd1-f8c4-46fe-9648-cc06aa8eb68b",
+        "68e77cda-906a-4801-88ec-1178a2c11866",
+        "bc7ea26b-5589-447f-a4fb-aeb4293034d1"
+      ],
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "sch-melbourne-grs-2027",
+      "name": "University of Melbourne Graduate Research Scholarships",
+      "awardingOrganization": "University of Melbourne (Melbourne Research Scholarship + Australian Government RTP)",
+      "authorityType": "UNIVERSITY",
+      "opportunityType": "UNIVERSITY_SCHOLARSHIP",
+      "country": "Australia",
+      "officialUrl": "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships",
+      "eligibleDegrees": [
+        "PhD",
+        "MSc"
+      ],
+      "eligibleCountries": [],
+      "excludedCitizenships": [],
+      "eligibleFields": [
+        "Interdisciplinary (CS & Bio)"
+      ],
+      "deadlineDate": "2027-01-31T23:59:59Z",
+      "deadlineTimezone": "Australia/Melbourne",
+      "applicationCycle": "2027-2028",
+      "separateApplicationReq": false,
+      "fundingClassification": "Fully Funded \u2014 Confirmed",
+      "verificationStatus": "Officially Confirmed",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "fundingPackage": {
+        "id": "fp-sch-melbourne-grs-2027",
+        "scholarshipId": "sch-melbourne-grs-2027",
+        "tuitionCoveragePercent": 100,
+        "mandatoryFeesCovered": true,
+        "stipendAmountAnnual": 41100,
+        "stipendCurrency": "AUD",
+        "stipendAmountUsdApprox": 26700,
+        "stipendFrequency": "MONTHLY",
+        "durationMonths": 48,
+        "accommodationCovered": false,
+        "healthInsuranceCovered": true,
+        "travelAllowanceCovered": true,
+        "relocationSupportCovered": true,
+        "renewalConditions": "Full fee offset up to 2 years (Master\u2019s by Research) / 4 years (PhD); living allowance up to 3.5 years (PhD)",
+        "awardBasis": "COMPETITIVE",
+        "classification": "Fully Funded \u2014 Confirmed",
+        "updatedAt": "2026-11-02T05:34:14.000Z"
+      },
+      "claimIds": [
+        "69d1cd98-8541-46a7-b7be-677450caea5f",
+        "b6d0b60b-d6f7-4abd-9d75-cd9b6a0d4997",
+        "80b85270-d5a4-49af-97ab-a9295866d247",
+        "d487cd15-760c-4497-ae72-e244e72682c7"
+      ],
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
+    },
+    {
+      "id": "sch-hec-uspak-kc-2027",
+      "name": "HEC US\u2013Pakistan Knowledge Corridor PhD Scholarships",
+      "awardingOrganization": "Higher Education Commission (HEC) Pakistan",
+      "authorityType": "GOVERNMENT",
+      "opportunityType": "GOVERNMENT_SCHOLARSHIP",
+      "country": "United States",
+      "officialUrl": "https://www.hec.gov.pk/site/US-PAK-KC",
+      "eligibleDegrees": [
+        "PhD"
+      ],
+      "eligibleCountries": [],
+      "excludedCitizenships": [],
+      "eligibleFields": [
+        "Interdisciplinary (CS & Bio)"
+      ],
+      "deadlineDate": "2027-03-30T23:59:59Z",
+      "deadlineTimezone": "Asia/Karachi",
+      "applicationCycle": "2027-2028",
+      "separateApplicationReq": true,
+      "fundingClassification": "Fully Funded \u2014 Confirmed",
+      "verificationStatus": "Cross-Verified",
+      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "fundingPackage": {
+        "id": "fp-sch-hec-uspak-kc-2027",
+        "scholarshipId": "sch-hec-uspak-kc-2027",
+        "tuitionCoveragePercent": 100,
+        "mandatoryFeesCovered": true,
+        "stipendAmountAnnual": 19000,
+        "stipendCurrency": "USD",
+        "stipendAmountUsdApprox": 19000,
+        "stipendFrequency": "MONTHLY",
+        "durationMonths": 60,
+        "accommodationCovered": false,
+        "healthInsuranceCovered": true,
+        "travelAllowanceCovered": false,
+        "relocationSupportCovered": false,
+        "renewalConditions": "Top-50 QS: full tuition + USD 19,000/year stipend + USD 2,000 health insurance; 51\u2013100 QS: tuition up to USD 12,000/year + stipend + insurance; max 5 years",
+        "awardBasis": "COMPETITIVE",
+        "classification": "Fully Funded \u2014 Confirmed",
+        "updatedAt": "2026-11-02T05:34:14.000Z"
+      },
+      "claimIds": [
+        "61dd3947-5b5a-4f5f-ae2b-ea1fe00e2c48",
+        "adfb405d-0a89-4b00-8d5e-1281313b9d0a"
+      ],
+      "createdAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-02T05:34:14.000Z"
     }
   ],
   "sources": [
@@ -11484,54 +12352,6 @@
       "versions": []
     },
     {
-      "id": "1760c6a0-6edd-4bb3-9c80-1cd064f98cfe",
-      "programId": "prog-swedish-institute-2027",
-      "scholarshipId": "sch-swedish-institute-2027",
-      "claimType": "STIPEND_AMOUNT",
-      "fieldName": "stipendAmountAnnual",
-      "normalizedValue": "Full tuition + SEK 12,000/month living allowance + SEK 15,000 one-time travel grant (~300 awards)",
-      "supportingExcerpt": "Swedish Institute scholars receive full tuition paid directly to the university, a monthly living allowance of SEK 12,000 and a one-time travel grant of SEK 15,000.",
-      "excerptHash": "9f79c54be08c4cf58c88a9ca66e2ad2983f6ff55551801347a036be42f30f8a2",
-      "sourceUrl": "https://si.se/",
-      "sourceDomain": "si.se",
-      "sourceOrganization": "Swedish Institute",
-      "pageSection": "",
-      "retrievedAt": "2026-10-23T13:20:53.000Z",
-      "extractedAt": "2026-10-23T13:20:53.000Z",
-      "lastContentChangeAt": "2026-10-23T13:20:53.000Z",
-      "verificationMethod": "INDEPENDENT_CORROBORATION",
-      "verificationStatus": "Cross-Verified",
-      "evidenceQualityScore": 0.95,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "WEEKLY",
-      "conflictingClaimIds": [],
-      "versions": []
-    },
-    {
-      "id": "b26c6a78-76ef-46e9-a86f-322344d14712",
-      "programId": "prog-swedish-institute-2027",
-      "scholarshipId": "sch-swedish-institute-2027",
-      "claimType": "ELIGIBILITY",
-      "fieldName": "workExperienceReq",
-      "normalizedValue": "3,000 hours work experience + demonstrated leadership required; Pakistan eligible",
-      "supportingExcerpt": "Applicants must document at least 3,000 hours of work experience together with demonstrated leadership experience, and be citizens of an eligible country including Pakistan.",
-      "excerptHash": "72c32ab07413bb0fbeb42beb82b287e8575384f39d8d3222ae867bb0084a3294",
-      "sourceUrl": "https://si.se/",
-      "sourceDomain": "si.se",
-      "sourceOrganization": "Swedish Institute",
-      "pageSection": "",
-      "retrievedAt": "2026-10-23T13:20:53.000Z",
-      "extractedAt": "2026-10-23T13:20:53.000Z",
-      "lastContentChangeAt": "2026-10-23T13:20:53.000Z",
-      "verificationMethod": "INDEPENDENT_CORROBORATION",
-      "verificationStatus": "Cross-Verified",
-      "evidenceQualityScore": 0.95,
-      "applicationCycle": "2027-2028",
-      "freshnessPolicy": "WEEKLY",
-      "conflictingClaimIds": [],
-      "versions": []
-    },
-    {
       "id": "38e2b383-e5e5-43a1-9a8e-7ca66e02ca76",
       "programId": "prog-hkpfs-2027",
       "scholarshipId": "sch-hkpfs-2027",
@@ -12722,6 +13542,390 @@
       "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
       "verificationStatus": "Officially Confirmed",
       "evidenceQualityScore": 0.98,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "ecb75171-82bf-4aff-9c50-82ce7125f837",
+      "programId": "prog-sydney-rtp-phd",
+      "scholarshipId": "sch-sydney-rtp-2027",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "AUD 44,293/year (2027 rate) + 100% tuition fee offset + OSHC + relocation and thesis allowance",
+      "supportingExcerpt": "RTP Stipend $44,293 per annum (2027 rate)",
+      "excerptHash": "b0f251cf117d6125b0f0222840abf8b98d8829554d145010ed97ea094e486508",
+      "sourceUrl": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html",
+      "sourceDomain": "www.sydney.edu.au",
+      "sourceOrganization": "University of Sydney",
+      "pageSection": "RTP Scholarships (International)",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.98,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "bf06c397-8cf8-47ee-9456-14b2b799e590",
+      "programId": "prog-sydney-rtp-phd",
+      "scholarshipId": "sch-sydney-rtp-2027",
+      "claimType": "DEADLINE",
+      "fieldName": "deadlineDate",
+      "normalizedValue": "Research Periods 3\u20134, 2027: 18 December 2026 (Periods 1\u20132, 2027 closed 11 Sep 2026; Periods 1\u20132, 2028: 10 Sep 2027)",
+      "supportingExcerpt": "Research Periods 3\u20134, 2027: applications close 18 December 2026",
+      "excerptHash": "23c5c8ccb96674dfb07ff79ccf5774f9e4d93d20ba01e4fde3fb80e317d0ba9f",
+      "sourceUrl": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html",
+      "sourceDomain": "www.sydney.edu.au",
+      "sourceOrganization": "University of Sydney",
+      "pageSection": "Application rounds",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.98,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "557db263-9183-4cff-bfc6-eb6f24f17668",
+      "programId": "prog-sydney-rtp-msc",
+      "scholarshipId": "sch-sydney-rtp-2027",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "AUD 44,293/year (2027 rate) + 100% tuition fee offset + OSHC + relocation and thesis allowance",
+      "supportingExcerpt": "RTP Stipend $44,293 per annum (2027 rate)",
+      "excerptHash": "b0f251cf117d6125b0f0222840abf8b98d8829554d145010ed97ea094e486508",
+      "sourceUrl": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html",
+      "sourceDomain": "www.sydney.edu.au",
+      "sourceOrganization": "University of Sydney",
+      "pageSection": "RTP Scholarships (International)",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.98,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "7bb3b8bc-3cc6-4ff5-96ca-821deeae4946",
+      "programId": "prog-sydney-rtp-msc",
+      "scholarshipId": "sch-sydney-rtp-2027",
+      "claimType": "DEADLINE",
+      "fieldName": "deadlineDate",
+      "normalizedValue": "Research Periods 3\u20134, 2027: 18 December 2026 (Periods 1\u20132, 2027 closed 11 Sep 2026; Periods 1\u20132, 2028: 10 Sep 2027)",
+      "supportingExcerpt": "Research Periods 3\u20134, 2027: applications close 18 December 2026",
+      "excerptHash": "23c5c8ccb96674dfb07ff79ccf5774f9e4d93d20ba01e4fde3fb80e317d0ba9f",
+      "sourceUrl": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html",
+      "sourceDomain": "www.sydney.edu.au",
+      "sourceOrganization": "University of Sydney",
+      "pageSection": "Application rounds",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.98,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "fc09d25f-1eb7-40ed-b797-87092bc21ada",
+      "programId": "prog-ubc-4yf-phd",
+      "scholarshipId": "sch-ubc-4yf-2027",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "CAD 24,000/year stipend + full tuition per year, for up to 4 years",
+      "supportingExcerpt": "Four Year Doctoral Fellowship: $24,000 stipend plus full tuition coverage per year for up to four years",
+      "excerptHash": "92c712a2009bed4d3d80179aa14d12b7a9a4d90ad9ca0e61806c8aa91ad177dc",
+      "sourceUrl": "https://www.grad.ubc.ca/awards/four-year-doctoral-fellowship-4yf",
+      "sourceDomain": "www.grad.ubc.ca",
+      "sourceOrganization": "University of British Columbia",
+      "pageSection": "Fellowship value",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.98,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "bcb9dfa0-24bd-491b-8729-863e43fe290c",
+      "programId": "prog-ubc-4yf-phd",
+      "scholarshipId": "sch-ubc-4yf-2027",
+      "claimType": "CITIZENSHIP_RULE",
+      "fieldName": "citizenshipRule",
+      "normalizedValue": "Canadian / Permanent Resident / International \u2014 all admitted doctoral applicants automatically considered",
+      "supportingExcerpt": "Eligibility: Canadian citizens, permanent residents and international students",
+      "excerptHash": "459defa9088b5d1f57c6da584d296952e6e6e2baf53861ccbfb7f1d9965bd95c",
+      "sourceUrl": "https://www.grad.ubc.ca/awards/four-year-doctoral-fellowship-4yf",
+      "sourceDomain": "www.grad.ubc.ca",
+      "sourceOrganization": "University of British Columbia",
+      "pageSection": "Eligibility",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.98,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "015efd9f-314e-4c91-bea0-d174c62375dc",
+      "programId": "prog-eiffel-msc-2027",
+      "scholarshipId": "sch-eiffel-2027",
+      "claimType": "DEADLINE",
+      "fieldName": "deadlineDate",
+      "normalizedValue": "Institutions submit to Campus France by 6 January 2027 (student internal deadlines earlier)",
+      "supportingExcerpt": "French higher education institutions must submit applications to Campus France by 6 January 2027",
+      "excerptHash": "120f0169fcc21f1395f3ea05c6d7987abd107855cb7c6b8237b3b3fd77c763a0",
+      "sourceUrl": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program",
+      "sourceDomain": "www.campusfrance.org",
+      "sourceOrganization": "Campus France",
+      "pageSection": "Call calendar",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.98,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "c9a4efd1-f8c4-46fe-9648-cc06aa8eb68b",
+      "programId": "prog-eiffel-msc-2027",
+      "scholarshipId": "sch-eiffel-2027",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "EUR 14,400/year (\u20ac1,200/month) for Master\u2019s; PhD rate EUR 24,000/year (\u20ac2,000/month)",
+      "supportingExcerpt": "Monthly allowance: \u20ac1,200 for master\u2019s students and \u20ac2,000 for doctoral students (2027 rules, as reported)",
+      "excerptHash": "7dc93e6913cfbc19871c3c2815451583370f0c8796bcc4b5064d9cbe9debbaaa",
+      "sourceUrl": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program",
+      "sourceDomain": "www.campusfrance.org",
+      "sourceOrganization": "Campus France",
+      "pageSection": "Scholarship benefits",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "INDEPENDENT_CORROBORATION",
+      "verificationStatus": "Cross-Verified",
+      "evidenceQualityScore": 0.9,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "68e77cda-906a-4801-88ec-1178a2c11866",
+      "programId": "prog-eiffel-phd-2027",
+      "scholarshipId": "sch-eiffel-2027",
+      "claimType": "DEADLINE",
+      "fieldName": "deadlineDate",
+      "normalizedValue": "Institutions submit to Campus France by 6 January 2027 (student internal deadlines earlier)",
+      "supportingExcerpt": "French higher education institutions must submit applications to Campus France by 6 January 2027",
+      "excerptHash": "120f0169fcc21f1395f3ea05c6d7987abd107855cb7c6b8237b3b3fd77c763a0",
+      "sourceUrl": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program",
+      "sourceDomain": "www.campusfrance.org",
+      "sourceOrganization": "Campus France",
+      "pageSection": "Call calendar",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.98,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "bc7ea26b-5589-447f-a4fb-aeb4293034d1",
+      "programId": "prog-eiffel-phd-2027",
+      "scholarshipId": "sch-eiffel-2027",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "EUR 24,000/year (\u20ac2,000/month) for PhD; Master\u2019s rate EUR 14,400/year (\u20ac1,200/month)",
+      "supportingExcerpt": "Monthly allowance: \u20ac1,200 for master\u2019s students and \u20ac2,000 for doctoral students (2027 rules, as reported)",
+      "excerptHash": "7dc93e6913cfbc19871c3c2815451583370f0c8796bcc4b5064d9cbe9debbaaa",
+      "sourceUrl": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program",
+      "sourceDomain": "www.campusfrance.org",
+      "sourceOrganization": "Campus France",
+      "pageSection": "Scholarship benefits",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "INDEPENDENT_CORROBORATION",
+      "verificationStatus": "Cross-Verified",
+      "evidenceQualityScore": 0.9,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "69d1cd98-8541-46a7-b7be-677450caea5f",
+      "programId": "prog-melbourne-grs-msc",
+      "scholarshipId": "sch-melbourne-grs-2027",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "AUD 41,100/year living allowance (2027 rate) + 100% fee remission + OSHC (single) + relocation grant (AUD 3,000 international)",
+      "supportingExcerpt": "Living allowance of $41,100 per year pro rata (2027 full-time study rate)",
+      "excerptHash": "cea2ab699d0aceedfc56c2482efeff0741badb5f9ce7f5c1dd526b6729e90195",
+      "sourceUrl": "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships",
+      "sourceDomain": "scholarships.unimelb.edu.au",
+      "sourceOrganization": "University of Melbourne",
+      "pageSection": "Benefits",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.98,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "b6d0b60b-d6f7-4abd-9d75-cd9b6a0d4997",
+      "programId": "prog-melbourne-grs-msc",
+      "scholarshipId": "sch-melbourne-grs-2027",
+      "claimType": "DEADLINE",
+      "fieldName": "deadlineDate",
+      "normalizedValue": "Automatic consideration with course application; Round 2 closes 31 Jan 2027, Round 3 closes 15 May 2027",
+      "supportingExcerpt": "Graduate research applications are considered in selection rounds; Round 2 closes 31 January 2027",
+      "excerptHash": "6dd82e3a550df0a065c732881f226a2b6c1c94b022a356b33f2bf1b1b78f2460",
+      "sourceUrl": "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships",
+      "sourceDomain": "scholarships.unimelb.edu.au",
+      "sourceOrganization": "University of Melbourne",
+      "pageSection": "Application rounds",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "INDEPENDENT_CORROBORATION",
+      "verificationStatus": "Cross-Verified",
+      "evidenceQualityScore": 0.9,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "80b85270-d5a4-49af-97ab-a9295866d247",
+      "programId": "prog-melbourne-grs-phd",
+      "scholarshipId": "sch-melbourne-grs-2027",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "AUD 41,100/year living allowance (2027 rate) + 100% fee remission + OSHC (single) + relocation grant (AUD 3,000 international)",
+      "supportingExcerpt": "Living allowance of $41,100 per year pro rata (2027 full-time study rate)",
+      "excerptHash": "cea2ab699d0aceedfc56c2482efeff0741badb5f9ce7f5c1dd526b6729e90195",
+      "sourceUrl": "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships",
+      "sourceDomain": "scholarships.unimelb.edu.au",
+      "sourceOrganization": "University of Melbourne",
+      "pageSection": "Benefits",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "AUTHORITATIVE_DOM_EXTRACTION",
+      "verificationStatus": "Officially Confirmed",
+      "evidenceQualityScore": 0.98,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "d487cd15-760c-4497-ae72-e244e72682c7",
+      "programId": "prog-melbourne-grs-phd",
+      "scholarshipId": "sch-melbourne-grs-2027",
+      "claimType": "DEADLINE",
+      "fieldName": "deadlineDate",
+      "normalizedValue": "Automatic consideration with course application; Round 2 closes 31 Jan 2027, Round 3 closes 15 May 2027",
+      "supportingExcerpt": "Graduate research applications are considered in selection rounds; Round 2 closes 31 January 2027",
+      "excerptHash": "6dd82e3a550df0a065c732881f226a2b6c1c94b022a356b33f2bf1b1b78f2460",
+      "sourceUrl": "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships",
+      "sourceDomain": "scholarships.unimelb.edu.au",
+      "sourceOrganization": "University of Melbourne",
+      "pageSection": "Application rounds",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "INDEPENDENT_CORROBORATION",
+      "verificationStatus": "Cross-Verified",
+      "evidenceQualityScore": 0.9,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "61dd3947-5b5a-4f5f-ae2b-ea1fe00e2c48",
+      "programId": "prog-hec-uspak-kc-phd",
+      "scholarshipId": "sch-hec-uspak-kc-2027",
+      "claimType": "STIPEND_AMOUNT",
+      "fieldName": "stipendAmountAnnual",
+      "normalizedValue": "USD 19,000/year stipend + full tuition + USD 2,000 health insurance (Top-50 QS); 51\u2013100 QS: tuition up to USD 12,000/year + stipend + insurance",
+      "supportingExcerpt": "For admissions in the Top 50 universities, the scholarship will cover full tuition fee along with an annual stipend of USD 19,000 and USD 2,000 for health insurance",
+      "excerptHash": "cd099f483f7a3692fecb0a49e827fea2d803d40dc43158ca68d29a11fb7eac2b",
+      "sourceUrl": "https://www.hec.gov.pk/site/US-PAK-KC",
+      "sourceDomain": "www.hec.gov.pk",
+      "sourceOrganization": "Higher Education Commission (HEC) Pakistan",
+      "pageSection": "Scholarship categories",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "INDEPENDENT_CORROBORATION",
+      "verificationStatus": "Cross-Verified",
+      "evidenceQualityScore": 0.9,
+      "applicationCycle": "2027-2028",
+      "freshnessPolicy": "WEEKLY",
+      "conflictingClaimIds": [],
+      "versions": []
+    },
+    {
+      "id": "adfb405d-0a89-4b00-8d5e-1281313b9d0a",
+      "programId": "prog-hec-uspak-kc-phd",
+      "scholarshipId": "sch-hec-uspak-kc-2027",
+      "claimType": "DEADLINE",
+      "fieldName": "deadlineDate",
+      "normalizedValue": "Fall 2027 intake: 30 March 2027 (Spring/Summer 2027 intake closed 30 Oct 2026)",
+      "supportingExcerpt": "For Fall 2027 intake, applications will be accepted till March 30, 2027",
+      "excerptHash": "fa6120cfefa0939e052003a808b83bcd856555b68a28922191484bf997d5b9f5",
+      "sourceUrl": "https://www.hec.gov.pk/site/US-PAK-KC",
+      "sourceDomain": "www.hec.gov.pk",
+      "sourceOrganization": "Higher Education Commission (HEC) Pakistan",
+      "pageSection": "Application deadlines",
+      "retrievedAt": "2026-11-02T05:34:14.000Z",
+      "extractedAt": "2026-11-02T05:34:14.000Z",
+      "lastContentChangeAt": "2026-11-02T05:34:14.000Z",
+      "verificationMethod": "INDEPENDENT_CORROBORATION",
+      "verificationStatus": "Cross-Verified",
+      "evidenceQualityScore": 0.9,
       "applicationCycle": "2027-2028",
       "freshnessPolicy": "WEEKLY",
       "conflictingClaimIds": [],
