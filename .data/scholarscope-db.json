@@ -776,7 +776,7 @@
       "officialApplicationUrl": "https://www.gatescambridge.org/apply/timeline/",
       "contactEmail": "info@gatescambridge.org",
       "applicationStages": [
-        "Submit Cambridge Graduate Application & Gates Cambridge statement via Applicant Portal",
+        "Submit Cambridge Graduate Application & Gates Cambridge statement via Applicant Portal (international-round funding deadline 8 Dec 2026 or 6 Jan 2027 depending on your course \u2014 check the Course Directory)",
         "Departmental academic ranking & nomination",
         "Shortlisting and 30-minute panel interview"
       ],
@@ -840,9 +840,9 @@
         "b85bd473-3b11-4347-b2f6-73db414575df",
         "87503e91-7d82-4140-ada4-68031f91b0df"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-22T12:22:23.248Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Computer Science",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -928,9 +928,9 @@
         "bbf6f1d7-b363-4050-8d21-e2b0e398bb4a",
         "5d866e37-3aa7-42ca-96a8-10414e0d1cd6"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-22T12:22:40.793Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Computer Science",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -1013,9 +1013,9 @@
         "c97baccd-328a-4b4a-a606-9f10cb334979",
         "7d4f9bf1-475a-4125-b4d7-421c618fe139"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-22T12:22:42.632Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Computer Science",
       "specializations": [
         "Cybersecurity and Information Security",
@@ -1040,7 +1040,7 @@
       "officialApplicationUrl": "https://gradadmissions.mit.edu/applications",
       "contactEmail": "gradadmissions@mit.edu",
       "applicationStages": [
-        "Online application submission via MIT Graduate Admissions Portal",
+        "Online application submission via MIT Graduate Admissions Portal (closes 1 Dec 2026, 11:59 PM Eastern)",
         "Faculty area committee review"
       ],
       "applicationFeeAmount": 75,
@@ -1095,9 +1095,9 @@
       "claimIds": [
         "ef3b4589-7fef-46b0-8d14-d85f67f83044"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-22T12:22:24.707Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Computer Science",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -1176,9 +1176,9 @@
       "claimIds": [
         "f91a2305-2a0e-4d20-ab65-8ce6cdcc6bdc"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-22T12:22:42.714Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Computer Science",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -1203,7 +1203,7 @@
       "officialApplicationUrl": "https://www.postgraduate.study.cam.ac.uk/",
       "contactEmail": null,
       "applicationStages": [
-        "Submit Postgraduate Portal Application",
+        "Submit Postgraduate Portal Application (international-round funding deadline 8 Dec 2026 or 6 Jan 2027 depending on your course \u2014 check the Course Directory)",
         "Supervisor & Maxwell Centre Interview"
       ],
       "applicationFeeAmount": 50,
@@ -1257,9 +1257,9 @@
       "claimIds": [
         "f0baa488-f3af-4a36-a480-2537f4b9eb04"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-22T12:22:28.748Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Bioinformatics and Computational Biology",
@@ -1414,9 +1414,9 @@
         "ac8d32d7-5174-46e5-aaa4-06816a002c38",
         "11c58493-2574-4094-bbc9-746ab65731fa"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-22T12:22:44.044Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-hec-pk-unavail",
@@ -1646,9 +1646,9 @@
       "claimIds": [
         "48c09c37-01e3-48b0-a926-d9970ad0f3c5"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-22T12:22:35.556Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-cam-phd-pathology-micro",
@@ -1678,7 +1678,7 @@
       "contactEmail": "grad.admin@path.cam.ac.uk",
       "applicationStages": [
         "Identify prospective supervisor in Division of Microbiology & Parasitology, Virology, or Immunology",
-        "Submit Cambridge Applicant Portal application by funding deadline (Dec 3)",
+        "Submit Cambridge Applicant Portal application by your course's funding deadline (8 Dec 2026 or 6 Jan 2027)",
         "Departmental & Gates Cambridge interview"
       ],
       "applicationFeeAmount": 50,
@@ -1735,9 +1735,9 @@
       "claimIds": [
         "c9b4e5f1-86e3-4a5c-95da-345a69a0ccc2"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-22T12:22:36.289Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-mpg-imprs-phd-cs",
@@ -2328,7 +2328,7 @@
       "officialApplicationUrl": "https://knight-hennessy.stanford.edu/admission",
       "contactEmail": "",
       "applicationStages": [
-        "Apply to Knight-Hennessy when the 2028 cohort opens (June 2027; closing date not yet published \u2014 expected ~Oct 2027; 2027 cohort closed 6 Oct 2026)",
+        "Apply to Knight-Hennessy when the 2028 cohort opens in June 2027 and closes in October 2027 (exact date not yet published \u2014 KHS deadlines page says \"summer 2027\"; you must have earned your bachelor's degree in 2021 or later; 2027 cohort closed 6 Oct 2026)",
         "Separately apply and be admitted to a full-time Stanford graduate programme (meet the earlier of the programme deadline or 1 Dec)",
         "Finalists attend an in-person selection weekend"
       ],
@@ -2380,9 +2380,9 @@
         "1985720c-9370-435e-8924-12dd159c1757",
         "946e556c-c27e-4ab4-a5e4-216434e380ff"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -2457,9 +2457,9 @@
         "6d0ba487-5924-4602-9f38-7fbbc5878fd0",
         "2630d48c-e95c-4261-af9c-ef98a9c42083"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -2537,9 +2537,9 @@
         "3badf90d-3536-4b15-a962-fd91627daca9",
         "2da68c60-5ecd-4887-bf79-5cd8cb9d643c"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Bioinformatics and Computational Biology",
@@ -2776,9 +2776,9 @@
         "edd4beef-0e15-48a0-8b87-a0422b304349",
         "b4cf2357-8fe2-4868-9dc5-cfa2c8d44fe1"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -2805,14 +2805,14 @@
       "officialApplicationUrl": "https://www.studyinkorea.go.kr/",
       "contactEmail": "",
       "applicationStages": [
-        "2027 GKS-G guidelines not yet published (as of Nov 2026); expected embassy window Feb\u2013Mar 2027 (~2 weeks) via the Korean Embassy in Islamabad \u2014 confirm the exact window on studyinkorea.go.kr; up to 3 university choices",
-        "OR University track (deadlines vary by institution, typically Mar\u2013Apr 2027) \u2014 1 university only; applying through both tracks disqualifies",
+        "2027 GKS-G guidelines not yet published (as of Nov 2026); expected embassy window Feb-Mar 2027 (~2 weeks) via the Korean Embassy in Islamabad \u2014 confirm the exact window on studyinkorea.go.kr; up to 3 university choices",
+        "OR University track (deadlines vary by institution, typically Mar-Apr 2027) \u2014 1 university only; applying through both tracks disqualifies",
         "Do not confuse with GKS-U (undergraduate): its 2027 embassy track closed 30 Sep 2026"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "KRW",
       "supervisorContactReq": "NOT_REQUIRED",
-      "deadlineDate": "2027-02-28T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "Asia/Seoul",
       "openingDate": null,
       "isActive": true,
@@ -2856,9 +2856,9 @@
         "412ab19f-3f4b-496e-bfd3-19f90df11bda",
         "f4158682-d13c-4cfa-8a60-ccb5b4fc2b6c"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -2935,9 +2935,9 @@
         "c5ac7ceb-7879-4a37-a683-f40a5ffd194d",
         "6b240f28-77d8-484e-9469-dad67f301298"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -3013,9 +3013,9 @@
         "38e2b383-e5e5-43a1-9a8e-7ca66e02ca76",
         "476ebb76-8bc6-40fa-b52c-98666d48a4d4"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "broadField": "Interdisciplinary (CS & Bio)",
       "specializations": [
         "Artificial Intelligence and Machine Learning",
@@ -4247,9 +4247,9 @@
       "officialApplicationUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-shared-scholarships-applications/",
       "contactEmail": null,
       "applicationStages": [
-        "Apply via CSC Central Electronic Application System",
-        "Apply for admission to an approved Master's course at a participating UK university",
-        "University nominates selected candidates to the CSC"
+        "Apply via CSC Central Electronic Application System (opens Tue 10 Nov 2026; closes 16:00 GMT Tue 8 Dec 2026)",
+        "Apply for admission to an approved Master's course at a participating UK university \u2014 NOTE: the 2027 approved-course list is not yet published as of 9 Nov 2026 (the CSC page still links the 2026 list; CSC says the 2027 list will be published in advance of the 10 Nov opening)",
+        "University nominates selected candidates to the CSC (March 2027)"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "GBP",
@@ -4305,9 +4305,9 @@
         "469f8bf3-7b68-4b48-9895-3da1b22d3201",
         "03e59532-cb63-4a32-9edb-0301beff2d4c"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-csc-shared-uk-msc-microbio",
@@ -4332,9 +4332,9 @@
       "officialApplicationUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-shared-scholarships-applications/",
       "contactEmail": null,
       "applicationStages": [
-        "Apply via CSC Central Electronic Application System",
-        "Apply for admission to an approved Master's course at a participating UK university",
-        "University nominates selected candidates to the CSC"
+        "Apply via CSC Central Electronic Application System (opens Tue 10 Nov 2026; closes 16:00 GMT Tue 8 Dec 2026)",
+        "Apply for admission to an approved Master's course at a participating UK university \u2014 NOTE: the 2027 approved-course list is not yet published as of 9 Nov 2026 (the CSC page still links the 2026 list; CSC says the 2027 list will be published in advance of the 10 Nov opening)",
+        "University nominates selected candidates to the CSC (March 2027)"
       ],
       "applicationFeeAmount": 0,
       "applicationFeeCurrency": "GBP",
@@ -4390,9 +4390,9 @@
         "1dd09fe4-cab8-4241-a758-1bde4f9f2b9f",
         "101932ae-4760-49e0-afcc-60b0be751f4f"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-ntu-npgs-phd",
@@ -4475,9 +4475,9 @@
         "7bbec350-cf31-4c80-ad12-e052c21a7a6f",
         "a6dcdd2c-7fb0-4e2f-b7e7-dff4085583d2"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-hbku-cse-phd",
@@ -4556,9 +4556,9 @@
         "e9358363-bb9f-4ca9-90e9-d226c54bc227",
         "6f7763f8-04f2-4d88-ba15-8dfd75c63d7d"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-hbku-chls-phd",
@@ -4637,9 +4637,9 @@
         "e976cc0b-1fe3-4c5b-9bb4-2b2eed7d9adc",
         "c62c5fd1-0d54-48d4-9fd7-efb0e4da5adf"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-sydney-rtp-phd",
@@ -4719,9 +4719,9 @@
         "ecb75171-82bf-4aff-9c50-82ce7125f837",
         "bf06c397-8cf8-47ee-9456-14b2b799e590"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-11-02T05:34:14.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-sydney-rtp-msc",
@@ -4801,9 +4801,9 @@
         "557db263-9183-4cff-bfc6-eb6f24f17668",
         "7bb3b8bc-3cc6-4ff5-96ca-821deeae4946"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-11-02T05:34:14.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-ubc-4yf-phd",
@@ -4964,9 +4964,9 @@
         "015efd9f-314e-4c91-bea0-d174c62375dc",
         "c9a4efd1-f8c4-46fe-9648-cc06aa8eb68b"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-11-02T05:34:14.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-eiffel-phd-2027",
@@ -5046,9 +5046,9 @@
         "68e77cda-906a-4801-88ec-1178a2c11866",
         "bc7ea26b-5589-447f-a4fb-aeb4293034d1"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-11-02T05:34:14.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-melbourne-grs-msc",
@@ -5127,9 +5127,9 @@
         "69d1cd98-8541-46a7-b7be-677450caea5f",
         "b6d0b60b-d6f7-4abd-9d75-cd9b6a0d4997"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-11-02T05:34:14.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-melbourne-grs-phd",
@@ -5208,9 +5208,9 @@
         "80b85270-d5a4-49af-97ab-a9295866d247",
         "d487cd15-760c-4497-ae72-e244e72682c7"
       ],
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "createdAt": "2026-11-02T05:34:14.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "prog-hec-uspak-kc-phd",
@@ -5332,7 +5332,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-gates-cambridge",
         "scholarshipId": "sch-gates-cambridge",
@@ -5366,7 +5366,7 @@
         "87503e91-7d82-4140-ada4-68031f91b0df"
       ],
       "createdAt": "2026-10-22T12:22:23.248Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "FOUNDATION_FELLOWSHIP"
     },
     {
@@ -5400,7 +5400,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-eth-esop",
         "scholarshipId": "sch-eth-esop",
@@ -5433,7 +5433,7 @@
         "5d866e37-3aa7-42ca-96a8-10414e0d1cd6"
       ],
       "createdAt": "2026-10-22T12:22:40.793Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "UNIVERSITY_SCHOLARSHIP"
     },
     {
@@ -5465,7 +5465,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Stipend Only",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-epfl-excellence",
         "scholarshipId": "sch-epfl-excellence",
@@ -5497,7 +5497,7 @@
         "7d4f9bf1-475a-4125-b4d7-421c618fe139"
       ],
       "createdAt": "2026-10-22T12:22:42.632Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "UNIVERSITY_SCHOLARSHIP"
     },
     {
@@ -5531,7 +5531,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Official Source, Not Fully Verified",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-mit-ra-fellowship",
         "scholarshipId": "sch-mit-ra-fellowship",
@@ -5562,7 +5562,7 @@
         "ef3b4589-7fef-46b0-8d14-d85f67f83044"
       ],
       "createdAt": "2026-10-22T12:22:24.707Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "RA_TA_ASSISTANTSHIP"
     },
     {
@@ -5594,7 +5594,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Tuition Only",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-uoft-sgs-awards",
         "scholarshipId": "sch-uoft-sgs-awards",
@@ -5625,7 +5625,7 @@
         "f91a2305-2a0e-4d20-ab65-8ce6cdcc6bdc"
       ],
       "createdAt": "2026-10-22T12:22:42.714Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "UNIVERSITY_SCHOLARSHIP"
     },
     {
@@ -5947,7 +5947,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-kaust-fellowship",
         "scholarshipId": "sch-kaust-fellowship",
@@ -5979,7 +5979,7 @@
         "11c58493-2574-4094-bbc9-746ab65731fa"
       ],
       "createdAt": "2026-10-22T12:22:44.044Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "sch-daad-germany-epos-phd",
@@ -6461,7 +6461,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-knight-hennessy-2028",
         "scholarshipId": "sch-knight-hennessy-2028",
@@ -6486,7 +6486,7 @@
         "946e556c-c27e-4ab4-a5e4-216434e380ff"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "FOUNDATION_FELLOWSHIP"
     },
     {
@@ -6510,7 +6510,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-imperial-presidents-phd-2027",
         "scholarshipId": "sch-imperial-presidents-phd-2027",
@@ -6535,7 +6535,7 @@
         "2630d48c-e95c-4261-af9c-ef98a9c42083"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "UNIVERSITY_SCHOLARSHIP"
     },
     {
@@ -6559,7 +6559,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-oist-phd-2027",
         "scholarshipId": "sch-oist-phd-2027",
@@ -6584,7 +6584,7 @@
         "2da68c60-5ecd-4887-bf79-5cd8cb9d643c"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "RESEARCH_STUDENTSHIP"
     },
     {
@@ -6708,7 +6708,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-turkiye-burslari-2027",
         "scholarshipId": "sch-turkiye-burslari-2027",
@@ -6733,7 +6733,7 @@
         "b4cf2357-8fe2-4868-9dc5-cfa2c8d44fe1"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "GOVERNMENT_SCHOLARSHIP"
     },
     {
@@ -6752,13 +6752,13 @@
       "eligibleFields": [
         "Interdisciplinary (CS & Bio)"
       ],
-      "deadlineDate": "2027-02-28T23:59:59Z",
+      "deadlineDate": null,
       "deadlineTimezone": "Asia/Seoul",
       "applicationCycle": "2027-2028",
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-gks-korea-2027",
         "scholarshipId": "sch-gks-korea-2027",
@@ -6783,7 +6783,7 @@
         "f4158682-d13c-4cfa-8a60-ccb5b4fc2b6c"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "GOVERNMENT_SCHOLARSHIP"
     },
     {
@@ -6807,7 +6807,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-singa-2027",
         "scholarshipId": "sch-singa-2027",
@@ -6832,7 +6832,7 @@
         "6b240f28-77d8-484e-9469-dad67f301298"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "RESEARCH_STUDENTSHIP"
     },
     {
@@ -6856,7 +6856,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-hkpfs-2027",
         "scholarshipId": "sch-hkpfs-2027",
@@ -6881,7 +6881,7 @@
         "476ebb76-8bc6-40fa-b52c-98666d48a4d4"
       ],
       "createdAt": "2026-10-23T13:20:53.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "opportunityType": "RESEARCH_STUDENTSHIP"
     },
     {
@@ -6919,7 +6919,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-commonwealth-shared-2027",
         "scholarshipId": "sch-commonwealth-shared-2027",
@@ -6946,7 +6946,7 @@
         "101932ae-4760-49e0-afcc-60b0be751f4f"
       ],
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z",
+      "updatedAt": "2026-11-09T05:21:20.000Z",
       "nominationProcessNote": "Apply via CSC Central AND secure admission to an approved Master's course at a participating UK university; universities nominate candidates to the CSC."
     },
     {
@@ -6973,7 +6973,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-ntu-npgs-2027",
         "scholarshipId": "sch-ntu-npgs-2027",
@@ -6999,7 +6999,7 @@
         "a6dcdd2c-7fb0-4e2f-b7e7-dff4085583d2"
       ],
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "sch-hbku-graduate-2027",
@@ -7025,7 +7025,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-hbku-graduate-2027",
         "scholarshipId": "sch-hbku-graduate-2027",
@@ -7052,7 +7052,7 @@
         "c62c5fd1-0d54-48d4-9fd7-efb0e4da5adf"
       ],
       "createdAt": "2026-10-26T05:21:11.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "sch-sydney-rtp-2027",
@@ -7077,7 +7077,7 @@
       "separateApplicationReq": true,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-sydney-rtp-2027",
         "scholarshipId": "sch-sydney-rtp-2027",
@@ -7104,7 +7104,7 @@
         "7bb3b8bc-3cc6-4ff5-96ca-821deeae4946"
       ],
       "createdAt": "2026-11-02T05:34:14.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "sch-ubc-4yf-2027",
@@ -7178,7 +7178,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Stipend Only",
       "verificationStatus": "Cross-Verified",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-eiffel-2027",
         "scholarshipId": "sch-eiffel-2027",
@@ -7205,7 +7205,7 @@
         "bc7ea26b-5589-447f-a4fb-aeb4293034d1"
       ],
       "createdAt": "2026-11-02T05:34:14.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "sch-melbourne-grs-2027",
@@ -7230,7 +7230,7 @@
       "separateApplicationReq": false,
       "fundingClassification": "Fully Funded \u2014 Confirmed",
       "verificationStatus": "Officially Confirmed",
-      "lastCheckedAt": "2026-11-02T05:34:14.000Z",
+      "lastCheckedAt": "2026-11-09T05:21:20.000Z",
       "fundingPackage": {
         "id": "fp-sch-melbourne-grs-2027",
         "scholarshipId": "sch-melbourne-grs-2027",
@@ -7257,7 +7257,7 @@
         "d487cd15-760c-4497-ae72-e244e72682c7"
       ],
       "createdAt": "2026-11-02T05:34:14.000Z",
-      "updatedAt": "2026-11-02T05:34:14.000Z"
+      "updatedAt": "2026-11-09T05:21:20.000Z"
     },
     {
       "id": "sch-hec-uspak-kc-2027",
@@ -11997,16 +11997,16 @@
       "scholarshipId": "sch-knight-hennessy-2028",
       "claimType": "DEADLINE",
       "fieldName": "deadlineDate",
-      "normalizedValue": "2027 cohort closed 6 Oct 2026; 2028 cohort opens ~June 2027, closes ~Oct 2027",
-      "supportingExcerpt": "The 2027 Knight-Hennessy cohort application closed on 6 October 2026. The 2028 cohort opens in June 2027 with an expected October 2027 deadline.",
-      "excerptHash": "9456e1163dbff709d25a86f4929b45f01e0ee4fcf91e162f3a8925f409d55af8",
+      "normalizedValue": "2028 cohort opens June 2027, closes October 2027 (exact date not yet published); 2027 cohort closed 6 Oct 2026",
+      "supportingExcerpt": "The KHS application to join the 2028 cohort will open in summer 2027.",
+      "excerptHash": "498a9a53f4daf4036c91df33a9801ba638fcfb36d482bcef95411a9c7a71deb5",
       "sourceUrl": "https://knight-hennessy.stanford.edu/admission",
       "sourceDomain": "knight-hennessy.stanford.edu",
       "sourceOrganization": "Knight-Hennessy Scholars",
       "pageSection": "",
-      "retrievedAt": "2026-10-23T13:20:53.000Z",
-      "extractedAt": "2026-10-23T13:20:53.000Z",
-      "lastContentChangeAt": "2026-10-23T13:20:53.000Z",
+      "retrievedAt": "2026-11-09T05:21:20.000Z",
+      "extractedAt": "2026-11-09T05:21:20.000Z",
+      "lastContentChangeAt": "2026-11-09T05:21:20.000Z",
       "verificationMethod": "INDEPENDENT_CORROBORATION",
       "verificationStatus": "Cross-Verified",
       "evidenceQualityScore": 0.95,
